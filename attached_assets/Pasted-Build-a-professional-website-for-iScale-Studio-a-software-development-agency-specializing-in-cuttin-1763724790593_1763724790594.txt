@@ -1,0 +1,50 @@
+Build a professional website for iScale Studio, a software development agency specializing in cutting-edge AI solutions.
+Company Overview:
+iScale Studio is a software development agency that helps businesses leverage AI technology to scale their operations and improve efficiency.
+Services:
+Primary Service: AI Web & App Development
+
+Custom web applications and mobile apps powered by artificial intelligence
+Standard modern web development stack (React, Node.js, Python, etc.)
+E-commerce solutions with AI integration
+Progressive web apps and native mobile applications
+
+Secondary Services:
+Workflow Automation
+
+Business process automation using enterprise-grade platforms
+Tools: n8n, Make.com, Zapier, Go High Level, Power Automate
+Custom workflow design and implementation
+System integration and data synchronization
+No-code/low-code automation solutions
+
+AI Agent Development
+
+Intelligent automation agents for customer service, data processing, and business operations
+Multi-AI integration: OpenAI (ChatGPT, GPT-4), Claude (Anthropic), Google Gemini
+Custom AI chatbots and virtual assistants
+Document processing and intelligent data extraction
+AI-powered business intelligence tools
+
+Website Requirements:
+
+Modern, professional design reflecting innovation and technical expertise
+Clear service descriptions with compelling calls-to-action for each offering
+Portfolio/case studies section showcasing successful AI implementations
+Technology stack showcase highlighting tools and platforms used
+Contact form and consultation booking system
+Blog section for thought leadership on AI and automation
+Mobile-responsive design with fast loading speeds
+SEO optimization for "AI development," "workflow automation," and related keywords
+
+Key Pages:
+
+Home - Hero section with value proposition
+Services - Detailed breakdown of AI Web/App Development, Workflow Automation, and AI Agents
+Portfolio/Case Studies - Real-world success stories
+About Us - Team and company mission
+Blog - Industry insights and tutorials
+Contact - Multiple contact options and consultation booking
+
+Tone & Style: Professional yet approachable, emphasizing transformation and scalability through AI technology. Use language that appeals to both technical and non-technical decision-makers.
+Target Audience: SMBs and enterprises looking to modernize operations with AI solutions, e-commerce businesses, and companies seeking automation to reduce manual work.
