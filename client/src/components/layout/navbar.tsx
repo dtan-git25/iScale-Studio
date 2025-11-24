@@ -37,7 +37,7 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link href="/">
               <a className="flex items-center">
-                <img src={logo} alt="iScale Studio" className="h-10 w-auto md:h-14" />
+                <img src={logo} alt="iScale Studio" className="h-6 w-auto md:h-8" />
               </a>
             </Link>
           </div>
