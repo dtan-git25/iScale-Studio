@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-1">
             <Link href="/">
               <a className="flex items-center mb-4">
-                <img src={logo} alt="iScale Studio" className="h-6 w-auto" />
+                <img src={logo} alt="iScale Studio" className="h-8 w-auto" />
               </a>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
