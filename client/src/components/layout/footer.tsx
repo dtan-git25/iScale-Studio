@@ -17,13 +17,16 @@ export default function Footer() {
               Empowering businesses with cutting-edge AI solutions, intelligent workflow automation, and custom software development.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-cyan-400 transition-colors">
+              <a href="https://facebook.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-cyan-400 transition-colors">
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a href="https://x.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-cyan-400 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-cyan-400 transition-colors">
+              <a href="https://linkedin.com/company/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-cyan-400 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-cyan-400 transition-colors">
+              <a href="https://instagram.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-cyan-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -53,16 +56,16 @@ export default function Footer() {
             <h3 className="font-display font-bold text-lg mb-4">Contact</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-cyan-400 shrink-0" />
-                <span>123 Innovation Dr,<br />Tech City, TC 90210</span>
+                <MapPin className="h-5 w-5 text-cyan-400 shrink-0 mt-0.5" />
+                <span>Capas, Tarlac<br />Philippines 2315</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-cyan-400 shrink-0" />
-                <span>hello@iscalestudio.com</span>
+                <a href="mailto:hello@iscalestudio.com" className="hover:text-cyan-300">hello@iscalestudio.com</a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-cyan-400 shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <a href="tel:+639560623082" className="hover:text-cyan-300">+63 956 0623 082</a>
               </li>
             </ul>
           </div>
