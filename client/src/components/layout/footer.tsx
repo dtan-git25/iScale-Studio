@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin, Phone } from "lucide-react";
-import logo from "@assets/iScale_Studio_V_1763966727415.png";
+import logo from "@assets/iScale_Studio_V_w_1763966994925.png";
 
 export default function Footer() {
   return (
