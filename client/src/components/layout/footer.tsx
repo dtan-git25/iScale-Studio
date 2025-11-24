@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import logo from "@assets/iScale_Studio_H_v2_1763964072319.png";
 
 export default function Footer() {
   return (
@@ -8,11 +9,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
             <Link href="/">
-              <a className="text-2xl font-display font-bold tracking-tighter flex items-center gap-2 mb-4">
-                <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                  iScale
-                </span>
-                <span className="text-foreground">Studio</span>
+              <a className="flex items-center mb-4">
+                <img src={logo} alt="iScale Studio" className="h-12 w-auto" />
               </a>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
