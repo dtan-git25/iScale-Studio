@@ -13,7 +13,7 @@ export default function Footer() {
                 <img src={logo} alt="iScale Studio" className="h-8 w-auto" />
               </a>
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+            <p className="text-muted-foreground text-xs leading-relaxed mb-6">
               Empowering businesses with cutting-edge AI solutions, intelligent workflow automation, and custom software development.
             </p>
             <div className="flex space-x-4">
