@@ -18,9 +18,9 @@ const FloatingCard = ({ delay, icon: Icon, text, description }: any) => {
             <div className="text-[#9929ea] group-hover:scale-110 transition-transform flex-shrink-0">
               <Icon className="h-8 w-8" />
             </div>
-            <h3 className="font-bold text-gray-900 text-lg lg:text-xl">{text}</h3>
+            <h3 className="font-bold text-gray-900 text-base lg:text-lg">{text}</h3>
           </div>
-          <p className="text-base lg:text-lg text-gray-700 line-clamp-3">{description}</p>
+          <p className="text-sm lg:text-base text-gray-700 line-clamp-3">{description}</p>
         </div>
       </motion.div>
     </motion.div>
