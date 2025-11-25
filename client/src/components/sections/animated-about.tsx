@@ -70,7 +70,7 @@ export function AnimatedAbout() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-lg text-gray-700 leading-relaxed mb-8 font-light"
+              className="text-lg text-gray-700 leading-relaxed mb-8"
             >
               Since 2019, iScale Studio has been transforming businesses across the Philippines through cutting-edge AI development, intelligent automation, and custom software solutions. We believe technology should work harder, so your business can grow smarter.
             </motion.p>
