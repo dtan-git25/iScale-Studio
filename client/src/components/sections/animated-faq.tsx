@@ -1,128 +1,132 @@
 import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Clock, DollarSign, Zap, Lightbulb, Shield, Headphones } from "lucide-react";
 
 export function AnimatedFAQ() {
   const faqs = [
-    { q: "How long does a typical project take?", a: "Project timelines vary based on scope. Simple automations can be done in 2-4 weeks, while custom AI applications typically take 8-16 weeks. We'll provide a detailed timeline during the discovery phase." },
-    { q: "What's your pricing model?", a: "We offer fixed-price projects, time & materials, and retainer models depending on your needs. We provide detailed quotes after understanding your requirements." },
-    { q: "Do you work with existing systems?", a: "Yes! We excel at integrating with legacy systems. Whether you use Salesforce, SAP, or custom software, we can build automation and AI solutions that fit seamlessly." },
-    { q: "Can you help with AI strategy?", a: "Absolutely. We offer AI consulting services to help identify opportunities in your business where AI and automation can have the most impact." },
-    { q: "What support do you provide after launch?", a: "We offer ongoing support packages including monitoring, updates, optimization, and new feature development to keep your systems running smoothly." },
-    { q: "How is data security handled?", a: "We follow industry best practices for data security. All solutions are built with GDPR, CCPA, and enterprise-grade security standards in mind." }
+    { 
+      q: "How long does a typical project take?", 
+      a: "Project timelines vary based on scope. Simple automations can be done in 2-4 weeks, while custom AI applications typically take 8-16 weeks. We'll provide a detailed timeline during the discovery phase.",
+      icon: Clock,
+      gradient: "from-blue-500 to-cyan-500",
+      category: "Timeline"
+    },
+    { 
+      q: "What's your pricing model?", 
+      a: "We offer fixed-price projects, time & materials, and retainer models depending on your needs. We provide detailed quotes after understanding your requirements.",
+      icon: DollarSign,
+      gradient: "from-emerald-500 to-teal-500",
+      category: "Pricing"
+    },
+    { 
+      q: "Do you work with existing systems?", 
+      a: "Yes! We excel at integrating with legacy systems. Whether you use Salesforce, SAP, or custom software, we can build automation and AI solutions that fit seamlessly.",
+      icon: Zap,
+      gradient: "from-orange-500 to-amber-500",
+      category: "Integration"
+    },
+    { 
+      q: "Can you help with AI strategy?", 
+      a: "Absolutely. We offer AI consulting services to help identify opportunities in your business where AI and automation can have the most impact.",
+      icon: Lightbulb,
+      gradient: "from-yellow-500 to-orange-500",
+      category: "Strategy"
+    },
+    { 
+      q: "What support do you provide after launch?", 
+      a: "We offer ongoing support packages including monitoring, updates, optimization, and new feature development to keep your systems running smoothly.",
+      icon: Headphones,
+      gradient: "from-pink-500 to-rose-500",
+      category: "Support"
+    },
+    { 
+      q: "How is data security handled?", 
+      a: "We follow industry best practices for data security. All solutions are built with GDPR, CCPA, and enterprise-grade security standards in mind.",
+      icon: Shield,
+      gradient: "from-purple-500 to-indigo-500",
+      category: "Security"
+    }
   ];
 
-  const column1 = faqs.slice(0, 3);
-  const column2 = faqs.slice(3, 6);
-
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section className="py-32 relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white">
       <motion.div
         animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
         transition={{ duration: 15, repeat: Infinity }}
         className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
       />
+      <motion.div
+        animate={{ x: [0, -50, 50, 0], y: [0, 30, -30, 0] }}
+        transition={{ duration: 18, repeat: Infinity }}
+        className="absolute bottom-20 left-0 w-80 h-80 bg-gradient-to-br from-[#2DBFBA]/10 to-transparent rounded-full blur-3xl pointer-events-none"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+        {/* Header */}
+        <div className="text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
-              FAQs
+              Have Questions?
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Get answers to common questions about our services, process, and support.
+            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Get answers to common questions about our services, process, and support. Can't find what you're looking for? 
+              <a href="/booking" className="text-[#8629e4] font-semibold hover:text-[#9929ea] transition-colors"> Schedule a consultation</a>
             </p>
           </motion.div>
         </div>
 
-        {/* 2 Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Column */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <Accordion type="single" collapsible className="space-y-4">
-              {column1.map((item, idx) => {
-                const color = { border: "border-l-4 border-l-[#8629e4]", bg: "from-[#8629e4]/5", accent: "from-[#8629e4]" };
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="group"
-                  >
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      className="h-full"
+        {/* FAQ Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {faqs.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.08 }}
+                className="group h-full"
+              >
+                <motion.div
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.3 }}
+                  className="h-full"
+                >
+                  <Accordion type="single" collapsible className="h-full">
+                    <AccordionItem
+                      value={`faq-${idx}`}
+                      className="border-0 h-full"
                     >
-                      <AccordionItem
-                        value={`left-${idx}`}
-                        className={`${color.border} border border-white/40 rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md transition-all hover:border-[#9929ea]/60 hover:shadow-lg`}
-                      >
-                        <AccordionTrigger className={`px-6 py-4 bg-gradient-to-r ${color.bg} to-transparent hover:bg-gradient-to-r hover:from-[#9929ea]/10 hover:to-[#5808fb]/10 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/15 [&[data-state=open]]:to-[#5808fb]/15`}>
-                          <span className="text-left font-bold text-gray-900 text-base">
-                            {item.q}
-                          </span>
-                        </AccordionTrigger>
-                        <AccordionContent className="px-6 py-4 bg-white/50 border-t border-white/30 text-gray-700 leading-relaxed">
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.1 }}
-                          >
-                            {item.a}
-                          </motion.div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    </motion.div>
-                  </motion.div>
-                );
-              })}
-            </Accordion>
-          </motion.div>
+                      <div className="bg-gradient-to-br from-white/95 to-white/40 backdrop-blur-xl border border-white/60 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col group-hover:border-[#8629e4]/40">
+                        {/* Card Header with Icon */}
+                        <div className="p-6 pb-4">
+                          <div className="flex items-start justify-between gap-3 mb-4">
+                            <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center text-white flex-shrink-0 shadow-lg`}>
+                              <IconComponent className="h-6 w-6" />
+                            </div>
+                            <span className={`text-xs font-bold px-2 py-1 rounded-full bg-gradient-to-r ${item.gradient} text-white`}>
+                              {item.category}
+                            </span>
+                          </div>
 
-          {/* Right Column */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <Accordion type="single" collapsible className="space-y-4">
-              {column2.map((item, idx) => {
-                const color = { border: "border-l-4 border-l-[#8629e4]", bg: "from-[#8629e4]/5", accent: "from-[#8629e4]" };
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: (idx + 3) * 0.1 }}
-                    className="group"
-                  >
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      className="h-full"
-                    >
-                      <AccordionItem
-                        value={`right-${idx}`}
-                        className={`${color.border} border border-white/40 rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md transition-all hover:border-[#9929ea]/60 hover:shadow-lg`}
-                      >
-                        <AccordionTrigger className={`px-6 py-4 bg-gradient-to-r ${color.bg} to-transparent hover:bg-gradient-to-r hover:from-[#9929ea]/10 hover:to-[#5808fb]/10 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/15 [&[data-state=open]]:to-[#5808fb]/15`}>
-                          <span className="text-left font-bold text-gray-900 text-base">
-                            {item.q}
-                          </span>
-                        </AccordionTrigger>
-                        <AccordionContent className="px-6 py-4 bg-white/50 border-t border-white/30 text-gray-700 leading-relaxed">
+                          <AccordionTrigger className="px-0 py-0 hover:no-underline focus:outline-none group/trigger">
+                            <h3 className="text-left font-bold text-gray-900 text-base leading-snug group-hover/trigger:text-transparent group-hover/trigger:bg-clip-text group-hover/trigger:bg-gradient-to-r group-hover/trigger:from-[#9929ea] group-hover/trigger:to-[#5808fb] transition-all">
+                              {item.q}
+                            </h3>
+                          </AccordionTrigger>
+                        </div>
+
+                        {/* Divider */}
+                        <div className="px-6 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+
+                        {/* Answer */}
+                        <AccordionContent className="px-6 py-4 text-sm text-gray-700 leading-relaxed flex-grow bg-white/30 border-0">
                           <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -131,13 +135,13 @@ export function AnimatedFAQ() {
                             {item.a}
                           </motion.div>
                         </AccordionContent>
-                      </AccordionItem>
-                    </motion.div>
-                  </motion.div>
-                );
-              })}
-            </Accordion>
-          </motion.div>
+                      </div>
+                    </AccordionItem>
+                  </Accordion>
+                </motion.div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
