@@ -15,7 +15,7 @@ export function AnimatedAbout() {
   ];
 
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       <motion.div
         animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
         transition={{ duration: 16, repeat: Infinity }}
