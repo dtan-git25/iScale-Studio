@@ -104,6 +104,11 @@ export default function Navbar() {
               </motion.div>
             </div>
             
+            <Link href="/booking">
+              <Button className="btn-gradient  border-0">
+                Book a Call <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

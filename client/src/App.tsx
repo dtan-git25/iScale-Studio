@@ -15,6 +15,7 @@ import EcommerceSolutions from "@/pages/services/ecommerce-solutions";
 import Portfolio from "@/pages/portfolio";
 import About from "@/pages/about";
 import Blog from "@/pages/blog";
+import Booking from "@/pages/booking";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
@@ -42,6 +43,7 @@ function Router() {
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/about" component={About} />
           <Route path="/blog" component={Blog} />
+          <Route path="/booking" component={Booking} />
           <Route component={NotFound} />
         </Switch>
       </main>
