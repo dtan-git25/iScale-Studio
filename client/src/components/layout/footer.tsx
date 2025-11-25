@@ -17,16 +17,16 @@ export default function Footer() {
               Empowering businesses with cutting-edge AI solutions, intelligent workflow automation, and custom software development.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
+              <a href="https://facebook.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-purple-600 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://x.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
+              <a href="https://x.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-purple-600 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="https://linkedin.com/company/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
+              <a href="https://linkedin.com/company/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-purple-600 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
+              <a href="https://instagram.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-purple-600 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -35,20 +35,20 @@ export default function Footer() {
           <div>
             <h3 className="font-display font-bold text-lg mb-4">Services</h3>
             <ul className="space-y-3 text-sm text-gray-600">
-              <li><Link href="/services"><a className="hover:text-teal-600 transition-colors">AI Web & App Development</a></Link></li>
-              <li><Link href="/services"><a className="hover:text-teal-600 transition-colors">Workflow Automation</a></Link></li>
-              <li><Link href="/services"><a className="hover:text-teal-600 transition-colors">AI Agent Development</a></Link></li>
-              <li><Link href="/services"><a className="hover:text-teal-600 transition-colors">E-commerce Solutions</a></Link></li>
+              <li><Link href="/services"><a className="hover:text-purple-600 transition-colors">AI Web & App Development</a></Link></li>
+              <li><Link href="/services"><a className="hover:text-purple-600 transition-colors">Workflow Automation</a></Link></li>
+              <li><Link href="/services"><a className="hover:text-purple-600 transition-colors">AI Agent Development</a></Link></li>
+              <li><Link href="/services"><a className="hover:text-purple-600 transition-colors">E-commerce Solutions</a></Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-display font-bold text-lg mb-4">Company</h3>
             <ul className="space-y-3 text-sm text-gray-600">
-              <li><Link href="/about"><a className="hover:text-teal-600 transition-colors">About Us</a></Link></li>
-              <li><Link href="/portfolio"><a className="hover:text-teal-600 transition-colors">Portfolio</a></Link></li>
-              <li><Link href="/blog"><a className="hover:text-teal-600 transition-colors">Blog</a></Link></li>
-              <li><Link href="/contact"><a className="hover:text-teal-600 transition-colors">Contact</a></Link></li>
+              <li><Link href="/about"><a className="hover:text-purple-600 transition-colors">About Us</a></Link></li>
+              <li><Link href="/portfolio"><a className="hover:text-purple-600 transition-colors">Portfolio</a></Link></li>
+              <li><Link href="/blog"><a className="hover:text-purple-600 transition-colors">Blog</a></Link></li>
+              <li><Link href="/contact"><a className="hover:text-purple-600 transition-colors">Contact</a></Link></li>
             </ul>
           </div>
 
@@ -56,16 +56,16 @@ export default function Footer() {
             <h3 className="font-display font-bold text-lg mb-4">Contact</h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-teal-600 shrink-0 mt-0.5" />
+                <MapPin className="h-5 w-5 text-purple-600 shrink-0 mt-0.5" />
                 <span>Capas, Tarlac<br />Philippines 2315</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-teal-600 shrink-0" />
-                <a href="mailto:hello@iscalestudio.com" className="hover:text-teal-700">hello@iscalestudio.com</a>
+                <Mail className="h-5 w-5 text-purple-600 shrink-0" />
+                <a href="mailto:hello@iscalestudio.com" className="hover:text-purple-700">hello@iscalestudio.com</a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-teal-600 shrink-0" />
-                <a href="tel:+639560623082" className="hover:text-teal-700">+63 956 0623 082</a>
+                <Phone className="h-5 w-5 text-purple-600 shrink-0" />
+                <a href="tel:+639560623082" className="hover:text-purple-700">+63 956 0623 082</a>
               </li>
             </ul>
           </div>
@@ -74,8 +74,8 @@ export default function Footer() {
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600">
           <p>&copy; {new Date().getFullYear()} iScale Studio. All rights reserved.</p>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-teal-600 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-teal-600 transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-purple-600 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-purple-600 transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
