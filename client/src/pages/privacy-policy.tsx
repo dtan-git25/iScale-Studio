@@ -57,13 +57,13 @@ export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen pt-20 pb-12">
       {/* Header */}
-      <section className="py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
+      <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/">
             <motion.a
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
-              className="inline-flex items-center gap-2 text-[#9929ea] hover:text-[#7a1fbf] transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-[#9929ea] hover:text-[#7a1fbf] transition-colors mb-6 text-sm sm:text-base"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Home
@@ -74,8 +74,8 @@ export default function PrivacyPolicy() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl font-display font-bold mb-4">Privacy Policy</h1>
-            <p className="text-gray-700">Last updated: January 2025</p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4">Privacy Policy</h1>
+            <p className="text-sm sm:text-base text-gray-700">Last updated: January 2025</p>
           </motion.div>
         </div>
       </section>
@@ -89,7 +89,7 @@ export default function PrivacyPolicy() {
         />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="space-y-12">
+          <div className="space-y-6 sm:space-y-12">
             {sections.map((section, idx) => (
               <motion.div
                 key={idx}
@@ -97,13 +97,13 @@ export default function PrivacyPolicy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md border border-white/40 p-8 rounded-2xl shadow-lg"
+                className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md border border-white/40 p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg"
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                <h2 className="text-lg sm:text-2xl font-bold text-gray-900 mb-4 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
                   <span className="text-[#9929ea]">{section.title.split('.')[0]}</span>
-                  <span className="text-gray-400 text-base font-normal">{section.title.substring(section.title.indexOf('.') + 1)}</span>
+                  <span className="text-gray-400 text-sm sm:text-base font-normal">{section.title.substring(section.title.indexOf('.') + 1)}</span>
                 </h2>
-                <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed whitespace-pre-line">
                   {section.content}
                 </p>
               </motion.div>
@@ -116,9 +116,9 @@ export default function PrivacyPolicy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: sections.length * 0.05 }}
-            className="mt-16 p-8 bg-gradient-to-r from-[#9929ea]/10 to-[#2DBFBA]/10 border border-[#9929ea]/30 rounded-2xl text-center"
+            className="mt-12 sm:mt-16 p-4 sm:p-6 lg:p-8 bg-gradient-to-r from-[#9929ea]/10 to-[#2DBFBA]/10 border border-[#9929ea]/30 rounded-2xl text-center"
           >
-            <p className="text-gray-700">
+            <p className="text-sm sm:text-base text-gray-700">
               If you have any questions or concerns about our Privacy Policy, please don't hesitate to contact us.
             </p>
           </motion.div>

@@ -121,7 +121,7 @@ export function CoDaveChat() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-24 right-6 w-96 max-w-[calc(100vw-2rem)] h-[600px] max-h-[calc(100vh-200px)] bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-xl border border-white/40 rounded-3xl shadow-2xl flex flex-col overflow-hidden z-40"
+            className="fixed bottom-24 right-4 left-4 sm:left-auto sm:right-6 w-full sm:w-96 max-w-[calc(100vw-2rem)] sm:max-w-96 h-[500px] sm:h-[600px] max-h-[calc(100vh-200px)] bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-xl border border-white/40 rounded-3xl shadow-2xl flex flex-col overflow-hidden z-40"
             data-testid="chat-window"
           >
             {/* Header */}
