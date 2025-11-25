@@ -58,7 +58,7 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen pt-20 bg-background">
-      <section className="py-20 bg-gradient-to-b from-pink-900/20 to-rose-900/10 border-b border-white/5">
+      <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
