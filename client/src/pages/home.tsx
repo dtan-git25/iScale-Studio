@@ -17,6 +17,10 @@ import servicesImage from "@assets/generated_images/abstract_ai_neural_network_v
 import processImage from "@assets/generated_images/digital_workflow_automation_process.png";
 import featuresImage from "@assets/generated_images/tech_expertise_collaboration_network.png";
 import portfolioImage from "@assets/generated_images/ai_machine_learning_data_flow.png";
+import fintechImg from "@assets/generated_images/fintech_dashboard_project.png";
+import ecommerceImg from "@assets/generated_images/e-commerce_platform_project.png";
+import marketingImg from "@assets/generated_images/marketing_automation_system.png";
+import chatbotImg from "@assets/generated_images/ai_chatbot_application.png";
 
 // Tech Stack Component
 function TechStack() {
@@ -277,31 +281,59 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { 
                 title: "E-Commerce AI Assistant", 
                 client: "StyleVogue",
                 category: "AI Agent",
-                desc: "AI-powered shopping assistant using computer vision to recommend products based on user preferences and uploaded photos.", 
+                desc: "AI-powered shopping assistant using computer vision to recommend products based on user preferences.", 
                 tags: ["OpenAI", "React", "Computer Vision"],
-                gradient: "from-pink-500 to-rose-500"
+                gradient: "from-pink-500 to-rose-500",
+                image: ecommerceImg,
+                metrics: [
+                  { label: "AOV Increase", value: "+35%" },
+                  { label: "Accuracy", value: "94%" }
+                ]
               },
               { 
                 title: "Logistics Automation Pipeline", 
                 client: "GlobalShip Inc.",
                 category: "Workflow Automation",
-                desc: "Automated order processing system reducing manual data entry by 95%. Integrates Shopify, SAP, and custom shipping APIs.", 
+                desc: "Automated order processing reducing manual data entry by 95%. Integrates Shopify, SAP, and shipping APIs.", 
                 tags: ["n8n", "PostgreSQL", "SAP"],
-                gradient: "from-blue-500 to-cyan-500"
+                gradient: "from-blue-500 to-cyan-500",
+                image: marketingImg,
+                metrics: [
+                  { label: "Time Saved", value: "2000h/yr" },
+                  { label: "Error Rate", value: "-99.2%" }
+                ]
               },
               { 
                 title: "FinTech Dashboard", 
                 client: "NovaFinance",
                 category: "Web Development",
-                desc: "Real-time financial analytics platform with predictive forecasting powered by machine learning models.", 
+                desc: "Real-time financial analytics platform with predictive forecasting powered by machine learning.", 
                 tags: ["Next.js", "FastAPI", "AWS"],
-                gradient: "from-emerald-500 to-teal-500"
+                gradient: "from-emerald-500 to-teal-500",
+                image: fintechImg,
+                metrics: [
+                  { label: "Transactions/Day", value: "500K+" },
+                  { label: "Latency", value: "<100ms" }
+                ]
+              },
+              { 
+                title: "Customer Support Bot", 
+                client: "TechFlow",
+                category: "AI Agent",
+                desc: "Tier-1 support automation resolving 70% of tickets instantly using RAG on knowledge base.", 
+                tags: ["LangChain", "Pinecone", "GPT-4"],
+                gradient: "from-purple-500 to-indigo-500",
+                image: chatbotImg,
+                metrics: [
+                  { label: "Instant Resolution", value: "70%" },
+                  { label: "CSAT Gain", value: "+42%" }
+                ]
               }
             ].map((project, idx) => (
               <motion.div
@@ -313,52 +345,68 @@ export default function Home() {
                 className="group"
               >
                 <motion.div
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 3, delay: idx * 0.15, repeat: Infinity }}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  className="h-full"
+                  whileHover={{ y: -8 }}
+                  transition={{ duration: 0.3 }}
+                  className="h-full flex flex-col bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md border border-white/40 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
                 >
-                  <div className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md border border-white/40 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
-                    {/* Project Header with Gradient */}
-                    <div className={`h-32 bg-gradient-to-br ${project.gradient} opacity-15 group-hover:opacity-25 transition-opacity`}></div>
+                  {/* Image */}
+                  <div className="relative h-56 overflow-hidden bg-gradient-to-br from-white/5 to-white/10">
+                    <motion.img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 mix-blend-overlay`}></div>
                     
-                    {/* Content */}
-                    <div className="p-6 flex-grow flex flex-col">
-                      <div className="mb-4">
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="inline-block px-3 py-1 bg-gradient-to-r from-[#9929ea]/10 to-[#5808fb]/10 border border-[#9929ea]/30 rounded-full text-xs font-medium text-[#8629e4]">
-                            {project.category}
-                          </span>
-                          <motion.div
-                            whileHover={{ scale: 1.2, rotate: 45 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <ArrowUpRight className="h-5 w-5 text-[#8629e4]" />
-                          </motion.div>
+                    {/* Category Badge */}
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-white/90 text-gray-900 border-white/60 backdrop-blur-sm font-medium text-xs">
+                        {project.category}
+                      </Badge>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 flex flex-col p-6">
+                    <div className="flex justify-between items-start mb-3">
+                      <div>
+                        <p className="text-sm font-medium text-[#8629e4] mb-1">{project.client}</p>
+                        <h3 className="text-lg font-bold text-gray-900">{project.title}</h3>
+                      </div>
+                      <motion.div
+                        whileHover={{ scale: 1.2, rotate: 45 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ArrowUpRight className="h-5 w-5 text-[#8629e4]" />
+                      </motion.div>
+                    </div>
+
+                    <p className="text-sm text-gray-700 mb-4 leading-relaxed flex-grow">
+                      {project.desc}
+                    </p>
+
+                    {/* Metrics */}
+                    <div className="grid grid-cols-2 gap-3 mb-4 p-3 bg-white/40 rounded-lg">
+                      {project.metrics.map((metric, i) => (
+                        <div key={i}>
+                          <p className="text-xs text-gray-600 mb-0.5">{metric.label}</p>
+                          <p className="text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#2DBFBA]">
+                            {metric.value}
+                          </p>
                         </div>
-                        <p className="text-sm text-gray-700 mb-1">{project.client}</p>
-                        <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                      </div>
+                      ))}
+                    </div>
 
-                      <p className="text-sm text-gray-700 mb-6 flex-grow leading-relaxed">
-                        {project.desc}
-                      </p>
-
-                      {/* Tags */}
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag, tagIdx) => (
-                          <motion.span
-                            key={tag}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.05 + tagIdx * 0.05 }}
-                            className="px-3 py-1 bg-gradient-to-r from-[#9929ea]/5 to-[#5808fb]/5 border border-[#9929ea]/20 rounded-full text-xs font-medium text-gray-700 hover:border-[#9929ea]/60 hover:bg-gradient-to-r hover:from-[#9929ea]/15 hover:to-[#5808fb]/15 transition-all"
-                          >
-                            {tag}
-                          </motion.span>
-                        ))}
-                      </div>
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <Badge
+                          key={tag}
+                          className="bg-gradient-to-r from-[#9929ea]/10 to-[#5808fb]/10 border border-[#9929ea]/30 text-gray-700 hover:from-[#9929ea]/20 hover:to-[#5808fb]/20 transition-all text-xs"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
                 </motion.div>
