@@ -52,6 +52,22 @@ export default function Services() {
       ],
       image: aiAgentImg,
       color: "pink"
+    },
+    {
+      id: "ecommerce-solutions",
+      title: "E-commerce Solutions",
+      subtitle: "Elevate your online store",
+      description: "Build powerful, scalable e-commerce platforms with integrated AI features. From product recommendations to intelligent inventory management, we create solutions that drive sales and enhance customer satisfaction.",
+      features: [
+        "Custom E-commerce Platform Development",
+        "AI-Powered Product Recommendations",
+        "Smart Inventory & Order Management",
+        "Payment Gateway Integration",
+        "AI Chatbots for Customer Support",
+        "Analytics & Conversion Optimization"
+      ],
+      image: webDevImg,
+      color: "emerald"
     }
   ];
 
