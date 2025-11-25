@@ -109,7 +109,7 @@ export default function Home() {
               <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
                 AI-Powered Digital Solutions
               </div>
-              <h1 className="text-4xl lg:text-6xl font-black leading-tight mb-4">
+              <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-4">
                 Transform Your Business with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#2DBFBA]">AI-Powered</span> Digital Solutions
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
