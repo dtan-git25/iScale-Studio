@@ -30,9 +30,9 @@ export function AnimatedFAQ() {
             viewport={{ once: true }}
           >
             <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
-              Frequently Asked Questions
+              FAQs
             </div>
-            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Common Questions</h2>
+            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Frequently Asked Questions</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Get answers to common questions about our services, process, and support.
             </p>
