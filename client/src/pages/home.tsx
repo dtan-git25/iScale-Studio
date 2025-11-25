@@ -9,6 +9,10 @@ import { AnimatedServices } from "@/components/sections/animated-services";
 import { AnimatedProcess } from "@/components/sections/animated-process";
 import { AnimatedFeatures } from "@/components/sections/animated-features";
 import heroImage from "@assets/generated_images/abstract_ai_neural_network_background.png";
+import servicesImage from "@assets/generated_images/abstract_ai_neural_network_visualization.png";
+import processImage from "@assets/generated_images/digital_workflow_automation_process.png";
+import featuresImage from "@assets/generated_images/tech_expertise_collaboration_network.png";
+import portfolioImage from "@assets/generated_images/ai_machine_learning_data_flow.png";
 
 // Tech Carousel Component
 function TechCarousel() {
@@ -163,8 +167,12 @@ export default function Home() {
       </section>
 
       {/* Services Overview - Primary Section */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-15">
+          <img src={servicesImage} alt="Services background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -370,8 +378,12 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us - Expanded */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-15">
+          <img src={featuresImage} alt="Features background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -416,8 +428,12 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-gray-50 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-gray-50 relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-15">
+          <img src={processImage} alt="Process background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-transparent to-gray-50"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -460,8 +476,12 @@ export default function Home() {
       </section>
 
       {/* Portfolio/Case Studies */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-15">
+          <img src={portfolioImage} alt="Portfolio background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Our Work</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
