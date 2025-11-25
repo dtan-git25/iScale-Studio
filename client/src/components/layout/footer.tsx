@@ -5,9 +5,6 @@ import logo from "@assets/iScale_Studio_V_1764045233039.png";
 import { CalendlyBooking } from "@/components/sections/calendly-booking";
 
 export default function Footer() {
-  const [location] = useLocation();
-  const showCalendly = location !== "/booking";
-
   const socialLinks = [
     { icon: Facebook, href: "https://facebook.com/iscalestudio/", label: "Facebook" },
     { icon: Twitter, href: "https://x.com/iscalestudio/", label: "Twitter" },
@@ -18,30 +15,28 @@ export default function Footer() {
   return (
     <>
       {/* CTA Section */}
-      {showCalendly && (
-        <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0 }}
-            >
-              <div className="bg-gradient-to-r from-[#9929ea]/10 via-[#5808fb]/10 to-[#2DBFBA]/10 border border-white/40 rounded-2xl p-8 md:p-12 text-center backdrop-blur-xl">
-                <h3 className="text-2xl font-display font-bold text-gray-900 mb-3">Ready to Transform Your Business?</h3>
-                <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-                  Let's discuss how AI and automation can help you scale faster and operate smarter.
-                </p>
-                <Link href="/booking">
-                  <a className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-[#9929ea] to-[#5808fb] text-white font-bold hover:shadow-lg hover:shadow-[#9929ea]/40 transition-all hover:scale-105">
-                    Schedule a Consultation <ArrowRight className="h-4 w-4" />
-                  </a>
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      )}
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0 }}
+          >
+            <div className="bg-gradient-to-r from-[#9929ea]/10 via-[#5808fb]/10 to-[#2DBFBA]/10 border border-white/40 rounded-2xl p-8 md:p-12 text-center backdrop-blur-xl">
+              <h3 className="text-2xl font-display font-bold text-gray-900 mb-3">Ready to Transform Your Business?</h3>
+              <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+                Let's discuss how AI and automation can help you scale faster and operate smarter.
+              </p>
+              <Link href="/booking">
+                <a className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-[#9929ea] to-[#5808fb] text-white font-bold hover:shadow-lg hover:shadow-[#9929ea]/40 transition-all hover:scale-105">
+                  Schedule a Consultation <ArrowRight className="h-4 w-4" />
+                </a>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       <footer className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white pt-20 pb-12">
         {/* Animated Background Elements */}
