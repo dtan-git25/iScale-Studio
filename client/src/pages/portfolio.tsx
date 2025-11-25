@@ -41,7 +41,7 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="py-20 bg-card/30 border-b border-white/5">
+      <section className="py-20 bg-gradient-to-b from-emerald-900/20 to-teal-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Selected Works</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
