@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { InteractiveHero } from "@/components/hero/interactive-hero";
 import heroImage from "@assets/generated_images/abstract_ai_neural_network_background.png";
 
 // Tech Carousel Component
@@ -117,30 +118,35 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-30">
+        <div className="absolute inset-0 z-0 opacity-20">
           <img src={heroImage} alt="Abstract AI Background" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Interactive Background */}
+        <div className="absolute inset-0 z-0">
+          <InteractiveHero />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-block px-3 py-1 mb-6 rounded-full bg-[#8629e4]/10 border border-[#8629e4]/30 [#8629e4] text-sm font-mono">
+              <div className="inline-block px-3 py-1 mb-6 rounded-full bg-[#8629e4]/10 border border-[#8629e4]/30 text-[#8629e4] text-sm font-mono">
                 AI-Powered Digital Solutions
               </div>
               <h1 className="text-5xl lg:text-7xl font-display font-bold leading-tight mb-6">
-                Transform Your Business with <span className="[#8629e4]">AI-Powered</span> Digital Solutions
+                Transform Your Business with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#2DBFBA]">AI-Powered</span> Digital Solutions
               </h1>
               <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
                 Custom AI-powered applications, intelligent workflow automation, and autonomous agents designed for Philippine businesses to scale faster and operate smarter.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link href="/contact">
-                  <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white border-0 rounded-full px-8 h-14 text-lg shadow-lg shadow-purple-600/25">
+                  <Button size="lg" className="btn-gradient border-0 rounded-full px-8 h-14 text-lg shadow-lg shadow-[#9929ea]/40">
                     Schedule a Consultation
                   </Button>
                 </Link>
