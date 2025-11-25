@@ -1,29 +1,32 @@
 import { motion } from "framer-motion";
 import { Code2, Workflow, Cpu, ShoppingCart } from "lucide-react";
+import { Link } from "wouter";
 
-const FloatingCard = ({ delay, icon: Icon, text, description }: any) => {
+const FloatingCard = ({ delay, icon: Icon, text, description, href }: any) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.6 }}
-    >
+    <Link href={href}>
       <motion.div
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 3, delay, repeat: Infinity }}
-        className="p-6 rounded-xl bg-gradient-to-br from-white/90 to-white/60 backdrop-blur-md border border-white/30 shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay, duration: 0.6 }}
       >
-        <div className="flex flex-col gap-3">
-          <div className="flex items-start gap-3">
-            <div className="text-[#9929ea] group-hover:scale-110 transition-transform flex-shrink-0">
-              <Icon className="h-8 w-8" />
+        <motion.div
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 3, delay, repeat: Infinity }}
+          className="p-6 rounded-xl bg-gradient-to-br from-white/90 to-white/60 backdrop-blur-md border border-white/30 shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
+        >
+          <div className="flex flex-col gap-3">
+            <div className="flex items-start gap-3">
+              <div className="text-[#9929ea] group-hover:scale-110 transition-transform flex-shrink-0">
+                <Icon className="h-8 w-8" />
+              </div>
+              <h3 className="font-bold text-gray-900 text-base lg:text-lg">{text}</h3>
             </div>
-            <h3 className="font-bold text-gray-900 text-base lg:text-lg">{text}</h3>
+            <p className="text-sm lg:text-base text-gray-700 line-clamp-3">{description}</p>
           </div>
-          <p className="text-sm lg:text-base text-gray-700 line-clamp-3">{description}</p>
-        </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </Link>
   );
 };
 
@@ -32,22 +35,26 @@ export function InteractiveHero() {
     {
       icon: Code2,
       text: "AI Web & App Development",
-      description: "Build intelligent web and mobile applications powered by cutting-edge AI technology"
+      description: "Build intelligent web and mobile applications powered by cutting-edge AI technology",
+      href: "/services/ai-development"
     },
     {
       icon: Workflow,
       text: "Workflow Automation",
-      description: "Streamline operations with smart automation that eliminates manual tasks"
+      description: "Streamline operations with smart automation that eliminates manual tasks",
+      href: "/services/workflow-automation"
     },
     {
       icon: Cpu,
       text: "AI Agent Development",
-      description: "Deploy autonomous AI agents that handle complex tasks intelligently"
+      description: "Deploy autonomous AI agents that handle complex tasks intelligently",
+      href: "/services/ai-agents"
     },
     {
       icon: ShoppingCart,
       text: "E-commerce Solutions",
-      description: "Scale your online business with AI-powered e-commerce platforms"
+      description: "Scale your online business with AI-powered e-commerce platforms",
+      href: "/services/ecommerce-solutions"
     }
   ];
 
@@ -81,6 +88,7 @@ export function InteractiveHero() {
               icon={feature.icon}
               text={feature.text}
               description={feature.description}
+              href={feature.href}
             />
           ))}
         </div>
