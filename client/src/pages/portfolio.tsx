@@ -50,42 +50,58 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 relative overflow-hidden">
+        <motion.div
+          animate={{ x: [0, 50, -50, 0], y: [0, 30, -30, 0] }}
+          transition={{ duration: 17, repeat: Infinity }}
+          className="absolute top-20 left-0 w-80 h-80 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group relative rounded-2xl overflow-hidden border border-white/10 bg-card hover:border-white/20 transition-colors"
+                className="group"
               >
-                <div className={`h-48 bg-gradient-to-br ${project.color} opacity-20 group-hover:opacity-30 transition-opacity`}></div>
-                <div className="p-8 relative -mt-12">
-                  <div className="bg-background border border-white/10 rounded-xl p-6 shadow-xl">
+                <motion.div
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 3, delay: idx * 0.15, repeat: Infinity }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="h-full"
+                >
+                  <div className={`bg-gradient-to-br ${project.color} opacity-10 rounded-t-3xl h-40 group-hover:opacity-20 transition-opacity`}></div>
+                  <div className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-b-3xl p-8 shadow-lg hover:shadow-2xl transition-all -mt-8 relative z-10">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <p className="text-sm text-muted-foreground mb-1">{project.client}</p>
-                        <h3 className="text-2xl font-bold">{project.title}</h3>
+                        <p className="text-sm text-gray-700 mb-2">{project.client}</p>
+                        <h3 className="text-2xl font-bold text-gray-900">{project.title}</h3>
                       </div>
-                      <Button size="icon" variant="ghost" className="rounded-full hover:bg-white/10">
-                        <ArrowUpRight className="h-5 w-5" />
-                      </Button>
+                      <motion.div
+                        whileHover={{ scale: 1.2, rotate: 45 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Button size="icon" variant="ghost" className="rounded-full hover:bg-gradient-to-br hover:from-[#9929ea]/20 hover:to-[#5808fb]/20">
+                          <ArrowUpRight className="h-5 w-5 text-[#8629e4]" />
+                        </Button>
+                      </motion.div>
                     </div>
-                    <p className="text-muted-foreground mb-6">
+                    <p className="text-gray-700 mb-6 leading-relaxed">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map(tag => (
-                        <Badge key={tag} variant="secondary" className="bg-white/5 hover:bg-white/10 border-white/5">
+                        <Badge key={tag} className="bg-gradient-to-r from-[#9929ea]/10 to-[#5808fb]/10 border border-[#9929ea]/30 text-gray-700 hover:from-[#9929ea]/20 hover:to-[#5808fb]/20 transition-all">
                           {tag}
                         </Badge>
                       ))}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>

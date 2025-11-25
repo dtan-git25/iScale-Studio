@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, MessageSquare, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -47,49 +48,58 @@ export default function Contact() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-3xl font-display font-bold mb-6">Let's Build Something <span className="text-cyan-400">Incredible</span></h2>
-            <p className="text-xl text-muted-foreground mb-12">
-              Whether you have a clear vision or just a problem to solve, we're here to help you navigate the AI landscape.
-            </p>
-            
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="bg-cyan-500/10 p-3 rounded-lg">
-                  <Calendar className="h-6 w-6 text-cyan-400" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Book a Consultation</h3>
-                  <p className="text-muted-foreground mb-2">Directly schedule a time with our solutions architect.</p>
-                  <Button variant="link" className="text-[#9929ea] p-0 h-auto">View Calendar &rarr;</Button>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="bg-purple-500/10 p-3 rounded-lg">
-                  <Mail className="h-6 w-6 text-purple-400" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Email Us</h3>
-                  <p className="text-muted-foreground">hello@iscalestudio.com</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                 <div className="bg-pink-500/10 p-3 rounded-lg">
-                  <MessageSquare className="h-6 w-6 text-pink-400" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Live Chat</h3>
-                  <p className="text-muted-foreground">Available Mon-Fri, 9am - 6pm EST</p>
-                </div>
-              </div>
-            </div>
-          </div>
+      <section className="py-20 relative overflow-hidden">
+        <motion.div
+          animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
+          transition={{ duration: 15, repeat: Infinity }}
+          className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
+        />
 
-          <div className="glass-panel p-8 rounded-2xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl font-display font-bold mb-6">Let's Build Something <span className="bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent">Incredible</span></h2>
+              <p className="text-xl text-muted-foreground mb-12">
+                Whether you have a clear vision or just a problem to solve, we're here to help you navigate the AI landscape.
+              </p>
+              
+              <div className="space-y-6">
+                {[
+                  { icon: Calendar, title: "Book a Consultation", desc: "Directly schedule a time with our solutions architect.", link: true, color: "from-cyan-500 to-blue-500" },
+                  { icon: Mail, title: "Email Us", desc: "hello@iscalestudio.com", color: "from-purple-500 to-pink-500" },
+                  { icon: MessageSquare, title: "Live Chat", desc: "Available Mon-Fri, 9am - 6pm EST", color: "from-orange-500 to-red-500" }
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="flex items-start gap-4 group"
+                  >
+                    <div className={`bg-gradient-to-br ${item.color} p-3 rounded-lg flex-shrink-0 group-hover:scale-110 transition-transform`}>
+                      <item.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg text-white">{item.title}</h3>
+                      <p className="text-muted-foreground mb-2">{item.desc}</p>
+                      {item.link && <Button variant="link" className="text-[#9929ea] p-0 h-auto">View Calendar &rarr;</Button>}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-3xl p-8 shadow-2xl"
+            >
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
@@ -163,9 +173,10 @@ export default function Contact() {
                 </Button>
               </form>
             </Form>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
