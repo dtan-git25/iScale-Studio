@@ -52,7 +52,9 @@ function TechStack() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-sm font-semibold text-[#9929ea] uppercase tracking-widest mb-4">Technology Stack</p>
+            <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
+              Technology Stack
+            </div>
             <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Built With Industry-Leading Tools</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We leverage cutting-edge technologies and platforms to deliver powerful, scalable solutions
@@ -156,7 +158,9 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-sm font-semibold text-[#9929ea] uppercase tracking-widest mb-4">Our Process</p>
+              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
+                Our Process
+              </div>
               <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Our Proven Approach</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 A structured methodology designed to deliver exceptional results while ensuring transparency and continuous collaboration.
@@ -248,7 +252,9 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-sm font-semibold text-[#9929ea] uppercase tracking-widest mb-4">Our Work</p>
+              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
+                Our Work
+              </div>
               <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Showcase of Our Projects</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Explore our recent projects showcasing expertise, innovation, and impact across various industries.

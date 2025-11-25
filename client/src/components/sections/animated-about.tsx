@@ -29,7 +29,9 @@ export function AnimatedAbout() {
           viewport={{ once: true }}
           className="mb-6"
         >
-          <p className="text-sm font-semibold text-[#9929ea] uppercase tracking-widest">About iScale Studio</p>
+          <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
+            About iScale Studio
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
