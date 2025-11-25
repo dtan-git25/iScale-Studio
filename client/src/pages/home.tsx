@@ -8,6 +8,7 @@ import { InteractiveHero } from "@/components/hero/interactive-hero";
 import { AnimatedServices } from "@/components/sections/animated-services";
 import { AnimatedProcess } from "@/components/sections/animated-process";
 import { AnimatedFeatures } from "@/components/sections/animated-features";
+import { CalendlyBooking } from "@/components/sections/calendly-booking";
 import heroImage from "@assets/generated_images/abstract_ai_neural_network_background.png";
 import servicesImage from "@assets/generated_images/abstract_ai_neural_network_visualization.png";
 import processImage from "@assets/generated_images/digital_workflow_automation_process.png";
@@ -576,42 +577,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-100/30 to-purple-100/30 border-y border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-display font-bold mb-4">Ready to Transform Your Business?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Schedule a free consultation to discuss your digital transformation needs. We'll respond within 24 hours.
-          </p>
-
-          <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
-            <div className="flex items-center justify-center gap-3">
-              <MessageSquare className="h-5 w-5 [#8629e4]" />
-              <div>
-                <p className="text-sm text-muted-foreground">Email</p>
-                <a href="mailto:hello@iscalestudio.com" className="font-mono [#8629e4] hover:[#8629e4]">
-                  hello@iscalestudio.com
-                </a>
-              </div>
-            </div>
-            <div className="flex items-center justify-center gap-3">
-              <Calendar className="h-5 w-5 [#8629e4]" />
-              <div>
-                <p className="text-sm text-muted-foreground">Phone</p>
-                <a href="tel:+639560623082" className="font-mono [#8629e4] hover:[#8629e4]">
-                  +63 956 0623 082
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <Link href="/contact">
-            <Button size="lg" className="bg-white text-background hover:bg-white/90 rounded-full px-10 h-14 font-bold">
-              Schedule Your Consultation <Calendar className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-        </div>
-      </section>
+      {/* Calendly Booking Section */}
+      <CalendlyBooking />
     </div>
   );
 }
