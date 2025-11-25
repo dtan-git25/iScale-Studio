@@ -85,53 +85,25 @@ export function InteractiveHero() {
           ))}
         </div>
 
-        {/* Client Logos Carousel */}
-        <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] mb-12 overflow-hidden bg-gradient-to-r from-white/0 via-white/40 to-white/0 py-8">
-          <p className="text-center text-sm text-gray-600 mb-6">Trusted by leading companies</p>
-          <motion.div
-            className="flex gap-8 justify-start"
-            animate={{ x: [-1000, 0] }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          >
-            {[
-              { name: "TechVision", color: "from-blue-500 to-blue-600" },
-              { name: "DataFlow", color: "from-purple-500 to-purple-600" },
-              { name: "CloudSync", color: "from-cyan-500 to-cyan-600" },
-              { name: "AI Systems", color: "from-emerald-500 to-emerald-600" },
-              { name: "InnovateLabs", color: "from-orange-500 to-orange-600" },
-              { name: "Digital Hub", color: "from-pink-500 to-pink-600" },
-              { name: "Future Corp", color: "from-indigo-500 to-indigo-600" },
-              { name: "NextGen AI", color: "from-rose-500 to-rose-600" },
-            ].map((client, idx) => (
-              <div
-                key={idx}
-                className="flex-shrink-0 w-40 h-24 rounded-lg bg-white border border-gray-200 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className={`bg-gradient-to-br ${client.color} p-3 rounded-lg flex items-center justify-center`}>
-                  <span className="text-white font-bold text-sm text-center px-2">{client.name}</span>
-                </div>
-              </div>
-            ))}
-            {[
-              { name: "TechVision", color: "from-blue-500 to-blue-600" },
-              { name: "DataFlow", color: "from-purple-500 to-purple-600" },
-              { name: "CloudSync", color: "from-cyan-500 to-cyan-600" },
-              { name: "AI Systems", color: "from-emerald-500 to-emerald-600" },
-            ].map((client, idx) => (
-              <div
-                key={`repeat-${idx}`}
-                className="flex-shrink-0 w-40 h-24 rounded-lg bg-white border border-gray-200 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className={`bg-gradient-to-br ${client.color} p-3 rounded-lg flex items-center justify-center`}>
-                  <span className="text-white font-bold text-sm text-center px-2">{client.name}</span>
-                </div>
-              </div>
-            ))}
-          </motion.div>
+        {/* Client Logos */}
+        <div className="flex justify-center mb-12">
+          <div className="w-full">
+            <p className="text-center text-sm text-gray-600 mb-6">Trusted by leading companies</p>
+            <div className="flex justify-center items-center gap-8 flex-wrap">
+              {["Client 1", "Client 2", "Client 3", "Client 4", "Client 5"].map((client, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: idx * 0.1, duration: 0.6 }}
+                >
+                  <div className="w-24 h-24 rounded-lg bg-gray-200 flex items-center justify-center">
+                    <span className="text-xs font-semibold text-gray-500">{client}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
