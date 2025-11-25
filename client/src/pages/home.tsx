@@ -13,6 +13,7 @@ import { CalendlyBooking } from "@/components/sections/calendly-booking";
 import { Reviews } from "@/components/sections/reviews";
 import { AnimatedFAQ } from "@/components/sections/animated-faq";
 import { AnimatedAbout } from "@/components/sections/animated-about";
+import { ComprehensiveSolutions } from "@/components/sections/comprehensive-solutions";
 import heroImage from "@assets/generated_images/abstract_ai_neural_network_background.png";
 import servicesImage from "@assets/generated_images/abstract_ai_neural_network_visualization.png";
 import processImage from "@assets/generated_images/digital_workflow_automation_process.png";
@@ -324,51 +325,8 @@ export default function Home() {
       {/* About Section */}
       <AnimatedAbout />
 
-      {/* Why Choose Us - Expanded */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Why Partner With iScale Studio?</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-                Here's what sets us apart in the market.
-              </p>
-            </motion.div>
-          </div>
-
-          <AnimatedFeatures />
-
-          <div className="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { icon: <Lightbulb className="h-8 w-8" />, title: "AI Expertise", desc: "Specialized knowledge in AI integration and implementation with proven track record." },
-              { icon: <MapPin className="h-8 w-8" />, title: "Philippine Market Knowledge", desc: "Deep understanding of local business needs, challenges, and opportunities." },
-              { icon: <Handshake className="h-8 w-8" />, title: "Consultation-First Approach", desc: "Personalized solutions tailored to your specific business requirements." },
-              { icon: <GitBranch className="h-8 w-8" />, title: "End-to-End Solutions", desc: "From concept and prototyping to deployment and ongoing support." },
-              { icon: <TrendingUp className="h-8 w-8" />, title: "Proven Results", desc: "Track record of successful implementations delivering measurable ROI." },
-              { icon: <Shield className="h-8 w-8" />, title: "Ongoing Support", desc: "Continued partnership after project delivery with ongoing optimization." }
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.05 }}
-                className="glass-panel p-8 rounded-xl group hover:border-gray-300 transition-colors border border-gray-200"
-              >
-                <div className="[#8629e4] mb-4 group-hover:scale-110 transition-transform">
-                  {item.icon}
-                </div>
-                <h3 className="text-lg font-bold mb-3">{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Comprehensive Solutions Section */}
+      <ComprehensiveSolutions />
 
       {/* Process Section */}
       <section className="py-24 bg-gray-50 relative">
