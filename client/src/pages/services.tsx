@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import webDevImg from "@assets/generated_images/futuristic_web_development_concept.png";
 import workflowImg from "@assets/generated_images/workflow_automation_concept.png";
 import aiAgentImg from "@assets/generated_images/ai_agent_concept.png";
+import ecommerceImg from "@assets/generated_images/e-commerce_platform_interface.png";
 
 export default function Services() {
   const services = [
@@ -66,7 +67,7 @@ export default function Services() {
         "AI Chatbots for Customer Support",
         "Analytics & Conversion Optimization"
       ],
-      image: webDevImg,
+      image: ecommerceImg,
       color: "emerald"
     }
   ];
