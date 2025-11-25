@@ -116,11 +116,6 @@ export default function AIDevelopmentPage() {
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               Let's discuss how AI can transform your application and help you stay ahead of the competition.
             </p>
-            <Link href="/contact">
-              <Button size="lg" className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
-                Schedule a Consultation <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
           </motion.div>
         </div>
       </section>

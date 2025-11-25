@@ -14,7 +14,6 @@ import AIAgents from "@/pages/services/ai-agents";
 import EcommerceSolutions from "@/pages/services/ecommerce-solutions";
 import Portfolio from "@/pages/portfolio";
 import About from "@/pages/about";
-import Contact from "@/pages/contact";
 import Blog from "@/pages/blog";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
@@ -42,7 +41,6 @@ function Router() {
           <Route path="/services/ecommerce-solutions" component={EcommerceSolutions} />
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
           <Route path="/blog" component={Blog} />
           <Route component={NotFound} />
         </Switch>

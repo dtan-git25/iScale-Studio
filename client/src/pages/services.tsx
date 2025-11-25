@@ -129,11 +129,6 @@ export default function Services() {
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
-                  <Link href="/contact">
-                    <Button className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
-                      Get Started
-                    </Button>
-                  </Link>
                 </div>
               </div>
               

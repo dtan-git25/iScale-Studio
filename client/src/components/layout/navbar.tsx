@@ -104,11 +104,6 @@ export default function Navbar() {
               </motion.div>
             </div>
             
-            <Link href="/contact">
-              <Button className="btn-gradient  border-0">
-                Start a Project <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -193,14 +188,6 @@ export default function Navbar() {
                   )}
                 </AnimatePresence>
               </div>
-              
-              <Link href="/contact">
-                <a onClick={() => setIsOpen(false)} className="block mt-4">
-                  <Button className="w-full btn-gradient border-0">
-                    Start a Project
-                  </Button>
-                </a>
-              </Link>
             </div>
           </motion.div>
         )}
