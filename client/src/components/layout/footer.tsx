@@ -17,8 +17,6 @@ export default function Footer() {
 
   return (
     <>
-      {showCalendly && <CalendlyBooking />}
-
       {/* CTA Section */}
       {showCalendly && (
         <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white py-16">
@@ -44,6 +42,8 @@ export default function Footer() {
           </div>
         </section>
       )}
+
+      {showCalendly && <CalendlyBooking />}
 
       <footer className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white pt-20 pb-12">
         {/* Animated Background Elements */}
