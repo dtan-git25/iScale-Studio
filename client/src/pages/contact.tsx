@@ -54,7 +54,7 @@ export default function Contact() {
                 <div>
                   <h3 className="font-bold text-lg">Book a Consultation</h3>
                   <p className="text-muted-foreground mb-2">Directly schedule a time with our solutions architect.</p>
-                  <Button variant="link" className="text-cyan-400 p-0 h-auto">View Calendar &rarr;</Button>
+                  <Button variant="link" className="className="text-[#9929ea] p-0 h-auto"">View Calendar &rarr;</Button>
                 </div>
               </div>
               
@@ -149,7 +149,7 @@ export default function Contact() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 h-12 font-bold">
+                <Button type="submit" className="w-full btn-gradient text-white border-0 h-12 font-bold">
                   Send Message
                 </Button>
               </form>

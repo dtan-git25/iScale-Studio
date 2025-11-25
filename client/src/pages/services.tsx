@@ -136,7 +136,7 @@ export default function Services() {
                 Book a free 15-minute discovery call. We'll analyze your current setup and propose a custom automation roadmap.
             </p>
             <Link href="/contact">
-                <Button variant="outline" size="lg" className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10">
+                <Button className="btn-gradient">
                     Schedule Discovery Call <ArrowRight className="ml-2 h-4 w-4"/>
                 </Button>
             </Link>

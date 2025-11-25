@@ -56,7 +56,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link href="/contact">
-              <Button className="btn-gradient  text-white border-0">
+              <Button className="btn-gradient  border-0">
                 Start a Project <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -100,7 +100,7 @@ export default function Navbar() {
               ))}
               <Link href="/contact">
                 <a onClick={() => setIsOpen(false)} className="block mt-4">
-                  <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0">
+                  <Button className="w-full btn-gradient border-0">
                     Start a Project
                   </Button>
                 </a>
