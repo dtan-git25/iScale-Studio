@@ -5,26 +5,26 @@ export function HeroServices() {
   const services = [
     {
       icon: Code2,
-      title: "AI Web & App Development",
+      title: "Custom Applications",
       desc: "Build scalable web and mobile apps",
       color: "from-blue-500 to-cyan-500"
     },
     {
       icon: Cpu,
-      title: "Workflow Automation",
-      desc: "Streamline operations and processes",
+      title: "AI Intelligence",
+      desc: "Integrate cutting-edge AI models",
       color: "from-purple-500 to-pink-500"
     },
     {
       icon: Rocket,
-      title: "AI Agent Development",
-      desc: "Create intelligent autonomous agents",
+      title: "Fast Deployment",
+      desc: "Get to market quickly",
       color: "from-orange-500 to-red-500"
     },
     {
       icon: Zap,
-      title: "E-commerce Solutions",
-      desc: "Drive sales with AI-powered tools",
+      title: "Smart Automation",
+      desc: "Eliminate manual tasks",
       color: "from-green-500 to-emerald-500"
     }
   ];
