@@ -305,14 +305,14 @@ export default function Home() {
               <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
                 Our Work
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4">Showcase of Our Projects</h2>
+              <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Showcase of Our Projects</h2>
               <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                 Explore our recent projects showcasing expertise, innovation, and impact across various industries.
               </p>
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {[
               { 
                 title: "E-Commerce AI Assistant", 
@@ -351,19 +351,6 @@ export default function Home() {
                 metrics: [
                   { label: "Transactions/Day", value: "500K+" },
                   { label: "Latency", value: "<100ms" }
-                ]
-              },
-              { 
-                title: "Customer Support Bot", 
-                client: "TechFlow",
-                category: "AI Agent",
-                desc: "Tier-1 support automation resolving 70% of tickets instantly using RAG on knowledge base.", 
-                tags: ["LangChain", "Pinecone", "GPT-4"],
-                gradient: "from-purple-500 to-indigo-500",
-                image: chatbotImg,
-                metrics: [
-                  { label: "Instant Resolution", value: "70%" },
-                  { label: "CSAT Gain", value: "+42%" }
                 ]
               }
             ].map((project, idx) => (
