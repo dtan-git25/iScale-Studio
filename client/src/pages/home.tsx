@@ -446,7 +446,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {[
               { 
                 title: "E-Commerce AI Assistant", 
@@ -471,14 +471,6 @@ export default function Home() {
                 desc: "Real-time financial analytics platform with predictive forecasting powered by machine learning models.", 
                 tags: ["Next.js", "FastAPI", "AWS"],
                 color: "from-emerald-500 to-teal-500"
-              },
-              { 
-                title: "Customer Support Bot", 
-                client: "TechFlow",
-                category: "AI Agent",
-                desc: "Tier-1 support automation that resolves 70% of tickets instantly using RAG on company knowledge base.", 
-                tags: ["LangChain", "React", "GPT-4"],
-                color: "from-purple-500 to-indigo-500"
               }
             ].map((project, idx) => (
               <motion.div
