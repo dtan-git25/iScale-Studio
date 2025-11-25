@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, Brain, Zap, Cpu } from "lucide-react";
+import { Code2, Workflow, Cpu, ShoppingCart } from "lucide-react";
 
 const FloatingCard = ({ delay, icon: Icon, text, description }: any) => {
   return (
@@ -31,23 +31,23 @@ export function InteractiveHero() {
   const features = [
     {
       icon: Code2,
-      text: "Custom Applications",
-      description: "Build scalable web and mobile apps"
+      text: "AI Web & App Development",
+      description: "Custom AI-powered web and mobile applications"
     },
     {
-      icon: Brain,
-      text: "AI Intelligence",
-      description: "Integrate cutting-edge AI models"
-    },
-    {
-      icon: Zap,
-      text: "Fast Deployment",
-      description: "Get to market quickly"
+      icon: Workflow,
+      text: "Workflow Automation",
+      description: "Intelligent process automation solutions"
     },
     {
       icon: Cpu,
-      text: "Smart Automation",
-      description: "Eliminate manual tasks"
+      text: "AI Agent Development",
+      description: "Deploy autonomous AI agents"
+    },
+    {
+      icon: ShoppingCart,
+      text: "E-commerce Solutions",
+      description: "AI-enhanced online store platforms"
     }
   ];
 
