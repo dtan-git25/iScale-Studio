@@ -50,12 +50,7 @@ export function AnimatedFAQ() {
           >
             <Accordion type="single" collapsible className="space-y-4">
               {column1.map((item, idx) => {
-                const colors = [
-                  { border: "border-l-4 border-l-[#8629e4]", bg: "from-[#8629e4]/5", accent: "from-[#8629e4]" },
-                  { border: "border-l-4 border-l-[#2DBFBA]", bg: "from-[#2DBFBA]/5", accent: "from-[#2DBFBA]" },
-                  { border: "border-l-4 border-l-[#5808fb]", bg: "from-[#5808fb]/5", accent: "from-[#5808fb]" }
-                ];
-                const color = colors[idx];
+                const color = { border: "border-l-4 border-l-[#8629e4]", bg: "from-[#8629e4]/5", accent: "from-[#8629e4]" };
                 return (
                   <motion.div
                     key={idx}
@@ -104,12 +99,7 @@ export function AnimatedFAQ() {
           >
             <Accordion type="single" collapsible className="space-y-4">
               {column2.map((item, idx) => {
-                const colors = [
-                  { border: "border-l-4 border-l-[#bc09d7]", bg: "from-[#bc09d7]/5", accent: "from-[#bc09d7]" },
-                  { border: "border-l-4 border-l-[#9929ea]", bg: "from-[#9929ea]/5", accent: "from-[#9929ea]" },
-                  { border: "border-l-4 border-l-[#2DBFBA]", bg: "from-[#2DBFBA]/5", accent: "from-[#2DBFBA]" }
-                ];
-                const color = colors[idx];
+                const color = { border: "border-l-4 border-l-[#8629e4]", bg: "from-[#8629e4]/5", accent: "from-[#8629e4]" };
                 return (
                   <motion.div
                     key={idx}
