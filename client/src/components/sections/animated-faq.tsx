@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { HelpCircle, Zap } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export function AnimatedFAQ() {
   const faqs = [
@@ -13,113 +13,65 @@ export function AnimatedFAQ() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 bg-gray-50 relative overflow-hidden">
       <motion.div
         animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
-        transition={{ duration: 14, repeat: Infinity }}
-        className="absolute -top-20 -left-32 w-96 h-96 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
+        transition={{ duration: 15, repeat: Infinity }}
+        className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
       />
       <motion.div
         animate={{ x: [0, -40, 40, 0], y: [0, 30, -30, 0] }}
-        transition={{ duration: 16, repeat: Infinity, delay: 2 }}
-        className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-[#2DBFBA]/10 to-transparent rounded-full blur-3xl pointer-events-none"
+        transition={{ duration: 17, repeat: Infinity, delay: 2 }}
+        className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-[#2DBFBA]/10 to-transparent rounded-full blur-3xl pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-          {/* Left Column */}
+        <div className="text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-2 flex flex-col justify-center"
           >
-            <motion.div
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#9929ea]/20 to-[#5808fb]/20 flex items-center justify-center mb-6"
-            >
-              <HelpCircle className="h-8 w-8 text-[#9929ea]" />
-            </motion.div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Frequently Asked<br />Questions</h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Trusted by industry leaders and enterprises across the Philippines and beyond. Get answers to common questions about our services, process, and support.
+            <p className="text-sm font-semibold text-[#9929ea] uppercase tracking-widest mb-4">FAQ</p>
+            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Get answers to common questions about our services, process, and support. Can't find what you're looking for? <a href="/contact" className="text-[#8629e4] font-semibold hover:underline">Contact us</a>.
             </p>
-
-            {/* Stats */}
-            <div className="space-y-4">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="flex items-center gap-3"
-              >
-                <Zap className="h-5 w-5 text-[#9929ea]" />
-                <span className="text-sm text-gray-700">Quick responses to your questions</span>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="flex items-center gap-3"
-              >
-                <Zap className="h-5 w-5 text-[#9929ea]" />
-                <span className="text-sm text-gray-700">Expert insights and guidance</span>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="flex items-center gap-3"
-              >
-                <Zap className="h-5 w-5 text-[#9929ea]" />
-                <span className="text-sm text-gray-700">Real solutions for real businesses</span>
-              </motion.div>
-            </div>
           </motion.div>
+        </div>
 
-          {/* Right Column - Accordion */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-3"
-          >
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.08 }}
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.06 }}
+              >
+                <AccordionItem
+                  value={`item-${idx}`}
+                  className="border border-white/40 rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md transition-all hover:border-white/60 hover:shadow-lg data-[state=open]:border-[#9929ea]/40 data-[state=open]:shadow-lg data-[state=open]:shadow-[#9929ea]/10"
                 >
-                  <AccordionItem
-                    value={`item-${idx}`}
-                    className="border border-white/30 rounded-xl overflow-hidden bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-md transition-all hover:border-[#9929ea]/50 hover:shadow-lg"
-                  >
-                    <AccordionTrigger className="px-6 py-4 bg-gradient-to-r from-[#9929ea]/8 to-[#5808fb]/8 hover:bg-gradient-to-r hover:from-[#9929ea]/15 hover:to-[#5808fb]/15 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/15 [&[data-state=open]]:to-[#5808fb]/15">
-                      <span className="text-left font-bold text-gray-900 text-base group-hover:text-[#9929ea] transition-colors">
-                        {item.q}
-                      </span>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-6 py-4 bg-gradient-to-br from-white/50 to-white/30 border-t border-white/30 text-muted-foreground leading-relaxed">
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.1 }}
-                      >
-                        {item.a}
-                      </motion.div>
-                    </AccordionContent>
-                  </AccordionItem>
-                </motion.div>
-              ))}
-            </Accordion>
-          </motion.div>
+                  <AccordionTrigger className="px-6 py-5 hover:no-underline group [&[data-state=open]>svg]:rotate-180">
+                    <span className="text-left font-bold text-gray-900 text-base group-hover:text-[#8629e4] transition-colors">
+                      {item.q}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 py-5 bg-gradient-to-br from-white/50 to-white/30 border-t border-white/30 text-muted-foreground leading-relaxed">
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      {item.a}
+                    </motion.div>
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
