@@ -329,11 +329,7 @@ export default function Home() {
       <AnimatedAbout />
 
       {/* Why Choose Us - Expanded */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-15">
-          <img src={featuresImage} alt="Features background" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
-        </div>
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <motion.div
@@ -427,11 +423,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio/Case Studies */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-15">
-          <img src={portfolioImage} alt="Portfolio background" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
-        </div>
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <motion.div
