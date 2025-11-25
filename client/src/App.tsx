@@ -18,6 +18,7 @@ import Blog from "@/pages/blog";
 import Booking from "@/pages/booking";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
+import { CoDaveChat } from "@/components/chat/codave-chat";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
@@ -51,6 +52,7 @@ function Router() {
           <Route component={NotFound} />
         </Switch>
       </main>
+      <CoDaveChat />
       <Footer />
     </div>
   );
