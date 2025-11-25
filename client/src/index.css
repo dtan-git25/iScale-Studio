@@ -104,12 +104,12 @@
   }
   
   .btn-gradient {
-    background-image: linear-gradient(to right, #8629e4, #9929ea);
+    background-image: linear-gradient(to right, #9929ea, #5808fb);
     @apply text-white;
   }
   
   .btn-gradient-aqua {
-    background-image: linear-gradient(to right, #8629e4, #2DBFBA);
+    background-image: linear-gradient(to right, #9929ea, #5808fb);
     @apply text-white;
   }
   
