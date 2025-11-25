@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { InteractiveHero } from "@/components/hero/interactive-hero";
+import { AnimatedServices } from "@/components/sections/animated-services";
+import { AnimatedProcess } from "@/components/sections/animated-process";
+import { AnimatedFeatures } from "@/components/sections/animated-features";
 import heroImage from "@assets/generated_images/abstract_ai_neural_network_background.png";
 
 // Tech Carousel Component
@@ -160,16 +163,27 @@ export default function Home() {
       </section>
 
       {/* Services Overview - Primary Section */}
-      <section className="py-24">
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Our Solutions</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Complete digital transformation solutions tailored for your business.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Our Solutions</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+                Complete digital transformation solutions tailored for your business.
+              </p>
+            </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="relative">
+            <AnimatedServices />
+          </div>
+
+          {/* Old grid removed - keeping for reference */}
+          <div className="hidden grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <motion.div
               whileHover={{ y: -5 }}
@@ -356,16 +370,24 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us - Expanded */}
-      <section className="py-24">
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Why Partner With iScale Studio?</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Here's what sets us apart in the market.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Why Partner With iScale Studio?</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+                Here's what sets us apart in the market.
+              </p>
+            </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatedFeatures />
+
+          <div className="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { icon: <Lightbulb className="h-8 w-8" />, title: "AI Expertise", desc: "Specialized knowledge in AI integration and implementation with proven track record." },
               { icon: <MapPin className="h-8 w-8" />, title: "Philippine Market Knowledge", desc: "Deep understanding of local business needs, challenges, and opportunities." },
@@ -394,16 +416,24 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Our Process</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              A structured approach to deliver world-class solutions.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Our Process</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+                A structured approach to deliver world-class solutions.
+              </p>
+            </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <AnimatedProcess />
+
+          <div className="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
               { num: "01", title: "Discovery & Consultation", desc: "Understanding your needs, goals, and technical environment." },
               { num: "02", title: "Strategy & Planning", desc: "Crafting the perfect solution approach for your business." },
