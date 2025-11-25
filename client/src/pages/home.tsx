@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers } from "lucide-react";
+import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { InteractiveHero } from "@/components/hero/interactive-hero";
@@ -433,30 +434,88 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Our Work</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Recent projects showcasing our expertise and impact.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Our Work</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+                Recent projects showcasing our expertise and impact.
+              </p>
+            </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: "E-Commerce AI Assistant", industry: "Retail", desc: "AI-powered shopping assistant using computer vision and LLMs.", metric: "70% reduction in support tickets" },
-              { title: "Logistics Automation", industry: "Logistics", desc: "End-to-end automation of order processing and fulfillment.", metric: "95% less manual data entry" },
-              { title: "FinTech Dashboard", industry: "Finance", desc: "Real-time financial analytics with ML-powered forecasting.", metric: "3x faster analytics" }
-            ].map((study, idx) => (
+              { 
+                title: "E-Commerce AI Assistant", 
+                client: "StyleVogue",
+                category: "AI Agent",
+                desc: "AI-powered shopping assistant using computer vision to recommend products based on user preferences and uploaded photos.", 
+                tags: ["OpenAI", "React", "Computer Vision"],
+                color: "from-pink-500 to-rose-500"
+              },
+              { 
+                title: "Logistics Automation Pipeline", 
+                client: "GlobalShip Inc.",
+                category: "Workflow Automation",
+                desc: "Automated order processing system reducing manual data entry by 95%. Integrates Shopify, SAP, and custom shipping APIs.", 
+                tags: ["n8n", "PostgreSQL", "SAP"],
+                color: "from-blue-500 to-cyan-500"
+              },
+              { 
+                title: "FinTech Dashboard", 
+                client: "NovaFinance",
+                category: "Web Development",
+                desc: "Real-time financial analytics platform with predictive forecasting powered by machine learning models.", 
+                tags: ["Next.js", "FastAPI", "AWS"],
+                color: "from-emerald-500 to-teal-500"
+              },
+              { 
+                title: "Customer Support Bot", 
+                client: "TechFlow",
+                category: "AI Agent",
+                desc: "Tier-1 support automation that resolves 70% of tickets instantly using RAG on company knowledge base.", 
+                tags: ["LangChain", "React", "GPT-4"],
+                color: "from-purple-500 to-indigo-500"
+              }
+            ].map((project, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group relative rounded-2xl overflow-hidden border border-white/10 bg-card hover:border-white/20 transition-colors"
               >
-                <div className="glass-panel p-8 rounded-xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-colors h-full">
-                  <p className="text-xs [#8629e4] font-mono mb-3 uppercase tracking-widest">INDUSTRY: {study.industry}</p>
-                  <h3 className="text-xl font-bold mb-4">{study.title}</h3>
-                  <p className="text-muted-foreground mb-6">{study.desc}</p>
-                  <div className="pt-4 border-t border-gray-200">
-                    <p className="text-sm font-mono [#8629e4]">{study.metric}</p>
+                <div className={`h-48 bg-gradient-to-br ${project.color} opacity-20 group-hover:opacity-30 transition-opacity`}></div>
+                <div className="p-8 relative -mt-12">
+                  <div className="bg-background border border-white/10 rounded-xl p-6 shadow-xl">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <p className="text-sm text-muted-foreground mb-1">{project.client}</p>
+                        <h3 className="text-2xl font-bold">{project.title}</h3>
+                      </div>
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Button size="icon" variant="ghost" className="rounded-full hover:bg-white/10">
+                          <ArrowUpRight className="h-5 w-5" />
+                        </Button>
+                      </motion.div>
+                    </div>
+                    <p className="text-muted-foreground mb-6">
+                      {project.desc}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map(tag => (
+                        <Badge key={tag} variant="secondary" className="bg-white/5 hover:bg-white/10 border-white/5">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -465,7 +524,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/portfolio">
-              <Button variant="outline" size="lg" className="rounded-full px-8 h-12 border-[#8629e4] [#8629e4] hover:bg-[#8629e4]/5">
+              <Button variant="outline" size="lg" className="rounded-full px-8 h-12 border-[#8629e4] text-[#8629e4] hover:bg-[#8629e4]/5">
                 View All Projects <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
