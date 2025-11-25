@@ -1,4 +1,4 @@
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin, Phone, Zap, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@assets/iScale_Studio_V_1764045233039.png";
