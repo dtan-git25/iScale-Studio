@@ -4,8 +4,17 @@ import { Link } from "wouter";
 export default function About() {
   return (
     <div className="min-h-screen pt-20">
+      <section className="py-20 bg-card/30 border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">About iScale Studio</h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            We're a next-generation software development agency obsessed with efficiency and innovation.
+          </p>
+        </div>
+      </section>
+
       <div className="max-w-4xl mx-auto px-4 py-20">
-        <h1 className="text-5xl font-display font-bold mb-8">We are iScale Studio.</h1>
+        <h2 className="text-4xl font-display font-bold mb-8">We are iScale Studio.</h2>
         <div className="prose prose-invert prose-lg max-w-none">
           <p className="text-xl text-muted-foreground leading-relaxed mb-8">
             iScale Studio is a next-generation software development agency obsessed with efficiency. We believe that the future of business lies in the intelligent combination of human creativity and artificial intelligence.

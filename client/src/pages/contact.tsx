@@ -38,10 +38,19 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen pt-20">
+      <section className="py-20 bg-card/30 border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Get In Touch</h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Whether you have a clear vision or just a problem to solve, we're here to help you navigate the AI landscape.
+          </p>
+        </div>
+      </section>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h1 className="text-5xl font-display font-bold mb-6">Let's Build Something <span className="text-cyan-400">Incredible</span></h1>
+            <h2 className="text-3xl font-display font-bold mb-6">Let's Build Something <span className="text-cyan-400">Incredible</span></h2>
             <p className="text-xl text-muted-foreground mb-12">
               Whether you have a clear vision or just a problem to solve, we're here to help you navigate the AI landscape.
             </p>
