@@ -13,14 +13,14 @@ const FloatingCard = ({ delay, icon: Icon, text, description }: any) => {
         transition={{ duration: 3, delay, repeat: Infinity }}
         className="p-6 rounded-xl bg-gradient-to-br from-white/90 to-white/60 backdrop-blur-md border border-white/30 shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
       >
-        <div className="flex items-start gap-4">
-          <div className="text-[#9929ea] group-hover:scale-110 transition-transform flex-shrink-0">
-            <Icon className="h-7 w-7" />
+        <div className="flex flex-col gap-3">
+          <div className="flex items-start gap-3">
+            <div className="text-[#9929ea] group-hover:scale-110 transition-transform flex-shrink-0">
+              <Icon className="h-8 w-8" />
+            </div>
+            <h3 className="font-bold text-gray-900 text-lg lg:text-xl">{text}</h3>
           </div>
-          <div className="min-w-0">
-            <h3 className="font-bold text-gray-900 mb-2 text-base lg:text-lg">{text}</h3>
-            <p className="text-sm text-gray-600 line-clamp-2">{description}</p>
-          </div>
+          <p className="text-base lg:text-lg text-gray-700 line-clamp-3">{description}</p>
         </div>
       </motion.div>
     </motion.div>
