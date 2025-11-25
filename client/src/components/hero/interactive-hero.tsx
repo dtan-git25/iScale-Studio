@@ -15,11 +15,11 @@ const FloatingCard = ({ delay, icon: Icon, text, description }: any) => {
       >
         <div className="flex items-start gap-4">
           <div className="text-[#9929ea] group-hover:scale-110 transition-transform flex-shrink-0">
-            <Icon className="h-6 w-6" />
+            <Icon className="h-7 w-7" />
           </div>
           <div className="min-w-0">
-            <h3 className="font-bold text-gray-900 mb-1 text-sm">{text}</h3>
-            <p className="text-xs text-gray-600 line-clamp-2">{description}</p>
+            <h3 className="font-bold text-gray-900 mb-2 text-base lg:text-lg">{text}</h3>
+            <p className="text-sm text-gray-600 line-clamp-2">{description}</p>
           </div>
         </div>
       </motion.div>
