@@ -9,7 +9,6 @@ import { InteractiveHero } from "@/components/hero/interactive-hero";
 import { AnimatedServices } from "@/components/sections/animated-services";
 import { AnimatedProcess } from "@/components/sections/animated-process";
 import { AnimatedFeatures } from "@/components/sections/animated-features";
-import { CalendlyBooking } from "@/components/sections/calendly-booking";
 import { Reviews } from "@/components/sections/reviews";
 import { AnimatedFAQ } from "@/components/sections/animated-faq";
 import { AnimatedAbout } from "@/components/sections/animated-about";
@@ -375,9 +374,6 @@ export default function Home() {
 
       {/* FAQ Section */}
       <AnimatedFAQ />
-
-      {/* Calendly Booking Section */}
-      <CalendlyBooking />
     </div>
   );
 }
