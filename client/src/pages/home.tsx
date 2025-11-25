@@ -106,7 +106,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-gray-900 text-sm font-medium">
+              <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
                 AI-Powered Digital Solutions
               </div>
               <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-4">
