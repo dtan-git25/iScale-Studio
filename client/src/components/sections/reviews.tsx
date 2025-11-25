@@ -105,7 +105,7 @@ export function Reviews() {
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.05 + i * 0.05 }}
                       >
-                        <Star className="h-5 w-5 fill-[#9929ea] text-[#9929ea]" />
+                        <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                       </motion.div>
                     ))}
                   </div>
