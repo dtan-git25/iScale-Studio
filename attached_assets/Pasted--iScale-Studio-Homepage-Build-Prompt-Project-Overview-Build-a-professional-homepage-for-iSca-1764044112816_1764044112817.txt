@@ -1,0 +1,488 @@
+# iScale Studio Homepage Build Prompt
+
+## Project Overview
+Build a professional homepage for iScale Studio, a Philippines-based company specializing in AI-powered digital solutions. The homepage should position the company as an expert in AI Web & App Development while showcasing comprehensive digital transformation capabilities.
+
+**Primary Goal**: Lead generation through appointment scheduling
+**Target Audience**: Philippine businesses seeking AI-powered digital solutions
+**Tone**: Professional, innovative, trustworthy, results-driven
+
+---
+
+## Homepage Sections & Design Specifications
+
+### 1. HERO SECTION
+**Layout**: Full-width, above-the-fold
+
+**Content Requirements**:
+- **Headline**: Bold, attention-grabbing statement emphasizing AI-powered solutions
+  - Example: "Transform Your Business with AI-Powered Digital Solutions"
+- **Subheadline**: 1-2 sentences explaining value proposition
+  - Focus on Philippine market and business transformation
+- **Primary CTA**: "Schedule a Consultation" (prominent button)
+- **Secondary CTA**: "View Our Solutions" (outlined/ghost button)
+- **Hero Visual**: Modern, tech-forward image or animation
+  - Suggestions: Abstract AI/digital elements, Philippine business context, or custom illustration
+
+**Design Elements**:
+- Clean, modern typography with strong hierarchy
+- Gradient or solid background (brand colors)
+- Subtle animation on load (optional)
+- Mobile-responsive with stacked layout on small screens
+
+---
+
+### 2. SERVICES OVERVIEW SECTION
+**Layout**: 3-column card layout (responsive to 1-column on mobile)
+
+**Title**: "Our Solutions" or "What We Do"
+
+**Service Cards** (in order of priority):
+
+**Card 1 - AI Web & App Development** (PRIMARY)
+- Icon: Custom or web/mobile device icon
+- Title: "AI Web & App Development"
+- Description: 2-3 sentences highlighting AI-integrated websites and applications
+- Features list:
+  - AI-powered features and integrations
+  - Custom web applications
+  - Mobile-responsive design
+  - Scalable architecture
+- CTA: "Learn More" → Links to Solutions page
+- Visual emphasis: Slightly larger or highlighted compared to other cards
+
+**Card 2 - Workflow Automation**
+- Icon: Automation/process icon
+- Title: "Workflow Automation"
+- Description: 2-3 sentences about streamlining business processes
+- Features list:
+  - Process optimization
+  - Integration solutions
+  - Time and cost savings
+  - Custom workflow design
+- CTA: "Learn More" → Links to Solutions page
+
+**Card 3 - AI Agents**
+- Icon: AI/chatbot icon
+- Title: "AI Agents"
+- Description: 2-3 sentences about intelligent automation
+- Features list:
+  - Customer service automation
+  - Smart assistants
+  - 24/7 availability
+  - Custom AI personalities
+- CTA: "Learn More" → Links to Solutions page
+
+**Design Elements**:
+- Consistent card styling with subtle shadows or borders
+- Hover effects (lift, glow, or color shift)
+- Icon consistency (same style family)
+- Ample white space between cards
+
+---
+
+### 3. ABOUT/COMPANY INTRODUCTION SECTION
+**Layout**: 2-column (text + image) or centered single column
+
+**Content Requirements**:
+- **Section Title**: "About iScale Studio" or "Who We Are"
+- **Body Text**: 3-4 paragraphs covering:
+  - Company mission and expertise
+  - Philippine market focus
+  - Why AI-powered solutions matter
+  - Commitment to digital transformation
+- **Key Stats/Highlights** (if available):
+  - Years of experience
+  - Projects completed
+  - Client satisfaction
+  - Technologies mastered
+- **CTA**: "Learn More About Us" → Links to About page
+- **Image**: Professional team photo, office, or branded graphic
+
+**Design Elements**:
+- Alternate background color (light gray or brand accent)
+- Professional photography or illustration
+- Clean typography with good line spacing
+- Mobile: Stack image above text
+
+---
+
+### 4. WHY CHOOSE US / VALUE PROPOSITION SECTION
+**Layout**: 3-4 column icon boxes or 2-column list
+
+**Section Title**: "Why Partner With iScale Studio?"
+
+**Value Points** (4-6 items):
+1. **AI Expertise**
+   - Icon: Brain/AI icon
+   - Description: Specialized knowledge in AI integration and implementation
+
+2. **Philippine Market Knowledge**
+   - Icon: Location/map icon
+   - Description: Deep understanding of local business needs and challenges
+
+3. **Consultation-First Approach**
+   - Icon: Handshake/meeting icon
+   - Description: Personalized solutions tailored to your specific needs
+
+4. **End-to-End Solutions**
+   - Icon: Cycle/process icon
+   - Description: From concept to deployment and beyond
+
+5. **Proven Results**
+   - Icon: Chart/growth icon
+   - Description: Track record of successful implementations
+
+6. **Ongoing Support**
+   - Icon: Support/service icon
+   - Description: Continued partnership after project delivery
+
+**Design Elements**:
+- Icons with consistent style (line art or filled)
+- Brief, scannable text
+- Equal spacing and alignment
+- Subtle animations on scroll (optional)
+
+---
+
+### 5. PORTFOLIO/CASE STUDIES PREVIEW SECTION
+**Layout**: Horizontal scrolling cards or 3-column grid
+
+**Section Title**: "Our Work" or "Recent Projects"
+
+**Content Requirements**:
+- **Portfolio Items**: 3-6 project cards (use placeholders if needed)
+- Each card includes:
+  - Project thumbnail/screenshot
+  - Project title
+  - Client industry or type
+  - Brief description (1-2 sentences)
+  - Key technology or service used
+  - "View Project" or "Learn More" link
+- **Section CTA**: "View All Projects" → Links to Portfolio page
+
+**Design Elements**:
+- Consistent card dimensions
+- High-quality images (even if placeholder)
+- Subtle hover effects revealing more info
+- Professional, polished appearance
+- Filtering options (optional): By service type or industry
+
+---
+
+### 6. PROCESS/HOW WE WORK SECTION
+**Layout**: Horizontal timeline or numbered steps (4-5 steps)
+
+**Section Title**: "Our Process" or "How We Work"
+
+**Process Steps**:
+1. **Discovery & Consultation**
+   - Icon: Magnifying glass/conversation
+   - Description: Understanding your needs and goals
+
+2. **Strategy & Planning**
+   - Icon: Blueprint/strategy
+   - Description: Crafting the perfect solution approach
+
+3. **Development & Implementation**
+   - Icon: Code/build
+   - Description: Building your AI-powered solution
+
+4. **Testing & Refinement**
+   - Icon: Check/quality
+   - Description: Ensuring excellence in every detail
+
+5. **Launch & Support**
+   - Icon: Rocket/support
+   - Description: Going live and ongoing optimization
+
+**Design Elements**:
+- Visual connection between steps (lines or arrows)
+- Progressive numbering (01, 02, 03, etc.)
+- Iconography for each step
+- Emphasize the consultation-first nature of step 1
+
+---
+
+### 7. TESTIMONIALS/SOCIAL PROOF SECTION (Optional)
+**Layout**: Carousel or 2-3 column grid
+
+**Section Title**: "What Our Clients Say"
+
+**Content Requirements**:
+- **Testimonial Cards**: 3-6 client testimonials (use placeholders if needed)
+- Each includes:
+  - Client quote (2-4 sentences)
+  - Client name and title
+  - Company name (if applicable)
+  - Client photo (optional)
+  - Star rating (optional)
+
+**Alternative (if testimonials unavailable)**:
+- Trust badges: Social media icons with follower counts
+- Certifications or partnerships
+- "Featured In" section with logos
+
+**Design Elements**:
+- Quotation marks or similar visual indicators
+- Professional styling
+- Photo/logo emphasis
+- Carousel controls (if using carousel)
+
+---
+
+### 8. BLOG/INSIGHTS PREVIEW SECTION (Optional)
+**Layout**: 3-column card grid
+
+**Section Title**: "Latest Insights" or "From Our Blog"
+
+**Content Requirements**:
+- **Blog Post Cards**: 3 most recent posts
+- Each card includes:
+  - Featured image
+  - Category or tag
+  - Post title
+  - Excerpt (1-2 sentences)
+  - Read time
+  - "Read More" link
+- **Section CTA**: "View All Posts" → Links to Blog page
+
+**Design Elements**:
+- Consistent card styling
+- Clear typography hierarchy
+- Hover effects on cards
+- Category color coding (optional)
+
+---
+
+### 9. CALL-TO-ACTION (CTA) SECTION
+**Layout**: Full-width, centered content
+
+**Content Requirements**:
+- **Headline**: Action-oriented message
+  - Example: "Ready to Transform Your Business with AI?"
+- **Subheadline**: 1 sentence reinforcing value proposition
+  - Example: "Schedule a consultation to discuss your digital transformation needs"
+- **Primary CTA**: "Schedule Your Consultation" (large, prominent button)
+- **Secondary Information**: 
+  - Contact options: Phone, email, or social media links
+  - Response time: "We'll respond within 24 hours"
+
+**Design Elements**:
+- Contrasting background (brand color or gradient)
+- Large, prominent CTA button
+- White space around content
+- Possibly include consultation form inline (optional)
+
+---
+
+### 10. FOOTER
+**Layout**: Multi-column footer (3-4 columns responsive to stacked on mobile)
+
+**Column 1 - Company Info**:
+- iScale Studio logo
+- Tagline: Brief company description (1 sentence)
+- Social media icons (Facebook, Instagram, LinkedIn, X)
+- Location: Philippines
+
+**Column 2 - Quick Links**:
+- Navigation menu:
+  - Home
+  - About
+  - Solutions (or individual solution pages)
+  - Portfolio
+  - Blog
+  - Contact
+
+**Column 3 - Services**:
+- AI Web & App Development
+- Workflow Automation
+- AI Agents
+
+**Column 4 - Contact**:
+- Email address
+- Phone number (if applicable)
+- "Schedule Consultation" CTA
+- Business hours (optional)
+
+**Bottom Bar**:
+- Copyright notice: "© 2024 iScale Studio. All rights reserved."
+- Legal links: Privacy Policy, Terms of Service (if available)
+
+**Design Elements**:
+- Dark background with light text
+- Organized, scannable layout
+- Clickable social icons
+- Mobile: Stacked columns with clear separation
+
+---
+
+## Overall Design Guidelines
+
+### Color Scheme
+- **Primary**: Professional, tech-forward colors (blues, purples, or brand colors)
+- **Accent**: Complementary color for CTAs and highlights
+- **Neutral**: Grays for text and backgrounds
+- Ensure sufficient contrast for accessibility
+
+### Typography
+- **Headings**: Bold, modern sans-serif font
+- **Body**: Clean, readable sans-serif font
+- **Hierarchy**: Clear sizing distinction (H1 > H2 > H3 > Body)
+- Font weights: Use variety for emphasis
+
+### Spacing & Layout
+- Generous white space between sections
+- Consistent padding and margins
+- Maximum content width: 1200-1400px for readability
+- Section breaks: Alternating background colors or dividers
+
+### Visual Elements
+- **Icons**: Consistent style throughout (line art or solid)
+- **Images**: High-quality, professional, optimized for web
+- **Animations**: Subtle, purposeful (fade-ins, scroll animations)
+- **Shadows**: Soft, consistent depth
+
+### Responsive Design
+- Mobile-first approach
+- Breakpoints: Mobile (< 768px), Tablet (768-1024px), Desktop (> 1024px)
+- Touch-friendly buttons and spacing on mobile
+- Simplified navigation on mobile (hamburger menu)
+
+### Performance
+- Optimized images (WebP format preferred)
+- Lazy loading for images below the fold
+- Minified CSS and JavaScript
+- Fast loading time (< 3 seconds)
+
+### Accessibility
+- Alt text for all images
+- Proper heading hierarchy
+- Sufficient color contrast (WCAG AA minimum)
+- Keyboard navigation support
+- Screen reader friendly
+
+---
+
+## Call-to-Action Strategy
+
+**Primary CTA**: "Schedule a Consultation"
+- Placement: Hero section, CTA section, navigation, footer
+- Emphasis: Most prominent button styling
+- Action: Links to Contact page or opens scheduling tool
+
+**Secondary CTAs**:
+- "Learn More" buttons on service cards
+- "View Portfolio" link
+- "Read Our Blog" link
+- Navigation to specific solutions pages
+
+**CTA Best Practices**:
+- Action-oriented language
+- Create urgency without being pushy
+- Consistent styling for primary vs. secondary CTAs
+- Mobile: Fixed bottom CTA bar (optional)
+
+---
+
+## Technical Requirements
+
+### Platform
+- Built on WordPress (or specified CMS)
+- Responsive framework (Bootstrap, Tailwind, or custom)
+- Page builder compatible (if using Elementor, Divi, etc.)
+
+### Functionality
+- Contact forms with validation
+- Newsletter signup (optional)
+- Social media integration
+- Analytics integration (Google Analytics)
+- SEO optimization (meta tags, structured data)
+
+### Integrations
+- Appointment scheduling tool integration (Calendly, Acuity, or custom)
+- Email marketing platform (if applicable)
+- CRM integration (optional)
+- Live chat widget (optional)
+
+---
+
+## Content Notes
+
+### Placeholder Content
+If actual content is not yet available, use:
+- Industry-relevant placeholder text
+- Professional stock photos (tech/business theme)
+- Sample project descriptions
+- Generic testimonials (clearly marked as examples)
+
+### Tone & Voice Guidelines
+- **Professional**: Expert but approachable
+- **Clear**: Avoid jargon, explain technical concepts
+- **Confident**: Assert expertise without arrogance
+- **Action-oriented**: Focus on results and transformation
+- **Local**: Philippine context when relevant
+
+---
+
+## Deliverables Checklist
+
+- [ ] Fully responsive homepage (mobile, tablet, desktop)
+- [ ] All sections implemented as specified
+- [ ] Working CTAs and navigation links
+- [ ] Contact form functional
+- [ ] Social media links working
+- [ ] SEO meta tags configured
+- [ ] Analytics tracking implemented
+- [ ] Performance optimized (page speed < 3s)
+- [ ] Cross-browser tested (Chrome, Firefox, Safari, Edge)
+- [ ] Accessibility standards met (WCAG AA)
+- [ ] Placeholder content marked for replacement
+- [ ] Documentation for content updates
+
+---
+
+## Next Steps After Homepage
+
+1. **About Page**: Company story, team, mission, values
+2. **Solutions Pages**: Detailed pages for each service
+3. **Portfolio Page**: Complete project showcase
+4. **Blog Setup**: Content management and publishing workflow
+5. **Contact Page**: Enhanced scheduling and contact options
+
+---
+
+## Additional Considerations
+
+### A/B Testing Opportunities
+- Hero headline variations
+- CTA button text and colors
+- Service card ordering
+- Form vs. direct scheduling link
+
+### Future Enhancements
+- Chatbot/AI assistant integration
+- Interactive demos or calculators
+- Client portal login
+- Case study downloads/gated content
+- Video content integration
+
+---
+
+## Brand Assets Needed
+
+Please provide:
+- [ ] Company logo (SVG and PNG formats)
+- [ ] Brand color codes (hex values)
+- [ ] Brand fonts (or specify web fonts)
+- [ ] Social media profile URLs
+- [ ] Contact information (email, phone)
+- [ ] Any existing brand guidelines
+- [ ] Professional photos (team, office, or product)
+- [ ] Actual project portfolio items (when ready)
+
+---
+
+**End of Homepage Build Prompt**
+
+This prompt should be used as a comprehensive guide for developers, designers, or AI tools to create a professional, conversion-optimized homepage for iScale Studio.
