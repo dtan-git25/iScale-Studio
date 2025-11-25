@@ -88,18 +88,17 @@ export function InteractiveHero() {
         {/* Client Logos */}
         <div className="flex justify-center mb-12">
           <div className="w-full">
-            <p className="text-center text-sm text-gray-600 mb-6">Trusted by leading companies</p>
-            <div className="flex justify-center items-center gap-8 flex-wrap">
-              {["Client 1", "Client 2", "Client 3", "Client 4", "Client 5"].map((client, idx) => (
+            <p className="text-center text-xs text-gray-600 mb-8 uppercase tracking-wide">Trusted by leading companies</p>
+            <div className="flex justify-center items-center gap-12 flex-wrap">
+              {["Boosterio", "Atomic SEO", "Voley", "IBM Media", "GreenHost"].map((client, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: idx * 0.1, duration: 0.6 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.08, duration: 0.5 }}
+                  className="flex items-center justify-center"
                 >
-                  <div className="w-24 h-24 rounded-lg bg-gray-200 flex items-center justify-center">
-                    <span className="text-xs font-semibold text-gray-500">{client}</span>
-                  </div>
+                  <span className="text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors">{client}</span>
                 </motion.div>
               ))}
             </div>
