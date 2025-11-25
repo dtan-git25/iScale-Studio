@@ -99,9 +99,9 @@ export function AnimatedFAQ() {
                 >
                   <AccordionItem
                     value={`item-${idx}`}
-                    className="border border-white/30 rounded-xl overflow-hidden bg-gradient-to-r from-white/60 to-white/30 backdrop-blur-md transition-all hover:border-[#9929ea]/50 hover:shadow-lg"
+                    className="border border-white/30 rounded-xl overflow-hidden bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-md transition-all hover:border-[#9929ea]/50 hover:shadow-lg"
                   >
-                    <AccordionTrigger className="px-6 py-4 hover:bg-gradient-to-r hover:from-[#9929ea]/5 hover:to-[#5808fb]/5 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/10 [&[data-state=open]]:to-[#5808fb]/10">
+                    <AccordionTrigger className="px-6 py-4 bg-gradient-to-r from-[#9929ea]/8 to-[#5808fb]/8 hover:bg-gradient-to-r hover:from-[#9929ea]/15 hover:to-[#5808fb]/15 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/15 [&[data-state=open]]:to-[#5808fb]/15">
                       <span className="text-left font-bold text-gray-900 text-base group-hover:text-[#9929ea] transition-colors">
                         {item.q}
                       </span>
