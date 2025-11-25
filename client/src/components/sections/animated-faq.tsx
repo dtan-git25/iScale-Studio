@@ -81,9 +81,8 @@ export function AnimatedFAQ() {
         </div>
 
         {/* FAQ Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {faqs.map((item, idx) => {
-            const IconComponent = item.icon;
             return (
               <motion.div
                 key={idx}
@@ -104,17 +103,8 @@ export function AnimatedFAQ() {
                       className="border-0 h-full"
                     >
                       <div className="bg-gradient-to-br from-white/95 to-white/40 backdrop-blur-xl border border-white/60 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col group-hover:border-[#8629e4]/40">
-                        {/* Card Header with Icon */}
-                        <div className="p-6 pb-4">
-                          <div className="flex items-start justify-between gap-3 mb-4">
-                            <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center text-white flex-shrink-0 shadow-lg`}>
-                              <IconComponent className="h-6 w-6" />
-                            </div>
-                            <span className={`text-xs font-bold px-2 py-1 rounded-full bg-gradient-to-r ${item.gradient} text-white`}>
-                              {item.category}
-                            </span>
-                          </div>
-
+                        {/* Card Header */}
+                        <div className="p-6">
                           <AccordionTrigger className="px-0 py-0 hover:no-underline focus:outline-none group/trigger">
                             <h3 className="text-left font-bold text-gray-900 text-base leading-snug group-hover/trigger:text-transparent group-hover/trigger:bg-clip-text group-hover/trigger:bg-gradient-to-r group-hover/trigger:from-[#9929ea] group-hover/trigger:to-[#5808fb] transition-all">
                               {item.q}
