@@ -26,31 +26,64 @@ import healthcareImg from "@assets/generated_images/healthcare_management_system
 
 // Tech Stack Component
 function TechStack() {
-  const technologies = [
-    { name: "React", icon: <Code className="h-8 w-8" />, gradient: "from-blue-500 to-cyan-500" },
-    { name: "Next.js", icon: <Layers className="h-8 w-8" />, gradient: "from-gray-700 to-gray-900" },
-    { name: "Node.js", icon: <Server className="h-8 w-8" />, gradient: "from-green-500 to-emerald-500" },
-    { name: "Python", icon: <Code className="h-8 w-8" />, gradient: "from-yellow-500 to-orange-500" },
-    { name: "Supabase", icon: <Database className="h-8 w-8" />, gradient: "from-emerald-500 to-teal-500" },
-    { name: "PostgreSQL", icon: <Database className="h-8 w-8" />, gradient: "from-blue-600 to-blue-400" },
-    { name: "n8n", icon: <Workflow className="h-8 w-8" />, gradient: "from-orange-500 to-red-500" },
-    { name: "Zapier", icon: <Zap className="h-8 w-8" />, gradient: "from-orange-400 to-amber-500" },
-    { name: "OpenAI", icon: <Cpu className="h-8 w-8" />, gradient: "from-[#8629e4] to-[#5808fb]" },
-    { name: "Claude", icon: <Cpu className="h-8 w-8" />, gradient: "from-[#bc09d7] to-[#8629e4]" },
-    { name: "Google Gemini", icon: <Cloud className="h-8 w-8" />, gradient: "from-blue-500 to-purple-500" },
-    { name: "LangChain", icon: <Settings className="h-8 w-8" />, gradient: "from-[#8629e4] to-[#2DBFBA]" }
+  const categories = [
+    {
+      name: "Frontend",
+      color: "from-blue-500 to-cyan-500",
+      icon: Globe,
+      technologies: [
+        { name: "React", icon: <Code className="h-6 w-6" />, gradient: "from-blue-500 to-cyan-500" },
+        { name: "Next.js", icon: <Layers className="h-6 w-6" />, gradient: "from-gray-700 to-gray-900" }
+      ]
+    },
+    {
+      name: "Backend & Data",
+      color: "from-green-500 to-emerald-500",
+      icon: Server,
+      technologies: [
+        { name: "Node.js", icon: <Server className="h-6 w-6" />, gradient: "from-green-500 to-emerald-500" },
+        { name: "Python", icon: <Code className="h-6 w-6" />, gradient: "from-yellow-500 to-orange-500" },
+        { name: "PostgreSQL", icon: <Database className="h-6 w-6" />, gradient: "from-blue-600 to-blue-400" },
+        { name: "Supabase", icon: <Database className="h-6 w-6" />, gradient: "from-emerald-500 to-teal-500" }
+      ]
+    },
+    {
+      name: "Automation",
+      color: "from-orange-500 to-red-500",
+      icon: Workflow,
+      technologies: [
+        { name: "n8n", icon: <Workflow className="h-6 w-6" />, gradient: "from-orange-500 to-red-500" },
+        { name: "Zapier", icon: <Zap className="h-6 w-6" />, gradient: "from-orange-400 to-amber-500" }
+      ]
+    },
+    {
+      name: "AI & ML",
+      color: "from-[#8629e4] to-[#5808fb]",
+      icon: Cpu,
+      technologies: [
+        { name: "OpenAI", icon: <Cpu className="h-6 w-6" />, gradient: "from-[#8629e4] to-[#5808fb]" },
+        { name: "Claude", icon: <Cpu className="h-6 w-6" />, gradient: "from-[#bc09d7] to-[#8629e4]" },
+        { name: "Google Gemini", icon: <Cloud className="h-6 w-6" />, gradient: "from-blue-500 to-purple-500" },
+        { name: "LangChain", icon: <Settings className="h-6 w-6" />, gradient: "from-[#8629e4] to-[#2DBFBA]" }
+      ]
+    }
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-32 relative overflow-hidden bg-gradient-to-b from-white via-white/95 to-white">
       <motion.div
-        animate={{ x: [0, -50, 50, 0], y: [0, -30, 30, 0] }}
+        animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
+        transition={{ duration: 20, repeat: Infinity }}
+        className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/8 to-transparent rounded-full blur-3xl pointer-events-none"
+      />
+      <motion.div
+        animate={{ x: [0, -50, 50, 0], y: [0, 30, -30, 0] }}
         transition={{ duration: 18, repeat: Infinity }}
-        className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-br from-[#8629e4]/10 to-transparent rounded-full blur-3xl pointer-events-none"
+        className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-br from-[#2DBFBA]/8 to-transparent rounded-full blur-3xl pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -59,42 +92,91 @@ function TechStack() {
             <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
               Technology Stack
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">Built With Industry-Leading Tools</h2>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              We leverage cutting-edge technologies and platforms to deliver powerful, scalable solutions
+            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Built With Industry-Leading Tools</h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              We partner with the best technologies available to build robust, scalable, and innovative solutions that power modern businesses.
             </p>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {technologies.map((tech, idx) => (
+        <div className="space-y-12">
+          {categories.map((category, catIdx) => (
             <motion.div
-              key={tech.name}
-              initial={{ opacity: 0, y: 20 }}
+              key={category.name}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.05 }}
-              className="group"
+              transition={{ delay: catIdx * 0.1 }}
             >
-              <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 3, delay: idx * 0.1, repeat: Infinity }}
-                whileHover={{ y: -8, scale: 1.05 }}
-              >
-                <div className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/40 p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center justify-center gap-3">
-                  <motion.div
-                    className={`w-12 h-12 rounded-lg bg-gradient-to-br ${tech.gradient} flex items-center justify-center text-white`}
-                    animate={{ rotate: [0, 5, -5, 0] }}
-                    transition={{ duration: 4, delay: idx * 0.15, repeat: Infinity }}
-                  >
-                    {tech.icon}
-                  </motion.div>
-                  <p className="text-sm font-semibold text-gray-900">{tech.name}</p>
+              {/* Category Header */}
+              <div className="flex items-center gap-3 mb-8">
+                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${category.color} flex items-center justify-center`}>
+                  <category.icon className="h-6 w-6 text-white" />
                 </div>
-              </motion.div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">{category.name}</h3>
+                  <div className={`h-1 w-16 bg-gradient-to-r ${category.color} rounded-full mt-1`}></div>
+                </div>
+              </div>
+
+              {/* Technologies Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {category.technologies.map((tech, idx) => (
+                  <motion.div
+                    key={tech.name}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: catIdx * 0.1 + idx * 0.05 }}
+                    className="group h-full"
+                  >
+                    <motion.div
+                      whileHover={{ y: -6 }}
+                      transition={{ duration: 0.3 }}
+                      className="h-full"
+                    >
+                      <div className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/60 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col items-center justify-center gap-4 group-hover:border-[#8629e4]/40">
+                        {/* Icon */}
+                        <motion.div
+                          className={`w-16 h-16 rounded-xl bg-gradient-to-br ${tech.gradient} flex items-center justify-center text-white shadow-lg group-hover:shadow-xl`}
+                          animate={{ rotate: [0, 2, -2, 0] }}
+                          transition={{ duration: 4, delay: catIdx * 0.15 + idx * 0.1, repeat: Infinity }}
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          {tech.icon}
+                        </motion.div>
+
+                        {/* Name */}
+                        <p className="text-lg font-bold text-gray-900 text-center">{tech.name}</p>
+
+                        {/* Shine effect */}
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="text-center mt-20"
+        >
+          <p className="text-gray-700 mb-6">
+            We're constantly exploring and integrating new technologies to stay ahead of the curve.
+          </p>
+          <Link href="/booking">
+            <Button className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
+              Discuss Your Tech Stack <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
