@@ -163,13 +163,12 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { num: "01", title: "Discovery & Consultation", desc: "Understanding your needs, goals, and technical environment." },
-              { num: "02", title: "Strategy & Planning", desc: "Crafting the perfect solution approach for your business." },
-              { num: "03", title: "Development", desc: "Building your AI-powered solution with best practices." },
-              { num: "04", title: "Testing & Refinement", desc: "Ensuring excellence in every detail." },
-              { num: "05", title: "Launch & Support", desc: "Going live and ongoing optimization." }
+              { num: "01", title: "Discovery & Planning", desc: "Understanding your needs and crafting a strategic roadmap." },
+              { num: "02", title: "Strategy & Development", desc: "Building your AI-powered solution with best practices." },
+              { num: "03", title: "Testing & Refinement", desc: "Ensuring excellence in every detail." },
+              { num: "04", title: "Launch & Support", desc: "Going live and ongoing optimization and support." }
             ].map((step, idx) => (
               <motion.div
                 key={idx}
