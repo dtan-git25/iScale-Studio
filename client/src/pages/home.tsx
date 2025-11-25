@@ -11,6 +11,7 @@ import { AnimatedFeatures } from "@/components/sections/animated-features";
 import { CalendlyBooking } from "@/components/sections/calendly-booking";
 import { Reviews } from "@/components/sections/reviews";
 import { AnimatedFAQ } from "@/components/sections/animated-faq";
+import { AnimatedAbout } from "@/components/sections/animated-about";
 import heroImage from "@assets/generated_images/abstract_ai_neural_network_background.png";
 import servicesImage from "@assets/generated_images/abstract_ai_neural_network_visualization.png";
 import processImage from "@assets/generated_images/digital_workflow_automation_process.png";
@@ -324,61 +325,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">About iScale Studio</h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Founded to bridge the gap between Philippine businesses and cutting-edge AI technology, iScale Studio specializes in delivering transformative digital solutions that help companies compete globally.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                We understand the unique challenges faced by Philippine SMBs and enterprises. That's why we've built a team of experts dedicated to making AI-powered solutions accessible, affordable, and impactful for businesses of all sizes.
-              </p>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Our mission is simple: empower businesses to scale faster and operate smarter through intelligent automation and custom software solutions.
-              </p>
-              <Link href="/about">
-                <Button variant="outline" className="border-[#8629e4] [#8629e4] hover:bg-[#8629e4]/5">
-                  Learn More About Us <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-2 gap-4"
-            >
-              <div className="space-y-4">
-                <div className="glass-panel p-6 rounded-lg text-center">
-                  <div className="text-3xl font-bold [#8629e4] mb-2">50+</div>
-                  <p className="text-sm text-muted-foreground">Successful Projects</p>
-                </div>
-                <div className="glass-panel p-6 rounded-lg text-center">
-                  <div className="text-3xl font-bold [#8629e4] mb-2">100%</div>
-                  <p className="text-sm text-muted-foreground">Client Satisfaction</p>
-                </div>
-              </div>
-              <div className="space-y-4 mt-8">
-                <div className="glass-panel p-6 rounded-lg text-center">
-                  <div className="text-3xl font-bold [#bc09d7] mb-2">8+</div>
-                  <p className="text-sm text-muted-foreground">Years Experience</p>
-                </div>
-                <div className="glass-panel p-6 rounded-lg text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-2">40+</div>
-                  <p className="text-sm text-muted-foreground">Team Members</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <AnimatedAbout />
 
       {/* Why Choose Us - Expanded */}
       <section className="py-24 relative overflow-hidden">
