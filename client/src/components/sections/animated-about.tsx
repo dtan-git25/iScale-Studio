@@ -42,7 +42,7 @@ export function AnimatedAbout() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-2xl lg:text-3xl font-display font-bold mb-8 leading-tight">
-              Philippines-based AI Automation Agency Helping Businesses Scale Smarter
+              Philippines-based AI Development & Automation Agency Helping Businesses Scale Smarter
             </h2>
 
             <div className="space-y-6">
@@ -53,7 +53,7 @@ export function AnimatedAbout() {
                 transition={{ delay: 0.1 }}
                 className="text-base text-muted-foreground leading-relaxed"
               >
-                iScale Studio is a Philippines-based AI automation agency helping businesses streamline processes, save time, and scale smarter.
+                iScale Studio is a Philippines-based technology agency specializing in AI-powered web and mobile app development, workflow automation, AI agent development, and e-commerce solutions. We help businesses streamline operations, elevate customer experiences, and scale with efficiency.
               </motion.p>
 
               <motion.p
@@ -63,7 +63,7 @@ export function AnimatedAbout() {
                 transition={{ delay: 0.2 }}
                 className="text-base text-muted-foreground leading-relaxed"
               >
-                From AI-powered customer engagement to business process automation, our solutions are designed to reduce costs and unlock growth. Partner with us to bring innovation, efficiency, and intelligence into your business operations.
+                From intelligent apps that automate tasks to AI agents that handle customer engagement, our solutions are built to reduce manual work, unlock productivity, and accelerate growth. We combine modern design, engineering, and automation to create systems that adapt and scale with your business.
               </motion.p>
 
               <motion.p
@@ -73,7 +73,7 @@ export function AnimatedAbout() {
                 transition={{ delay: 0.3 }}
                 className="text-base text-muted-foreground leading-relaxed"
               >
-                We leverage cutting-edge automation platforms like n8n, Zapier, and Make.com, combined with artificial intelligence to create seamless, scalable solutions that transform how your business operates.
+                Our goal is simple: empower companies with future-ready technology that makes everyday operations faster, smarter, and more efficient.
               </motion.p>
             </div>
 
