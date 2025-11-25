@@ -43,8 +43,6 @@ export default function Footer() {
         </section>
       )}
 
-      {showCalendly && <CalendlyBooking />}
-
       <footer className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white pt-20 pb-12">
         {/* Animated Background Elements */}
         <motion.div
