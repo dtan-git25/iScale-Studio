@@ -20,106 +20,74 @@ import processImage from "@assets/generated_images/digital_workflow_automation_p
 import featuresImage from "@assets/generated_images/tech_expertise_collaboration_network.png";
 import portfolioImage from "@assets/generated_images/ai_machine_learning_data_flow.png";
 
-// Tech Carousel Component
-function TechCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  
+// Tech Stack Component
+function TechStack() {
   const technologies = [
-    { name: "React", icon: <Code className="h-10 w-10" />, color: "text-blue-400" },
-    { name: "Next.js", icon: <Layers className="h-10 w-10" />, color: "text-white" },
-    { name: "Node.js", icon: <Server className="h-10 w-10" />, color: "text-green-400" },
-    { name: "Python", icon: <Code className="h-10 w-10" />, color: "text-yellow-400" },
-    { name: "Supabase", icon: <Database className="h-10 w-10" />, color: "text-emerald-400" },
-    { name: "PostgreSQL", icon: <Database className="h-10 w-10" />, color: "text-blue-500" },
-    { name: "n8n", icon: <Workflow className="h-10 w-10" />, color: "text-orange-400" },
-    { name: "Zapier", icon: <Zap className="h-10 w-10" />, color: "text-orange-500" },
-    { name: "OpenAI", icon: <Cpu className="h-10 w-10" />, color: "[#8629e4]" },
-    { name: "Claude", icon: <Cpu className="h-10 w-10" />, color: "[#bc09d7]" },
-    { name: "Google Gemini", icon: <Cloud className="h-10 w-10" />, color: "text-blue-600" },
-    { name: "LangChain", icon: <Settings className="h-10 w-10" />, color: "[#8629e4]" }
+    { name: "React", icon: <Code className="h-8 w-8" />, gradient: "from-blue-500 to-cyan-500" },
+    { name: "Next.js", icon: <Layers className="h-8 w-8" />, gradient: "from-gray-700 to-gray-900" },
+    { name: "Node.js", icon: <Server className="h-8 w-8" />, gradient: "from-green-500 to-emerald-500" },
+    { name: "Python", icon: <Code className="h-8 w-8" />, gradient: "from-yellow-500 to-orange-500" },
+    { name: "Supabase", icon: <Database className="h-8 w-8" />, gradient: "from-emerald-500 to-teal-500" },
+    { name: "PostgreSQL", icon: <Database className="h-8 w-8" />, gradient: "from-blue-600 to-blue-400" },
+    { name: "n8n", icon: <Workflow className="h-8 w-8" />, gradient: "from-orange-500 to-red-500" },
+    { name: "Zapier", icon: <Zap className="h-8 w-8" />, gradient: "from-orange-400 to-amber-500" },
+    { name: "OpenAI", icon: <Cpu className="h-8 w-8" />, gradient: "from-[#8629e4] to-[#5808fb]" },
+    { name: "Claude", icon: <Cpu className="h-8 w-8" />, gradient: "from-[#bc09d7] to-[#8629e4]" },
+    { name: "Google Gemini", icon: <Cloud className="h-8 w-8" />, gradient: "from-blue-500 to-purple-500" },
+    { name: "LangChain", icon: <Settings className="h-8 w-8" />, gradient: "from-[#8629e4] to-[#2DBFBA]" }
   ];
 
-  const itemsPerView = 6;
-  const maxIndex = Math.max(0, technologies.length - itemsPerView);
-
-  const handleNext = () => {
-    setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex(prev => (prev === 0 ? maxIndex : prev - 1));
-  };
-
-  const visibleTechs = technologies.slice(currentIndex, currentIndex + itemsPerView);
-
   return (
-    <section className="py-20 bg-gray-50 border-y border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-white relative overflow-hidden">
+      <motion.div
+        animate={{ x: [0, -50, 50, 0], y: [0, -30, 30, 0] }}
+        transition={{ duration: 18, repeat: Infinity }}
+        className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-br from-[#8629e4]/10 to-transparent rounded-full blur-3xl pointer-events-none"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-display font-bold mb-4">Our Technology Stack</h2>
-          <p className="text-muted-foreground">Built with industry-leading tools and frameworks</p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-sm font-semibold text-[#9929ea] uppercase tracking-widest mb-4">Technology Stack</p>
+            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Built With Industry-Leading Tools</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We leverage cutting-edge technologies and platforms to deliver powerful, scalable solutions
+            </p>
+          </motion.div>
         </div>
 
-        <div className="relative">
-          {/* Carousel Container */}
-          <div className="flex items-center justify-between gap-6">
-            {/* Left Arrow */}
-            <button
-              onClick={handlePrev}
-              className="flex-shrink-0 p-3 rounded-lg bg-gray-100 border border-gray-300 hover:bg-gray-200 hover:border-gray-400 transition-all [#8629e4] hover:scale-110"
-              aria-label="Previous technologies"
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {technologies.map((tech, idx) => (
+            <motion.div
+              key={tech.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.05 }}
+              className="group"
             >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-
-            {/* Tech Items */}
-            <div className="flex-1 overflow-hidden">
-              <div className="flex gap-4 justify-center">
-                {visibleTechs.map((tech, idx) => (
+              <motion.div
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 3, delay: idx * 0.1, repeat: Infinity }}
+                whileHover={{ y: -8, scale: 1.05 }}
+              >
+                <div className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/40 p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center justify-center gap-3">
                   <motion.div
-                    key={tech.name}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ delay: idx * 0.05 }}
-                    className="flex-1 min-w-0"
+                    className={`w-12 h-12 rounded-lg bg-gradient-to-br ${tech.gradient} flex items-center justify-center text-white`}
+                    animate={{ rotate: [0, 5, -5, 0] }}
+                    transition={{ duration: 4, delay: idx * 0.15, repeat: Infinity }}
                   >
-                    <div className="glass-panel p-6 rounded-xl border border-gray-200 hover:border-gray-300 transition-all hover:bg-gray-100 h-full flex flex-col items-center justify-center gap-4 group cursor-pointer">
-                      <div className={`${tech.color} transition-transform group-hover:scale-125`}>
-                        {tech.icon}
-                      </div>
-                      <p className="text-sm font-mono text-gray-600 text-center group-hover:[#8629e4] transition-colors truncate w-full">
-                        {tech.name}
-                      </p>
-                    </div>
+                    {tech.icon}
                   </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Arrow */}
-            <button
-              onClick={handleNext}
-              className="flex-shrink-0 p-3 rounded-lg bg-gray-100 border border-gray-300 hover:bg-gray-200 hover:border-gray-400 transition-all [#8629e4] hover:scale-110"
-              aria-label="Next technologies"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          </div>
-
-          {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-8">
-            {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`h-2 rounded-full transition-all ${
-                  idx === currentIndex ? "bg-cyan-600 w-8" : "bg-gray-300 w-2 hover:bg-gray-400"
-                }`}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
-          </div>
+                  <p className="text-sm font-semibold text-gray-900">{tech.name}</p>
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -320,7 +288,7 @@ export default function Home() {
       <Reviews />
 
       {/* Technologies Section */}
-      <TechCarousel />
+      <TechStack />
 
       {/* FAQ Section */}
       <AnimatedFAQ />
