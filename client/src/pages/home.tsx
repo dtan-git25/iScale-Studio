@@ -9,6 +9,7 @@ import { AnimatedServices } from "@/components/sections/animated-services";
 import { AnimatedProcess } from "@/components/sections/animated-process";
 import { AnimatedFeatures } from "@/components/sections/animated-features";
 import { CalendlyBooking } from "@/components/sections/calendly-booking";
+import { Reviews } from "@/components/sections/reviews";
 import heroImage from "@assets/generated_images/abstract_ai_neural_network_background.png";
 import servicesImage from "@assets/generated_images/abstract_ai_neural_network_visualization.png";
 import processImage from "@assets/generated_images/digital_workflow_automation_process.png";
@@ -523,6 +524,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Reviews Section */}
+      <Reviews />
 
       {/* Technologies Section */}
       <TechCarousel />
