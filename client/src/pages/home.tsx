@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Brain } from "lucide-react";
+import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -189,71 +189,6 @@ export default function Home() {
 
         {/* Interactive Hero Section */}
         <InteractiveHero />
-      </section>
-
-      {/* Why Choose Our Services Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
-                Why Choose Us
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4">Why Choose Our Services?</h2>
-              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                These core values guide every decision we make and every project we undertake.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Brain,
-                title: "Innovation First",
-                desc: "We stay ahead of the curve, constantly exploring emerging technologies to deliver cutting-edge solutions.",
-                color: "from-blue-500 to-cyan-500"
-              },
-              {
-                icon: Rocket,
-                title: "Execution Excellence",
-                desc: "We deliver. Fast, reliable, and scalable solutions that directly impact your bottom line.",
-                color: "from-[#9929ea] to-[#5808fb]"
-              },
-              {
-                icon: Users,
-                title: "Partnership Mindset",
-                desc: "Your success is our success. We're invested in your long-term growth and transformation.",
-                color: "from-[#2DBFBA] to-teal-500"
-              },
-              {
-                icon: TrendingUp,
-                title: "Measurable Impact",
-                desc: "Every solution is designed to deliver quantifiable results and ROI.",
-                color: "from-orange-500 to-pink-500"
-              }
-            ].map((value, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all"
-              >
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${value.color} flex items-center justify-center mb-4`}>
-                  <value.icon className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{value.title}</h3>
-                <p className="text-gray-700 text-sm leading-relaxed">{value.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* About Section */}
