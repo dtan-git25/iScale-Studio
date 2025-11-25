@@ -10,6 +10,7 @@ import { AnimatedProcess } from "@/components/sections/animated-process";
 import { AnimatedFeatures } from "@/components/sections/animated-features";
 import { CalendlyBooking } from "@/components/sections/calendly-booking";
 import { Reviews } from "@/components/sections/reviews";
+import { AnimatedFAQ } from "@/components/sections/animated-faq";
 import heroImage from "@assets/generated_images/abstract_ai_neural_network_background.png";
 import servicesImage from "@assets/generated_images/abstract_ai_neural_network_visualization.png";
 import processImage from "@assets/generated_images/digital_workflow_automation_process.png";
@@ -532,54 +533,7 @@ export default function Home() {
       <TechCarousel />
 
       {/* FAQ Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass-panel p-12 rounded-2xl border border-gray-200">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-              {/* Left Column */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="lg:col-span-2 flex flex-col justify-center"
-              >
-                <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Frequently Asked<br />Question</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  Trusted by industry leaders and enterprises across the Philippines and beyond. Get answers to common questions about our services, process, and support.
-                </p>
-              </motion.div>
-
-              {/* Right Column - Accordion */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="lg:col-span-3"
-              >
-                <Accordion type="single" collapsible className="space-y-4">
-                  {[
-                    { q: "How long does a typical project take?", a: "Project timelines vary based on scope. Simple automations can be done in 2-4 weeks, while custom AI applications typically take 8-16 weeks. We'll provide a detailed timeline during the discovery phase." },
-                    { q: "What's your pricing model?", a: "We offer fixed-price projects, time & materials, and retainer models depending on your needs. We provide detailed quotes after understanding your requirements." },
-                    { q: "Do you work with existing systems?", a: "Yes! We excel at integrating with legacy systems. Whether you use Salesforce, SAP, or custom software, we can build automation and AI solutions that fit seamlessly." },
-                    { q: "Can you help with AI strategy?", a: "Absolutely. We offer AI consulting services to help identify opportunities in your business where AI and automation can have the most impact." },
-                    { q: "What support do you provide after launch?", a: "We offer ongoing support packages including monitoring, updates, optimization, and new feature development to keep your systems running smoothly." },
-                    { q: "How is data security handled?", a: "We follow industry best practices for data security. All solutions are built with GDPR, CCPA, and enterprise-grade security standards in mind." }
-                  ].map((item, idx) => (
-                    <AccordionItem key={idx} value={`item-${idx}`} className="border border-white/10 rounded-lg overflow-hidden">
-                      <AccordionTrigger className="px-6 py-4 hover:bg-gray-100 transition-colors [&[data-state=open]]:bg-gray-100">
-                        <span className="text-left font-medium text-gray-900 text-base">{item.q}</span>
-                      </AccordionTrigger>
-                      <AccordionContent className="px-6 py-4 bg-gray-50 border-t border-gray-200 text-muted-foreground leading-relaxed">
-                        {item.a}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AnimatedFAQ />
 
       {/* Calendly Booking Section */}
       <CalendlyBooking />
