@@ -39,7 +39,7 @@ export function AnimatedAbout() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-8 leading-tight">
+            <h2 className="text-2xl lg:text-3xl font-display font-bold mb-8 leading-tight">
               Philippines-based AI Automation Agency Helping Businesses Scale Smarter
             </h2>
 
@@ -49,7 +49,7 @@ export function AnimatedAbout() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-lg text-muted-foreground leading-relaxed"
+                className="text-base text-muted-foreground leading-relaxed"
               >
                 iScale Studio is a Philippines-based AI automation agency helping businesses streamline processes, save time, and scale smarter.
               </motion.p>
@@ -59,7 +59,7 @@ export function AnimatedAbout() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-lg text-muted-foreground leading-relaxed"
+                className="text-base text-muted-foreground leading-relaxed"
               >
                 From AI-powered customer engagement to business process automation, our solutions are designed to reduce costs and unlock growth. Partner with us to bring innovation, efficiency, and intelligence into your business operations.
               </motion.p>
@@ -69,7 +69,7 @@ export function AnimatedAbout() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-lg text-muted-foreground leading-relaxed"
+                className="text-base text-muted-foreground leading-relaxed"
               >
                 We leverage cutting-edge automation platforms like n8n, Zapier, and Make.com, combined with artificial intelligence to create seamless, scalable solutions that transform how your business operates.
               </motion.p>
