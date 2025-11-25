@@ -68,7 +68,10 @@ export function AnimatedFAQ() {
                         value={`left-${idx}`}
                         className={`${color.border} border border-white/40 rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md transition-all hover:border-[#9929ea]/60 hover:shadow-lg`}
                       >
-                        <AccordionTrigger className={`px-6 py-4 bg-gradient-to-r ${color.bg} to-transparent hover:bg-gradient-to-r hover:from-[#9929ea]/10 hover:to-[#5808fb]/10 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/15 [&[data-state=open]]:to-[#5808fb]/15`}>
+                        <AccordionTrigger className={`px-6 py-4 bg-gradient-to-r ${color.bg} to-transparent hover:bg-gradient-to-r hover:from-[#9929ea]/10 hover:to-[#5808fb]/10 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/15 [&[data-state=open]]:to-[#5808fb]/15 flex items-center gap-4`}>
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-[#9929ea] to-[#5808fb] flex items-center justify-center text-white font-bold text-sm">
+                            {idx + 1}
+                          </div>
                           <span className="text-left font-bold text-gray-900 text-base">
                             {item.q}
                           </span>
@@ -117,7 +120,10 @@ export function AnimatedFAQ() {
                         value={`right-${idx}`}
                         className={`${color.border} border border-white/40 rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md transition-all hover:border-[#9929ea]/60 hover:shadow-lg`}
                       >
-                        <AccordionTrigger className={`px-6 py-4 bg-gradient-to-r ${color.bg} to-transparent hover:bg-gradient-to-r hover:from-[#9929ea]/10 hover:to-[#5808fb]/10 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/15 [&[data-state=open]]:to-[#5808fb]/15`}>
+                        <AccordionTrigger className={`px-6 py-4 bg-gradient-to-r ${color.bg} to-transparent hover:bg-gradient-to-r hover:from-[#9929ea]/10 hover:to-[#5808fb]/10 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/15 [&[data-state=open]]:to-[#5808fb]/15 flex items-center gap-4`}>
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-[#9929ea] to-[#5808fb] flex items-center justify-center text-white font-bold text-sm">
+                            {idx + 1}
+                          </div>
                           <span className="text-left font-bold text-gray-900 text-base">
                             {item.q}
                           </span>
