@@ -123,15 +123,15 @@ export function AnimatedAbout() {
                     whileHover={{ y: -8 }}
                     className="h-full"
                   >
-                    <div className="bg-gradient-to-br from-white to-white/60 backdrop-blur-md border border-white/40 p-5 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div className="bg-gradient-to-br from-white to-white/60 backdrop-blur-md border border-white/40 p-4 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
                       <motion.div
-                        className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#9929ea]/20 to-[#5808fb]/20 flex items-center justify-center mx-auto mb-3 group-hover:from-[#9929ea]/40 group-hover:to-[#5808fb]/40 transition-colors"
+                        className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#9929ea]/20 to-[#5808fb]/20 flex items-center justify-center mx-auto mb-2 group-hover:from-[#9929ea]/40 group-hover:to-[#5808fb]/40 transition-colors"
                         animate={{ rotate: [0, 10, -10, 0] }}
                         transition={{ duration: 3, delay: idx * 0.2, repeat: Infinity }}
                       >
-                        <Icon className="h-5 w-5 text-[#9929ea]" />
+                        <Icon className="h-4 w-4 text-[#9929ea]" />
                       </motion.div>
-                      <div className="text-3xl font-display font-bold bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent mb-1">
+                      <div className="text-2xl font-display font-bold bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent mb-1">
                         {stat.value}
                       </div>
                       <p className="text-xs text-muted-foreground">{stat.label}</p>
