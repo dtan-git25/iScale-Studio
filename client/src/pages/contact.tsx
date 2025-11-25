@@ -54,7 +54,7 @@ export default function Contact() {
                 <div>
                   <h3 className="font-bold text-lg">Book a Consultation</h3>
                   <p className="text-muted-foreground mb-2">Directly schedule a time with our solutions architect.</p>
-                  <Button variant="link" className="className="text-[#9929ea] p-0 h-auto"">View Calendar &rarr;</Button>
+                  <Button variant="link" className="text-[#9929ea] p-0 h-auto">View Calendar &rarr;</Button>
                 </div>
               </div>
               
