@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
 
 export function AnimatedAbout() {
@@ -40,9 +40,8 @@ export function AnimatedAbout() {
           viewport={{ once: true }}
           className="mb-6"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#9929ea]/10 to-[#2DBFBA]/10 border border-[#9929ea]/30 backdrop-blur-sm">
-            <Sparkles className="h-4 w-4 text-[#9929ea]" />
-            <span className="text-sm font-semibold bg-gradient-to-r from-[#9929ea] to-[#2DBFBA] bg-clip-text text-transparent">About iScale Studio</span>
+          <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
+            About iScale Studio
           </div>
         </motion.div>
 
