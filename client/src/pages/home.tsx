@@ -13,7 +13,7 @@ import { CalendlyBooking } from "@/components/sections/calendly-booking";
 import { Reviews } from "@/components/sections/reviews";
 import { AnimatedFAQ } from "@/components/sections/animated-faq";
 import { AnimatedAbout } from "@/components/sections/animated-about";
-import { ComprehensiveSolutions } from "@/components/sections/comprehensive-solutions";
+import { HeroServices } from "@/components/sections/hero-services";
 import heroImage from "@assets/generated_images/abstract_ai_neural_network_background.png";
 import servicesImage from "@assets/generated_images/abstract_ai_neural_network_visualization.png";
 import processImage from "@assets/generated_images/digital_workflow_automation_process.png";
@@ -172,161 +172,11 @@ export default function Home() {
         <InteractiveHero />
       </section>
 
-      {/* Services Overview - Primary Section */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Our Solutions</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-                Complete digital transformation solutions tailored for your business.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="relative">
-            <AnimatedServices />
-          </div>
-
-          {/* Old grid removed - keeping for reference */}
-          <div className="hidden grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="glass-panel p-8 rounded-xl group border border-gray-200 hover:border-gray-300 transition-colors h-full">
-                <div className="bg-gray-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Globe className="h-10 w-10 [#8629e4]" />
-                </div>
-                <h3 className="text-xl font-display font-bold mb-3">AI Web & App Development</h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
-                  Custom web applications and mobile apps powered by artificial intelligence. Build intelligent, scalable solutions that automate decisions and personalize user experiences.
-                </p>
-                <div className="mb-6 space-y-2">
-                  <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 [#8629e4] shrink-0 mt-0.5" />
-                    <span className="text-xs text-muted-foreground">AI-powered features and integrations</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 [#8629e4] shrink-0 mt-0.5" />
-                    <span className="text-xs text-muted-foreground">Custom web applications</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 [#8629e4] shrink-0 mt-0.5" />
-                    <span className="text-xs text-muted-foreground">Mobile-responsive design</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 [#8629e4] shrink-0 mt-0.5" />
-                    <span className="text-xs text-muted-foreground">Scalable architecture</span>
-                  </div>
-                </div>
-                <Link href="/services">
-                  <a className="inline-flex items-center text-sm font-medium [#8629e4] hover:[#8629e4]">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Card 2 */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              <div className="glass-panel p-8 rounded-xl group border border-gray-200 hover:border-gray-300 transition-colors h-full">
-                <div className="bg-gray-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Workflow className="h-10 w-10 [#8629e4]" />
-                </div>
-                <h3 className="text-xl font-display font-bold mb-3">Workflow Automation</h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
-                  Streamline business processes and eliminate manual tasks with intelligent automation solutions.
-                </p>
-                <div className="mb-6 space-y-2">
-                  <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 [#8629e4] shrink-0 mt-0.5" />
-                    <span className="text-xs text-muted-foreground">Process optimization</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 [#8629e4] shrink-0 mt-0.5" />
-                    <span className="text-xs text-muted-foreground">Integration solutions</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 [#8629e4] shrink-0 mt-0.5" />
-                    <span className="text-xs text-muted-foreground">Time & cost savings</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 [#8629e4] shrink-0 mt-0.5" />
-                    <span className="text-xs text-muted-foreground">Custom workflow design</span>
-                  </div>
-                </div>
-                <Link href="/services">
-                  <a className="inline-flex items-center text-sm font-medium text-purple-400 hover:text-purple-300">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Card 3 */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <div className="glass-panel p-8 rounded-xl group border border-gray-200 hover:border-gray-300 transition-colors h-full">
-                <div className="bg-gray-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Cpu className="h-10 w-10 [#bc09d7]" />
-                </div>
-                <h3 className="text-xl font-display font-bold mb-3">AI Agents</h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
-                  Intelligent autonomous agents powered by advanced AI models to handle complex business operations.
-                </p>
-                <div className="mb-6 space-y-2">
-                  <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 [#bc09d7] shrink-0 mt-0.5" />
-                    <span className="text-xs text-muted-foreground">Customer service automation</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 [#bc09d7] shrink-0 mt-0.5" />
-                    <span className="text-xs text-muted-foreground">Smart assistants</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 [#bc09d7] shrink-0 mt-0.5" />
-                    <span className="text-xs text-muted-foreground">24/7 availability</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 [#bc09d7] shrink-0 mt-0.5" />
-                    <span className="text-xs text-muted-foreground">Custom AI personalities</span>
-                  </div>
-                </div>
-                <Link href="/services">
-                  <a className="inline-flex items-center text-sm font-medium text-pink-400 hover:text-pink-300">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* Quick Services Below Hero */}
+      <HeroServices />
 
       {/* About Section */}
       <AnimatedAbout />
-
-      {/* Comprehensive Solutions Section */}
-      <ComprehensiveSolutions />
 
       {/* Process Section */}
       <section className="py-24 bg-gray-50 relative">
