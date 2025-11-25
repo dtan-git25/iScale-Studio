@@ -32,22 +32,22 @@ export function InteractiveHero() {
     {
       icon: Code2,
       text: "AI Web & App Development",
-      description: "Custom AI-powered web and mobile applications"
+      description: "Build intelligent web and mobile applications powered by cutting-edge AI technology"
     },
     {
       icon: Workflow,
       text: "Workflow Automation",
-      description: "Intelligent process automation solutions"
+      description: "Streamline operations with smart automation that eliminates manual tasks"
     },
     {
       icon: Cpu,
       text: "AI Agent Development",
-      description: "Deploy autonomous AI agents"
+      description: "Deploy autonomous AI agents that handle complex tasks intelligently"
     },
     {
       icon: ShoppingCart,
       text: "E-commerce Solutions",
-      description: "AI-enhanced online store platforms"
+      description: "Scale your online business with AI-powered e-commerce platforms"
     }
   ];
 
