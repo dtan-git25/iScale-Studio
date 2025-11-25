@@ -49,41 +49,49 @@ export function AnimatedFAQ() {
             className="space-y-4"
           >
             <Accordion type="single" collapsible className="space-y-4">
-              {column1.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="group"
-                >
+              {column1.map((item, idx) => {
+                const colors = [
+                  { border: "border-l-4 border-l-[#8629e4]", bg: "from-[#8629e4]/5", accent: "from-[#8629e4]" },
+                  { border: "border-l-4 border-l-[#2DBFBA]", bg: "from-[#2DBFBA]/5", accent: "from-[#2DBFBA]" },
+                  { border: "border-l-4 border-l-[#5808fb]", bg: "from-[#5808fb]/5", accent: "from-[#5808fb]" }
+                ];
+                const color = colors[idx];
+                return (
                   <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    className="h-full"
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="group"
                   >
-                    <AccordionItem
-                      value={`left-${idx}`}
-                      className="border border-white/40 rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md transition-all hover:border-[#9929ea]/60 hover:shadow-lg"
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      className="h-full"
                     >
-                      <AccordionTrigger className="px-6 py-4 hover:bg-gradient-to-r hover:from-[#9929ea]/10 hover:to-[#5808fb]/10 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/15 [&[data-state=open]]:to-[#5808fb]/15">
-                        <span className="text-left font-bold text-gray-900 text-base">
-                          {item.q}
-                        </span>
-                      </AccordionTrigger>
-                      <AccordionContent className="px-6 py-4 bg-white/50 border-t border-white/30 text-muted-foreground leading-relaxed">
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: 0.1 }}
-                        >
-                          {item.a}
-                        </motion.div>
-                      </AccordionContent>
-                    </AccordionItem>
+                      <AccordionItem
+                        value={`left-${idx}`}
+                        className={`${color.border} border border-white/40 rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md transition-all hover:border-[#9929ea]/60 hover:shadow-lg`}
+                      >
+                        <AccordionTrigger className={`px-6 py-4 bg-gradient-to-r ${color.bg} to-transparent hover:bg-gradient-to-r hover:from-[#9929ea]/10 hover:to-[#5808fb]/10 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/15 [&[data-state=open]]:to-[#5808fb]/15`}>
+                          <span className="text-left font-bold text-gray-900 text-base">
+                            {item.q}
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="px-6 py-4 bg-white/50 border-t border-white/30 text-muted-foreground leading-relaxed">
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.1 }}
+                          >
+                            {item.a}
+                          </motion.div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </motion.div>
                   </motion.div>
-                </motion.div>
-              ))}
+                );
+              })}
             </Accordion>
           </motion.div>
 
@@ -95,41 +103,49 @@ export function AnimatedFAQ() {
             className="space-y-4"
           >
             <Accordion type="single" collapsible className="space-y-4">
-              {column2.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: (idx + 3) * 0.1 }}
-                  className="group"
-                >
+              {column2.map((item, idx) => {
+                const colors = [
+                  { border: "border-l-4 border-l-[#bc09d7]", bg: "from-[#bc09d7]/5", accent: "from-[#bc09d7]" },
+                  { border: "border-l-4 border-l-[#9929ea]", bg: "from-[#9929ea]/5", accent: "from-[#9929ea]" },
+                  { border: "border-l-4 border-l-[#2DBFBA]", bg: "from-[#2DBFBA]/5", accent: "from-[#2DBFBA]" }
+                ];
+                const color = colors[idx];
+                return (
                   <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    className="h-full"
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: (idx + 3) * 0.1 }}
+                    className="group"
                   >
-                    <AccordionItem
-                      value={`right-${idx}`}
-                      className="border border-white/40 rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md transition-all hover:border-[#9929ea]/60 hover:shadow-lg"
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      className="h-full"
                     >
-                      <AccordionTrigger className="px-6 py-4 hover:bg-gradient-to-r hover:from-[#9929ea]/10 hover:to-[#5808fb]/10 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/15 [&[data-state=open]]:to-[#5808fb]/15">
-                        <span className="text-left font-bold text-gray-900 text-base">
-                          {item.q}
-                        </span>
-                      </AccordionTrigger>
-                      <AccordionContent className="px-6 py-4 bg-white/50 border-t border-white/30 text-muted-foreground leading-relaxed">
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: 0.1 }}
-                        >
-                          {item.a}
-                        </motion.div>
-                      </AccordionContent>
-                    </AccordionItem>
+                      <AccordionItem
+                        value={`right-${idx}`}
+                        className={`${color.border} border border-white/40 rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md transition-all hover:border-[#9929ea]/60 hover:shadow-lg`}
+                      >
+                        <AccordionTrigger className={`px-6 py-4 bg-gradient-to-r ${color.bg} to-transparent hover:bg-gradient-to-r hover:from-[#9929ea]/10 hover:to-[#5808fb]/10 transition-all [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-[#9929ea]/15 [&[data-state=open]]:to-[#5808fb]/15`}>
+                          <span className="text-left font-bold text-gray-900 text-base">
+                            {item.q}
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="px-6 py-4 bg-white/50 border-t border-white/30 text-muted-foreground leading-relaxed">
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.1 }}
+                          >
+                            {item.a}
+                          </motion.div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </motion.div>
                   </motion.div>
-                </motion.div>
-              ))}
+                );
+              })}
             </Accordion>
           </motion.div>
         </div>
