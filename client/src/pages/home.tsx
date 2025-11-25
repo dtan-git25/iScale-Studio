@@ -117,41 +117,36 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <section className="relative pt-20 pb-0 lg:pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <img src={heroImage} alt="Abstract AI Background" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
         </div>
 
-        {/* Interactive Background */}
-        <div className="absolute inset-0 z-0">
-          <InteractiveHero />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-          <div className="text-center mb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-block px-3 py-1 mb-6 rounded-full bg-[#8629e4]/10 border border-[#8629e4]/30 text-[#8629e4] text-sm font-mono">
+              <div className="inline-block px-3 py-1 mb-4 rounded-full bg-[#8629e4]/10 border border-[#8629e4]/30 text-[#8629e4] text-sm font-mono">
                 AI-Powered Digital Solutions
               </div>
-              <h1 className="text-5xl lg:text-7xl font-display font-bold leading-tight mb-6">
+              <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-4">
                 Transform Your Business with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#2DBFBA]">AI-Powered</span> Digital Solutions
               </h1>
-              <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
                 Custom AI-powered applications, intelligent workflow automation, and autonomous agents designed for Philippine businesses to scale faster and operate smarter.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link href="/contact">
-                  <Button size="lg" className="btn-gradient border-0 rounded-full px-8 h-14 text-lg shadow-lg shadow-[#9929ea]/40">
+                  <Button size="lg" className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
                     Schedule a Consultation
                   </Button>
                 </Link>
                 <Link href="/portfolio">
-                  <Button variant="outline" size="lg" className="rounded-full px-8 h-14 text-lg border-gray-300 hover:bg-gray-50">
+                  <Button variant="outline" size="lg" className="rounded-full px-8 h-12 text-base border-gray-300 hover:bg-gray-50">
                     View Our Solutions
                   </Button>
                 </Link>
@@ -159,6 +154,9 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
+
+        {/* Interactive Hero Section */}
+        <InteractiveHero />
       </section>
 
       {/* Services Overview - Primary Section */}
