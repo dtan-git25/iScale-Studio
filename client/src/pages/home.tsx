@@ -129,6 +129,27 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
+
+          {/* Trusted by leading companies */}
+          <div className="flex justify-center mt-16">
+            <div className="w-full">
+              <p className="text-center text-xs text-gray-600 mb-8 uppercase tracking-wide">Trusted by leading companies</p>
+              <div className="flex justify-center items-center gap-12 flex-wrap">
+                {["Boosterio", "Atomic SEO", "Voley", "IBM Media", "GreenHost"].map((client, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.08, duration: 0.5 }}
+                    className="flex items-center justify-center"
+                  >
+                    <span className="text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors">{client}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Interactive Hero Section */}
