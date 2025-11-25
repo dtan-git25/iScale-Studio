@@ -85,23 +85,25 @@ export function InteractiveHero() {
           ))}
         </div>
 
-        {/* Center interactive element */}
+        {/* Client Logos */}
         <div className="flex justify-center mb-12">
-          <motion.div
-            animate={{ 
-              scale: [1, 1.06, 1],
-            }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#9929ea] to-[#5808fb] shadow-lg shadow-[#9929ea]/30 flex items-center justify-center">
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 8, repeat: Infinity, linear: true }}
-              >
-                <Cpu className="h-10 w-10 text-white" />
-              </motion.div>
+          <div className="w-full">
+            <p className="text-center text-sm text-gray-600 mb-6">Trusted by leading companies</p>
+            <div className="flex justify-center items-center gap-8 flex-wrap">
+              {["Client 1", "Client 2", "Client 3", "Client 4", "Client 5"].map((client, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: idx * 0.1, duration: 0.6 }}
+                >
+                  <div className="w-24 h-24 rounded-lg bg-gray-200 flex items-center justify-center">
+                    <span className="text-xs font-semibold text-gray-500">{client}</span>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>
