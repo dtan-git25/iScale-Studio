@@ -29,6 +29,30 @@ export default function Blog() {
       category: "Tech Stack",
       readTime: "8 min read",
       gradient: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "From Manual to Intelligent: How AI Changed Customer Support",
+      excerpt: "Discover how businesses are using AI agents to handle 70% of support tickets instantly, improving customer satisfaction and reducing costs.",
+      date: "Nov 15, 2024",
+      category: "Case Study",
+      readTime: "7 min read",
+      gradient: "from-emerald-500 to-teal-500"
+    },
+    {
+      title: "Building Your First AI Workflow: A Step-by-Step Guide",
+      excerpt: "Learn how to create intelligent automation workflows without writing code. We walk through real examples using popular no-code platforms.",
+      date: "Nov 8, 2024",
+      category: "Tutorial",
+      readTime: "10 min read",
+      gradient: "from-amber-500 to-orange-500"
+    },
+    {
+      title: "The Future of E-Commerce: AI-Powered Personalization at Scale",
+      excerpt: "Explore how AI recommendation engines are driving revenue growth and transforming the online shopping experience.",
+      date: "Oct 30, 2024",
+      category: "AI Trends",
+      readTime: "6 min read",
+      gradient: "from-red-500 to-pink-500"
     }
   ];
 
@@ -45,7 +69,7 @@ export default function Blog() {
               Blog
             </div>
           </motion.div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Insights</h1>
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Insights</h1>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Thoughts on AI, automation, and the future of software development.
           </p>
@@ -59,7 +83,7 @@ export default function Blog() {
           className="absolute top-20 left-0 w-80 h-80 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
         />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10">
           {posts.map((post, idx) => (
             <motion.div
               key={idx}
@@ -85,7 +109,7 @@ export default function Blog() {
                     <span className="text-gray-700">{post.readTime}</span>
                   </div>
                   
-                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#9929ea] group-hover:to-[#5808fb] transition-all">
+                  <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#9929ea] group-hover:to-[#5808fb] transition-all line-clamp-2">
                     {post.title}
                   </h2>
                   
