@@ -25,7 +25,7 @@ export function AnimatedFAQ() {
         className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-[#2DBFBA]/10 to-transparent rounded-full blur-3xl pointer-events-none"
       />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
           {/* Left Column */}
           <motion.div
