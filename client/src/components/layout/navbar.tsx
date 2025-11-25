@@ -50,17 +50,16 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link key={link.name} href={link.href}>
-                <a
-                  className={`text-sm font-medium transition-colors hover:[#8629e4] ${
-                    location === link.href ? "[#8629e4]" : "text-gray-700"
-                  }`}
-                >
-                  {link.name}
-                </a>
-              </Link>
-            ))}
+            {/* About */}
+            <Link href={navLinks[0].href}>
+              <a
+                className={`text-sm font-medium transition-colors hover:[#8629e4] ${
+                  location === navLinks[0].href ? "[#8629e4]" : "text-gray-700"
+                }`}
+              >
+                {navLinks[0].name}
+              </a>
+            </Link>
             
             {/* Services Dropdown */}
             <div className="relative group">
@@ -102,6 +101,19 @@ export default function Navbar() {
                 </Link>
               </motion.div>
             </div>
+
+            {/* Portfolio and Blog */}
+            {navLinks.slice(1).map((link) => (
+              <Link key={link.name} href={link.href}>
+                <a
+                  className={`text-sm font-medium transition-colors hover:[#8629e4] ${
+                    location === link.href ? "[#8629e4]" : "text-gray-700"
+                  }`}
+                >
+                  {link.name}
+                </a>
+              </Link>
+            ))}
             
             <Link href="/booking">
               <Button className="btn-gradient  border-0">
@@ -132,21 +144,20 @@ export default function Navbar() {
             className="md:hidden bg-white border-b border-gray-200"
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
-              {navLinks.map((link) => (
-                <Link key={link.name} href={link.href}>
-                  <a
-                    onClick={() => setIsOpen(false)}
-                    className={`block px-3 py-4 text-base font-medium rounded-md transition-colors ${
-                      location === link.href
-                        ? "bg-[#8629e4]/5 [#8629e4]"
-                        : "text-gray-700 hover:bg-gray-50 hover:[#8629e4]"
-                    }`}
-                  >
-                    {link.name}
-                  </a>
-                </Link>
-              ))}
-              
+              {/* About */}
+              <Link href={navLinks[0].href}>
+                <a
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-3 py-4 text-base font-medium rounded-md transition-colors ${
+                    location === navLinks[0].href
+                      ? "bg-[#8629e4]/5 [#8629e4]"
+                      : "text-gray-700 hover:bg-gray-50 hover:[#8629e4]"
+                  }`}
+                >
+                  {navLinks[0].name}
+                </a>
+              </Link>
+
               {/* Mobile Services Dropdown */}
               <div>
                 <button
@@ -192,6 +203,22 @@ export default function Navbar() {
                   )}
                 </AnimatePresence>
               </div>
+
+              {/* Portfolio and Blog */}
+              {navLinks.slice(1).map((link) => (
+                <Link key={link.name} href={link.href}>
+                  <a
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-3 py-4 text-base font-medium rounded-md transition-colors ${
+                      location === link.href
+                        ? "bg-[#8629e4]/5 [#8629e4]"
+                        : "text-gray-700 hover:bg-gray-50 hover:[#8629e4]"
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                </Link>
+              ))}
             </div>
           </motion.div>
         )}
