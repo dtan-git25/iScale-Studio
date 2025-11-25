@@ -8,6 +8,10 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Home from "@/pages/home";
 import Services from "@/pages/services";
+import AIDevelopment from "@/pages/services/ai-development";
+import WorkflowAutomation from "@/pages/services/workflow-automation";
+import AIAgents from "@/pages/services/ai-agents";
+import EcommerceSolutions from "@/pages/services/ecommerce-solutions";
 import Portfolio from "@/pages/portfolio";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
@@ -32,6 +36,10 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/services" component={Services} />
+          <Route path="/services/ai-development" component={AIDevelopment} />
+          <Route path="/services/workflow-automation" component={WorkflowAutomation} />
+          <Route path="/services/ai-agents" component={AIAgents} />
+          <Route path="/services/ecommerce-solutions" component={EcommerceSolutions} />
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />

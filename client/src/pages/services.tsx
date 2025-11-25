@@ -123,9 +123,14 @@ export default function Services() {
                   ))}
                 </ul>
                 
-                <div className="pt-8">
+                <div className="pt-8 flex gap-4">
+                  <Link href={`/services/${service.id}`}>
+                    <Button variant="outline" className="rounded-full px-8 h-12 text-base border-gray-300 hover:bg-gray-50">
+                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                   <Link href="/contact">
-                    <Button className={`bg-${service.color}-500 hover:bg-${service.color}-600 text-white border-0 px-8 h-12`}>
+                    <Button className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
                       Get Started
                     </Button>
                   </Link>
