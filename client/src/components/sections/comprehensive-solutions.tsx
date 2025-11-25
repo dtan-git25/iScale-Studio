@@ -93,7 +93,7 @@ export function ComprehensiveSolutions() {
             viewport={{ once: true }}
           >
             <p className="text-sm font-semibold text-[#9929ea] uppercase tracking-widest mb-4">Our Solutions</p>
-            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4 leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
               Comprehensive AI & Automation Solutions For Modern Businesses
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">

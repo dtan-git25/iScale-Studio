@@ -77,7 +77,7 @@ export function AnimatedServices() {
                       <Icon className="h-8 w-8 text-[#9929ea]" />
                     </motion.div>
 
-                    <h3 className="text-xl font-display font-bold mb-3 text-gray-900">{service.title}</h3>
+                    <h3 className="text-xl font-bold mb-3 text-gray-900">{service.title}</h3>
                     <p className="text-muted-foreground mb-4 leading-relaxed text-sm">{service.desc}</p>
 
                     <div className="mb-6 space-y-2">

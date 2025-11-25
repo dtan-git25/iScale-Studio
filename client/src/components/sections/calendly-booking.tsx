@@ -37,7 +37,7 @@ export function CalendlyBooking() {
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <h2 className="text-3xl lg:text-4xl font-display font-bold mb-3 text-gray-900">Schedule Your Consultation</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold mb-3 text-gray-900">Schedule Your Consultation</h2>
                 <p className="text-base text-gray-700">
                   Book a personalized 30-minute call with our solutions architect to discuss your AI transformation needs.
                 </p>

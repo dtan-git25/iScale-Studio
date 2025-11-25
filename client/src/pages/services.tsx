@@ -86,7 +86,7 @@ export default function Services() {
               Services
             </div>
           </motion.div>
-          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Our Services</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             End-to-end digital transformation services designed to help modern businesses scale efficiently.
           </p>
@@ -109,7 +109,7 @@ export default function Services() {
                 <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
                   {service.subtitle}
                 </div>
-                <h2 className="text-4xl font-display font-bold">{service.title}</h2>
+                <h2 className="text-4xl font-bold">{service.title}</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
@@ -157,7 +157,7 @@ export default function Services() {
       
       <section className="py-20 bg-card border-t border-white/5">
         <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-display font-bold mb-6">Not sure what you need?</h2>
+            <h2 className="text-3xl font-bold mb-6">Not sure what you need?</h2>
             <p className="text-muted-foreground mb-8">
                 Book a free 15-minute discovery call. We'll analyze your current setup and propose a custom automation roadmap.
             </p>

@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display font-bold text-lg mb-4">Services</h3>
+            <h3 className="font-bold text-lg mb-4">Services</h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li><Link href="/services"><a className="hover:[#8629e4] transition-colors">AI Web & App Development</a></Link></li>
               <li><Link href="/services"><a className="hover:[#8629e4] transition-colors">Workflow Automation</a></Link></li>
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display font-bold text-lg mb-4">Company</h3>
+            <h3 className="font-bold text-lg mb-4">Company</h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li><Link href="/about"><a className="hover:[#8629e4] transition-colors">About Us</a></Link></li>
               <li><Link href="/portfolio"><a className="hover:[#8629e4] transition-colors">Portfolio</a></Link></li>
@@ -56,7 +56,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display font-bold text-lg mb-4">Contact</h3>
+            <h3 className="font-bold text-lg mb-4">Contact</h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 [#8629e4] shrink-0 mt-0.5" />

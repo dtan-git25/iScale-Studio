@@ -41,7 +41,7 @@ export function AnimatedAbout() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl lg:text-3xl font-display font-bold mb-8 leading-tight">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-8 leading-tight">
               Philippines-based AI Development & Automation Agency Helping Businesses Scale Smarter
             </h2>
 
@@ -133,7 +133,7 @@ export function AnimatedAbout() {
                       >
                         <Icon className="h-4 w-4 text-[#9929ea]" />
                       </motion.div>
-                      <div className="text-2xl font-display font-bold bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent mb-1">
+                      <div className="text-2xl font-bold bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent mb-1">
                         {stat.value}
                       </div>
                       <p className="text-xs text-muted-foreground">{stat.label}</p>

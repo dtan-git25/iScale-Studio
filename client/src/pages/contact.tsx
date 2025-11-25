@@ -50,7 +50,7 @@ export default function Contact() {
               Contact Us
             </div>
           </motion.div>
-          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Get In Touch</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Get In Touch</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Whether you have a clear vision or just a problem to solve, we're here to help you navigate the AI landscape.
           </p>
@@ -71,7 +71,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-display font-bold mb-6">Let's Build Something <span className="bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent">Incredible</span></h2>
+              <h2 className="text-3xl font-bold mb-6">Let's Build Something <span className="bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent">Incredible</span></h2>
               <p className="text-xl text-muted-foreground mb-12">
                 Whether you have a clear vision or just a problem to solve, we're here to help you navigate the AI landscape.
               </p>

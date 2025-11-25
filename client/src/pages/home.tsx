@@ -53,7 +53,7 @@ function TechStack() {
             <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
               Technology Stack
             </div>
-            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Built With Industry-Leading Tools</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">Built With Industry-Leading Tools</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We leverage cutting-edge technologies and platforms to deliver powerful, scalable solutions
             </p>
@@ -109,7 +109,7 @@ export default function Home() {
               <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
                 AI-Powered Digital Solutions
               </div>
-              <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-4">
+              <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-4">
                 Transform Your Business with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#2DBFBA]">AI-Powered</span> Digital Solutions
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -177,7 +177,7 @@ export default function Home() {
               <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
                 Our Process
               </div>
-              <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Our Proven Approach</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Proven Approach</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 A structured methodology designed to deliver exceptional results while ensuring transparency and continuous collaboration.
               </p>
@@ -220,7 +220,7 @@ export default function Home() {
                         animate={{ rotate: [0, 5, -5, 0] }}
                         transition={{ duration: 4, delay: idx * 0.15, repeat: Infinity }}
                       >
-                        <span className="text-4xl font-display font-bold bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent">
+                        <span className="text-4xl font-bold bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent">
                           {step.num}
                         </span>
                       </motion.div>
@@ -270,7 +270,7 @@ export default function Home() {
               <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
                 Our Work
               </div>
-              <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Showcase of Our Projects</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4">Showcase of Our Projects</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Explore our recent projects showcasing expertise, innovation, and impact across various industries.
               </p>

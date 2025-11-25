@@ -36,7 +36,7 @@ export function AnimatedProcess() {
               <div className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/30 p-6 rounded-xl h-full hover:border-white/50 transition-all duration-300 group hover:shadow-xl">
                 {/* Animated number background */}
                 <motion.div
-                  className="text-6xl font-display font-bold bg-gradient-to-r from-[#9929ea]/15 to-[#5808fb]/15 bg-clip-text text-transparent mb-3 group-hover:from-[#9929ea]/25 group-hover:to-[#5808fb]/25 transition-all duration-300"
+                  className="text-6xl font-bold bg-gradient-to-r from-[#9929ea]/15 to-[#5808fb]/15 bg-clip-text text-transparent mb-3 group-hover:from-[#9929ea]/25 group-hover:to-[#5808fb]/25 transition-all duration-300"
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, delay: idx * 0.3, repeat: Infinity }}
                 >

@@ -45,7 +45,7 @@ export default function Blog() {
               Blog
             </div>
           </motion.div>
-          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Insights</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Insights</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Thoughts on AI, automation, and the future of software development.
           </p>
