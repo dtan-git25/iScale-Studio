@@ -147,7 +147,13 @@ export default function Home() {
       <AnimatedAbout />
 
       {/* Process Section */}
-      <section className="py-24 bg-gray-50 relative">
+      <section className="py-24 bg-white relative overflow-hidden">
+        <motion.div
+          animate={{ x: [0, -50, 50, 0], y: [0, -30, 30, 0] }}
+          transition={{ duration: 16, repeat: Infinity }}
+          className="absolute top-32 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
+        />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <motion.div
@@ -155,16 +161,15 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Our Process</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-                A structured approach to deliver world-class solutions.
+              <p className="text-sm font-semibold text-[#9929ea] uppercase tracking-widest mb-4">Our Process</p>
+              <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Our Proven Approach</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                A structured methodology designed to deliver exceptional results while ensuring transparency and continuous collaboration.
               </p>
             </motion.div>
           </div>
 
-          <AnimatedProcess />
-
-          <div className="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
               { num: "01", title: "Discovery & Consultation", desc: "Understanding your needs, goals, and technical environment." },
               { num: "02", title: "Strategy & Planning", desc: "Crafting the perfect solution approach for your business." },
@@ -174,16 +179,59 @@ export default function Home() {
             ].map((step, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                transition={{ delay: idx * 0.08, duration: 0.6 }}
+                className="group relative"
               >
-                <div className="glass-panel p-6 rounded-xl h-full">
-                  <div className="text-4xl font-display font-bold [#8629e4]/20 mb-3">{step.num}</div>
-                  <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
-                </div>
+                <motion.div
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 3, delay: idx * 0.12, repeat: Infinity }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="h-full"
+                >
+                  <div className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md border border-white/40 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden">
+                    {/* Animated Step Number Background */}
+                    <motion.div
+                      className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-[#9929ea]/10 to-[#5808fb]/10 rounded-full blur-2xl group-hover:from-[#9929ea]/20 group-hover:to-[#5808fb]/20 transition-all"
+                      animate={{ rotate: [0, 360] }}
+                      transition={{ duration: 20, repeat: Infinity }}
+                    />
+
+                    {/* Step Number */}
+                    <div className="relative z-10 mb-4">
+                      <motion.div
+                        className="inline-block"
+                        animate={{ rotate: [0, 5, -5, 0] }}
+                        transition={{ duration: 4, delay: idx * 0.15, repeat: Infinity }}
+                      >
+                        <span className="text-4xl font-display font-bold bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent">
+                          {step.num}
+                        </span>
+                      </motion.div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 relative z-10">
+                      {step.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground leading-relaxed relative z-10 flex-grow">
+                      {step.desc}
+                    </p>
+
+                    {/* Connector Line (hidden on last) */}
+                    {idx < 4 && (
+                      <motion.div
+                        className="hidden lg:block absolute bottom-1/2 -right-6 w-12 h-1 bg-gradient-to-r from-[#9929ea]/40 to-transparent"
+                        animate={{ scaleX: [0, 1] }}
+                        transition={{ delay: idx * 0.1 + 0.5, duration: 0.8 }}
+                      />
+                    )}
+                  </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
