@@ -22,19 +22,6 @@ export function CalendlyBooking() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Schedule Your Consultation</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Book a personalized 30-minute call with our solutions architect to discuss your AI transformation needs.
-            </p>
-          </motion.div>
-        </div>
-
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -44,6 +31,18 @@ export function CalendlyBooking() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Side - Info */}
             <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mb-8"
+              >
+                <h2 className="text-3xl lg:text-4xl font-display font-bold mb-3 text-gray-900">Schedule Your Consultation</h2>
+                <p className="text-base text-gray-700">
+                  Book a personalized 30-minute call with our solutions architect to discuss your AI transformation needs.
+                </p>
+              </motion.div>
+
               <h3 className="text-2xl font-bold mb-6 text-gray-900">What to Expect</h3>
               
               <div className="space-y-6">
