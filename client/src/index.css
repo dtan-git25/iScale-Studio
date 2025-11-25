@@ -94,6 +94,18 @@
 }
 
 @layer utilities {
+  .body-text {
+    @apply text-base text-gray-700;
+  }
+  
+  .body-text-sm {
+    @apply text-sm text-gray-700;
+  }
+  
+  .body-text-lg {
+    @apply text-lg text-gray-700;
+  }
+  
   .glass-panel {
     @apply bg-white/60 backdrop-blur-sm border border-gray-200/60 shadow-sm hover:shadow-md transition-shadow;
   }

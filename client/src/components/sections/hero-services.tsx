@@ -58,7 +58,7 @@ export function HeroServices() {
                     </motion.div>
                     <div>
                       <h3 className="font-bold text-gray-900 text-sm">{service.title}</h3>
-                      <p className="text-xs text-muted-foreground">{service.desc}</p>
+                      <p className="text-xs text-gray-700">{service.desc}</p>
                     </div>
                   </div>
                 </motion.div>

@@ -44,7 +44,7 @@ export function AnimatedProcess() {
                 </motion.div>
 
                 <h3 className="text-lg font-bold mb-2 text-gray-900 group-hover:text-[#9929ea] transition-colors">{step.title}</h3>
-                <p className="text-sm text-muted-foreground group-hover:text-gray-600 transition-colors">{step.desc}</p>
+                <p className="text-sm text-gray-700 group-hover:text-gray-700 transition-colors">{step.desc}</p>
 
                 {/* Animated progress bar */}
                 <motion.div

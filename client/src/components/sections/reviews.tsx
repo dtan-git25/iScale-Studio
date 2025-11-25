@@ -72,7 +72,7 @@ export function Reviews() {
               What Our Clients Say
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               Trusted by businesses across the Philippines. See why companies choose iScale Studio for their AI and digital transformation needs.
             </p>
           </motion.div>
@@ -127,7 +127,7 @@ export function Reviews() {
                     </motion.div>
                     <div>
                       <h4 className="font-bold text-gray-900 text-sm">{review.name}</h4>
-                      <p className="text-xs text-muted-foreground">{review.role} at {review.company}</p>
+                      <p className="text-xs text-gray-700">{review.role} at {review.company}</p>
                     </div>
                   </div>
                 </div>

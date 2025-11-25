@@ -58,7 +58,7 @@ export function CalendlyBooking() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">30 Minutes</h4>
-                    <p className="text-sm text-muted-foreground">Quick call to understand your needs</p>
+                    <p className="text-sm text-gray-700">Quick call to understand your needs</p>
                   </div>
                 </motion.div>
 
@@ -74,7 +74,7 @@ export function CalendlyBooking() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">Solutions Architect</h4>
-                    <p className="text-sm text-muted-foreground">Expert guidance tailored to you</p>
+                    <p className="text-sm text-gray-700">Expert guidance tailored to you</p>
                   </div>
                 </motion.div>
 
@@ -90,7 +90,7 @@ export function CalendlyBooking() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">No Obligation</h4>
-                    <p className="text-sm text-muted-foreground">Explore possibilities risk-free</p>
+                    <p className="text-sm text-gray-700">Explore possibilities risk-free</p>
                   </div>
                 </motion.div>
               </div>
@@ -117,7 +117,7 @@ export function CalendlyBooking() {
                           : "border-gray-200 hover:border-[#9929ea]"
                       }`}
                     >
-                      <div className="text-xs font-medium text-gray-600">{d.day}</div>
+                      <div className="text-xs font-medium text-gray-700">{d.day}</div>
                       <div className="text-sm font-bold text-gray-900">{d.date}</div>
                     </motion.button>
                   ))}
@@ -158,7 +158,7 @@ export function CalendlyBooking() {
                 Confirm Booking
               </motion.button>
 
-              <p className="text-xs text-center text-muted-foreground mt-4">
+              <p className="text-xs text-center text-gray-700 mt-4">
                 We'll send you a calendar invite and Zoom link
               </p>
             </div>

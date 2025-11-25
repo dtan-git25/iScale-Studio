@@ -54,7 +54,7 @@ function TechStack() {
               Technology Stack
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">Built With Industry-Leading Tools</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               We leverage cutting-edge technologies and platforms to deliver powerful, scalable solutions
             </p>
           </motion.div>
@@ -112,7 +112,7 @@ export default function Home() {
               <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-4">
                 Transform Your Business with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#2DBFBA]">AI-Powered</span> Digital Solutions
               </h1>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
                 Custom AI-powered applications, intelligent workflow automation, and autonomous agents designed for Philippine businesses to scale faster and operate smarter.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
@@ -133,7 +133,7 @@ export default function Home() {
           {/* Trusted by leading companies */}
           <div className="flex justify-center mt-16">
             <div className="w-full">
-              <p className="text-center text-xs text-gray-600 mb-8 uppercase tracking-wide">Trusted by leading companies</p>
+              <p className="text-center text-xs text-gray-700 mb-8 uppercase tracking-wide">Trusted by leading companies</p>
               <div className="flex justify-center items-center gap-12 flex-wrap">
                 {["Boosterio", "Atomic SEO", "Voley", "IBM Media", "GreenHost"].map((client, idx) => (
                   <motion.div
@@ -178,7 +178,7 @@ export default function Home() {
                 Our Process
               </div>
               <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Proven Approach</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                 A structured methodology designed to deliver exceptional results while ensuring transparency and continuous collaboration.
               </p>
             </motion.div>
@@ -232,7 +232,7 @@ export default function Home() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm text-muted-foreground leading-relaxed relative z-10 flex-grow">
+                    <p className="text-sm text-gray-700 leading-relaxed relative z-10 flex-grow">
                       {step.desc}
                     </p>
 
@@ -271,7 +271,7 @@ export default function Home() {
                 Our Work
               </div>
               <h2 className="text-4xl lg:text-5xl font-bold mb-4">Showcase of Our Projects</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                 Explore our recent projects showcasing expertise, innovation, and impact across various industries.
               </p>
             </motion.div>
@@ -336,11 +336,11 @@ export default function Home() {
                             <ArrowUpRight className="h-5 w-5 text-[#8629e4]" />
                           </motion.div>
                         </div>
-                        <p className="text-sm text-muted-foreground mb-1">{project.client}</p>
+                        <p className="text-sm text-gray-700 mb-1">{project.client}</p>
                         <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
                       </div>
 
-                      <p className="text-sm text-muted-foreground mb-6 flex-grow leading-relaxed">
+                      <p className="text-sm text-gray-700 mb-6 flex-grow leading-relaxed">
                         {project.desc}
                       </p>
 

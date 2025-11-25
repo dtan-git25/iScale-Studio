@@ -78,7 +78,7 @@ export function AnimatedServices() {
                     </motion.div>
 
                     <h3 className="text-xl font-bold mb-3 text-gray-900">{service.title}</h3>
-                    <p className="text-muted-foreground mb-4 leading-relaxed text-sm">{service.desc}</p>
+                    <p className="text-gray-700 mb-4 leading-relaxed text-sm">{service.desc}</p>
 
                     <div className="mb-6 space-y-2">
                       {[1, 2, 3, 4].map((i) => (
@@ -90,7 +90,7 @@ export function AnimatedServices() {
                           className="flex items-center gap-2"
                         >
                           <Check className="h-4 w-4 text-[#9929ea] shrink-0" />
-                          <span className="text-xs text-gray-600">Feature included</span>
+                          <span className="text-xs text-gray-700">Feature included</span>
                         </motion.div>
                       ))}
                     </div>

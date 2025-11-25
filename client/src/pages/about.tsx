@@ -18,7 +18,7 @@ export default function About() {
             </div>
           </motion.div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">About iScale Studio</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             We're a next-generation software development agency obsessed with efficiency and innovation.
           </p>
         </div>

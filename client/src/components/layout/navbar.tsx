@@ -48,7 +48,7 @@ export default function Navbar() {
               <Link key={link.name} href={link.href}>
                 <a
                   className={`text-sm font-medium transition-colors hover:[#8629e4] ${
-                    location === link.href ? "[#8629e4]" : "text-gray-600"
+                    location === link.href ? "[#8629e4]" : "text-gray-700"
                   }`}
                 >
                   {link.name}
@@ -91,7 +91,7 @@ export default function Navbar() {
                     className={`block px-3 py-4 text-base font-medium rounded-md transition-colors ${
                       location === link.href
                         ? "bg-[#8629e4]/5 [#8629e4]"
-                        : "text-gray-600 hover:bg-gray-50 hover:[#8629e4]"
+                        : "text-gray-700 hover:bg-gray-50 hover:[#8629e4]"
                     }`}
                   >
                     {link.name}

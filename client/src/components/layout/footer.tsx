@@ -16,20 +16,20 @@ export default function Footer() {
                 <img src={logo} alt="iScale Studio" className="h-8 w-auto" />
               </a>
             </Link>
-            <p className="text-muted-foreground text-xs leading-relaxed mb-6">
+            <p className="text-gray-700 text-xs leading-relaxed mb-6">
               Empowering businesses with cutting-edge AI solutions, intelligent workflow automation, and custom software development.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:[#8629e4] transition-colors">
+              <a href="https://facebook.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:[#8629e4] transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://x.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:[#8629e4] transition-colors">
+              <a href="https://x.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:[#8629e4] transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="https://linkedin.com/company/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:[#8629e4] transition-colors">
+              <a href="https://linkedin.com/company/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:[#8629e4] transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:[#8629e4] transition-colors">
+              <a href="https://instagram.com/iscalestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:[#8629e4] transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -37,7 +37,7 @@ export default function Footer() {
 
           <div>
             <h3 className="font-bold text-lg mb-4">Services</h3>
-            <ul className="space-y-3 text-sm text-gray-600">
+            <ul className="space-y-3 text-sm text-gray-700">
               <li><Link href="/services"><a className="hover:[#8629e4] transition-colors">AI Web & App Development</a></Link></li>
               <li><Link href="/services"><a className="hover:[#8629e4] transition-colors">Workflow Automation</a></Link></li>
               <li><Link href="/services"><a className="hover:[#8629e4] transition-colors">AI Agent Development</a></Link></li>
@@ -47,7 +47,7 @@ export default function Footer() {
 
           <div>
             <h3 className="font-bold text-lg mb-4">Company</h3>
-            <ul className="space-y-3 text-sm text-gray-600">
+            <ul className="space-y-3 text-sm text-gray-700">
               <li><Link href="/about"><a className="hover:[#8629e4] transition-colors">About Us</a></Link></li>
               <li><Link href="/portfolio"><a className="hover:[#8629e4] transition-colors">Portfolio</a></Link></li>
               <li><Link href="/blog"><a className="hover:[#8629e4] transition-colors">Blog</a></Link></li>
@@ -57,7 +57,7 @@ export default function Footer() {
 
           <div>
             <h3 className="font-bold text-lg mb-4">Contact</h3>
-            <ul className="space-y-3 text-sm text-gray-600">
+            <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 [#8629e4] shrink-0 mt-0.5" />
                 <span>Capas, Tarlac<br />Philippines 2315</span>
@@ -74,7 +74,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600">
+        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-700">
           <p>&copy; {new Date().getFullYear()} iScale Studio. All rights reserved.</p>
           <div className="flex space-x-6">
             <a href="#" className="hover:[#8629e4] transition-colors">Privacy Policy</a>

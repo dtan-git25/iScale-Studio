@@ -53,7 +53,7 @@ export default function Portfolio() {
             </div>
           </motion.div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Selected Works</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             See how we've helped ambitious companies transform their operations with intelligent software.
           </p>
         </div>

@@ -49,7 +49,7 @@ export function AnimatedFeatures() {
                   </motion.div>
 
                   <h3 className="text-lg font-bold mb-3 text-gray-900 group-hover:text-[#9929ea] transition-colors">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-gray-600 transition-colors">{feature.desc}</p>
+                  <p className="text-gray-700 text-sm leading-relaxed group-hover:text-gray-700 transition-colors">{feature.desc}</p>
 
                   {/* Animated bottom border */}
                   <motion.div

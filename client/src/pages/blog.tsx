@@ -46,7 +46,7 @@ export default function Blog() {
             </div>
           </motion.div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Insights</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Thoughts on AI, automation, and the future of software development.
           </p>
         </div>
@@ -80,9 +80,9 @@ export default function Blog() {
                   
                   <div className="flex items-center gap-3 text-sm text-gray-700 mb-4">
                     <Badge className={`bg-gradient-to-r ${post.gradient} text-white border-0`}>{post.category}</Badge>
-                    <span className="text-gray-600">{post.date}</span>
-                    <span className="text-gray-600">•</span>
-                    <span className="text-gray-600">{post.readTime}</span>
+                    <span className="text-gray-700">{post.date}</span>
+                    <span className="text-gray-700">•</span>
+                    <span className="text-gray-700">{post.readTime}</span>
                   </div>
                   
                   <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#9929ea] group-hover:to-[#5808fb] transition-all">

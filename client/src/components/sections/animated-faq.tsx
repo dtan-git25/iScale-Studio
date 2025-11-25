@@ -33,7 +33,7 @@ export function AnimatedFAQ() {
               FAQs
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               Get answers to common questions about our services, process, and support.
             </p>
           </motion.div>
@@ -73,7 +73,7 @@ export function AnimatedFAQ() {
                             {item.q}
                           </span>
                         </AccordionTrigger>
-                        <AccordionContent className="px-6 py-4 bg-white/50 border-t border-white/30 text-muted-foreground leading-relaxed">
+                        <AccordionContent className="px-6 py-4 bg-white/50 border-t border-white/30 text-gray-700 leading-relaxed">
                           <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -122,7 +122,7 @@ export function AnimatedFAQ() {
                             {item.q}
                           </span>
                         </AccordionTrigger>
-                        <AccordionContent className="px-6 py-4 bg-white/50 border-t border-white/30 text-muted-foreground leading-relaxed">
+                        <AccordionContent className="px-6 py-4 bg-white/50 border-t border-white/30 text-gray-700 leading-relaxed">
                           <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}

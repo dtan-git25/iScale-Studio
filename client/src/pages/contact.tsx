@@ -51,7 +51,7 @@ export default function Contact() {
             </div>
           </motion.div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Get In Touch</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Whether you have a clear vision or just a problem to solve, we're here to help you navigate the AI landscape.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function Contact() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-bold mb-6">Let's Build Something <span className="bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent">Incredible</span></h2>
-              <p className="text-xl text-muted-foreground mb-12">
+              <p className="text-xl text-gray-700 mb-12">
                 Whether you have a clear vision or just a problem to solve, we're here to help you navigate the AI landscape.
               </p>
               
@@ -95,7 +95,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg text-white">{item.title}</h3>
-                      <p className="text-muted-foreground mb-2">{item.desc}</p>
+                      <p className="text-gray-700 mb-2">{item.desc}</p>
                       {item.link && <Button variant="link" className="text-[#9929ea] p-0 h-auto">View Calendar &rarr;</Button>}
                     </div>
                   </motion.div>

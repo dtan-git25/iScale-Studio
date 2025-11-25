@@ -96,7 +96,7 @@ export function ComprehensiveSolutions() {
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
               Comprehensive AI & Automation Solutions For Modern Businesses
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               From white-label partnerships to custom AI automation, we deliver intelligent solutions that streamline operations and drive growth.
             </p>
           </motion.div>
@@ -121,7 +121,7 @@ export function ComprehensiveSolutions() {
                   <div className="border border-gray-200 rounded-2xl p-8 h-full bg-white hover:border-gray-300 hover:shadow-lg transition-all duration-300 flex flex-col">
                     {/* Badge and Icon */}
                     <div className="flex items-start justify-between mb-4">
-                      <span className="text-xs font-semibold text-gray-600 uppercase tracking-widest">
+                      <span className="text-xs font-semibold text-gray-700 uppercase tracking-widest">
                         {solution.badge}
                       </span>
                       <motion.div
@@ -135,7 +135,7 @@ export function ComprehensiveSolutions() {
 
                     {/* Title and Description */}
                     <h3 className="text-xl font-bold mb-3 text-gray-900">{solution.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
+                    <p className="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
                       {solution.desc}
                     </p>
 
@@ -178,7 +178,7 @@ export function ComprehensiveSolutions() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-700 mb-6">
             Need a custom solution? We create tailored automation strategies for unique business needs.
           </p>
           <motion.button

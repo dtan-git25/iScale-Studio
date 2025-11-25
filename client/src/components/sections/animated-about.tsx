@@ -51,7 +51,7 @@ export function AnimatedAbout() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-base text-muted-foreground leading-relaxed"
+                className="text-base text-gray-700 leading-relaxed"
               >
                 iScale Studio is a Philippines-based technology agency specializing in AI-powered web and mobile app development, workflow automation, AI agent development, and e-commerce solutions. We help businesses streamline operations, elevate customer experiences, and scale with efficiency.
               </motion.p>
@@ -61,7 +61,7 @@ export function AnimatedAbout() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-base text-muted-foreground leading-relaxed"
+                className="text-base text-gray-700 leading-relaxed"
               >
                 From intelligent apps that automate tasks to AI agents that handle customer engagement, our solutions are built to reduce manual work, unlock productivity, and accelerate growth. We combine modern design, engineering, and automation to create systems that adapt and scale with your business.
               </motion.p>
@@ -71,7 +71,7 @@ export function AnimatedAbout() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-base text-muted-foreground leading-relaxed"
+                className="text-base text-gray-700 leading-relaxed"
               >
                 Our goal is simple: empower companies with future-ready technology that makes everyday operations faster, smarter, and more efficient.
               </motion.p>
@@ -136,7 +136,7 @@ export function AnimatedAbout() {
                       <div className="text-2xl font-bold bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent mb-1">
                         {stat.value}
                       </div>
-                      <p className="text-xs text-muted-foreground">{stat.label}</p>
+                      <p className="text-xs text-gray-700">{stat.label}</p>
                     </div>
                   </motion.div>
                 </motion.div>
