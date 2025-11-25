@@ -28,9 +28,6 @@ function ScrollToTop() {
 }
 
 function Router() {
-  const [location] = useLocation();
-  const showFooter = location !== "/booking";
-
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
       <ScrollToTop />
@@ -50,7 +47,7 @@ function Router() {
           <Route component={NotFound} />
         </Switch>
       </main>
-      {showFooter && <Footer />}
+      <Footer />
     </div>
   );
 }
