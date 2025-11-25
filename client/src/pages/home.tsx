@@ -19,10 +19,10 @@ function TechCarousel() {
     { name: "PostgreSQL", icon: <Database className="h-10 w-10" />, color: "text-blue-500" },
     { name: "n8n", icon: <Workflow className="h-10 w-10" />, color: "text-orange-400" },
     { name: "Zapier", icon: <Zap className="h-10 w-10" />, color: "text-orange-500" },
-    { name: "OpenAI", icon: <Cpu className="h-10 w-10" />, color: "text-purple-400" },
-    { name: "Claude", icon: <Cpu className="h-10 w-10" />, color: "text-pink-400" },
-    { name: "Google Gemini", icon: <Cloud className="h-10 w-10" />, color: "text-blue-400" },
-    { name: "LangChain", icon: <Settings className="h-10 w-10" />, color: "text-cyan-400" }
+    { name: "OpenAI", icon: <Cpu className="h-10 w-10" />, color: "text-purple-600" },
+    { name: "Claude", icon: <Cpu className="h-10 w-10" />, color: "text-pink-600" },
+    { name: "Google Gemini", icon: <Cloud className="h-10 w-10" />, color: "text-blue-600" },
+    { name: "LangChain", icon: <Settings className="h-10 w-10" />, color: "text-cyan-600" }
   ];
 
   const itemsPerView = 6;
@@ -39,7 +39,7 @@ function TechCarousel() {
   const visibleTechs = technologies.slice(currentIndex, currentIndex + itemsPerView);
 
   return (
-    <section className="py-20 bg-card/30 border-y border-white/5">
+    <section className="py-20 bg-gray-50 border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-display font-bold mb-4">Our Technology Stack</h2>
@@ -52,7 +52,7 @@ function TechCarousel() {
             {/* Left Arrow */}
             <button
               onClick={handlePrev}
-              className="flex-shrink-0 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all text-cyan-400 hover:scale-110"
+              className="flex-shrink-0 p-3 rounded-lg bg-gray-100 border border-gray-300 hover:bg-gray-200 hover:border-gray-400 transition-all text-cyan-600 hover:scale-110"
               aria-label="Previous technologies"
             >
               <ChevronLeft className="h-6 w-6" />
@@ -70,11 +70,11 @@ function TechCarousel() {
                     transition={{ delay: idx * 0.05 }}
                     className="flex-1 min-w-0"
                   >
-                    <div className="glass-panel p-6 rounded-xl border border-white/5 hover:border-white/20 transition-all hover:bg-white/10 h-full flex flex-col items-center justify-center gap-4 group cursor-pointer">
+                    <div className="glass-panel p-6 rounded-xl border border-gray-200 hover:border-gray-300 transition-all hover:bg-gray-100 h-full flex flex-col items-center justify-center gap-4 group cursor-pointer">
                       <div className={`${tech.color} transition-transform group-hover:scale-125`}>
                         {tech.icon}
                       </div>
-                      <p className="text-sm font-mono text-muted-foreground text-center group-hover:text-cyan-400 transition-colors truncate w-full">
+                      <p className="text-sm font-mono text-gray-600 text-center group-hover:text-cyan-600 transition-colors truncate w-full">
                         {tech.name}
                       </p>
                     </div>
@@ -86,7 +86,7 @@ function TechCarousel() {
             {/* Right Arrow */}
             <button
               onClick={handleNext}
-              className="flex-shrink-0 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all text-cyan-400 hover:scale-110"
+              className="flex-shrink-0 p-3 rounded-lg bg-gray-100 border border-gray-300 hover:bg-gray-200 hover:border-gray-400 transition-all text-cyan-600 hover:scale-110"
               aria-label="Next technologies"
             >
               <ChevronRight className="h-6 w-6" />
@@ -100,7 +100,7 @@ function TechCarousel() {
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 className={`h-2 rounded-full transition-all ${
-                  idx === currentIndex ? "bg-cyan-400 w-8" : "bg-white/20 w-2 hover:bg-white/40"
+                  idx === currentIndex ? "bg-cyan-600 w-8" : "bg-gray-300 w-2 hover:bg-gray-400"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
@@ -129,11 +129,11 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-block px-3 py-1 mb-6 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm font-mono">
+              <div className="inline-block px-3 py-1 mb-6 rounded-full bg-cyan-100 border border-cyan-300 text-cyan-600 text-sm font-mono">
                 AI-Powered Digital Solutions
               </div>
               <h1 className="text-5xl lg:text-7xl font-display font-bold leading-tight mb-6">
-                Transform Your Business with <span className="text-cyan-400">AI-Powered</span> Digital Solutions
+                Transform Your Business with <span className="text-cyan-600">AI-Powered</span> Digital Solutions
               </h1>
               <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
                 Custom AI-powered applications, intelligent workflow automation, and autonomous agents designed for Philippine businesses to scale faster and operate smarter.
@@ -145,7 +145,7 @@ export default function Home() {
                   </Button>
                 </Link>
                 <Link href="/portfolio">
-                  <Button variant="outline" size="lg" className="rounded-full px-8 h-14 text-lg border-white/20 hover:bg-white/5">
+                  <Button variant="outline" size="lg" className="rounded-full px-8 h-14 text-lg border-gray-300 hover:bg-gray-50">
                     View Our Solutions
                   </Button>
                 </Link>
@@ -173,9 +173,9 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="glass-panel p-8 rounded-xl group border border-white/5 hover:border-white/20 transition-colors h-full">
-                <div className="bg-white/5 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Globe className="h-10 w-10 text-cyan-400" />
+              <div className="glass-panel p-8 rounded-xl group border border-gray-200 hover:border-gray-300 transition-colors h-full">
+                <div className="bg-gray-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Globe className="h-10 w-10 text-cyan-600" />
                 </div>
                 <h3 className="text-xl font-display font-bold mb-3">AI Web & App Development</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
@@ -183,24 +183,24 @@ export default function Home() {
                 </p>
                 <div className="mb-6 space-y-2">
                   <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-cyan-600 shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground">AI-powered features and integrations</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-cyan-600 shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground">Custom web applications</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-cyan-600 shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground">Mobile-responsive design</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-cyan-600 shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground">Scalable architecture</span>
                   </div>
                 </div>
                 <Link href="/services">
-                  <a className="inline-flex items-center text-sm font-medium text-cyan-400 hover:text-cyan-300">
+                  <a className="inline-flex items-center text-sm font-medium text-cyan-600 hover:text-cyan-700">
                     Learn More <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Link>
@@ -215,9 +215,9 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <div className="glass-panel p-8 rounded-xl group border border-white/5 hover:border-white/20 transition-colors h-full">
-                <div className="bg-white/5 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Workflow className="h-10 w-10 text-purple-400" />
+              <div className="glass-panel p-8 rounded-xl group border border-gray-200 hover:border-gray-300 transition-colors h-full">
+                <div className="bg-gray-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Workflow className="h-10 w-10 text-purple-600" />
                 </div>
                 <h3 className="text-xl font-display font-bold mb-3">Workflow Automation</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
@@ -225,19 +225,19 @@ export default function Home() {
                 </p>
                 <div className="mb-6 space-y-2">
                   <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-purple-400 shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-purple-600 shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground">Process optimization</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-purple-400 shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-purple-600 shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground">Integration solutions</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-purple-400 shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-purple-600 shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground">Time & cost savings</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-purple-400 shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-purple-600 shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground">Custom workflow design</span>
                   </div>
                 </div>
@@ -257,9 +257,9 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <div className="glass-panel p-8 rounded-xl group border border-white/5 hover:border-white/20 transition-colors h-full">
-                <div className="bg-white/5 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Cpu className="h-10 w-10 text-pink-400" />
+              <div className="glass-panel p-8 rounded-xl group border border-gray-200 hover:border-gray-300 transition-colors h-full">
+                <div className="bg-gray-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Cpu className="h-10 w-10 text-pink-600" />
                 </div>
                 <h3 className="text-xl font-display font-bold mb-3">AI Agents</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
@@ -267,19 +267,19 @@ export default function Home() {
                 </p>
                 <div className="mb-6 space-y-2">
                   <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-pink-400 shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-pink-600 shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground">Customer service automation</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-pink-400 shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-pink-600 shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground">Smart assistants</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-pink-400 shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-pink-600 shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground">24/7 availability</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-pink-400 shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-pink-600 shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground">Custom AI personalities</span>
                   </div>
                 </div>
@@ -295,7 +295,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-24 bg-card/30">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -314,7 +314,7 @@ export default function Home() {
                 Our mission is simple: empower businesses to scale faster and operate smarter through intelligent automation and custom software solutions.
               </p>
               <Link href="/about">
-                <Button variant="outline" className="border-cyan-400/30 text-cyan-400 hover:bg-cyan-400/10">
+                <Button variant="outline" className="border-cyan-600 text-cyan-600 hover:bg-cyan-50">
                   Learn More About Us <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -328,21 +328,21 @@ export default function Home() {
             >
               <div className="space-y-4">
                 <div className="glass-panel p-6 rounded-lg text-center">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2">50+</div>
+                  <div className="text-3xl font-bold text-cyan-600 mb-2">50+</div>
                   <p className="text-sm text-muted-foreground">Successful Projects</p>
                 </div>
                 <div className="glass-panel p-6 rounded-lg text-center">
-                  <div className="text-3xl font-bold text-purple-400 mb-2">100%</div>
+                  <div className="text-3xl font-bold text-purple-600 mb-2">100%</div>
                   <p className="text-sm text-muted-foreground">Client Satisfaction</p>
                 </div>
               </div>
               <div className="space-y-4 mt-8">
                 <div className="glass-panel p-6 rounded-lg text-center">
-                  <div className="text-3xl font-bold text-pink-400 mb-2">8+</div>
+                  <div className="text-3xl font-bold text-pink-600 mb-2">8+</div>
                   <p className="text-sm text-muted-foreground">Years Experience</p>
                 </div>
                 <div className="glass-panel p-6 rounded-lg text-center">
-                  <div className="text-3xl font-bold text-green-400 mb-2">40+</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">40+</div>
                   <p className="text-sm text-muted-foreground">Team Members</p>
                 </div>
               </div>
@@ -376,9 +376,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="glass-panel p-8 rounded-xl group hover:border-white/20 transition-colors border border-white/5"
+                className="glass-panel p-8 rounded-xl group hover:border-gray-300 transition-colors border border-gray-200"
               >
-                <div className="text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
+                <div className="text-cyan-600 mb-4 group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-bold mb-3">{item.title}</h3>
@@ -390,7 +390,7 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-card/30">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Our Process</h2>
@@ -415,7 +415,7 @@ export default function Home() {
                 transition={{ delay: idx * 0.1 }}
               >
                 <div className="glass-panel p-6 rounded-xl h-full">
-                  <div className="text-4xl font-display font-bold text-cyan-400/20 mb-3">{step.num}</div>
+                  <div className="text-4xl font-display font-bold text-cyan-600/20 mb-3">{step.num}</div>
                   <h3 className="text-lg font-bold mb-2">{step.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
                 </div>
@@ -447,12 +447,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
               >
-                <div className="glass-panel p-8 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors h-full">
-                  <p className="text-xs text-cyan-400 font-mono mb-3 uppercase tracking-widest">INDUSTRY: {study.industry}</p>
+                <div className="glass-panel p-8 rounded-xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-colors h-full">
+                  <p className="text-xs text-cyan-600 font-mono mb-3 uppercase tracking-widest">INDUSTRY: {study.industry}</p>
                   <h3 className="text-xl font-bold mb-4">{study.title}</h3>
                   <p className="text-muted-foreground mb-6">{study.desc}</p>
-                  <div className="pt-4 border-t border-white/10">
-                    <p className="text-sm font-mono text-cyan-400">{study.metric}</p>
+                  <div className="pt-4 border-t border-gray-200">
+                    <p className="text-sm font-mono text-cyan-600">{study.metric}</p>
                   </div>
                 </div>
               </motion.div>
@@ -461,7 +461,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/portfolio">
-              <Button variant="outline" size="lg" className="rounded-full px-8 h-12 border-cyan-400/30 text-cyan-400 hover:bg-cyan-400/10">
+              <Button variant="outline" size="lg" className="rounded-full px-8 h-12 border-cyan-600 text-cyan-600 hover:bg-cyan-50">
                 View All Projects <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -475,7 +475,7 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass-panel p-12 rounded-2xl border border-white/10">
+          <div className="glass-panel p-12 rounded-2xl border border-gray-200">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
               {/* Left Column */}
               <motion.div
@@ -507,10 +507,10 @@ export default function Home() {
                     { q: "How is data security handled?", a: "We follow industry best practices for data security. All solutions are built with GDPR, CCPA, and enterprise-grade security standards in mind." }
                   ].map((item, idx) => (
                     <AccordionItem key={idx} value={`item-${idx}`} className="border border-white/10 rounded-lg overflow-hidden">
-                      <AccordionTrigger className="px-6 py-4 hover:bg-white/5 transition-colors [&[data-state=open]]:bg-white/5">
-                        <span className="text-left font-medium text-cyan-100 text-base">{item.q}</span>
+                      <AccordionTrigger className="px-6 py-4 hover:bg-gray-100 transition-colors [&[data-state=open]]:bg-gray-100">
+                        <span className="text-left font-medium text-gray-900 text-base">{item.q}</span>
                       </AccordionTrigger>
-                      <AccordionContent className="px-6 py-4 bg-white/5 border-t border-white/10 text-muted-foreground leading-relaxed">
+                      <AccordionContent className="px-6 py-4 bg-gray-50 border-t border-gray-200 text-muted-foreground leading-relaxed">
                         {item.a}
                       </AccordionContent>
                     </AccordionItem>
@@ -523,7 +523,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-cyan-900/20 to-purple-900/20 border-y border-white/5">
+      <section className="py-20 bg-gradient-to-r from-cyan-100/30 to-purple-100/30 border-y border-gray-200">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-display font-bold mb-4">Ready to Transform Your Business?</h2>
           <p className="text-lg text-muted-foreground mb-8">
@@ -532,19 +532,19 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
             <div className="flex items-center justify-center gap-3">
-              <MessageSquare className="h-5 w-5 text-cyan-400" />
+              <MessageSquare className="h-5 w-5 text-cyan-600" />
               <div>
                 <p className="text-sm text-muted-foreground">Email</p>
-                <a href="mailto:hello@iscalestudio.com" className="font-mono text-cyan-400 hover:text-cyan-300">
+                <a href="mailto:hello@iscalestudio.com" className="font-mono text-cyan-600 hover:text-cyan-700">
                   hello@iscalestudio.com
                 </a>
               </div>
             </div>
             <div className="flex items-center justify-center gap-3">
-              <Calendar className="h-5 w-5 text-cyan-400" />
+              <Calendar className="h-5 w-5 text-cyan-600" />
               <div>
                 <p className="text-sm text-muted-foreground">Phone</p>
-                <a href="tel:+639560623082" className="font-mono text-cyan-400 hover:text-cyan-300">
+                <a href="tel:+639560623082" className="font-mono text-cyan-600 hover:text-cyan-700">
                   +63 956 0623 082
                 </a>
               </div>
