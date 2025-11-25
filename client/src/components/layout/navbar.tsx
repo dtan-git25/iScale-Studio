@@ -29,7 +29,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || isOpen ? "bg-background/80 backdrop-blur-md border-b border-white/10" : "bg-transparent"
+        scrolled || isOpen ? "bg-white/80 backdrop-blur-md border-b border-gray-200" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,8 +47,8 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href}>
                 <a
-                  className={`text-sm font-medium transition-colors hover:text-cyan-400 ${
-                    location === link.href ? "text-cyan-400" : "text-muted-foreground"
+                  className={`text-sm font-medium transition-colors hover:text-cyan-600 ${
+                    location === link.href ? "text-cyan-600" : "text-gray-600"
                   }`}
                 >
                   {link.name}
@@ -66,7 +66,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground hover:text-cyan-400 focus:outline-none"
+              className="text-foreground hover:text-cyan-600 focus:outline-none"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -81,7 +81,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-white/10"
+            className="md:hidden bg-white border-b border-gray-200"
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
               {navLinks.map((link) => (
@@ -90,8 +90,8 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                     className={`block px-3 py-4 text-base font-medium rounded-md transition-colors ${
                       location === link.href
-                        ? "bg-white/5 text-cyan-400"
-                        : "text-muted-foreground hover:bg-white/5 hover:text-cyan-400"
+                        ? "bg-cyan-50 text-cyan-600"
+                        : "text-gray-600 hover:bg-gray-50 hover:text-cyan-600"
                     }`}
                   >
                     {link.name}
