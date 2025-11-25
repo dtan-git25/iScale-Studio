@@ -10,8 +10,8 @@ export function AnimatedAbout() {
   ];
 
   const services = [
-    "AI Automation", "Business Process Automation", "API Integrations", "AI Agents",
-    "Workflow Design", "App Development", "Web Development", "E-Commerce Solutions", "Custom Solutions", "White-label Services"
+    "App Development", "E-Commerce Solutions", "Web Development", "AI Automation",
+    "Business Process Automation", "AI Agents", "API Integrations", "Workflow Design", "Custom Solutions", "White-label Services"
   ];
 
   return (
