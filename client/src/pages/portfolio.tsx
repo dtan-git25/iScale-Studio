@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Zap, Target, Users, TrendingUp } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import fintechImg from "@assets/generated_images/fintech_dashboard_project.png";
 import ecommerceImg from "@assets/generated_images/e-commerce_platform_project.png";
@@ -112,13 +112,6 @@ export default function Portfolio() {
     ? projects 
     : projects.filter(p => p.category === selectedCategory);
 
-  const stats = [
-    { icon: Zap, label: "Projects", value: "50+", color: "from-cyan-500 to-blue-500" },
-    { icon: Target, label: "Happy Clients", value: "30+", color: "from-purple-500 to-pink-500" },
-    { icon: TrendingUp, label: "Hours Saved", value: "10K+", color: "from-emerald-500 to-teal-500" },
-    { icon: Users, label: "Team Members", value: "15+", color: "from-orange-500 to-pink-500" }
-  ];
-
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Header */}
@@ -142,35 +135,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 relative overflow-hidden">
-        <motion.div
-          animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
-          transition={{ duration: 15, repeat: Infinity }}
-          className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg"
-              >
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${stat.color} flex items-center justify-center mb-4`}>
-                  <stat.icon className="h-6 w-6 text-white" />
-                </div>
-                <p className="text-sm text-gray-700 mb-1">{stat.label}</p>
-                <p className="text-4xl font-bold text-gray-900">{stat.value}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Category Filter */}
       <section className="py-16 relative overflow-hidden bg-gradient-to-b from-white/5 to-transparent border-b border-white/5">
