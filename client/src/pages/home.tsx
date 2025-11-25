@@ -21,6 +21,8 @@ import fintechImg from "@assets/generated_images/fintech_dashboard_project.png";
 import ecommerceImg from "@assets/generated_images/e-commerce_platform_project.png";
 import marketingImg from "@assets/generated_images/marketing_automation_system.png";
 import chatbotImg from "@assets/generated_images/ai_chatbot_application.png";
+import realEstateImg from "@assets/generated_images/real_estate_mobile_app.png";
+import healthcareImg from "@assets/generated_images/healthcare_management_system.png";
 
 // Tech Stack Component
 function TechStack() {

@@ -7,6 +7,8 @@ import fintechImg from "@assets/generated_images/fintech_dashboard_project.png";
 import ecommerceImg from "@assets/generated_images/e-commerce_platform_project.png";
 import marketingImg from "@assets/generated_images/marketing_automation_system.png";
 import chatbotImg from "@assets/generated_images/ai_chatbot_application.png";
+import realEstateImg from "@assets/generated_images/real_estate_mobile_app.png";
+import healthcareImg from "@assets/generated_images/healthcare_management_system.png";
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -71,10 +73,40 @@ export default function Portfolio() {
         { label: "Instant Resolution", value: "70%" },
         { label: "CSAT Improvement", value: "+42%" }
       ]
+    },
+    {
+      id: 5,
+      title: "Real Estate Mobile Platform",
+      client: "PropertyHub",
+      category: "Web Development",
+      description: "Full-stack mobile and web platform for property listings with AI-powered property matching and virtual tours.",
+      details: "Increased property inquiries by 180% and reduced agent workload by 60%.",
+      tags: ["React Native", "Node.js", "ML Matching", "Google Maps"],
+      image: realEstateImg,
+      gradient: "from-amber-500 to-orange-500",
+      metrics: [
+        { label: "Inquiries Increase", value: "+180%" },
+        { label: "Time Saved", value: "60%" }
+      ]
+    },
+    {
+      id: 6,
+      title: "Healthcare Patient Management",
+      client: "MediCare Systems",
+      category: "Web Development",
+      description: "Comprehensive patient management system with appointment scheduling, medical records, and AI-powered health analytics.",
+      details: "Improved appointment completion rate by 89% and reduced no-shows to 3%.",
+      tags: ["React", "Python", "PostgreSQL", "HIPAA Compliant"],
+      image: healthcareImg,
+      gradient: "from-red-500 to-pink-500",
+      metrics: [
+        { label: "Appointment Completion", value: "+89%" },
+        { label: "No-Show Rate", value: "3%" }
+      ]
     }
   ];
 
-  const categories = ["All", "AI Agent", "Workflow Automation", "Web Development"];
+  const categories = ["All", "Web Development", "AI Agent", "Workflow Automation"];
   
   const filteredProjects = selectedCategory === "All" 
     ? projects 
