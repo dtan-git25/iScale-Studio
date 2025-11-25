@@ -184,8 +184,12 @@ export default function Footer() {
           <div className="border-t border-white/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-700">
             <p>&copy; {new Date().getFullYear()} iScale Studio. All rights reserved.</p>
             <div className="flex space-x-6">
-              <a href="#" className="hover:text-[#8629e4] transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-[#8629e4] transition-colors">Terms of Service</a>
+              <Link href="/privacy-policy">
+                <a className="hover:text-[#8629e4] transition-colors">Privacy Policy</a>
+              </Link>
+              <Link href="/terms-of-service">
+                <a className="hover:text-[#8629e4] transition-colors">Terms of Service</a>
+              </Link>
             </div>
           </div>
         </div>

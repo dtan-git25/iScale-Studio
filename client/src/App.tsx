@@ -16,6 +16,8 @@ import Portfolio from "@/pages/portfolio";
 import About from "@/pages/about";
 import Blog from "@/pages/blog";
 import Booking from "@/pages/booking";
+import PrivacyPolicy from "@/pages/privacy-policy";
+import TermsOfService from "@/pages/terms-of-service";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
@@ -44,6 +46,8 @@ function Router() {
           <Route path="/about" component={About} />
           <Route path="/blog" component={Blog} />
           <Route path="/booking" component={Booking} />
+          <Route path="/privacy-policy" component={PrivacyPolicy} />
+          <Route path="/terms-of-service" component={TermsOfService} />
           <Route component={NotFound} />
         </Switch>
       </main>
