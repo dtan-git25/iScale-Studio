@@ -106,7 +106,7 @@ export default function Services() {
               className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-16 items-center`}
             >
               <div className="flex-1 space-y-6">
-                <div className={`inline-block px-3 py-1 rounded-full bg-${service.color}-500/10 border border-${service.color}-500/30 text-${service.color}-400 text-sm font-mono`}>
+                <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
                   {service.subtitle}
                 </div>
                 <h2 className="text-4xl font-display font-bold">{service.title}</h2>
