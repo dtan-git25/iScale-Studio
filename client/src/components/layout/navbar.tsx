@@ -47,8 +47,8 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href}>
                 <a
-                  className={`text-sm font-medium transition-colors hover:text-purple-600 ${
-                    location === link.href ? "text-purple-600" : "text-gray-600"
+                  className={`text-sm font-medium transition-colors hover:[#8629e4] ${
+                    location === link.href ? "[#8629e4]" : "text-gray-600"
                   }`}
                 >
                   {link.name}
@@ -56,7 +56,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link href="/contact">
-              <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white border-0">
+              <Button className="btn-gradient  text-white border-0">
                 Start a Project <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -66,7 +66,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground hover:text-purple-600 focus:outline-none"
+              className="text-foreground hover:[#8629e4] focus:outline-none"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -90,8 +90,8 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                     className={`block px-3 py-4 text-base font-medium rounded-md transition-colors ${
                       location === link.href
-                        ? "bg-purple-50 text-purple-600"
-                        : "text-gray-600 hover:bg-gray-50 hover:text-purple-600"
+                        ? "bg-[#8629e4]/5 [#8629e4]"
+                        : "text-gray-600 hover:bg-gray-50 hover:[#8629e4]"
                     }`}
                   >
                     {link.name}

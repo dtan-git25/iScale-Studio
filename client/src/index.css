@@ -37,7 +37,15 @@
 }
 
 :root {
-  /* Light Mode Theme - Purple Primary */
+  /* Custom Color Palette */
+  --color-primary: #8629e4;
+  --color-primary-gradient: #9929ea;
+  --color-accent-aqua: #2DBFBA;
+  --color-secondary: #5808fb;
+  --color-dark: #010F3C;
+  --color-accent-light-violet: #bc09d7;
+
+  /* Light Mode Theme */
   --background: 0 0% 100%; /* White */
   --foreground: 222 47% 11%; /* Dark text */
   
@@ -47,16 +55,16 @@
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
   
-  --primary: 262 83% 58%; /* Purple #8b5cf6 - Logo Color */
+  --primary: 269 83% 50%; /* #8629e4 */
   --primary-foreground: 210 40% 98%;
   
-  --secondary: 199 89% 48%; /* Cyan/Blue #0ea5e9 - Secondary */
+  --secondary: 176 73% 52%; /* #2DBFBA */
   --secondary-foreground: 210 40% 98%;
   
   --muted: 220 15% 45%;
   --muted-foreground: 220 15% 45%;
   
-  --accent: 262 83% 58%; /* Purple */
+  --accent: 290 91% 56%; /* #bc09d7 */
   --accent-foreground: 210 40% 98%;
   
   --destructive: 0 62.8% 30.6%;
@@ -64,7 +72,7 @@
   
   --border: 220 13% 91%;
   --input: 0 0% 98%;
-  --ring: 262 83% 58%; /* Purple ring */
+  --ring: 269 83% 50%; /* Primary ring */
 }
 
 @layer base {
@@ -74,9 +82,9 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
     background-image: 
-      radial-gradient(at 0% 0%, hsla(262, 83%, 58%, 0.1) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(199, 89%, 48%, 0.08) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, hsla(262, 83%, 58%, 0.05) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, hsla(269, 83%, 50%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(176, 73%, 52%, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(269, 83%, 50%, 0.05) 0px, transparent 50%);
     background-attachment: fixed;
   }
   
@@ -91,10 +99,21 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-purple-600;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #8629e4, #2DBFBA);
+  }
+  
+  .btn-gradient {
+    background-image: linear-gradient(to right, #8629e4, #9929ea);
+    @apply text-white;
+  }
+  
+  .btn-gradient-aqua {
+    background-image: linear-gradient(to right, #8629e4, #2DBFBA);
+    @apply text-white;
   }
   
   .glow-text {
-    text-shadow: 0 0 20px hsla(199, 89%, 48%, 0.2);
+    text-shadow: 0 0 20px hsla(269, 83%, 50%, 0.2);
   }
 }
