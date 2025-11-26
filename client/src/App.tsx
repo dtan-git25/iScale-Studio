@@ -15,6 +15,12 @@ import EcommerceSolutions from "@/pages/services/ecommerce-solutions";
 import Portfolio from "@/pages/portfolio";
 import About from "@/pages/about";
 import Blog from "@/pages/blog";
+import BlogPost1 from "@/pages/blog-post-1";
+import BlogPost2 from "@/pages/blog-post-2";
+import BlogPost3 from "@/pages/blog-post-3";
+import BlogPost4 from "@/pages/blog-post-4";
+import BlogPost5 from "@/pages/blog-post-5";
+import BlogPost6 from "@/pages/blog-post-6";
 import Booking from "@/pages/booking";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
@@ -46,6 +52,12 @@ function Router() {
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/about" component={About} />
           <Route path="/blog" component={Blog} />
+          <Route path="/blog-post-1" component={BlogPost1} />
+          <Route path="/blog-post-2" component={BlogPost2} />
+          <Route path="/blog-post-3" component={BlogPost3} />
+          <Route path="/blog-post-4" component={BlogPost4} />
+          <Route path="/blog-post-5" component={BlogPost5} />
+          <Route path="/blog-post-6" component={BlogPost6} />
           <Route path="/booking" component={Booking} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
           <Route path="/terms-of-service" component={TermsOfService} />
