@@ -483,68 +483,75 @@ export default function Home() {
                 icon: "💼",
                 title: "AI Sales Agent",
                 description: "Automate lead qualification, follow-ups, and deal management. Close deals faster with intelligent sales conversations",
-                features: ["Lead Qualification", "Deal Tracking", "Sales Analytics"]
+                features: ["Lead Qualification", "Deal Tracking", "Sales Analytics"],
+                link: "/ai-sales-agent"
               },
               {
                 icon: "🎧",
                 title: "AI Support Agent",
                 description: "Provide 24/7 customer support with intelligent troubleshooting and instant resolutions for common issues",
-                features: ["Ticketing", "Problem Solving", "Escalation"]
+                features: ["Ticketing", "Problem Solving", "Escalation"],
+                link: "/ai-support-agent"
               },
               {
                 icon: "📢",
                 title: "AI Marketing Agent",
                 description: "Manage campaigns, analyze trends, and optimize marketing strategies with data-driven insights and automation",
-                features: ["Campaign Management", "A/B Testing", "Analytics"]
+                features: ["Campaign Management", "A/B Testing", "Analytics"],
+                link: "/ai-marketing-agent"
               },
               {
                 icon: "⚡",
                 title: "AI Admin Agent",
                 description: "Handle administrative tasks, data management, and process optimization to free up your team's time",
-                features: ["Task Automation", "Data Management", "Reporting"]
+                features: ["Task Automation", "Data Management", "Reporting"],
+                link: "/ai-admin-agent"
               },
               {
                 icon: "🔬",
                 title: "AI Research Agent",
                 description: "Conduct market research, analyze competitors, and discover business opportunities with intelligent research",
-                features: ["Market Analysis", "Competitor Intel", "Insights"]
+                features: ["Market Analysis", "Competitor Intel", "Insights"],
+                link: "/ai-research-agent"
               },
               {
                 icon: "✍️",
                 title: "AI Content Agent",
                 description: "Generate high-quality content, manage publications, and optimize messaging across all channels",
-                features: ["Content Generation", "Publishing", "SEO Optimization"]
+                features: ["Content Generation", "Publishing", "SEO Optimization"],
+                link: "/ai-content-agent"
               }
             ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="group"
-              >
-                <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
-                  <div className="text-5xl mb-4">{item.icon}</div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#9929ea] group-hover:to-[#5808fb] transition-all">
-                    {item.title}
-                  </h3>
-                  
-                  <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                    {item.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {item.features.map((feature, i) => (
-                      <Badge key={i} className="bg-gradient-to-r from-[#9929ea]/10 to-[#5808fb]/10 border border-[#9929ea]/30 text-gray-700 hover:from-[#9929ea]/20 hover:to-[#5808fb]/20 transition-all text-xs">
-                        {feature}
-                      </Badge>
-                    ))}
+              <Link key={idx} href={item.link}>
+                <motion.a
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  className="group block cursor-pointer h-full"
+                >
+                  <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div className="text-5xl mb-4">{item.icon}</div>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#9929ea] group-hover:to-[#5808fb] transition-all">
+                      {item.title}
+                    </h3>
+                    
+                    <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                      {item.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {item.features.map((feature, i) => (
+                        <Badge key={i} className="bg-gradient-to-r from-[#9929ea]/10 to-[#5808fb]/10 border border-[#9929ea]/30 text-gray-700 hover:from-[#9929ea]/20 hover:to-[#5808fb]/20 transition-all text-xs">
+                          {feature}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.a>
+              </Link>
             ))}
           </div>
 

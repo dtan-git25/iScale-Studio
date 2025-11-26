@@ -34,6 +34,12 @@ import CaseStudy3 from "@/pages/case-study-3";
 import CaseStudy4 from "@/pages/case-study-4";
 import CaseStudy5 from "@/pages/case-study-5";
 import CaseStudy6 from "@/pages/case-study-6";
+import AISalesAgent from "@/pages/ai-sales-agent";
+import AISupportAgent from "@/pages/ai-support-agent";
+import AIMarketingAgent from "@/pages/ai-marketing-agent";
+import AIAdminAgent from "@/pages/ai-admin-agent";
+import AIResearchAgent from "@/pages/ai-research-agent";
+import AIContentAgent from "@/pages/ai-content-agent";
 import Booking from "@/pages/booking";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
@@ -84,6 +90,12 @@ function Router() {
           <Route path="/case-study-4" component={CaseStudy4} />
           <Route path="/case-study-5" component={CaseStudy5} />
           <Route path="/case-study-6" component={CaseStudy6} />
+          <Route path="/ai-sales-agent" component={AISalesAgent} />
+          <Route path="/ai-support-agent" component={AISupportAgent} />
+          <Route path="/ai-marketing-agent" component={AIMarketingAgent} />
+          <Route path="/ai-admin-agent" component={AIAdminAgent} />
+          <Route path="/ai-research-agent" component={AIResearchAgent} />
+          <Route path="/ai-content-agent" component={AIContentAgent} />
           <Route path="/booking" component={Booking} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
           <Route path="/terms-of-service" component={TermsOfService} />
@@ -96,15 +108,13 @@ function Router() {
   );
 }
 
-function App() {
+export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
         <Router />
+        <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
   );
 }
-
-export default App;
