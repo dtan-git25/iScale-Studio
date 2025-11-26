@@ -71,7 +71,7 @@ export function AnimatedAbout() {
               transition={{ delay: 0.2 }}
               className="text-lg text-gray-700 leading-relaxed mb-8"
             >
-              Since 2019, iScale Studio has been transforming businesses across the Philippines through cutting-edge AI development, intelligent automation, and custom software solutions. We believe technology should work harder, so your business can grow smarter.
+              iScale Studio is a Philippines-based technology agency specializing in AI-powered web and mobile app development, workflow automation, AI agent development, and e-commerce solutions. We help businesses streamline operations, elevate customer experiences, and scale with efficiency.
             </motion.p>
 
             {/* Highlights */}
