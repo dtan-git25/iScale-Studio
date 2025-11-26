@@ -88,16 +88,6 @@ export default function AISalesAgent() {
                 <li>• Agencies handling multiple client sales processes</li>
               </ul>
             </div>
-
-            <div className="bg-gradient-to-r from-[#9929ea]/15 to-[#2DBFBA]/15 border border-[#9929ea]/40 rounded-2xl p-8 text-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Ready to transform your sales process?</h3>
-              <p className="text-gray-700 mb-6">Let's deploy an AI Sales Agent that closes more deals in less time for your team.</p>
-              <Link href="/booking">
-                <Button className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
-                  Schedule Consultation
-                </Button>
-              </Link>
-            </div>
           </motion.div>
         </div>
       </section>
