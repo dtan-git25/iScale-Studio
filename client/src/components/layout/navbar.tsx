@@ -98,13 +98,25 @@ export default function Navbar() {
                   <div key={link.name}>
                     {link.submenu ? (
                       <div>
-                        <button
-                          onClick={() => setExpandedSubmenu(expandedSubmenu === link.name ? null : link.name)}
-                          className="w-full flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#8629e4] transition-colors border-b border-gray-100"
-                        >
-                          <span>{link.name}</span>
-                          <ChevronDown className={`h-3 w-3 transition-transform ${expandedSubmenu === link.name ? "rotate-180" : ""}`} />
-                        </button>
+                        <div className="flex items-center justify-between border-b border-gray-100">
+                          <Link href={link.href}>
+                            <a
+                              onClick={() => {
+                                setServicesDropdownOpen(false);
+                                setExpandedSubmenu(null);
+                              }}
+                              className="flex-1 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#8629e4] transition-colors"
+                            >
+                              {link.name}
+                            </a>
+                          </Link>
+                          <button
+                            onClick={() => setExpandedSubmenu(expandedSubmenu === link.name ? null : link.name)}
+                            className="px-3 py-3 text-gray-700 hover:text-[#8629e4] transition-colors"
+                          >
+                            <ChevronDown className={`h-3 w-3 transition-transform ${expandedSubmenu === link.name ? "rotate-180" : ""}`} />
+                          </button>
+                        </div>
                         <AnimatePresence>
                           {expandedSubmenu === link.name && (
                             <motion.div
@@ -232,13 +244,26 @@ export default function Navbar() {
                         <div key={link.name}>
                           {link.submenu ? (
                             <div>
-                              <button
-                                onClick={() => setExpandedSubmenu(expandedSubmenu === link.name ? null : link.name)}
-                                className="w-full text-left flex items-center justify-between px-6 py-3 text-sm text-gray-700 hover:text-[#8629e4] hover:bg-white transition-colors"
-                              >
-                                <span>{link.name}</span>
-                                <ChevronDown className={`h-3 w-3 transition-transform ${expandedSubmenu === link.name ? "rotate-180" : ""}`} />
-                              </button>
+                              <div className="flex items-center justify-between bg-gray-50 hover:bg-white transition-colors">
+                                <Link href={link.href}>
+                                  <a
+                                    onClick={() => {
+                                      setIsOpen(false);
+                                      setServicesDropdownOpen(false);
+                                      setExpandedSubmenu(null);
+                                    }}
+                                    className="flex-1 px-6 py-3 text-sm text-gray-700 hover:text-[#8629e4] transition-colors"
+                                  >
+                                    {link.name}
+                                  </a>
+                                </Link>
+                                <button
+                                  onClick={() => setExpandedSubmenu(expandedSubmenu === link.name ? null : link.name)}
+                                  className="px-3 py-3 text-gray-700 hover:text-[#8629e4] transition-colors"
+                                >
+                                  <ChevronDown className={`h-3 w-3 transition-transform ${expandedSubmenu === link.name ? "rotate-180" : ""}`} />
+                                </button>
+                              </div>
                               <AnimatePresence>
                                 {expandedSubmenu === link.name && (
                                   <motion.div
