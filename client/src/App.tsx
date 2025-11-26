@@ -27,6 +27,13 @@ import BlogPost9 from "@/pages/blog-post-9";
 import BlogPost10 from "@/pages/blog-post-10";
 import BlogPost11 from "@/pages/blog-post-11";
 import BlogPost12 from "@/pages/blog-post-12";
+import CaseStudies from "@/pages/case-studies";
+import CaseStudy1 from "@/pages/case-study-1";
+import CaseStudy2 from "@/pages/case-study-2";
+import CaseStudy3 from "@/pages/case-study-3";
+import CaseStudy4 from "@/pages/case-study-4";
+import CaseStudy5 from "@/pages/case-study-5";
+import CaseStudy6 from "@/pages/case-study-6";
 import Booking from "@/pages/booking";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
@@ -70,6 +77,13 @@ function Router() {
           <Route path="/blog-post-10" component={BlogPost10} />
           <Route path="/blog-post-11" component={BlogPost11} />
           <Route path="/blog-post-12" component={BlogPost12} />
+          <Route path="/case-studies" component={CaseStudies} />
+          <Route path="/case-study-1" component={CaseStudy1} />
+          <Route path="/case-study-2" component={CaseStudy2} />
+          <Route path="/case-study-3" component={CaseStudy3} />
+          <Route path="/case-study-4" component={CaseStudy4} />
+          <Route path="/case-study-5" component={CaseStudy5} />
+          <Route path="/case-study-6" component={CaseStudy6} />
           <Route path="/booking" component={Booking} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
           <Route path="/terms-of-service" component={TermsOfService} />
