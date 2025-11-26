@@ -484,35 +484,35 @@ export default function Home() {
                 title: "AI Sales Agent",
                 description: "Automate lead qualification, follow-ups, and deal management. Close deals faster with intelligent sales conversations",
                 features: ["Lead Qualification", "Deal Tracking", "Sales Analytics"],
-                link: "/ai-sales-agent"
+                link: "#"
               },
               {
                 icon: "🎧",
                 title: "AI Support Agent",
                 description: "Provide 24/7 customer support with intelligent troubleshooting and instant resolutions for common issues",
                 features: ["Ticketing", "Problem Solving", "Escalation"],
-                link: "/ai-support-agent"
+                link: "#"
               },
               {
                 icon: "📢",
                 title: "AI Marketing Agent",
                 description: "Manage campaigns, analyze trends, and optimize marketing strategies with data-driven insights and automation",
                 features: ["Campaign Management", "A/B Testing", "Analytics"],
-                link: "/ai-marketing-agent"
+                link: "#"
               },
               {
                 icon: "⚡",
                 title: "AI Admin Agent",
                 description: "Handle administrative tasks, data management, and process optimization to free up your team's time",
                 features: ["Task Automation", "Data Management", "Reporting"],
-                link: "/ai-admin-agent"
+                link: "#"
               },
               {
                 icon: "🔬",
                 title: "AI Research Agent",
                 description: "Conduct market research, analyze competitors, and discover business opportunities with intelligent research",
                 features: ["Market Analysis", "Competitor Intel", "Insights"],
-                link: "/ai-research-agent"
+                link: "#"
               },
               {
                 icon: "✍️",
