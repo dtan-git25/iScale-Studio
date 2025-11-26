@@ -128,8 +128,8 @@ export function AnimatedAbout() {
               {[
                 { value: "250+", label: "Projects Delivered", icon: "📊" },
                 { value: "50+", label: "Satisfied Clients", icon: "👥" },
-                { value: "7+", label: "Years of Expertise", icon: "⭐" },
-                { value: "5.0", label: "Ratings", icon: "🏆" }
+                { value: "7+", label: "Years of Expertise", icon: "🏆" },
+                { value: "5.0", label: "Ratings", icon: "⭐" }
               ].map((stat, idx) => (
                 <motion.div
                   key={idx}
