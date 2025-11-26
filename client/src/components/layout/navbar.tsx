@@ -47,12 +47,12 @@ export default function Navbar() {
       name: "AI Agent Development",
       href: "/services/ai-agents",
       submenu: [
-        { name: "💼 AI Sales Agent", href: "/ai-sales-agent" },
-        { name: "🎧 AI Support Agent", href: "/ai-support-agent" },
-        { name: "📢 AI Marketing Agent", href: "/ai-marketing-agent" },
-        { name: "⚡ AI Admin Agent", href: "/ai-admin-agent" },
-        { name: "🔬 AI Research Agent", href: "/ai-research-agent" },
-        { name: "✍️ AI Content Agent", href: "/ai-content-agent" },
+        { name: "AI Sales Agent", href: "/ai-sales-agent" },
+        { name: "AI Support Agent", href: "/ai-support-agent" },
+        { name: "AI Marketing Agent", href: "/ai-marketing-agent" },
+        { name: "AI Admin Agent", href: "/ai-admin-agent" },
+        { name: "AI Research Agent", href: "/ai-research-agent" },
+        { name: "AI Content Agent", href: "/ai-content-agent" },
       ]
     },
     { name: "E-commerce Solutions", href: "/services/ecommerce-solutions" },
