@@ -138,23 +138,31 @@ export function AnimatedAbout() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + idx * 0.08 }}
                   whileHover={{ y: -8 }}
-                  className="bg-gradient-to-br from-white/95 to-white/60 backdrop-blur-xl border border-white/60 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all group"
+                  className="bg-gradient-to-br from-white/95 to-white/60 backdrop-blur-xl border border-white/60 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all group relative overflow-hidden"
                   data-testid={`stat-card-${idx}`}
                 >
+                  {/* Animated Step Number Background */}
+                  <motion.div
+                    className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-[#9929ea]/10 to-[#5808fb]/10 rounded-full blur-2xl group-hover:from-[#9929ea]/20 group-hover:to-[#5808fb]/20 transition-all"
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 20, repeat: Infinity }}
+                  />
+
                   {/* Gradient background accent */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#9929ea]/5 to-[#2DBFBA]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                   
                   {/* Content */}
                   <div className="relative z-10">
-                    <div className="text-3xl sm:text-4xl mb-2">{stat.icon}</div>
-                    <motion.p
-                      initial={{ scale: 0.9 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold bg-gradient-to-r from-[#9929ea] to-[#2DBFBA] bg-clip-text text-transparent mb-2"
+                    <div className="text-3xl sm:text-4xl mb-3">{stat.icon}</div>
+                    <motion.div
+                      className="inline-block"
+                      animate={{ rotate: [0, 5, -5, 0] }}
+                      transition={{ duration: 4, delay: idx * 0.15, repeat: Infinity }}
                     >
-                      {stat.value}
-                    </motion.p>
+                      <p className="text-4xl font-bold bg-gradient-to-r from-[#9929ea] to-[#5808fb] bg-clip-text text-transparent mb-2">
+                        {stat.value}
+                      </p>
+                    </motion.div>
                     <p className="text-sm sm:text-base text-gray-700 font-medium">
                       {stat.label}
                     </p>
