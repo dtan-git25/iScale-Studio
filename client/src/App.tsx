@@ -30,6 +30,7 @@ import BlogPost12 from "@/pages/blog-post-12";
 import Booking from "@/pages/booking";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
+import Contact from "@/pages/contact";
 import { CoDaveChat } from "@/components/chat/codave-chat";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
@@ -71,6 +72,7 @@ function Router() {
           <Route path="/blog-post-11" component={BlogPost11} />
           <Route path="/blog-post-12" component={BlogPost12} />
           <Route path="/booking" component={Booking} />
+          <Route path="/contact" component={Contact} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
           <Route path="/terms-of-service" component={TermsOfService} />
           <Route component={NotFound} />
