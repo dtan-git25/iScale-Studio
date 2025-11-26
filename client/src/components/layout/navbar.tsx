@@ -67,24 +67,21 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/">
-              <a className="flex items-center">
-                <img src={logo} alt="iScale Studio" className="h-6 w-auto md:h-8" />
-              </a>
+            <Link href="/" className="flex items-center">
+              <img src={logo} alt="iScale Studio" className="h-6 w-auto md:h-8" />
             </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {/* About */}
-            <Link href={navLinks[0].href}>
-              <a
-                className={`text-sm font-medium transition-colors hover:[#8629e4] ${
-                  location === navLinks[0].href ? "[#8629e4]" : "text-gray-700"
-                }`}
-              >
-                {navLinks[0].name}
-              </a>
+            <Link 
+              href={navLinks[0].href}
+              className={`text-sm font-medium transition-colors hover:[#8629e4] ${
+                location === navLinks[0].href ? "[#8629e4]" : "text-gray-700"
+              }`}
+            >
+              {navLinks[0].name}
             </Link>
             
             {/* Services Dropdown */}
@@ -112,16 +109,15 @@ export default function Navbar() {
                     {link.submenu ? (
                       <div>
                         <div className="flex items-center justify-between border-b border-gray-100">
-                          <Link href={link.href}>
-                            <a
-                              onClick={() => {
-                                setServicesDropdownOpen(false);
-                                setExpandedSubmenu(null);
-                              }}
-                              className="flex-1 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#8629e4] transition-colors"
-                            >
-                              {link.name}
-                            </a>
+                          <Link 
+                            href={link.href}
+                            onClick={() => {
+                              setServicesDropdownOpen(false);
+                              setExpandedSubmenu(null);
+                            }}
+                            className="flex-1 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#8629e4] transition-colors"
+                          >
+                            {link.name}
                           </Link>
                           <button
                             onClick={() => setExpandedSubmenu(expandedSubmenu === link.name ? null : link.name)}
@@ -139,16 +135,16 @@ export default function Navbar() {
                               className="bg-gray-50 border-b border-gray-100 overflow-hidden"
                             >
                               {link.submenu.map((submenuItem) => (
-                                <Link key={submenuItem.name} href={submenuItem.href}>
-                                  <a
-                                    onClick={() => {
-                                      setServicesDropdownOpen(false);
-                                      setExpandedSubmenu(null);
-                                    }}
-                                    className="block px-6 py-2 text-sm text-gray-700 hover:bg-white hover:text-[#8629e4] transition-colors"
-                                  >
-                                    {submenuItem.name}
-                                  </a>
+                                <Link 
+                                  key={submenuItem.name} 
+                                  href={submenuItem.href}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    setExpandedSubmenu(null);
+                                  }}
+                                  className="block px-6 py-2 text-sm text-gray-700 hover:bg-white hover:text-[#8629e4] transition-colors"
+                                >
+                                  {submenuItem.name}
                                 </Link>
                               ))}
                             </motion.div>
@@ -156,40 +152,38 @@ export default function Navbar() {
                         </AnimatePresence>
                       </div>
                     ) : (
-                      <Link href={link.href}>
-                        <a
-                          onClick={() => {
-                            setServicesDropdownOpen(false);
-                          }}
-                          className="flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#8629e4] transition-colors border-b border-gray-100 last:border-b-0"
-                        >
-                          <span>{link.name}</span>
-                        </a>
+                      <Link 
+                        href={link.href}
+                        onClick={() => {
+                          setServicesDropdownOpen(false);
+                        }}
+                        className="flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#8629e4] transition-colors border-b border-gray-100 last:border-b-0"
+                      >
+                        <span>{link.name}</span>
                       </Link>
                     )}
                   </div>
                 ))}
-                <Link href="/services">
-                  <a
-                    onClick={() => setServicesDropdownOpen(false)}
-                    className="block px-4 py-3 text-sm font-medium text-[#8629e4] hover:bg-purple-50 transition-colors border-t border-gray-100"
-                  >
-                    View All Services →
-                  </a>
+                <Link 
+                  href="/services"
+                  onClick={() => setServicesDropdownOpen(false)}
+                  className="block px-4 py-3 text-sm font-medium text-[#8629e4] hover:bg-purple-50 transition-colors border-t border-gray-100"
+                >
+                  View All Services →
                 </Link>
               </motion.div>
             </div>
 
             {/* Portfolio and Blog */}
             {navLinks.slice(1).map((link) => (
-              <Link key={link.name} href={link.href}>
-                <a
-                  className={`text-sm font-medium transition-colors hover:[#8629e4] ${
-                    location === link.href ? "[#8629e4]" : "text-gray-700"
-                  }`}
-                >
-                  {link.name}
-                </a>
+              <Link 
+                key={link.name} 
+                href={link.href}
+                className={`text-sm font-medium transition-colors hover:[#8629e4] ${
+                  location === link.href ? "[#8629e4]" : "text-gray-700"
+                }`}
+              >
+                {link.name}
               </Link>
             ))}
             
@@ -223,17 +217,16 @@ export default function Navbar() {
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
               {/* About */}
-              <Link href={navLinks[0].href}>
-                <a
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-4 text-base font-medium rounded-md transition-colors ${
-                    location === navLinks[0].href
-                      ? "bg-[#8629e4]/5 [#8629e4]"
-                      : "text-gray-700 hover:bg-gray-50 hover:[#8629e4]"
-                  }`}
-                >
-                  {navLinks[0].name}
-                </a>
+              <Link 
+                href={navLinks[0].href}
+                onClick={() => setIsOpen(false)}
+                className={`block px-3 py-4 text-base font-medium rounded-md transition-colors ${
+                  location === navLinks[0].href
+                    ? "bg-[#8629e4]/5 [#8629e4]"
+                    : "text-gray-700 hover:bg-gray-50 hover:[#8629e4]"
+                }`}
+              >
+                {navLinks[0].name}
               </Link>
 
               {/* Mobile Services Dropdown */}
@@ -258,17 +251,16 @@ export default function Navbar() {
                           {link.submenu ? (
                             <div>
                               <div className="flex items-center justify-between bg-gray-50 hover:bg-white transition-colors">
-                                <Link href={link.href}>
-                                  <a
-                                    onClick={() => {
-                                      setIsOpen(false);
-                                      setServicesDropdownOpen(false);
-                                      setExpandedSubmenu(null);
-                                    }}
-                                    className="flex-1 px-6 py-3 text-sm text-gray-700 hover:text-[#8629e4] transition-colors"
-                                  >
-                                    {link.name}
-                                  </a>
+                                <Link 
+                                  href={link.href}
+                                  onClick={() => {
+                                    setIsOpen(false);
+                                    setServicesDropdownOpen(false);
+                                    setExpandedSubmenu(null);
+                                  }}
+                                  className="flex-1 px-6 py-3 text-sm text-gray-700 hover:text-[#8629e4] transition-colors"
+                                >
+                                  {link.name}
                                 </Link>
                                 <button
                                   onClick={() => setExpandedSubmenu(expandedSubmenu === link.name ? null : link.name)}
@@ -286,17 +278,17 @@ export default function Navbar() {
                                     className="bg-white overflow-hidden"
                                   >
                                     {link.submenu.map((submenuItem) => (
-                                      <Link key={submenuItem.name} href={submenuItem.href}>
-                                        <a
-                                          onClick={() => {
-                                            setIsOpen(false);
-                                            setServicesDropdownOpen(false);
-                                            setExpandedSubmenu(null);
-                                          }}
-                                          className="block px-9 py-2 text-sm text-gray-700 hover:text-[#8629e4] hover:bg-gray-50 transition-colors"
-                                        >
-                                          {submenuItem.name}
-                                        </a>
+                                      <Link 
+                                        key={submenuItem.name} 
+                                        href={submenuItem.href}
+                                        onClick={() => {
+                                          setIsOpen(false);
+                                          setServicesDropdownOpen(false);
+                                          setExpandedSubmenu(null);
+                                        }}
+                                        className="block px-9 py-2 text-sm text-gray-700 hover:text-[#8629e4] hover:bg-gray-50 transition-colors"
+                                      >
+                                        {submenuItem.name}
                                       </Link>
                                     ))}
                                   </motion.div>
@@ -304,30 +296,28 @@ export default function Navbar() {
                               </AnimatePresence>
                             </div>
                           ) : (
-                            <Link href={link.href}>
-                              <a
-                                onClick={() => {
-                                  setIsOpen(false);
-                                  setServicesDropdownOpen(false);
-                                }}
-                                className="block px-6 py-3 text-sm text-gray-700 hover:text-[#8629e4] hover:bg-white transition-colors"
-                              >
-                                {link.name}
-                              </a>
+                            <Link 
+                              href={link.href}
+                              onClick={() => {
+                                setIsOpen(false);
+                                setServicesDropdownOpen(false);
+                              }}
+                              className="block px-6 py-3 text-sm text-gray-700 hover:text-[#8629e4] hover:bg-white transition-colors"
+                            >
+                              {link.name}
                             </Link>
                           )}
                         </div>
                       ))}
-                      <Link href="/services">
-                        <a
-                          onClick={() => {
-                            setIsOpen(false);
-                            setServicesDropdownOpen(false);
-                          }}
-                          className="block px-6 py-3 text-sm font-medium text-[#8629e4] hover:bg-white transition-colors border-t border-gray-200"
-                        >
-                          View All Services →
-                        </a>
+                      <Link 
+                        href="/services"
+                        onClick={() => {
+                          setIsOpen(false);
+                          setServicesDropdownOpen(false);
+                        }}
+                        className="block px-6 py-3 text-sm font-medium text-[#8629e4] hover:bg-white transition-colors border-t border-gray-200"
+                      >
+                        View All Services →
                       </Link>
                     </motion.div>
                   )}
@@ -336,17 +326,17 @@ export default function Navbar() {
 
               {/* Portfolio and Blog */}
               {navLinks.slice(1).map((link) => (
-                <Link key={link.name} href={link.href}>
-                  <a
-                    onClick={() => setIsOpen(false)}
-                    className={`block px-3 py-4 text-base font-medium rounded-md transition-colors ${
-                      location === link.href
-                        ? "bg-[#8629e4]/5 [#8629e4]"
-                        : "text-gray-700 hover:bg-gray-50 hover:[#8629e4]"
-                    }`}
-                  >
-                    {link.name}
-                  </a>
+                <Link 
+                  key={link.name} 
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-3 py-4 text-base font-medium rounded-md transition-colors ${
+                    location === link.href
+                      ? "bg-[#8629e4]/5 [#8629e4]"
+                      : "text-gray-700 hover:bg-gray-50 hover:[#8629e4]"
+                  }`}
+                >
+                  {link.name}
                 </Link>
               ))}
             </div>
