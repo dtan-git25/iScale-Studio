@@ -115,7 +115,7 @@ export function AnimatedAbout() {
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Timeline */}
+          {/* Right Column - Stats */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -123,55 +123,67 @@ export function AnimatedAbout() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            {/* Timeline */}
-            <div className="relative">
-              {/* Vertical line */}
-              <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#9929ea] via-[#5808fb] to-[#2DBFBA]"></div>
-
-              {/* Timeline items */}
-              <div className="space-y-12">
-                {achievements.map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 + idx * 0.1 }}
-                    className="relative pl-24"
-                  >
-                    {/* Timeline dot */}
-                    <motion.div
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 2, delay: idx * 0.2, repeat: Infinity }}
-                      className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-[#9929ea] to-[#5808fb] flex items-center justify-center border-4 border-white shadow-lg"
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 gap-6">
+              {[
+                { value: "250+", label: "Projects Delivered", icon: "📊" },
+                { value: "50+", label: "Satisfied Clients", icon: "👥" },
+                { value: "7+", label: "Years of Expertise", icon: "⭐" },
+                { value: "5.0", label: "Ratings", icon: "🏆" }
+              ].map((stat, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + idx * 0.08 }}
+                  whileHover={{ y: -8 }}
+                  className="bg-gradient-to-br from-white/95 to-white/60 backdrop-blur-xl border border-white/60 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all group"
+                  data-testid={`stat-card-${idx}`}
+                >
+                  {/* Gradient background accent */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#9929ea]/5 to-[#2DBFBA]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="text-3xl sm:text-4xl mb-2">{stat.icon}</div>
+                    <motion.p
+                      initial={{ scale: 0.9 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold bg-gradient-to-r from-[#9929ea] to-[#2DBFBA] bg-clip-text text-transparent mb-2"
                     >
-                      <span className="text-white font-bold text-sm">{idx + 1}</span>
-                    </motion.div>
-
-                    {/* Content Card */}
-                    <motion.div
-                      whileHover={{ x: 8 }}
-                      className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-md border border-white/60 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all"
-                    >
-                      <p className="text-sm font-bold text-[#9929ea] mb-1">{item.year}</p>
-                      <p className="text-lg font-bold text-gray-900">{item.milestone}</p>
-                    </motion.div>
-                  </motion.div>
-                ))}
-              </div>
+                      {stat.value}
+                    </motion.p>
+                    <p className="text-sm sm:text-base text-gray-700 font-medium">
+                      {stat.label}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
 
-            {/* Bottom accent */}
+            {/* Bottom highlight card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.7 }}
-              className="mt-12 p-6 bg-gradient-to-r from-[#9929ea]/10 to-[#2DBFBA]/10 border border-[#9929ea]/30 rounded-2xl backdrop-blur-sm"
+              className="mt-8 p-6 sm:p-8 bg-gradient-to-r from-[#9929ea]/15 to-[#2DBFBA]/15 border border-[#9929ea]/40 rounded-2xl backdrop-blur-md relative overflow-hidden group"
             >
-              <p className="text-sm text-gray-700 text-center">
-                <span className="font-semibold text-gray-900">98% Client Satisfaction</span> — Trusted by over 50+ happy clients
-              </p>
+              {/* Animated gradient background */}
+              <motion.div
+                animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
+                transition={{ duration: 6, repeat: Infinity }}
+                className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity"
+              />
+              <div className="relative z-10">
+                <p className="text-center text-sm sm:text-base">
+                  <span className="font-display font-bold text-gray-900">Trusted by Philippines' Leading Brands</span>
+                  <br />
+                  <span className="text-gray-700">Powering businesses with AI innovation and automation</span>
+                </p>
+              </div>
             </motion.div>
           </motion.div>
         </div>
