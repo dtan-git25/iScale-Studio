@@ -449,6 +449,110 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Case Studies Section */}
+      <section className="py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <motion.div
+          animate={{ x: [0, -50, 50, 0], y: [0, 30, -30, 0] }}
+          transition={{ duration: 17, repeat: Infinity }}
+          className="absolute bottom-20 right-0 w-80 h-80 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
+                Case Studies
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4">Real Results From Real Projects</h2>
+              <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto">
+                Explore how we've helped businesses transform operations and achieve measurable growth with AI and automation.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {[
+              {
+                title: "E-Commerce Platform with AI Recommendation Engine",
+                result: "+45% Revenue",
+                industry: "E-Commerce",
+                link: "/case-study-1",
+                gradient: "from-pink-500 to-rose-500"
+              },
+              {
+                title: "Healthcare Data Analytics System",
+                result: "35% Better Outcomes",
+                industry: "Healthcare",
+                link: "/case-study-3",
+                gradient: "from-emerald-500 to-teal-500"
+              },
+              {
+                title: "Financial Services Automation Platform",
+                result: "80% Automation",
+                industry: "FinTech",
+                link: "/case-study-2",
+                gradient: "from-blue-500 to-cyan-500"
+              },
+              {
+                title: "AI-Powered Customer Support System",
+                result: "75% Automation",
+                industry: "Customer Service",
+                link: "/case-study-6",
+                gradient: "from-red-500 to-pink-500"
+              }
+            ].map((study, idx) => (
+              <Link key={idx} href={study.link}>
+                <motion.a
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  whileHover={{ y: -6 }}
+                  className="group block cursor-pointer h-full"
+                  data-testid={`homepage-case-study-${idx}`}
+                >
+                  <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div className={`h-1 w-16 bg-gradient-to-r ${study.gradient} rounded-full mb-4`}></div>
+                    
+                    <Badge className={`bg-gradient-to-r ${study.gradient} text-white border-0 w-fit mb-3`}>
+                      {study.industry}
+                    </Badge>
+                    
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#9929ea] group-hover:to-[#5808fb] transition-all line-clamp-2 flex-grow">
+                      {study.title}
+                    </h3>
+                    
+                    <div className="flex items-center justify-between pt-3 border-t border-white/20">
+                      <span className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#5808fb]">
+                        {study.result}
+                      </span>
+                      <ArrowRight className="h-5 w-5 text-[#9929ea] group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </motion.a>
+              </Link>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link href="/case-studies">
+              <Button size="lg" className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
+                View All Case Studies <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Reviews Section */}
       <Reviews />
 
