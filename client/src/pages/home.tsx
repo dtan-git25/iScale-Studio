@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import { PenSquare } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { InteractiveHero } from "@/components/hero/interactive-hero";
 import { AnimatedServices } from "@/components/sections/animated-services";
@@ -450,6 +451,108 @@ export default function Home() {
 
       {/* Reviews Section */}
       <Reviews />
+
+      {/* Blog Section */}
+      <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+        <motion.div
+          animate={{ x: [0, -50, 50, 0], y: [0, 30, -30, 0] }}
+          transition={{ duration: 17, repeat: Infinity }}
+          className="absolute top-20 right-0 w-80 h-80 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
+                Latest Insights
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4">Industry Insights & Resources</h2>
+              <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto">
+                Stay updated with our latest articles on AI, automation, and the future of technology.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                title: "The Rise of Autonomous AI Agents in Business",
+                excerpt: "How companies are moving beyond simple chatbots to fully autonomous agents that can execute complex tasks.",
+                date: "Oct 24, 2023",
+                category: "AI Trends",
+                link: "/blog-post-1",
+                gradient: "from-pink-500 to-rose-500"
+              },
+              {
+                title: "Building Your First AI Workflow: A Step-by-Step Guide",
+                excerpt: "Learn how to create intelligent automation workflows without writing code. We walk through real examples.",
+                date: "Nov 8, 2024",
+                category: "Tutorial",
+                link: "/blog-post-5",
+                gradient: "from-amber-500 to-orange-500"
+              },
+              {
+                title: "The Future of E-Commerce: AI-Powered Personalization at Scale",
+                excerpt: "Explore how AI recommendation engines are driving revenue growth and transforming online shopping.",
+                date: "Oct 30, 2024",
+                category: "AI Trends",
+                link: "/blog-post-6",
+                gradient: "from-red-500 to-pink-500"
+              }
+            ].map((post, idx) => (
+              <Link key={idx} href={post.link}>
+                <motion.a
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  className="group block cursor-pointer h-full"
+                  data-testid={`homepage-blog-card-${idx}`}
+                >
+                  <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div className={`h-1 w-16 bg-gradient-to-r ${post.gradient} rounded-full mb-4`}></div>
+                    
+                    <div className="flex items-center gap-2 mb-3">
+                      <Badge className={`bg-gradient-to-r ${post.gradient} text-white border-0 text-xs`}>{post.category}</Badge>
+                      <span className="text-xs text-gray-600">{post.date}</span>
+                    </div>
+                    
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#9929ea] group-hover:to-[#5808fb] transition-all line-clamp-2">
+                      {post.title}
+                    </h3>
+                    
+                    <p className="text-sm text-gray-700 mb-4 leading-relaxed line-clamp-2 flex-grow">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="flex items-center text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#5808fb] font-medium group-hover:translate-x-2 transition-transform text-sm">
+                      Read Article <ArrowRight className="ml-2 h-4 w-4" />
+                    </div>
+                  </div>
+                </motion.a>
+              </Link>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link href="/blog">
+              <Button size="lg" className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
+                Read All Articles <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Technologies Section */}
       <TechStack />
