@@ -23,7 +23,6 @@ export default function Navbar() {
     { name: "About", href: "/about" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
   ];
 
   const serviceLinks = [
@@ -103,7 +102,7 @@ export default function Navbar() {
               </motion.div>
             </div>
 
-            {/* Portfolio, Blog, and Contact */}
+            {/* Portfolio and Blog */}
             {navLinks.slice(1).map((link) => (
               <Link key={link.name} href={link.href}>
                 <a
