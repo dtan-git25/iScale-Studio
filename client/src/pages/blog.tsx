@@ -65,6 +65,66 @@ export default function Blog() {
       readTime: "6 min read",
       gradient: "from-red-500 to-pink-500",
       link: "/blog-post-6"
+    },
+    {
+      id: 7,
+      title: "Generative AI in Business: From Hype to ROI",
+      excerpt: "Understanding how to measure and maximize return on investment from generative AI initiatives.",
+      date: "Nov 20, 2024",
+      category: "AI Trends",
+      readTime: "9 min read",
+      gradient: "from-indigo-500 to-purple-500",
+      link: "/blog-post-7"
+    },
+    {
+      id: 8,
+      title: "Building Scalable Microservices with Node.js and Kubernetes",
+      excerpt: "A comprehensive guide to containerizing and orchestrating Node.js applications for enterprise-scale deployment.",
+      date: "Nov 18, 2024",
+      category: "Tech Stack",
+      readTime: "11 min read",
+      gradient: "from-blue-600 to-cyan-600",
+      link: "/blog-post-8"
+    },
+    {
+      id: 9,
+      title: "Data Privacy in the Age of AI: Compliance and Best Practices",
+      excerpt: "Navigating GDPR, CCPA, and emerging regulations while implementing AI systems responsibly.",
+      date: "Nov 16, 2024",
+      category: "Security",
+      readTime: "8 min read",
+      gradient: "from-rose-500 to-red-500",
+      link: "/blog-post-9"
+    },
+    {
+      id: 10,
+      title: "The Role of Machine Learning in Predictive Analytics",
+      excerpt: "Leveraging machine learning to forecast trends and make data-driven business decisions.",
+      date: "Nov 14, 2024",
+      category: "Data Science",
+      readTime: "9 min read",
+      gradient: "from-green-500 to-emerald-500",
+      link: "/blog-post-10"
+    },
+    {
+      id: 11,
+      title: "Serverless Architecture: When and Why to Go Serverless",
+      excerpt: "Making the right architectural choice between serverless and traditional infrastructure.",
+      date: "Nov 12, 2024",
+      category: "Cloud Infrastructure",
+      readTime: "10 min read",
+      gradient: "from-orange-500 to-yellow-500",
+      link: "/blog-post-11"
+    },
+    {
+      id: 12,
+      title: "Building Resilient Systems: Disaster Recovery and Business Continuity",
+      excerpt: "Essential strategies for ensuring your business stays operational when systems fail.",
+      date: "Nov 10, 2024",
+      category: "DevOps",
+      readTime: "11 min read",
+      gradient: "from-violet-600 to-purple-600",
+      link: "/blog-post-12"
     }
   ];
 

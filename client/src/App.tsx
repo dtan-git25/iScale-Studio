@@ -21,6 +21,12 @@ import BlogPost3 from "@/pages/blog-post-3";
 import BlogPost4 from "@/pages/blog-post-4";
 import BlogPost5 from "@/pages/blog-post-5";
 import BlogPost6 from "@/pages/blog-post-6";
+import BlogPost7 from "@/pages/blog-post-7";
+import BlogPost8 from "@/pages/blog-post-8";
+import BlogPost9 from "@/pages/blog-post-9";
+import BlogPost10 from "@/pages/blog-post-10";
+import BlogPost11 from "@/pages/blog-post-11";
+import BlogPost12 from "@/pages/blog-post-12";
 import Booking from "@/pages/booking";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
@@ -58,6 +64,12 @@ function Router() {
           <Route path="/blog-post-4" component={BlogPost4} />
           <Route path="/blog-post-5" component={BlogPost5} />
           <Route path="/blog-post-6" component={BlogPost6} />
+          <Route path="/blog-post-7" component={BlogPost7} />
+          <Route path="/blog-post-8" component={BlogPost8} />
+          <Route path="/blog-post-9" component={BlogPost9} />
+          <Route path="/blog-post-10" component={BlogPost10} />
+          <Route path="/blog-post-11" component={BlogPost11} />
+          <Route path="/blog-post-12" component={BlogPost12} />
           <Route path="/booking" component={Booking} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
           <Route path="/terms-of-service" component={TermsOfService} />
