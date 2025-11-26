@@ -152,7 +152,7 @@ export default function Home() {
                 Custom AI-powered applications, intelligent workflow automation, and autonomous agents designed for Philippine businesses to scale faster and operate smarter.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link href="/contact">
+                <Link href="/booking">
                   <Button size="lg" className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
                     Schedule a Consultation
                   </Button>
