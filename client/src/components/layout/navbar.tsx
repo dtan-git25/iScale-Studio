@@ -9,6 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [aiAgentSubmenuOpen, setAiAgentSubmenuOpen] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
@@ -29,7 +30,18 @@ export default function Navbar() {
   const serviceLinks = [
     { name: "AI Web & App Development", href: "/services/ai-development" },
     { name: "Workflow Automation", href: "/services/workflow-automation" },
-    { name: "AI Agent Development", href: "/services/ai-agents" },
+    {
+      name: "AI Agent Development",
+      href: "/services/ai-agents",
+      submenu: [
+        { name: "💼 AI Sales Agent", href: "/ai-sales-agent" },
+        { name: "🎧 AI Support Agent", href: "/ai-support-agent" },
+        { name: "📢 AI Marketing Agent", href: "/ai-marketing-agent" },
+        { name: "⚡ AI Admin Agent", href: "/ai-admin-agent" },
+        { name: "🔬 AI Research Agent", href: "/ai-research-agent" },
+        { name: "✍️ AI Content Agent", href: "/ai-content-agent" },
+      ]
+    },
     { name: "E-commerce Solutions", href: "/services/ecommerce-solutions" },
   ];
 
@@ -82,15 +94,49 @@ export default function Navbar() {
                   servicesDropdownOpen ? "block" : "hidden"
                 }`}
               >
-                {serviceLinks.map((link) => (
-                  <Link key={link.name} href={link.href}>
-                    <a
-                      onClick={() => setServicesDropdownOpen(false)}
-                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#8629e4] transition-colors border-b border-gray-100 last:border-b-0"
-                    >
-                      {link.name}
-                    </a>
-                  </Link>
+                {serviceLinks.map((link, idx) => (
+                  <div key={link.name}>
+                    <div className="relative group">
+                      <Link href={link.href}>
+                        <a
+                          onClick={() => {
+                            setServicesDropdownOpen(false);
+                            setAiAgentSubmenuOpen(false);
+                          }}
+                          className="flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#8629e4] transition-colors border-b border-gray-100 last:border-b-0"
+                        >
+                          <span>{link.name}</span>
+                          {link.submenu && (
+                            <ChevronDown className="h-3 w-3 group-hover:rotate-180 transition-transform" />
+                          )}
+                        </a>
+                      </Link>
+                      
+                      {/* Submenu for AI Agents */}
+                      {link.submenu && (
+                        <motion.div
+                          initial={{ opacity: 0, x: -5 }}
+                          whileHover={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute left-full top-0 ml-1 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible z-50"
+                        >
+                          {link.submenu.map((submenuItem) => (
+                            <Link key={submenuItem.name} href={submenuItem.href}>
+                              <a
+                                onClick={() => {
+                                  setServicesDropdownOpen(false);
+                                  setAiAgentSubmenuOpen(false);
+                                }}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#8629e4] transition-colors first:rounded-t-lg last:rounded-b-lg"
+                              >
+                                {submenuItem.name}
+                              </a>
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </div>
+                  </div>
                 ))}
                 <Link href="/services">
                   <a
@@ -177,17 +223,58 @@ export default function Navbar() {
                       className="bg-gray-50 rounded-md overflow-hidden"
                     >
                       {serviceLinks.map((link) => (
-                        <Link key={link.name} href={link.href}>
-                          <a
-                            onClick={() => {
-                              setIsOpen(false);
-                              setServicesDropdownOpen(false);
-                            }}
-                            className="block px-6 py-3 text-sm text-gray-700 hover:text-[#8629e4] hover:bg-white transition-colors"
-                          >
-                            {link.name}
-                          </a>
-                        </Link>
+                        <div key={link.name}>
+                          <div className="flex items-center justify-between px-6 py-3">
+                            <Link href={link.href}>
+                              <a
+                                onClick={() => {
+                                  setIsOpen(false);
+                                  setServicesDropdownOpen(false);
+                                }}
+                                className="block text-sm text-gray-700 hover:text-[#8629e4] hover:bg-white transition-colors w-full"
+                              >
+                                {link.name}
+                              </a>
+                            </Link>
+                            {link.submenu && (
+                              <button
+                                onClick={() => setAiAgentSubmenuOpen(!aiAgentSubmenuOpen)}
+                                className="ml-2 text-gray-700 hover:text-[#8629e4]"
+                              >
+                                <ChevronDown className={`h-3 w-3 transition-transform ${aiAgentSubmenuOpen ? "rotate-180" : ""}`} />
+                              </button>
+                            )}
+                          </div>
+                          
+                          {/* Mobile AI Agent Submenu */}
+                          {link.submenu && (
+                            <AnimatePresence>
+                              {aiAgentSubmenuOpen && (
+                                <motion.div
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: "auto" }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  className="bg-white overflow-hidden"
+                                >
+                                  {link.submenu.map((submenuItem) => (
+                                    <Link key={submenuItem.name} href={submenuItem.href}>
+                                      <a
+                                        onClick={() => {
+                                          setIsOpen(false);
+                                          setServicesDropdownOpen(false);
+                                          setAiAgentSubmenuOpen(false);
+                                        }}
+                                        className="block px-9 py-2 text-sm text-gray-700 hover:text-[#8629e4] hover:bg-gray-50 transition-colors"
+                                      >
+                                        {submenuItem.name}
+                                      </a>
+                                    </Link>
+                                  ))}
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          )}
+                        </div>
                       ))}
                       <Link href="/services">
                         <a
