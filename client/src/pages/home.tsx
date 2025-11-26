@@ -320,6 +320,131 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Workflow Automation Section */}
+      <section className="py-24 md:py-32 bg-gradient-to-b from-white to-blue-50/30 relative overflow-hidden">
+        <motion.div
+          animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
+          transition={{ duration: 20, repeat: Infinity }}
+          className="absolute top-20 left-0 w-80 h-80 bg-gradient-to-br from-[#2DBFBA]/12 to-transparent rounded-full blur-3xl pointer-events-none"
+        />
+        <motion.div
+          animate={{ x: [0, -50, 50, 0], y: [0, 30, -30, 0] }}
+          transition={{ duration: 18, repeat: Infinity }}
+          className="absolute bottom-20 right-0 w-72 h-72 bg-gradient-to-br from-[#9929ea]/12 to-transparent rounded-full blur-3xl pointer-events-none"
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
+                Workflow Automation
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4">
+                Intelligent Workflow Automation to Scale Efficiently
+              </h2>
+              <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto">
+                Eliminate repetitive tasks, reduce human errors, and accelerate business processes with intelligent automation powered by AI and workflow orchestration.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                icon: "⚙️",
+                title: "Process Automation",
+                description: "Automate repetitive tasks and manual workflows to boost productivity and reduce operational costs",
+                features: ["RPA", "Task Scheduling", "Batch Processing"]
+              },
+              {
+                icon: "🔗",
+                title: "Seamless Integration",
+                description: "Connect all your business tools and systems with intelligent automation bridges",
+                features: ["API Integration", "Data Sync", "Multi-System"]
+              },
+              {
+                icon: "📊",
+                title: "Data-Driven Workflows",
+                description: "Make intelligent decisions with real-time data processing and analytics-driven automation",
+                features: ["Real-time Processing", "Smart Routing", "Data Analytics"]
+              },
+              {
+                icon: "🤝",
+                title: "Collaborative Automation",
+                description: "Enable teams to work smarter with automated handoffs and intelligent task distribution",
+                features: ["Task Routing", "Team Collaboration", "Approval Workflows"]
+              },
+              {
+                icon: "📈",
+                title: "Business Intelligence",
+                description: "Gain visibility into your processes with detailed analytics, dashboards, and performance metrics",
+                features: ["Analytics", "Reporting", "Insights"]
+              },
+              {
+                icon: "🔐",
+                title: "Secure & Compliant",
+                description: "Maintain security and compliance with audit trails, access controls, and data protection",
+                features: ["Audit Logs", "Access Control", "Compliance"]
+              }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="group"
+              >
+                <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <div className="text-5xl mb-4">{item.icon}</div>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#9929ea] group-hover:to-[#5808fb] transition-all">
+                    {item.title}
+                  </h3>
+                  
+                  <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                    {item.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {item.features.map((feature, i) => (
+                      <Badge key={i} className="bg-gradient-to-r from-[#9929ea]/10 to-[#5808fb]/10 border border-[#9929ea]/30 text-gray-700 hover:from-[#9929ea]/20 hover:to-[#5808fb]/20 transition-all text-xs">
+                        {feature}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-r from-[#2DBFBA]/15 to-[#9929ea]/15 border border-[#2DBFBA]/40 rounded-2xl p-8 sm:p-12 backdrop-blur-md text-center"
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+              Ready to automate your workflows?
+            </h3>
+            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+              Let's identify processes you can automate and build workflows that streamline your operations.
+            </p>
+            <Link href="/services/workflow-automation">
+              <Button className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
+                Explore Workflow Automation <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Process Section */}
       <section className="py-24 bg-white relative overflow-hidden">
         <motion.div
