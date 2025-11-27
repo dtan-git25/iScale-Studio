@@ -168,7 +168,7 @@ export default function Home() {
           {/* Client Testimonials */}
           <div className="flex justify-center mt-16">
             <div className="w-full max-w-4xl">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
                   {
                     quote: "iScale transformed our business operations with an intelligent automation system that reduced manual tasks by 80%. Their team was professional and delivered on time.",
@@ -177,8 +177,13 @@ export default function Home() {
                   },
                   {
                     quote: "The AI-powered web platform they built increased our customer engagement by 150%. Highly recommended for any business looking to scale with technology.",
-                    author: "Juan dela Cruz",
+                    author: "Rafael Reyes",
                     role: "Founder & CEO"
+                  },
+                  {
+                    quote: "Outstanding service and exceptional technical expertise. They built a custom ML model that improved our predictive accuracy by 65%. Definitely the best choice for AI solutions.",
+                    author: "Anna Mercado",
+                    role: "Tech Lead"
                   }
                 ].map((testimonial, idx) => (
                   <motion.div
