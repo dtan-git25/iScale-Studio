@@ -1,12 +1,18 @@
 import { Link } from "wouter";
-import { Facebook, X, Linkedin, Instagram, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
+import { Facebook, Linkedin, Instagram, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@assets/iScale_Studio_V_1764045233039.png";
+
+const XLogo = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.207-6.806-5.979 6.806h-3.308l7.73-8.835L.424 2.25h6.852l4.707 6.225 5.455-6.225zM17.15 20.205h1.829L5.881 4.09H3.967l13.183 16.115z"/>
+  </svg>
+);
 
 export default function Footer() {
   const socialLinks = [
     { icon: Facebook, href: "https://facebook.com/iscalestudio/", label: "Facebook" },
-    { icon: X, href: "https://x.com/iscalestudio/", label: "X" },
+    { icon: XLogo, href: "https://x.com/iscalestudio/", label: "X" },
     { icon: Linkedin, href: "https://linkedin.com/company/iscalestudio/", label: "LinkedIn" },
     { icon: Instagram, href: "https://instagram.com/iscalestudio/", label: "Instagram" }
   ];
@@ -81,7 +87,7 @@ export default function Footer() {
                         whileHover={{ scale: 1.1, y: -3 }}
                         className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#9929ea]/10 to-[#5808fb]/10 border border-[#9929ea]/30 flex items-center justify-center text-[#8629e4] hover:from-[#9929ea] hover:to-[#5808fb] hover:text-white hover:border-[#9929ea] transition-all"
                       >
-                        <Icon className="h-5 w-5" />
+                        <Icon className={social.label === "X" ? "h-5 w-5" : "h-5 w-5"} />
                       </motion.a>
                     );
                   })}
