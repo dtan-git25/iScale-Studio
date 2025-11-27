@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Smartphone, Bot, ShoppingCart, Brain } from "lucide-react";
+import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Smartphone, Bot, ShoppingCart, Brain, Clock, Target } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -303,6 +303,60 @@ export default function Home() {
                     </motion.div>
                   </a>
                 </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Our Services Section */}
+      <section className="py-24 bg-gradient-to-b from-white/5 to-transparent relative overflow-hidden">
+        <motion.div
+          animate={{ x: [0, -50, 50, 0], y: [0, 20, -20, 0] }}
+          transition={{ duration: 15, repeat: Infinity }}
+          className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-[#2DBFBA]/10 to-transparent rounded-full blur-3xl pointer-events-none"
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
+                Why Choose Us
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4">Why Choose Our Services?</h2>
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                We deliver solutions that directly impact your business growth and operational efficiency.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Clock, title: "Save Time", desc: "Reduce manual work by up to 80%" },
+              { icon: Zap, title: "Boost Efficiency", desc: "Streamline operations instantly" },
+              { icon: Target, title: "Scale Faster", desc: "Grow without growing headcount" },
+              { icon: Shield, title: "Enterprise-Grade", desc: "Secure and reliable solutions" }
+            ].map((benefit, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="group"
+              >
+                <div className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 text-center h-full">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#9929ea] to-[#5808fb] flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                    <benefit.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
+                  <p className="text-gray-700">{benefit.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
