@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Smartphone, Bot, ShoppingCart, Brain } from "lucide-react";
+import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Smartphone, Bot, ShoppingCart, Brain, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -23,8 +23,7 @@ import marketingImg from "@assets/generated_images/marketing_automation_system.p
 import chatbotImg from "@assets/generated_images/ai_chatbot_application.png";
 import realEstateImg from "@assets/generated_images/real_estate_mobile_app.png";
 import healthcareImg from "@assets/generated_images/healthcare_management_system.png";
-import aiAppImg from "@assets/generated_images/ai_mobile_app_development_interface.png";
-import { CheckCircle2 } from "lucide-react";
+import webDevImg from "@assets/generated_images/ai_mobile_app_development_interface.png";
 
 // Tech Stack Component
 function TechStack() {
@@ -311,33 +310,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* AI App Development Section */}
-      <section className="py-24 md:py-32 bg-gradient-to-b from-white to-blue-50/20 relative overflow-hidden">
-        <motion.div
-          animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
-          transition={{ duration: 20, repeat: Infinity }}
-          className="absolute top-20 left-0 w-80 h-80 bg-gradient-to-br from-[#2DBFBA]/12 to-transparent rounded-full blur-3xl pointer-events-none"
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
-                Build Intelligent Applications
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4">
-                AI App Development
-              </h2>
-              <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto">
-                We create custom mobile and desktop applications infused with Artificial Intelligence. From AI-powered assistants to intelligent data processing, our apps deliver powerful functionality right in your users' hands.
-              </p>
-            </motion.div>
-          </div>
-
+      {/* AI App Development Section - EXACT CODE FROM SERVICE PAGE */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -345,7 +320,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img src={aiAppImg} alt="AI App Development" className="rounded-xl shadow-lg" />
+              <img src={webDevImg} alt="AI App Development" className="rounded-xl shadow-lg" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -354,7 +329,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <h3 className="text-4xl font-bold">What We Deliver</h3>
+              <h2 className="text-4xl font-bold">What We Deliver</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Our AI app development expertise spans across native iOS/Android development and cross-platform frameworks. We leverage the latest AI technologies to create mobile applications that are intelligent, responsive, and user-friendly.
               </p>
@@ -375,6 +350,37 @@ export default function Home() {
               </ul>
             </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl p-12 mb-20"
+          >
+            <h2 className="text-4xl font-bold mb-12">Why Choose Our AI App Development?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                "Faster time-to-market with intelligent automation",
+                "Enhanced user experiences with personalization",
+                "Reduced operational costs through smart algorithms",
+                "Competitive advantage with cutting-edge technology",
+                "Seamless integration with existing systems",
+                "Optimized performance for mobile devices"
+              ].map((benefit, i) => (
+                <div key={i} className="flex gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-r from-[#9929ea] to-[#5808fb]">
+                      <CheckCircle2 className="h-6 w-6 text-white" />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-lg text-gray-700 font-medium">{benefit}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
           {/* Featured App Development Capabilities */}
           <motion.div
@@ -457,22 +463,20 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Bottom CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-[#2DBFBA]/15 to-[#9929ea]/15 border border-[#2DBFBA]/40 rounded-2xl p-8 sm:p-12 backdrop-blur-md text-center"
+            transition={{ duration: 0.6 }}
+            className="text-center space-y-6"
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
-              Ready to build intelligent mobile apps?
-            </h3>
-            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-              Let's discuss how AI can transform your mobile application and deliver powerful solutions to your users.
+            <h2 className="text-4xl font-bold">Ready to Build Your Intelligent Mobile App?</h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              Let's discuss how AI can transform your mobile application and help you deliver powerful solutions to your users.
             </p>
-            <Link href="/services/ai-app-development">
-              <Button className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
-                Explore AI App Development <ArrowRight className="ml-2 h-4 w-4" />
+            <Link href="/booking">
+              <Button size="lg" className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
+                Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </motion.div>
