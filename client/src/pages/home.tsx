@@ -172,9 +172,9 @@ export default function Home() {
 
           {/* Trusted by leading companies */}
           <div className="flex justify-center mt-16">
-            <div className="w-full">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <p className="text-center text-xs text-gray-700 mb-8 uppercase tracking-wide">Trusted by leading companies</p>
-              <div className="flex justify-center items-center gap-8 md:gap-12 flex-wrap">
+              <div className="flex justify-center items-center gap-8 md:gap-16 flex-wrap">
                 {[
                   { logo: boosterioLogo, name: "Boosterio" },
                   { logo: atomicSeoLogo, name: "Atomic SEO" },
@@ -190,7 +190,7 @@ export default function Home() {
                     transition={{ delay: idx * 0.08, duration: 0.5 }}
                     className="flex items-center justify-center hover:scale-110 transition-transform"
                   >
-                    <img src={client.logo} alt={client.name} className="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                    <img src={client.logo} alt={client.name} className="h-20 object-contain grayscale hover:grayscale-0 transition-all" />
                   </motion.div>
                 ))}
               </div>
