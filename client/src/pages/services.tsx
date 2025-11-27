@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, Zap, Target, Clock, Shield } from "lucide-react";
+import { CheckCircle2, ArrowRight, Zap, Target, Clock, Shield, Globe, Smartphone, Bot, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import webDevImg from "@assets/generated_images/futuristic_web_development_concept.png";
@@ -23,7 +23,7 @@ export default function Services() {
         "Intelligent Search & Recommendation Systems"
       ],
       image: webDevImg,
-      icon: "Code",
+      icon: Globe,
       gradient: "from-cyan-500 to-blue-500",
       href: "/services/ai-web-development"
     },
@@ -41,7 +41,7 @@ export default function Services() {
         "Computer Vision & Image Recognition"
       ],
       image: webDevImg,
-      icon: "Code",
+      icon: Smartphone,
       gradient: "from-blue-500 to-indigo-500",
       href: "/services/ai-app-development"
     },
@@ -59,7 +59,7 @@ export default function Services() {
         "No-code/Low-code Solutions"
       ],
       image: workflowImg,
-      icon: "Zap",
+      icon: Zap,
       gradient: "from-purple-500 to-pink-500",
       href: "/services/workflow-automation"
     },
@@ -77,7 +77,7 @@ export default function Services() {
         "Business Intelligence Assistants"
       ],
       image: aiAgentImg,
-      icon: "Target",
+      icon: Bot,
       gradient: "from-pink-500 to-rose-500",
       href: "/services/ai-agents"
     },
@@ -96,7 +96,7 @@ export default function Services() {
         "Analytics & Conversion Optimization"
       ],
       image: ecommerceImg,
-      icon: "Shield",
+      icon: ShoppingCart,
       gradient: "from-emerald-500 to-teal-500",
       href: "/services/ecommerce-solutions"
     }
@@ -159,7 +159,7 @@ export default function Services() {
                       className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all h-full flex flex-col"
                     >
                       <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                        <Zap className="h-7 w-7 text-white" />
+                        <service.icon className="h-7 w-7 text-white" />
                       </div>
                       
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
