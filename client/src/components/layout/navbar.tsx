@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@assets/optimized_images/iScale_Studio_logo.webp";
+import logo from "@assets/optimized_images/iScale_Studio_logo_optimized.webp";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

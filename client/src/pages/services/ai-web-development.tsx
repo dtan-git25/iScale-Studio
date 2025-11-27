@@ -3,7 +3,7 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import webDevImg from "@assets/optimized_images/futuristic_web_development_concept.webp";
+import webDevImg from "@assets/optimized_images/futuristic_web_development_concept_small.webp";
 import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function AIWebDevelopmentPage() {
@@ -76,7 +76,7 @@ export default function AIWebDevelopmentPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img src={webDevImg} alt="AI Web Development" className="rounded-xl shadow-lg" width="800" height="436" />
+              <img src={webDevImg} alt="AI Web Development" className="rounded-xl shadow-lg" width="600" height="327" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}

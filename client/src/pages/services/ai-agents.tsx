@@ -3,7 +3,7 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import aiAgentImg from "@assets/optimized_images/ai_agent_concept.webp";
+import aiAgentImg from "@assets/optimized_images/ai_agent_concept_small.webp";
 import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function AIAgentsPage() {
@@ -76,7 +76,7 @@ export default function AIAgentsPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img src={aiAgentImg} alt="AI Agents" className="rounded-xl shadow-lg" width="800" height="436" />
+              <img src={aiAgentImg} alt="AI Agents" className="rounded-xl shadow-lg" width="600" height="327" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}

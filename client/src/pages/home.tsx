@@ -24,12 +24,12 @@ import marketingImg from "@assets/optimized_images/marketing_automation_system.w
 import chatbotImg from "@assets/optimized_images/ai_chatbot_application.webp";
 import realEstateImg from "@assets/optimized_images/real_estate_mobile_app.webp";
 import healthcareImg from "@assets/optimized_images/healthcare_management_system.webp";
-import webDevImg from "@assets/optimized_images/ai_web_development_modern_interface.webp";
-import appDevImg from "@assets/optimized_images/ai_mobile_app_development_interface.webp";
-import workflowImg from "@assets/optimized_images/workflow_automation_process_diagram.webp";
-import aiAgentImg from "@assets/optimized_images/ai_agent_assistant_interface.webp";
-import ecommerceSvcImg from "@assets/optimized_images/e-commerce_platform_interface.webp";
-import mlDevImg from "@assets/optimized_images/ml_models_development_dashboard.webp";
+import webDevImg from "@assets/optimized_images/ai_web_development_modern_interface_small.webp";
+import appDevImg from "@assets/optimized_images/ai_mobile_app_development_interface_small.webp";
+import workflowImg from "@assets/optimized_images/workflow_automation_process_diagram_small.webp";
+import aiAgentImg from "@assets/optimized_images/ai_agent_concept_small.webp";
+import ecommerceSvcImg from "@assets/optimized_images/e-commerce_platform_interface_small.webp";
+import mlDevImg from "@assets/optimized_images/machine_learning_model_development_dashboard_small.webp";
 
 // Tech Stack Component
 function TechStack() {
@@ -493,8 +493,8 @@ export default function Home() {
                     <img 
                       src={service.image} 
                       alt={service.title}
-                      width="800"
-                      height="436"
+                      width="600"
+                      height="327"
                       loading="lazy"
                       className="relative rounded-2xl shadow-2xl w-full object-cover"
                     />

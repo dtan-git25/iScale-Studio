@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Facebook, Linkedin, Instagram, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import logo from "@assets/optimized_images/iScale_Studio_logo.webp";
+import logo from "@assets/optimized_images/iScale_Studio_logo_optimized.webp";
 
 const XLogo = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
