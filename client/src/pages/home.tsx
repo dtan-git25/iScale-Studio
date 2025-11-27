@@ -5,11 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { PenSquare } from "lucide-react";
-import boosterioLogo from "@assets/generated_images/boosterio_tech_company_logo.png";
-import atomicSeoLogo from "@assets/generated_images/atomic_seo_agency_logo.png";
-import voleyLogo from "@assets/generated_images/voley_sports_brand_logo.png";
-import ibmMediaLogo from "@assets/generated_images/ibm_media_company_logo.png";
-import greenhostLogo from "@assets/generated_images/greenhost_eco-friendly_hosting_logo.png";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AnimatedServices } from "@/components/sections/animated-services";
 import { AnimatedProcess } from "@/components/sections/animated-process";
@@ -170,27 +165,40 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Trusted by leading companies */}
+          {/* Client Testimonials */}
           <div className="flex justify-center mt-16">
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <p className="text-center text-xs text-gray-700 mb-8 uppercase tracking-wide">Trusted by leading companies</p>
-              <div className="flex justify-center items-center gap-8 md:gap-16 flex-wrap">
+            <div className="w-full max-w-4xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  { logo: boosterioLogo, name: "Boosterio" },
-                  { logo: atomicSeoLogo, name: "Atomic SEO" },
-                  { logo: voleyLogo, name: "Voley" },
-                  { logo: ibmMediaLogo, name: "IBM Media" },
-                  { logo: greenhostLogo, name: "GreenHost" }
-                ].map((client, idx) => (
+                  {
+                    quote: "iScale transformed our business operations with an intelligent automation system that reduced manual tasks by 80%. Their team was professional and delivered on time.",
+                    author: "Maria Santos",
+                    role: "Operations Director"
+                  },
+                  {
+                    quote: "The AI-powered web platform they built increased our customer engagement by 150%. Highly recommended for any business looking to scale with technology.",
+                    author: "Juan dela Cruz",
+                    role: "Founder & CEO"
+                  }
+                ].map((testimonial, idx) => (
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: idx * 0.08, duration: 0.5 }}
-                    className="flex items-center justify-center hover:scale-110 transition-transform"
+                    transition={{ delay: idx * 0.1, duration: 0.6 }}
+                    className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm border border-white/40 rounded-xl p-6 shadow-md hover:shadow-lg transition-all"
                   >
-                    <img src={client.logo} alt={client.name} className="h-20 object-contain grayscale hover:grayscale-0 transition-all" />
+                    <div className="flex gap-1 mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-yellow-400">★</span>
+                      ))}
+                    </div>
+                    <p className="text-gray-700 text-sm leading-relaxed mb-4">"{testimonial.quote}"</p>
+                    <div>
+                      <p className="text-gray-900 font-semibold text-sm">{testimonial.author}</p>
+                      <p className="text-[#8629e4] text-xs">{testimonial.role}</p>
+                    </div>
                   </motion.div>
                 ))}
               </div>
