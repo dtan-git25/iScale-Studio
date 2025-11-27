@@ -43,16 +43,8 @@ export default function Footer() {
 
       <footer className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white pt-20 pb-12">
         {/* Animated Background Elements */}
-        <motion.div
-          animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
-          transition={{ duration: 20, repeat: Infinity }}
-          className="absolute top-10 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/8 to-transparent rounded-full blur-3xl pointer-events-none"
-        />
-        <motion.div
-          animate={{ x: [0, -50, 50, 0], y: [0, 30, -30, 0] }}
-          transition={{ duration: 18, repeat: Infinity }}
-          className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-[#2DBFBA]/8 to-transparent rounded-full blur-3xl pointer-events-none"
-        />
+        <div className="absolute top-10 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/8 to-transparent rounded-full blur-3xl pointer-events-none animate-float-slow" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-[#2DBFBA]/8 to-transparent rounded-full blur-3xl pointer-events-none animate-float-slow-reverse" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Main Content */}

@@ -310,20 +310,19 @@ export default function Services() {
 
               {/* Image */}
               <div className="flex-1 w-full">
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="relative"
-                >
+                <div className="relative">
                   <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl aspect-video group">
                     <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-20 mix-blend-overlay z-10`}></div>
                     <img
                       src={service.image}
                       alt={service.title}
+                      width="800"
+                      height="436"
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -332,11 +331,7 @@ export default function Services() {
 
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white/5 to-transparent">
-        <motion.div
-          animate={{ x: [0, -50, 50, 0], y: [0, 20, -20, 0] }}
-          transition={{ duration: 15, repeat: Infinity }}
-          className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-[#2DBFBA]/10 to-transparent rounded-full blur-3xl pointer-events-none"
-        />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-[#2DBFBA]/10 to-transparent rounded-full blur-3xl pointer-events-none animate-float-slow-reverse" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
