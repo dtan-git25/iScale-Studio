@@ -23,6 +23,8 @@ import marketingImg from "@assets/generated_images/marketing_automation_system.p
 import chatbotImg from "@assets/generated_images/ai_chatbot_application.png";
 import realEstateImg from "@assets/generated_images/real_estate_mobile_app.png";
 import healthcareImg from "@assets/generated_images/healthcare_management_system.png";
+import aiAppImg from "@assets/generated_images/ai_mobile_app_development_interface.png";
+import { CheckCircle2 } from "lucide-react";
 
 // Tech Stack Component
 function TechStack() {
@@ -306,6 +308,174 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* AI App Development Section */}
+      <section className="py-24 md:py-32 bg-gradient-to-b from-white to-blue-50/20 relative overflow-hidden">
+        <motion.div
+          animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
+          transition={{ duration: 20, repeat: Infinity }}
+          className="absolute top-20 left-0 w-80 h-80 bg-gradient-to-br from-[#2DBFBA]/12 to-transparent rounded-full blur-3xl pointer-events-none"
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
+                Build Intelligent Applications
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4">
+                AI App Development
+              </h2>
+              <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto">
+                We create custom mobile and desktop applications infused with Artificial Intelligence. From AI-powered assistants to intelligent data processing, our apps deliver powerful functionality right in your users' hands.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img src={aiAppImg} alt="AI App Development" className="rounded-xl shadow-lg" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <h3 className="text-4xl font-bold">What We Deliver</h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Our AI app development expertise spans across native iOS/Android development and cross-platform frameworks. We leverage the latest AI technologies to create mobile applications that are intelligent, responsive, and user-friendly.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Native Mobile App Development (iOS & Android)",
+                  "Cross-Platform Applications with React Native",
+                  "AI-Powered Mobile Assistants",
+                  "Offline-First AI Processing",
+                  "Computer Vision & Image Recognition Apps",
+                  "Enterprise Mobile Solutions"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0" />
+                    <span className="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Featured App Development Capabilities */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-20"
+          >
+            <h2 className="text-4xl font-bold mb-12">Featured App Development Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: "📱",
+                  title: "Native Mobile Apps",
+                  description: "iOS and Android native apps with seamless AI integration and offline capabilities",
+                  features: ["iOS/Android", "Native Performance", "Offline Mode"]
+                },
+                {
+                  icon: "🤖",
+                  title: "AI Assistants",
+                  description: "Intelligent mobile assistants that understand context and provide personalized guidance",
+                  features: ["NLP Integration", "Personalization", "Smart Learning"]
+                },
+                {
+                  icon: "⚡",
+                  title: "Lightning Fast",
+                  description: "Optimized performance with AI-driven caching and intelligent resource management",
+                  features: ["Fast Loading", "Smart Caching", "Optimized"]
+                },
+                {
+                  icon: "📸",
+                  title: "Computer Vision",
+                  description: "Advanced image recognition and processing capabilities built into your app",
+                  features: ["Image Recognition", "OCR", "Real-time Processing"]
+                },
+                {
+                  icon: "🔒",
+                  title: "Secure & Scalable",
+                  description: "Enterprise-grade security with AI-powered threat detection and auto-scaling",
+                  features: ["AI Security", "Auto-Scaling", "Encryption"]
+                },
+                {
+                  icon: "📊",
+                  title: "Smart Analytics",
+                  description: "Built-in monitoring and AI-driven insights that track user behavior and app performance",
+                  features: ["User Analytics", "Performance Tracking", "Insights"]
+                }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  className="group"
+                >
+                  <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div className="text-5xl mb-4">{item.icon}</div>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#9929ea] group-hover:to-[#5808fb] transition-all">
+                      {item.title}
+                    </h3>
+                    
+                    <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                      {item.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {item.features.map((feature, i) => (
+                        <Badge key={i} className="bg-gradient-to-r from-[#9929ea]/10 to-[#5808fb]/10 border border-[#9929ea]/30 text-gray-700 hover:from-[#9929ea]/20 hover:to-[#5808fb]/20 transition-all text-xs">
+                          {feature}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-r from-[#2DBFBA]/15 to-[#9929ea]/15 border border-[#2DBFBA]/40 rounded-2xl p-8 sm:p-12 backdrop-blur-md text-center"
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+              Ready to build intelligent mobile apps?
+            </h3>
+            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+              Let's discuss how AI can transform your mobile application and deliver powerful solutions to your users.
+            </p>
+            <Link href="/services/ai-app-development">
+              <Button className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
+                Explore AI App Development <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
