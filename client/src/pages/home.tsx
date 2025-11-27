@@ -312,8 +312,8 @@ export default function Home() {
       {/* About Section */}
       <AnimatedAbout />
 
-      {/* AI Web Development Section */}
-      <section className="py-24 md:py-32 bg-gradient-to-b from-white via-cyan-50/30 to-white relative overflow-hidden">
+      {/* Process Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
         <motion.div
           animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
           transition={{ duration: 20, repeat: Infinity }}
