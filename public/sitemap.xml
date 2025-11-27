@@ -22,7 +22,13 @@
   
   <!-- Service Pages -->
   <url>
-    <loc>https://iscalestudio.com/services/ai-development</loc>
+    <loc>https://iscalestudio.com/services/ai-web-development</loc>
+    <lastmod>2025-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iscalestudio.com/services/ai-app-development</loc>
     <lastmod>2025-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

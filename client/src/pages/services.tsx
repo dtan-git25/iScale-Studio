@@ -10,21 +10,40 @@ import ecommerceImg from "@assets/generated_images/e-commerce_platform_interface
 export default function Services() {
   const services = [
     {
-      id: "ai-development",
-      title: "AI Web & App Development",
-      subtitle: "Build intelligent applications",
-      shortDesc: "Custom web and mobile apps powered by cutting-edge AI technology.",
-      description: "We create custom web and mobile applications infused with Artificial Intelligence. From predictive analytics to personalized user experiences, our apps do more than just function—they think.",
+      id: "ai-web-development",
+      title: "AI Web Development",
+      subtitle: "Build intelligent web applications",
+      shortDesc: "Custom web applications powered by cutting-edge AI technology.",
+      description: "We create custom web applications infused with Artificial Intelligence. From predictive analytics dashboards to AI-powered recommendation engines, our web solutions combine modern design with intelligent functionality.",
       features: [
-        "Custom React & Node.js Applications",
-        "AI-Powered E-commerce Solutions",
+        "Custom React & Next.js Applications",
+        "AI-Powered Dashboards & Analytics",
         "Progressive Web Apps (PWA)",
-        "Native Mobile App Development",
+        "Real-time Data Visualization",
         "Intelligent Search & Recommendation Systems"
       ],
       image: webDevImg,
       icon: "Code",
-      gradient: "from-cyan-500 to-blue-500"
+      gradient: "from-cyan-500 to-blue-500",
+      href: "/services/ai-web-development"
+    },
+    {
+      id: "ai-app-development",
+      title: "AI App Development",
+      subtitle: "Build intelligent mobile apps",
+      shortDesc: "Custom mobile apps powered by cutting-edge AI technology.",
+      description: "We create custom mobile and desktop applications infused with Artificial Intelligence. From AI-powered assistants to intelligent data processing, our apps deliver powerful functionality right in your users' hands.",
+      features: [
+        "Native Mobile App Development",
+        "Cross-Platform Applications",
+        "AI-Powered Mobile Assistants",
+        "Offline-First AI Processing",
+        "Computer Vision & Image Recognition"
+      ],
+      image: webDevImg,
+      icon: "Code",
+      gradient: "from-blue-500 to-indigo-500",
+      href: "/services/ai-app-development"
     },
     {
       id: "workflow-automation",

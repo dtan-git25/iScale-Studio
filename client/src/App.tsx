@@ -8,7 +8,8 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Home from "@/pages/home";
 import Services from "@/pages/services";
-import AIDevelopment from "@/pages/services/ai-development";
+import AIWebDevelopment from "@/pages/services/ai-web-development";
+import AIAppDevelopment from "@/pages/services/ai-app-development";
 import WorkflowAutomation from "@/pages/services/workflow-automation";
 import AIAgents from "@/pages/services/ai-agents";
 import EcommerceSolutions from "@/pages/services/ecommerce-solutions";
@@ -64,7 +65,8 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/services" component={Services} />
-          <Route path="/services/ai-development" component={AIDevelopment} />
+          <Route path="/services/ai-web-development" component={AIWebDevelopment} />
+          <Route path="/services/ai-app-development" component={AIAppDevelopment} />
           <Route path="/services/workflow-automation" component={WorkflowAutomation} />
           <Route path="/services/ai-agents" component={AIAgents} />
           <Route path="/services/ecommerce-solutions" component={EcommerceSolutions} />
