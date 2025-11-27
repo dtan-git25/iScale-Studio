@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Smartphone, Bot, ShoppingCart, Brain } from "lucide-react";
+import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Smartphone, Bot, ShoppingCart, Brain, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -23,6 +23,7 @@ import marketingImg from "@assets/generated_images/marketing_automation_system.p
 import chatbotImg from "@assets/generated_images/ai_chatbot_application.png";
 import realEstateImg from "@assets/generated_images/real_estate_mobile_app.png";
 import healthcareImg from "@assets/generated_images/healthcare_management_system.png";
+import appDevImg from "@assets/generated_images/ai_mobile_app_development_interface.png";
 
 // Tech Stack Component
 function TechStack() {
@@ -211,6 +212,76 @@ export default function Home() {
           </div>
         </div>
 
+      </section>
+
+      {/* AI App Development Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-purple-50/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
+                Build intelligent applications
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">AI App Development</h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                We create custom web and mobile applications infused with Artificial Intelligence. From predictive analytics to personalized user experiences, our apps do more than function—they think.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img src={appDevImg} alt="AI App Development" className="rounded-xl shadow-lg" />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <h3 className="text-3xl font-bold">Key Features</h3>
+              <ul className="space-y-3">
+                {[
+                  "Native Mobile App Development (iOS & Android)",
+                  "Cross-Platform Applications with React Native",
+                  "AI-Powered Mobile Assistants",
+                  "Offline-First AI Processing",
+                  "Computer Vision & Image Recognition Apps",
+                  "Enterprise Mobile Solutions"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0" />
+                    <span className="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Link href="/services/ai-app-development">
+                  <Button variant="outline" className="rounded-full px-6 h-11 border-gray-300 hover:bg-gray-50">
+                    Full Details
+                  </Button>
+                </Link>
+                <Link href="/booking">
+                  <Button className="btn-gradient border-0 rounded-full px-6 h-11 shadow-lg shadow-[#9929ea]/40">
+                    Book a Call
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* Services Overview Grid */}
