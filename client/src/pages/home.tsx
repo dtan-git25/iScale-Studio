@@ -526,7 +526,7 @@ export default function Home() {
                 </div>
 
                 {/* Image */}
-                <div className="flex-1 w-full">
+                <div className={`flex-1 w-full ${idx === 5 ? 'max-w-md mx-auto lg:mx-0' : ''}`}>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
@@ -536,7 +536,7 @@ export default function Home() {
                     <img 
                       src={service.image} 
                       alt={service.title}
-                      className={`relative rounded-2xl shadow-2xl w-full object-cover ${idx === 5 ? 'max-h-[400px] object-center' : ''}`}
+                      className={`relative rounded-2xl shadow-2xl w-full object-cover ${idx === 5 ? 'max-h-[320px]' : ''}`}
                     />
                   </motion.div>
                 </div>
