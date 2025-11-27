@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@assets/iScale_Studio_V_1764045233039.png";
+import logo from "@assets/optimized_images/iScale_Studio_logo.webp";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,7 +90,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
-              <img src={logo} alt="iScale Studio" className="h-6 w-auto md:h-8" />
+              <img src={logo} alt="iScale Studio" className="h-6 w-auto md:h-8" width="162" height="30" />
             </Link>
           </div>
 

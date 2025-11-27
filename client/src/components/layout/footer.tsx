@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Facebook, Linkedin, Instagram, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import logo from "@assets/iScale_Studio_V_1764045233039.png";
+import logo from "@assets/optimized_images/iScale_Studio_logo.webp";
 
 const XLogo = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -66,7 +66,7 @@ export default function Footer() {
             >
               <div className="bg-gradient-to-br from-white/95 to-white/40 backdrop-blur-xl border border-white/60 p-8 rounded-2xl hover:border-[#8629e4]/40 transition-all duration-300 h-full shadow-lg hover:shadow-xl">
                 <Link href="/" className="flex items-center mb-6 group-hover:scale-105 transition-transform">
-                  <img src={logo} alt="iScale Studio" className="h-10 w-auto" />
+                  <img src={logo} alt="iScale Studio" className="h-10 w-auto" width="216" height="40" />
                 </Link>
                 <p className="text-gray-700 text-sm leading-relaxed mb-6">
                   Empowering businesses with cutting-edge AI solutions, intelligent workflow automation, and custom software development.

@@ -76,7 +76,7 @@ export default function WorkflowAutomationPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img src={workflowImg} alt="Workflow Automation" className="rounded-xl shadow-lg" />
+              <img src={workflowImg} alt="Workflow Automation" className="rounded-xl shadow-lg" width="800" height="436" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}

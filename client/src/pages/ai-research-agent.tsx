@@ -31,12 +31,12 @@ export default function AIResearchAgent() {
       <div className="min-h-screen pt-20 pb-12">
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/">
-            <motion.a initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="inline-flex items-center gap-2 text-[#9929ea] hover:text-[#7a1fbf] transition-colors mb-6 text-sm sm:text-base">
+          <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}>
+            <Link href="/" className="inline-flex items-center gap-2 text-[#9929ea] hover:text-[#7a1fbf] transition-colors mb-6 text-sm sm:text-base">
               <ArrowLeft className="h-4 w-4" />
               Back to Home
-            </motion.a>
-          </Link>
+            </Link>
+          </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="text-5xl mb-4">🔬</div>
             <Badge className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white border-0 mb-4">AI Research Agent</Badge>

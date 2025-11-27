@@ -76,7 +76,7 @@ export default function AIMLDevelopmentPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img src={mlDevImg} alt="AI/ML Model Development" className="rounded-xl shadow-lg" />
+              <img src={mlDevImg} alt="AI/ML Model Development" className="rounded-xl shadow-lg" width="800" height="436" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}

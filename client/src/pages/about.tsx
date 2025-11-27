@@ -102,7 +102,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img src={teamImg} alt="iScale Studio Team" className="rounded-2xl shadow-2xl border border-white/10" />
+              <img src={teamImg} alt="iScale Studio Team" className="rounded-2xl shadow-2xl border border-white/10" width="800" height="436" />
             </motion.div>
 
             <motion.div
@@ -335,7 +335,7 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="lg:order-1"
             >
-              <img src={workspaceImg} alt="iScale Studio Workspace" className="rounded-2xl shadow-2xl border border-white/10" />
+              <img src={workspaceImg} alt="iScale Studio Workspace" className="rounded-2xl shadow-2xl border border-white/10" width="800" height="436" />
             </motion.div>
           </div>
         </div>

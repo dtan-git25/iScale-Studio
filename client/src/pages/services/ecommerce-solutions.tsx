@@ -77,7 +77,7 @@ export default function EcommerceSolutionsPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img src={ecommerceImg} alt="E-commerce Solutions" className="rounded-xl shadow-lg" />
+              <img src={ecommerceImg} alt="E-commerce Solutions" className="rounded-xl shadow-lg" width="800" height="436" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}

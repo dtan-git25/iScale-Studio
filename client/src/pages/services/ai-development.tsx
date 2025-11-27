@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import webDevImg from "@assets/generated_images/futuristic_web_development_concept.png";
+import webDevImg from "@assets/optimized_images/futuristic_web_development_concept.webp";
 
 export default function AIDevelopmentPage() {
   const features = [
@@ -55,7 +55,7 @@ export default function AIDevelopmentPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img src={webDevImg} alt="AI Development" className="rounded-xl shadow-lg" />
+              <img src={webDevImg} alt="AI Development" className="rounded-xl shadow-lg" width="800" height="436" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
