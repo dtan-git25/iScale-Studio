@@ -1,0 +1,50 @@
+TASK: Add "AI App Development" section from Services page to Homepage
+
+OBJECTIVE:
+Copy the complete "AI App Development" section from the services page and add it to the homepage. This should be an EXACT copy with NO modifications to design, layout, content, or styling.
+
+SECTION TO COPY:
+The "AI App Development" section which includes:
+- Category tag: "Build intelligent applications"
+- Heading: "AI App Development"
+- Description: "We create custom web and mobile applications infused with Artificial Intelligence. From predictive analytics to personalized user experiences, our apps do more than they function—they think."
+- KEY FEATURES list (4 items with checkmark icons):
+  ✓ Custom React & Node.js Applications
+  ✓ AI-Powered E-commerce Solutions
+  ✓ Progressive Web Apps (PWA)
+  ✓ Native Mobile App Development
+  ✓ Intelligent Search & Recommendation Systems
+- Hero image (tech/AI themed image on the right)
+- Two buttons at bottom: "Full Details" and "Book a Call" (purple button)
+
+INSTRUCTIONS:
+1. Locate the "AI App Development" section in the services page HTML/code
+2. Copy the ENTIRE section including:
+   - All HTML markup
+   - All CSS classes and styling
+   - All images and assets
+   - All interactive elements (buttons, links)
+   - Exact spacing, padding, and layout
+3. Insert this section into the homepage after the hero section (or specify where you want it placed)
+4. Ensure all links work correctly (especially "Full Details" and "Book a Call" buttons)
+5. Verify the section is fully responsive and looks identical on all screen sizes
+
+PLACEMENT ON HOMEPAGE:
+Add it as the first service showcase section after the hero/banner area, before other service sections.
+
+CRITICAL REQUIREMENTS:
+- DO NOT modify any text content
+- DO NOT change any styling or colors
+- DO NOT alter the layout or image placement
+- DO NOT remove or add any features
+- Keep it EXACTLY as it appears on the services page
+
+VERIFICATION:
+After implementation, confirm:
+1. Section appears on homepage ✓
+2. Layout matches services page exactly ✓
+3. All styling is identical ✓
+4. Buttons are functional ✓
+5. Mobile responsive ✓
+
+Please implement this now and confirm when complete.
