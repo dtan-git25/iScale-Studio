@@ -173,11 +173,7 @@ export default function Services() {
 
       {/* Services Grid Overview */}
       <section className="py-24 relative overflow-hidden">
-        <motion.div
-          animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
-          transition={{ duration: 15, repeat: Infinity }}
-          className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
-        />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none animate-float-slow" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -217,11 +213,7 @@ export default function Services() {
 
       {/* Benefits Section */}
       <section className="py-24 bg-gradient-to-b from-white/5 to-transparent relative overflow-hidden">
-        <motion.div
-          animate={{ x: [0, -50, 50, 0], y: [0, 20, -20, 0] }}
-          transition={{ duration: 15, repeat: Infinity }}
-          className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-[#2DBFBA]/10 to-transparent rounded-full blur-3xl pointer-events-none"
-        />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-[#2DBFBA]/10 to-transparent rounded-full blur-3xl pointer-events-none animate-float-slow-reverse" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -256,11 +248,7 @@ export default function Services() {
 
       {/* Detailed Services */}
       <section className="py-24 relative overflow-hidden">
-        <motion.div
-          animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
-          transition={{ duration: 15, repeat: Infinity }}
-          className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
-        />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none animate-float-slow" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-32">
           {services.map((service, index) => (
