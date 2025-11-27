@@ -272,13 +272,13 @@ export default function Home() {
                       transition={{ duration: 0.3 }}
                       className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all h-full flex flex-col"
                     >
-                      <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                      <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                         <service.icon className="h-7 w-7 text-white" />
                       </div>
                       
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
-                      <p className="text-sm text-[#8629e4] font-medium mb-3">{service.subtitle}</p>
-                      <p className="text-gray-700 mb-6 flex-grow">{service.shortDesc}</p>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                      <p className="text-sm text-[#8629e4] font-medium mb-4">{service.subtitle}</p>
+                      <p className="text-gray-700 flex-grow">{service.shortDesc}</p>
                     </motion.div>
                   </a>
                 </Link>
