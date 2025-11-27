@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Zap, Target, Clock, Shield, Globe, Smartphone, Bot, ShoppingCart, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import webDevImg from "@assets/generated_images/futuristic_web_development_concept.png";
-import workflowImg from "@assets/generated_images/workflow_automation_concept.png";
-import aiAgentImg from "@assets/generated_images/ai_agent_concept.png";
+import webDevImg from "@assets/generated_images/ai_web_development_modern_interface.png";
+import appDevImg from "@assets/generated_images/ai_mobile_app_development_interface.png";
+import workflowImg from "@assets/generated_images/workflow_automation_process_diagram.png";
+import aiAgentImg from "@assets/generated_images/ai_agent_assistant_interface.png";
 import ecommerceImg from "@assets/generated_images/e-commerce_platform_interface.png";
+import mlDevImg from "@assets/generated_images/machine_learning_model_development_dashboard.png";
 
 export default function Services() {
   const services = [
@@ -40,7 +42,7 @@ export default function Services() {
         "Offline-First AI Processing",
         "Computer Vision & Image Recognition"
       ],
-      image: webDevImg,
+      image: appDevImg,
       icon: Smartphone,
       gradient: "from-blue-500 to-indigo-500",
       href: "/services/ai-app-development"
@@ -114,7 +116,7 @@ export default function Services() {
         "Custom Model Training & Optimization",
         "Real-time Model Inference & Deployment"
       ],
-      image: webDevImg,
+      image: mlDevImg,
       icon: Brain,
       gradient: "from-orange-500 to-yellow-500",
       href: "/services/ai-ml-development"
