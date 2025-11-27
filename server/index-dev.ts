@@ -33,6 +33,18 @@ export async function setupVite(app: Express, server: Server) {
     appType: "custom",
   });
 
+  const publicPath = path.resolve(import.meta.dirname, "..", "public");
+
+  app.get("/robots.txt", (_req, res) => {
+    res.type("text/plain");
+    res.sendFile(path.join(publicPath, "robots.txt"));
+  });
+
+  app.get("/sitemap.xml", (_req, res) => {
+    res.type("application/xml");
+    res.sendFile(path.join(publicPath, "sitemap.xml"));
+  });
+
   app.use(vite.middlewares);
   app.use("*", async (req, res, next) => {
     const url = req.originalUrl;

@@ -18,6 +18,16 @@ export async function serveStatic(app: Express, server: Server) {
 
   app.use(compression());
 
+  app.get("/robots.txt", (_req, res) => {
+    res.type("text/plain");
+    res.sendFile(path.join(distPath, "robots.txt"));
+  });
+
+  app.get("/sitemap.xml", (_req, res) => {
+    res.type("application/xml");
+    res.sendFile(path.join(distPath, "sitemap.xml"));
+  });
+
   app.use((req, res, next) => {
     if (req.path.endsWith('.html') || req.path === '/' || !req.path.includes('.')) {
       res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
