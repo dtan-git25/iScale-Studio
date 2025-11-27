@@ -221,22 +221,6 @@ export default function Home() {
           className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
-                Our Services
-              </div>
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Complete AI & Automation Solutions</h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                From intelligent web applications to autonomous AI agents, we deliver cutting-edge solutions that transform your business with artificial intelligence and smart automation.
-              </p>
-            </motion.div>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
@@ -322,42 +306,6 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-
-          {/* Service Benefits */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mt-20 bg-gradient-to-r from-[#9929ea]/10 to-[#2DBFBA]/10 border border-[#9929ea]/20 rounded-3xl p-12"
-          >
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Why Choose iScale Studio Services</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { icon: "⚡", title: "Expert AI Integration", desc: "Deep expertise in LLMs, ML models, and AI frameworks tailored to your needs" },
-                { icon: "🔧", title: "Custom Solutions", desc: "Bespoke AI implementations designed specifically for your business challenges" },
-                { icon: "📈", title: "Scalable Architecture", desc: "Built to grow with your business, from MVP to enterprise deployment" },
-                { icon: "🤝", title: "Full Support", desc: "Ongoing optimization, monitoring, and support for all solutions" },
-                { icon: "🔐", title: "Enterprise Security", desc: "Security-first approach with compliance, encryption, and data protection" },
-                { icon: "⏱️", title: "Fast Delivery", desc: "Agile development methodology ensuring quick time-to-market" }
-              ].map((benefit, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.08 }}
-                  className="flex gap-4"
-                >
-                  <div className="text-3xl flex-shrink-0">{benefit.icon}</div>
-                  <div>
-                    <h4 className="font-bold text-gray-900 mb-1">{benefit.title}</h4>
-                    <p className="text-sm text-gray-700">{benefit.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
 
