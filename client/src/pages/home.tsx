@@ -536,7 +536,7 @@ export default function Home() {
                     <img 
                       src={service.image} 
                       alt={service.title}
-                      className="relative rounded-2xl shadow-2xl w-full object-cover"
+                      className="relative rounded-2xl shadow-2xl w-full h-[400px] object-cover"
                     />
                   </motion.div>
                 </div>
