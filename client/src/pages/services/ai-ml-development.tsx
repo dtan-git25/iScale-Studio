@@ -3,7 +3,7 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import webDevImg from "@assets/generated_images/machine_learning_model_development_dashboard.png";
+import mlDevImg from "@assets/generated_images/ml_models_development_dashboard.png";
 
 export default function AIMLDevelopmentPage() {
   const features = [
@@ -56,7 +56,7 @@ export default function AIMLDevelopmentPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img src={webDevImg} alt="AI/ML Model Development" className="rounded-xl shadow-lg" />
+              <img src={mlDevImg} alt="AI/ML Model Development" className="rounded-xl shadow-lg" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
