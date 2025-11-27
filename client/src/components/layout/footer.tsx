@@ -1,12 +1,12 @@
 import { Link } from "wouter";
-import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
+import { Facebook, X, Linkedin, Instagram, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@assets/iScale_Studio_V_1764045233039.png";
 
 export default function Footer() {
   const socialLinks = [
     { icon: Facebook, href: "https://facebook.com/iscalestudio/", label: "Facebook" },
-    { icon: Twitter, href: "https://x.com/iscalestudio/", label: "Twitter" },
+    { icon: X, href: "https://x.com/iscalestudio/", label: "X" },
     { icon: Linkedin, href: "https://linkedin.com/company/iscalestudio/", label: "LinkedIn" },
     { icon: Instagram, href: "https://instagram.com/iscalestudio/", label: "Instagram" }
   ];
