@@ -1,0 +1,56 @@
+Please conduct a comprehensive SEO site-wide audit of iscalestudio.com and provide detailed findings and recommendations. Analyze the following areas:
+
+## Technical SEO
+1. Check all page URLs, titles, and meta descriptions
+2. Verify proper heading structure (H1, H2, H3 hierarchy) on all pages
+3. Test page load speeds and identify optimization opportunities
+4. Review mobile responsiveness across all pages
+5. Check for broken links or 404 errors
+6. Verify robots.txt and sitemap.xml files exist and are properly configured
+7. Test canonical URLs and redirects
+8. Check SSL certificate implementation
+
+## On-Page SEO
+1. Analyze keyword usage and density across all pages:
+   - Home page
+   - About page
+   - Solutions pages (AI Web & App Development, Workflow Automation, AI Agents)
+   - Portfolio page
+   - Contact page
+2. Review content quality and relevance for target keywords:
+   - "AI development Philippines"
+   - "AI automation solutions"
+   - "Custom AI applications"
+   - "Business automation Philippines"
+3. Check image alt text implementation
+4. Review internal linking structure
+5. Analyze content length and readability
+6. Check for duplicate content issues
+
+## Schema Markup & Structured Data
+1. Verify LocalBusiness schema for Philippines location
+2. Check for Service schema on Solutions pages
+3. Review breadcrumb markup
+4. Verify Organization schema with contact information
+
+## Conversion Optimization (SEO-Related)
+1. Review CTA placement and visibility for appointment scheduling
+2. Check contact form accessibility and functionality
+3. Analyze user flow from landing to conversion points
+
+## Competitive Analysis Prep
+1. Identify which keywords we should be targeting based on our service offerings
+2. Suggest content gaps that could improve rankings
+3. Recommend page titles and meta descriptions if current ones need improvement
+
+## Output Format
+For each finding, provide:
+- **Issue/Observation**: What you found
+- **Impact**: How it affects SEO (High/Medium/Low)
+- **Current State**: Specific examples
+- **Recommendation**: Exact fix needed with implementation details
+- **Priority**: Critical/High/Medium/Low
+
+Please analyze the actual code and content, not just theory. Give me specific, actionable recommendations with exact text suggestions for titles, meta descriptions, and content improvements where needed.
+
+Focus particularly on optimizing for our consultation-first business model where appointment scheduling is the primary conversion goal.
