@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Smartphone, Bot, ShoppingCart, Brain, Clock, Target } from "lucide-react";
+import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Smartphone, Bot, ShoppingCart, Brain, Clock, Target, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -23,6 +23,12 @@ import marketingImg from "@assets/generated_images/marketing_automation_system.p
 import chatbotImg from "@assets/generated_images/ai_chatbot_application.png";
 import realEstateImg from "@assets/generated_images/real_estate_mobile_app.png";
 import healthcareImg from "@assets/generated_images/healthcare_management_system.png";
+import webDevImg from "@assets/generated_images/ai_web_development_modern_interface.png";
+import appDevImg from "@assets/generated_images/ai_mobile_app_development_interface.png";
+import workflowImg from "@assets/generated_images/workflow_automation_process_diagram.png";
+import aiAgentImg from "@assets/generated_images/ai_agent_assistant_interface.png";
+import ecommerceSvcImg from "@assets/generated_images/e-commerce_platform_interface.png";
+import mlDevImg from "@assets/generated_images/machine_learning_model_development_dashboard.png";
 
 // Tech Stack Component
 function TechStack() {
@@ -356,6 +362,183 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
                   <p className="text-gray-700">{benefit.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Services Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
+                What We Offer
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Core Services</h2>
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                Comprehensive AI and automation solutions to transform your business operations.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Services List - Alternating Layout */}
+          <div className="space-y-32">
+            {[
+              {
+                title: "AI Web Development",
+                subtitle: "Build intelligent web applications",
+                description: "We create custom web applications infused with Artificial Intelligence. From predictive analytics dashboards to AI-powered recommendation engines, our web solutions combine modern design with intelligent functionality.",
+                features: [
+                  "Custom React & Next.js Applications",
+                  "AI-Powered Dashboards & Analytics",
+                  "Progressive Web Apps (PWA)",
+                  "Real-time Data Visualization",
+                  "Intelligent Search & Recommendation Systems"
+                ],
+                image: webDevImg,
+                href: "/services/ai-web-development"
+              },
+              {
+                title: "AI App Development",
+                subtitle: "Build intelligent mobile apps",
+                description: "We create custom mobile and desktop applications infused with Artificial Intelligence. From AI-powered assistants to intelligent data processing, our apps deliver powerful functionality right in your users' hands.",
+                features: [
+                  "Native Mobile App Development",
+                  "Cross-Platform Applications",
+                  "AI-Powered Mobile Assistants",
+                  "Offline-First AI Processing",
+                  "Computer Vision & Image Recognition"
+                ],
+                image: appDevImg,
+                href: "/services/ai-app-development"
+              },
+              {
+                title: "Workflow Automation",
+                subtitle: "Eliminate manual tasks",
+                description: "Stop wasting time on repetitive tasks. We design and implement enterprise-grade automation workflows that connect your favorite tools and run your business on autopilot.",
+                features: [
+                  "Business Process Automation (n8n, Make)",
+                  "CRM & Marketing Automation",
+                  "Data Synchronization & ETL",
+                  "Custom API Integrations",
+                  "No-code/Low-code Solutions"
+                ],
+                image: workflowImg,
+                href: "/services/workflow-automation"
+              },
+              {
+                title: "AI Agent Development",
+                subtitle: "Deploy digital workforce",
+                description: "Deploy autonomous AI agents capable of handling complex customer inquiries, processing documents, and executing multi-step business logic without human intervention.",
+                features: [
+                  "Custom GPT & LLM Integration",
+                  "Customer Service Chatbots",
+                  "Document Processing Agents",
+                  "Multi-Agent Systems",
+                  "Business Intelligence Assistants"
+                ],
+                image: aiAgentImg,
+                href: "/services/ai-agents"
+              },
+              {
+                title: "E-commerce Solutions",
+                subtitle: "Elevate your online store",
+                description: "Build powerful, scalable e-commerce platforms with integrated AI features. From product recommendations to intelligent inventory management, we create solutions that drive sales and enhance customer satisfaction.",
+                features: [
+                  "Custom E-commerce Platform Development",
+                  "AI-Powered Product Recommendations",
+                  "Smart Inventory & Order Management",
+                  "Payment Gateway Integration",
+                  "AI Chatbots for Customer Support"
+                ],
+                image: ecommerceSvcImg,
+                href: "/services/ecommerce-solutions"
+              },
+              {
+                title: "Custom AI/ML Models",
+                subtitle: "Build proprietary ML models",
+                description: "We develop custom machine learning models that unlock actionable insights from your data. From predictive analytics to computer vision, our models are built to solve your specific business challenges.",
+                features: [
+                  "Predictive Analytics & Forecasting",
+                  "Computer Vision & Image Classification",
+                  "Natural Language Processing (NLP)",
+                  "Customer Churn & Risk Prediction",
+                  "Custom Model Training & Optimization"
+                ],
+                image: mlDevImg,
+                href: "/services/ai-ml-development"
+              }
+            ].map((service, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-16 items-center`}
+              >
+                {/* Text Content */}
+                <div className="flex-1 space-y-6">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-[#8629e4]"></div>
+                    <span className="text-[#8629e4] text-sm font-medium">{service.subtitle}</span>
+                  </div>
+                  
+                  <h3 className="text-3xl lg:text-4xl font-bold text-gray-900">{service.title}</h3>
+                  
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  {/* Key Features Box */}
+                  <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                    <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wide mb-4">Key Features</h4>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, i) => (
+                        <li key={i} className="flex items-center gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-[#8629e4] flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Buttons */}
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <Link href={service.href}>
+                      <Button variant="outline" className="rounded-full px-6 h-11 border-gray-300 hover:border-[#8629e4] hover:text-[#8629e4]">
+                        Full Details <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                    <Link href="/booking">
+                      <Button className="btn-gradient border-0 rounded-full px-6 h-11">
+                        Book a Call
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div className="flex-1 w-full">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#9929ea]/20 to-[#2DBFBA]/20 rounded-2xl blur-2xl opacity-50"></div>
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="relative rounded-2xl shadow-2xl w-full object-cover"
+                    />
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
