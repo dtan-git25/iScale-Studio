@@ -218,32 +218,24 @@ export default function Home() {
       {/* AI Web Development Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
-              <span className="w-2 h-2 rounded-full bg-[#8629e4]"></span>
-              Build intelligent web applications
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">AI Web Development</h2>
-            <p className="text-lg text-gray-700 max-w-2xl">
-              We create custom web applications infused with Artificial Intelligence. From predictive analytics dashboards to AI-powered recommendation engines, our web solutions combine modern design with intelligent functionality.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="order-2 lg:order-1"
             >
-              <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
+                <span className="w-2 h-2 rounded-full bg-[#8629e4]"></span>
+                Build intelligent web applications
+              </div>
+              <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">AI Web Development</h2>
+              <p className="text-base md:text-lg text-gray-700 mb-8">
+                We create custom web applications infused with Artificial Intelligence. From predictive analytics dashboards to AI-powered recommendation engines, our web solutions combine modern design with intelligent functionality.
+              </p>
+
+              <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-6 md:p-8 mb-6">
                 <h3 className="text-sm font-bold text-gray-900 mb-6 uppercase tracking-wide">KEY FEATURES</h3>
                 <ul className="space-y-4">
                   {[
@@ -255,7 +247,7 @@ export default function Home() {
                   ].map((feature, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-[#8629e4] flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-gray-700 text-sm md:text-base">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -280,8 +272,9 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="order-1 lg:order-2"
             >
-              <img src={webDevImg} alt="AI Web Development" className="rounded-xl shadow-lg w-full" />
+              <img src={webDevImg} alt="AI Web Development" className="rounded-xl shadow-lg w-full h-auto" />
             </motion.div>
           </div>
         </div>
