@@ -166,8 +166,8 @@ export default function Home() {
           </div>
 
           {/* Client Testimonials */}
-          <div className="flex justify-center mt-16">
-            <div className="w-full max-w-4xl">
+          <div className="mt-16">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
                   {
