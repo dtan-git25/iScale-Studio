@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import webDevImg from "@assets/generated_images/futuristic_web_development_concept.png";
 
@@ -99,6 +100,87 @@ export default function AIWebDevelopmentPage() {
                     <p className="text-lg text-gray-700 font-medium">{benefit}</p>
                   </div>
                 </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Featured Web Development Capabilities */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-20"
+          >
+            <h2 className="text-4xl font-bold mb-12">Featured Web Development Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: "🌐",
+                  title: "Smart Dashboards",
+                  description: "AI-powered dashboards with predictive analytics and real-time insights for data-driven decisions",
+                  features: ["Live Analytics", "AI Insights", "Real-time Data"]
+                },
+                {
+                  icon: "🎯",
+                  title: "Intelligent Recommendations",
+                  description: "Smart recommendation engines that learn from user behavior and boost conversions",
+                  features: ["Personalization", "Smart Algorithms", "Conversion Boost"]
+                },
+                {
+                  icon: "⚡",
+                  title: "High Performance",
+                  description: "Lightning-fast web applications optimized with AI-driven caching and intelligent load balancing",
+                  features: ["Fast Loading", "Smart Caching", "Optimized"]
+                },
+                {
+                  icon: "🔍",
+                  title: "Intelligent Search",
+                  description: "Advanced search capabilities with AI understanding natural language queries and context",
+                  features: ["NLP Search", "Semantic Search", "Smart Filters"]
+                },
+                {
+                  icon: "📊",
+                  title: "Data Visualization",
+                  description: "Beautiful, interactive charts and visualizations that make complex data easy to understand",
+                  features: ["Charts", "Graphs", "Interactive UI"]
+                },
+                {
+                  icon: "🛡️",
+                  title: "Enterprise Security",
+                  description: "Built with security-first approach featuring AI-powered threat detection and prevention",
+                  features: ["AI Security", "SSL/TLS", "Data Protection"]
+                }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  className="group"
+                >
+                  <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div className="text-5xl mb-4">{item.icon}</div>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#9929ea] group-hover:to-[#5808fb] transition-all">
+                      {item.title}
+                    </h3>
+                    
+                    <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                      {item.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {item.features.map((feature, i) => (
+                        <Badge key={i} className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 text-gray-700 hover:from-cyan-500/20 hover:to-blue-500/20 transition-all text-xs">
+                          {feature}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
