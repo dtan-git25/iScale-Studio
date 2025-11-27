@@ -230,7 +230,7 @@ export default function Home() {
                 <span className="w-2 h-2 rounded-full bg-[#8629e4]"></span>
                 Build intelligent web applications
               </div>
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">AI Web Development</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">AI Web Development</h2>
               <p className="text-base md:text-lg text-gray-700 mb-8">
                 We create custom web applications infused with Artificial Intelligence. From predictive analytics dashboards to AI-powered recommendation engines, our web solutions combine modern design with intelligent functionality.
               </p>
