@@ -246,7 +246,7 @@ export default function Services() {
                     <benefit.icon className="h-6 w-6 text-white" />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h4>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h3>
                 <p className="text-gray-700 text-sm">{benefit.desc}</p>
               </motion.div>
             ))}
@@ -283,7 +283,7 @@ export default function Services() {
                 <p className="text-lg text-gray-700 leading-relaxed">{service.description}</p>
 
                 <div className="bg-gradient-to-r from-[#9929ea]/5 to-[#2DBFBA]/5 border border-[#9929ea]/20 rounded-2xl p-8">
-                  <h4 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wider">Key Features</h4>
+                  <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wider">Key Features</h3>
                   <ul className="space-y-3">
                     {service.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-3">

@@ -257,7 +257,7 @@ export default function About() {
                   <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${step.color} flex items-center justify-center mb-4`}>
                     <step.icon className="h-6 w-6 text-white" />
                   </div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h4>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
                   <p className="text-gray-700 leading-relaxed">{step.desc}</p>
                 </motion.div>
               </motion.div>

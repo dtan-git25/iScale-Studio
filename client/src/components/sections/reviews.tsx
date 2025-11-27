@@ -126,7 +126,7 @@ export function Reviews() {
                       {review.image}
                     </motion.div>
                     <div>
-                      <h4 className="font-bold text-gray-900 text-sm">{review.name}</h4>
+                      <p className="font-bold text-gray-900 text-sm">{review.name}</p>
                       <p className="text-xs text-gray-700">{review.role} at {review.company}</p>
                     </div>
                   </div>
