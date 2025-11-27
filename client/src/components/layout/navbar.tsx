@@ -99,8 +99,8 @@ export default function Navbar() {
             {/* About */}
             <Link 
               href={navLinks[0].href}
-              className={`text-sm font-medium transition-all ${
-                location === navLinks[0].href ? "text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#5808fb]" : "text-gray-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb]"
+              className={`text-sm transition-all ${
+                location === navLinks[0].href ? "text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#5808fb] font-bold" : "text-gray-700 font-medium hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb]"
               }`}
             >
               {navLinks[0].name}
@@ -110,8 +110,8 @@ export default function Navbar() {
             <div className="relative group" ref={dropdownRef}>
               <button
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                className={`text-sm font-medium transition-all flex items-center gap-1 ${
-                  isAnyServiceActive() ? "text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#5808fb]" : "text-gray-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb]"
+                className={`text-sm transition-all flex items-center gap-1 ${
+                  isAnyServiceActive() ? "text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#5808fb] font-bold" : "text-gray-700 font-medium hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb]"
                 }`}
               >
                 Services
@@ -209,8 +209,8 @@ export default function Navbar() {
               <Link 
                 key={link.name} 
                 href={link.href}
-                className={`text-sm font-medium transition-all ${
-                  location === link.href ? "text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#5808fb]" : "text-gray-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb]"
+                className={`text-sm transition-all ${
+                  location === link.href ? "text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#5808fb] font-bold" : "text-gray-700 font-medium hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb]"
                 }`}
               >
                 {link.name}
