@@ -152,6 +152,7 @@ Preferred communication style: Simple, everyday language.
 - **Image Optimization:** All images converted to WebP format (96-98% size reduction from original PNGs)
   - Optimized images stored in: `attached_assets/optimized_images/`
   - Original images remain in: `attached_assets/generated_images/`
+  - Mobile-optimized logo (226x42, 3.8KB) served via picture element with srcset
   - Optimization script: `scripts/optimize-images.js` (uses Sharp library)
 - **Code Splitting:** React.lazy() implemented for all 35+ route components in App.tsx
   - Suspense boundary with loading spinner for smooth transitions
@@ -161,6 +162,10 @@ Preferred communication style: Simple, everyday language.
   - Removed JetBrains Mono from initial load (not used on primary pages)
 - **Server Compression:** Gzip/Brotli compression enabled in production via Express middleware
 - **Static Asset Caching:** Long-term caching (1 year) for immutable assets (JS, CSS, images, fonts)
+- **JavaScript Deferral:** Google Analytics 4 (G-1TSQ46FW5G) deferred 2 seconds after page load with onload callback
+- **Animation Optimization:** Above-the-fold Framer Motion replaced with CSS animations (fade-in-up keyframes)
+  - Hero section uses CSS `animate-fade-in-up` class
+  - Testimonial cards use staggered CSS delays (`animate-fade-in-up-delay-1`, etc.)
 - Source map optimization (@jridgewell/trace-mapping)
 
 **SEO Infrastructure:**
