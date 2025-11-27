@@ -79,8 +79,8 @@ export default function Navbar() {
             {/* About */}
             <Link 
               href={navLinks[0].href}
-              className={`text-sm font-medium transition-colors hover:[#8629e4] ${
-                location === navLinks[0].href ? "[#8629e4]" : "text-gray-700"
+              className={`text-sm font-medium transition-all ${
+                location === navLinks[0].href ? "[#8629e4]" : "text-gray-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb]"
               }`}
             >
               {navLinks[0].name}
@@ -90,8 +90,8 @@ export default function Navbar() {
             <div className="relative group" ref={dropdownRef}>
               <button
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                className={`text-sm font-medium transition-colors flex items-center gap-1 ${
-                  location === "/services" ? "[#8629e4]" : "text-gray-700 hover:[#8629e4]"
+                className={`text-sm font-medium transition-all flex items-center gap-1 ${
+                  location === "/services" ? "[#8629e4]" : "text-gray-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb]"
                 }`}
               >
                 Services
@@ -181,8 +181,8 @@ export default function Navbar() {
               <Link 
                 key={link.name} 
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:[#8629e4] ${
-                  location === link.href ? "[#8629e4]" : "text-gray-700"
+                className={`text-sm font-medium transition-all ${
+                  location === link.href ? "[#8629e4]" : "text-gray-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb]"
                 }`}
               >
                 {link.name}
