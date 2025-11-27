@@ -105,7 +105,8 @@ export default function Footer() {
                     { label: "AI Web & App", href: "/services" },
                     { label: "Workflow Automation", href: "/services" },
                     { label: "AI Agents", href: "/services" },
-                    { label: "E-commerce Solutions", href: "/services" }
+                    { label: "E-commerce Solutions", href: "/services" },
+                    { label: "Custom AI/ML Models", href: "/services/ai-ml-development" }
                   ].map((item, idx) => (
                     <li key={idx}>
                       <Link href={item.href}>
@@ -136,6 +137,7 @@ export default function Footer() {
                     { label: "About Us", href: "/about" },
                     { label: "Services", href: "/services" },
                     { label: "Portfolio", href: "/portfolio" },
+                    { label: "Case Studies", href: "/case-studies" },
                     { label: "Blog", href: "/blog" }
                   ].map((item, idx) => (
                     <li key={idx}>
