@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import webDevImg from "@assets/generated_images/futuristic_web_development_concept.png";
+import webDevImg from "@assets/generated_images/ai_mobile_app_development_interface.png";
 
 export default function AIAppDevelopmentPage() {
   const features = [
