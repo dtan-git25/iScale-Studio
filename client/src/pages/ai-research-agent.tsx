@@ -3,10 +3,32 @@ import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function AIResearchAgent() {
+  const pageSchema = [
+    createServiceSchema(
+      "AI Research Agent",
+      "Conduct intelligent market research, competitor analysis, and trend identification with AI-powered data synthesis. Get 10x more data coverage with real-time insights.",
+      "https://iscalestudio.com/ai-research-agent"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Services", url: "https://iscalestudio.com/services" },
+      { name: "AI Agents", url: "https://iscalestudio.com/services/ai-agents" },
+      { name: "AI Research Agent", url: "https://iscalestudio.com/ai-research-agent" }
+    ])
+  ];
+
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <>
+      <SEOHead
+        title="AI Research Agent | Automated Data Research | iScale Studio"
+        description="Conduct intelligent market research, competitor analysis, and trend identification with AI-powered data synthesis. Get 10x more data coverage with real-time insights."
+        canonical="https://iscalestudio.com/ai-research-agent"
+        schema={pageSchema}
+      />
+      <div className="min-h-screen pt-20 pb-12">
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/">
@@ -92,5 +114,6 @@ export default function AIResearchAgent() {
         </div>
       </section>
     </div>
+    </>
   );
 }

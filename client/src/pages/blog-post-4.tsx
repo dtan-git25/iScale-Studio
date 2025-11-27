@@ -2,10 +2,38 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createArticleSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
+
+const pageSchema = [
+  createArticleSchema(
+    "From Manual to Intelligent: How AI Changed Customer Support",
+    "Discover how businesses are using AI agents to handle 70% of support tickets instantly, improving customer satisfaction and reducing costs.",
+    "2024-11-15",
+    "https://iscalestudio.com/blog-post-4",
+    "Case Study"
+  ),
+  createBreadcrumbSchema([
+    { name: "Home", url: "https://iscalestudio.com" },
+    { name: "Blog", url: "https://iscalestudio.com/blog" },
+    { name: "From Manual to Intelligent: How AI Changed Customer Support", url: "https://iscalestudio.com/blog-post-4" }
+  ])
+];
 
 export default function BlogPost4() {
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="From Manual to Intelligent: How AI Changed Customer Support | iScale Studio Blog"
+        description="Discover how businesses are using AI agents to handle 70% of support tickets instantly, improving customer satisfaction and reducing costs."
+        canonical="https://iscalestudio.com/blog-post-4"
+        type="article"
+        schema={pageSchema}
+        article={{
+          publishedTime: "2024-11-15",
+          author: "iScale Studio",
+          section: "Case Study"
+        }}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

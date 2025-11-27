@@ -2,10 +2,38 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createArticleSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
+
+const pageSchema = [
+  createArticleSchema(
+    "Why Every Modern App Needs a Vector Database",
+    "Understanding RAG (Retrieval Augmented Generation) and how it powers context-aware AI applications.",
+    "2023-09-28",
+    "https://iscalestudio.com/blog-post-3",
+    "Tech Stack"
+  ),
+  createBreadcrumbSchema([
+    { name: "Home", url: "https://iscalestudio.com" },
+    { name: "Blog", url: "https://iscalestudio.com/blog" },
+    { name: "Why Every Modern App Needs a Vector Database", url: "https://iscalestudio.com/blog-post-3" }
+  ])
+];
 
 export default function BlogPost3() {
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="Why Every Modern App Needs a Vector Database | iScale Studio Blog"
+        description="Understanding RAG (Retrieval Augmented Generation) and how it powers context-aware AI applications."
+        canonical="https://iscalestudio.com/blog-post-3"
+        type="article"
+        schema={pageSchema}
+        article={{
+          publishedTime: "2023-09-28",
+          author: "iScale Studio",
+          section: "Tech Stack"
+        }}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

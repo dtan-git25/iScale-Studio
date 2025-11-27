@@ -2,10 +2,38 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createArticleSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
+
+const pageSchema = [
+  createArticleSchema(
+    "Serverless Architecture: When and Why to Go Serverless",
+    "Making the right architectural choice between serverless and traditional infrastructure.",
+    "2024-11-12",
+    "https://iscalestudio.com/blog-post-11",
+    "Cloud Infrastructure"
+  ),
+  createBreadcrumbSchema([
+    { name: "Home", url: "https://iscalestudio.com" },
+    { name: "Blog", url: "https://iscalestudio.com/blog" },
+    { name: "Serverless Architecture: When and Why to Go Serverless", url: "https://iscalestudio.com/blog-post-11" }
+  ])
+];
 
 export default function BlogPost11() {
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="Serverless Architecture: When and Why to Go Serverless | iScale Studio Blog"
+        description="Making the right architectural choice between serverless and traditional infrastructure."
+        canonical="https://iscalestudio.com/blog-post-11"
+        type="article"
+        schema={pageSchema}
+        article={{
+          publishedTime: "2024-11-12",
+          author: "iScale Studio",
+          section: "Cloud Infrastructure"
+        }}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

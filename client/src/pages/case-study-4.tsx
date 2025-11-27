@@ -2,10 +2,31 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createWebPageSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function CaseStudy4() {
+  const pageSchema = [
+    createWebPageSchema(
+      "Real Estate Platform with AI Matching | iScale Studio Case Study",
+      "Intelligent property matching connecting buyers and sellers with 40% better matches and 3.5x higher conversion rates.",
+      "https://iscalestudio.com/case-study-4"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Case Studies", url: "https://iscalestudio.com/case-studies" },
+      { name: "Real Estate AI Matching", url: "https://iscalestudio.com/case-study-4" }
+    ])
+  ];
+
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <>
+      <SEOHead
+        title="Real Estate Platform with AI Matching | iScale Studio Case Study"
+        description="Intelligent property matching connecting buyers and sellers with 40% better matches and 3.5x higher conversion rates."
+        canonical="https://iscalestudio.com/case-study-4"
+        schema={pageSchema}
+      />
+      <div className="min-h-screen pt-20 pb-12">
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,5 +133,6 @@ export default function CaseStudy4() {
         </div>
       </section>
     </div>
+    </>
   );
 }

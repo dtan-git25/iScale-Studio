@@ -4,8 +4,22 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import webDevImg from "@assets/generated_images/ai_mobile_app_development_interface.png";
+import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function AIAppDevelopmentPage() {
+  const pageSchema = [
+    createServiceSchema(
+      "AI App Development",
+      "Native and cross-platform mobile app development with AI-powered features, computer vision, and intelligent assistants.",
+      "https://iscalestudio.com/services/ai-app-development"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Services", url: "https://iscalestudio.com/services" },
+      { name: "AI App Development", url: "https://iscalestudio.com/services/ai-app-development" }
+    ])
+  ];
+
   const features = [
     "Native Mobile App Development (iOS & Android)",
     "Cross-Platform Applications with React Native",
@@ -26,6 +40,12 @@ export default function AIAppDevelopmentPage() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="AI App Development | Mobile & Desktop Apps Philippines | iScale Studio"
+        description="Custom AI-powered mobile and desktop applications with React Native, computer vision, intelligent assistants, and offline AI processing."
+        canonical="https://iscalestudio.com/services/ai-app-development"
+        schema={pageSchema}
+      />
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/services" className="text-[#8629e4] hover:text-[#9929ea] text-sm font-medium mb-4 block">

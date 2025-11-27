@@ -4,8 +4,22 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import webDevImg from "@assets/generated_images/futuristic_web_development_concept.png";
+import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function AIWebDevelopmentPage() {
+  const pageSchema = [
+    createServiceSchema(
+      "AI Web Development",
+      "Custom web applications powered by AI including React, Next.js dashboards, PWAs, and intelligent search & recommendation systems.",
+      "https://iscalestudio.com/services/ai-web-development"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Services", url: "https://iscalestudio.com/services" },
+      { name: "AI Web Development", url: "https://iscalestudio.com/services/ai-web-development" }
+    ])
+  ];
+
   const features = [
     "Custom React & Next.js Applications",
     "AI-Powered Dashboards & Analytics",
@@ -26,6 +40,12 @@ export default function AIWebDevelopmentPage() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="AI Web Development Services Philippines | iScale Studio"
+        description="Custom AI-powered web applications with React, Next.js, dashboards, PWAs, and intelligent recommendation systems. Transform your web presence with AI."
+        canonical="https://iscalestudio.com/services/ai-web-development"
+        schema={pageSchema}
+      />
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/services" className="text-[#8629e4] hover:text-[#9929ea] text-sm font-medium mb-4 block">

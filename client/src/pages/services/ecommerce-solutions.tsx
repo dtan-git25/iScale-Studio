@@ -3,8 +3,22 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import ecommerceImg from "@assets/generated_images/e-commerce_platform_interface.png";
+import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function EcommerceSolutionsPage() {
+  const pageSchema = [
+    createServiceSchema(
+      "E-commerce Solutions",
+      "AI-powered e-commerce platforms with product recommendations, smart inventory management, payment integration, and conversion optimization.",
+      "https://iscalestudio.com/services/ecommerce-solutions"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Services", url: "https://iscalestudio.com/services" },
+      { name: "E-commerce Solutions", url: "https://iscalestudio.com/services/ecommerce-solutions" }
+    ])
+  ];
+
   const features = [
     "Custom E-commerce Platform Development",
     "AI-Powered Product Recommendations",
@@ -25,6 +39,12 @@ export default function EcommerceSolutionsPage() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="AI-Powered E-commerce Solutions Philippines | iScale Studio"
+        description="Build scalable e-commerce platforms with AI product recommendations, smart inventory management, payment integration, and 24/7 AI chatbots."
+        canonical="https://iscalestudio.com/services/ecommerce-solutions"
+        schema={pageSchema}
+      />
       {/* Header */}
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

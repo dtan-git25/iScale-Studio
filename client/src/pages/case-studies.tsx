@@ -3,8 +3,20 @@ import { ArrowRight, TrendingUp } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEOHead, createBreadcrumbSchema, createWebPageSchema } from "@/components/seo/seo-head";
 
 export default function CaseStudies() {
+  const pageSchema = [
+    createWebPageSchema(
+      "Case Studies | AI & Automation Success Stories | iScale Studio",
+      "Real results from real clients. Explore how iScale Studio's AI solutions transformed businesses across e-commerce, fintech, healthcare, and more.",
+      "https://iscalestudio.com/case-studies"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Case Studies", url: "https://iscalestudio.com/case-studies" }
+    ])
+  ];
   const caseStudies = [
     {
       id: 1,
@@ -100,6 +112,12 @@ export default function CaseStudies() {
 
   return (
     <div className="min-h-screen pt-20 bg-background">
+      <SEOHead
+        title="Case Studies | AI & Automation Success Stories | iScale Studio"
+        description="Real results from real clients. Explore how iScale Studio's AI solutions transformed businesses across e-commerce, fintech, healthcare, and more."
+        canonical="https://iscalestudio.com/case-studies"
+        schema={pageSchema}
+      />
       {/* Header */}
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

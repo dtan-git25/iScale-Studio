@@ -4,8 +4,22 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import workflowImg from "@assets/generated_images/workflow_automation_concept.png";
+import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function WorkflowAutomationPage() {
+  const pageSchema = [
+    createServiceSchema(
+      "Workflow Automation",
+      "Enterprise-grade business process automation using n8n, Make, Zapier with custom API integrations and no-code solutions.",
+      "https://iscalestudio.com/services/workflow-automation"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Services", url: "https://iscalestudio.com/services" },
+      { name: "Workflow Automation", url: "https://iscalestudio.com/services/workflow-automation" }
+    ])
+  ];
+
   const features = [
     "Business Process Automation (n8n, Make)",
     "CRM & Marketing Automation",
@@ -24,6 +38,12 @@ export default function WorkflowAutomationPage() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="Workflow Automation Services Philippines | n8n, Make, Zapier | iScale Studio"
+        description="Eliminate manual tasks with enterprise-grade workflow automation. Save 20-30 hours weekly with n8n, Make, custom API integrations and no-code solutions."
+        canonical="https://iscalestudio.com/services/workflow-automation"
+        schema={pageSchema}
+      />
       {/* Header */}
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

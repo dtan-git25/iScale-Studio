@@ -2,10 +2,38 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createArticleSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
+
+const pageSchema = [
+  createArticleSchema(
+    "Building Scalable Microservices with Node.js and Kubernetes",
+    "A comprehensive guide to containerizing and orchestrating Node.js applications for enterprise-scale deployment.",
+    "2024-11-18",
+    "https://iscalestudio.com/blog-post-8",
+    "Tech Stack"
+  ),
+  createBreadcrumbSchema([
+    { name: "Home", url: "https://iscalestudio.com" },
+    { name: "Blog", url: "https://iscalestudio.com/blog" },
+    { name: "Building Scalable Microservices with Node.js and Kubernetes", url: "https://iscalestudio.com/blog-post-8" }
+  ])
+];
 
 export default function BlogPost8() {
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="Building Scalable Microservices with Node.js and Kubernetes | iScale Studio Blog"
+        description="A comprehensive guide to containerizing and orchestrating Node.js applications for enterprise-scale deployment."
+        canonical="https://iscalestudio.com/blog-post-8"
+        type="article"
+        schema={pageSchema}
+        article={{
+          publishedTime: "2024-11-18",
+          author: "iScale Studio",
+          section: "Tech Stack"
+        }}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

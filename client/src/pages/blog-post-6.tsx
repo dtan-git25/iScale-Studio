@@ -2,10 +2,38 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createArticleSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
+
+const pageSchema = [
+  createArticleSchema(
+    "The Future of E-Commerce: AI-Powered Personalization at Scale",
+    "Explore how AI recommendation engines are driving revenue growth and transforming the online shopping experience.",
+    "2024-10-30",
+    "https://iscalestudio.com/blog-post-6",
+    "AI Trends"
+  ),
+  createBreadcrumbSchema([
+    { name: "Home", url: "https://iscalestudio.com" },
+    { name: "Blog", url: "https://iscalestudio.com/blog" },
+    { name: "The Future of E-Commerce: AI-Powered Personalization at Scale", url: "https://iscalestudio.com/blog-post-6" }
+  ])
+];
 
 export default function BlogPost6() {
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="The Future of E-Commerce: AI-Powered Personalization at Scale | iScale Studio Blog"
+        description="Explore how AI recommendation engines are driving revenue growth and transforming the online shopping experience."
+        canonical="https://iscalestudio.com/blog-post-6"
+        type="article"
+        schema={pageSchema}
+        article={{
+          publishedTime: "2024-10-30",
+          author: "iScale Studio",
+          section: "AI Trends"
+        }}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

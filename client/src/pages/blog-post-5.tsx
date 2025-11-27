@@ -2,10 +2,38 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createArticleSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
+
+const pageSchema = [
+  createArticleSchema(
+    "Building Your First AI Workflow: A Step-by-Step Guide",
+    "Learn how to create intelligent automation workflows without writing code. We walk through real examples using popular no-code platforms.",
+    "2024-11-08",
+    "https://iscalestudio.com/blog-post-5",
+    "Tutorial"
+  ),
+  createBreadcrumbSchema([
+    { name: "Home", url: "https://iscalestudio.com" },
+    { name: "Blog", url: "https://iscalestudio.com/blog" },
+    { name: "Building Your First AI Workflow: A Step-by-Step Guide", url: "https://iscalestudio.com/blog-post-5" }
+  ])
+];
 
 export default function BlogPost5() {
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="Building Your First AI Workflow: A Step-by-Step Guide | iScale Studio Blog"
+        description="Learn how to create intelligent automation workflows without writing code. We walk through real examples using popular no-code platforms."
+        canonical="https://iscalestudio.com/blog-post-5"
+        type="article"
+        schema={pageSchema}
+        article={{
+          publishedTime: "2024-11-08",
+          author: "iScale Studio",
+          section: "Tutorial"
+        }}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

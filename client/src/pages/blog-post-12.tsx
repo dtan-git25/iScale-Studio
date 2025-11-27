@@ -2,10 +2,38 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createArticleSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
+
+const pageSchema = [
+  createArticleSchema(
+    "Building Resilient Systems: Disaster Recovery and Business Continuity",
+    "Essential strategies for ensuring your business stays operational when systems fail.",
+    "2024-11-10",
+    "https://iscalestudio.com/blog-post-12",
+    "DevOps"
+  ),
+  createBreadcrumbSchema([
+    { name: "Home", url: "https://iscalestudio.com" },
+    { name: "Blog", url: "https://iscalestudio.com/blog" },
+    { name: "Building Resilient Systems: Disaster Recovery and Business Continuity", url: "https://iscalestudio.com/blog-post-12" }
+  ])
+];
 
 export default function BlogPost12() {
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="Building Resilient Systems: Disaster Recovery and Business Continuity | iScale Studio Blog"
+        description="Essential strategies for ensuring your business stays operational when systems fail."
+        canonical="https://iscalestudio.com/blog-post-12"
+        type="article"
+        schema={pageSchema}
+        article={{
+          publishedTime: "2024-11-10",
+          author: "iScale Studio",
+          section: "DevOps"
+        }}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

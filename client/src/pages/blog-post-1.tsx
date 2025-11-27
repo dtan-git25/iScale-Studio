@@ -2,10 +2,38 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createArticleSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
+
+const pageSchema = [
+  createArticleSchema(
+    "The Rise of Autonomous AI Agents in Business",
+    "How companies are moving beyond simple chatbots to fully autonomous agents that can execute complex tasks.",
+    "2023-10-24",
+    "https://iscalestudio.com/blog-post-1",
+    "AI Trends"
+  ),
+  createBreadcrumbSchema([
+    { name: "Home", url: "https://iscalestudio.com" },
+    { name: "Blog", url: "https://iscalestudio.com/blog" },
+    { name: "The Rise of Autonomous AI Agents in Business", url: "https://iscalestudio.com/blog-post-1" }
+  ])
+];
 
 export default function BlogPost1() {
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="The Rise of Autonomous AI Agents in Business | iScale Studio Blog"
+        description="How companies are moving beyond simple chatbots to fully autonomous agents that can execute complex tasks."
+        canonical="https://iscalestudio.com/blog-post-1"
+        type="article"
+        schema={pageSchema}
+        article={{
+          publishedTime: "2023-10-24",
+          author: "iScale Studio",
+          section: "AI Trends"
+        }}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

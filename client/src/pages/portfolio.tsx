@@ -9,8 +9,20 @@ import marketingImg from "@assets/generated_images/marketing_automation_system.p
 import chatbotImg from "@assets/generated_images/ai_chatbot_application.png";
 import realEstateImg from "@assets/generated_images/real_estate_mobile_app.png";
 import healthcareImg from "@assets/generated_images/healthcare_management_system.png";
+import { SEOHead, createBreadcrumbSchema, createWebPageSchema } from "@/components/seo/seo-head";
 
 export default function Portfolio() {
+  const portfolioSchema = [
+    createWebPageSchema(
+      "Our Work | AI & Automation Project Portfolio | iScale Studio",
+      "Explore iScale Studio's portfolio of successful AI and automation projects including e-commerce AI assistants, workflow automation, fintech dashboards, and more.",
+      "https://iscalestudio.com/portfolio"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Portfolio", url: "https://iscalestudio.com/portfolio" }
+    ])
+  ];
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const projects = [
@@ -114,6 +126,12 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="Our Work | AI & Automation Project Portfolio | iScale Studio"
+        description="Explore iScale Studio's portfolio of successful AI and automation projects including e-commerce AI assistants, workflow automation, fintech dashboards, and more."
+        canonical="https://iscalestudio.com/portfolio"
+        schema={portfolioSchema}
+      />
       {/* Hero Header */}
       <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -2,10 +2,38 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createArticleSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
+
+const pageSchema = [
+  createArticleSchema(
+    "The Role of Machine Learning in Predictive Analytics",
+    "Leveraging machine learning to forecast trends and make data-driven business decisions.",
+    "2024-11-14",
+    "https://iscalestudio.com/blog-post-10",
+    "Data Science"
+  ),
+  createBreadcrumbSchema([
+    { name: "Home", url: "https://iscalestudio.com" },
+    { name: "Blog", url: "https://iscalestudio.com/blog" },
+    { name: "The Role of Machine Learning in Predictive Analytics", url: "https://iscalestudio.com/blog-post-10" }
+  ])
+];
 
 export default function BlogPost10() {
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="The Role of Machine Learning in Predictive Analytics | iScale Studio Blog"
+        description="Leveraging machine learning to forecast trends and make data-driven business decisions."
+        canonical="https://iscalestudio.com/blog-post-10"
+        type="article"
+        schema={pageSchema}
+        article={{
+          publishedTime: "2024-11-14",
+          author: "iScale Studio",
+          section: "Data Science"
+        }}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

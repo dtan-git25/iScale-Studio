@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Smartphone, Bot, ShoppingCart, Brain, Clock, Target, CheckCircle2 } from "lucide-react";
+import { SEOHead, createBreadcrumbSchema, createWebPageSchema } from "@/components/seo/seo-head";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -136,8 +137,25 @@ function TechStack() {
 }
 
 export default function Home() {
+  const homeSchema = [
+    createWebPageSchema(
+      "iScale Studio | AI Development & Automation Agency Philippines",
+      "Philippines-based AI development agency offering AI web & app development, workflow automation, AI agents, and custom ML solutions. Transform your business with cutting-edge AI technology.",
+      "https://iscalestudio.com"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" }
+    ])
+  ];
+
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="iScale Studio | AI Development & Automation Agency Philippines"
+        description="Philippines-based AI development agency offering AI web & app development, workflow automation, AI agents, and custom ML solutions. Transform your business with cutting-edge AI technology."
+        canonical="https://iscalestudio.com"
+        schema={homeSchema}
+      />
       {/* Hero Section */}
       <section className="relative pt-20 pb-0 lg:pt-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

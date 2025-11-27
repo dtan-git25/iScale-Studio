@@ -1,8 +1,20 @@
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
+import { SEOHead, createWebPageSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function PrivacyPolicy() {
+  const pageSchema = [
+    createWebPageSchema(
+      "Privacy Policy | iScale Studio",
+      "Learn how iScale Studio collects, uses, and protects your personal information. Our commitment to data privacy and security for our AI development services.",
+      "https://iscalestudio.com/privacy-policy"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Privacy Policy", url: "https://iscalestudio.com/privacy-policy" }
+    ])
+  ];
   const sections = [
     {
       title: "1. Introduction",
@@ -56,6 +68,12 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="Privacy Policy | iScale Studio"
+        description="Learn how iScale Studio collects, uses, and protects your personal information. Our commitment to data privacy and security for our AI development services."
+        canonical="https://iscalestudio.com/privacy-policy"
+        schema={pageSchema}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -4,8 +4,22 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import mlDevImg from "@assets/generated_images/ml_models_development_dashboard.png";
+import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function AIMLDevelopmentPage() {
+  const pageSchema = [
+    createServiceSchema(
+      "Custom AI/ML Model Development",
+      "Custom machine learning models for predictive analytics, computer vision, NLP, and real-time model deployment tailored to your business needs.",
+      "https://iscalestudio.com/services/ai-ml-development"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Services", url: "https://iscalestudio.com/services" },
+      { name: "Custom AI/ML Models", url: "https://iscalestudio.com/services/ai-ml-development" }
+    ])
+  ];
+
   const features = [
     "Predictive Analytics & Forecasting Models",
     "Computer Vision & Image Classification",
@@ -26,6 +40,12 @@ export default function AIMLDevelopmentPage() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="Custom AI & Machine Learning Model Development | iScale Studio Philippines"
+        description="Build custom ML models for predictive analytics, computer vision, NLP, and real-time deployment. Data-driven insights tailored to your business."
+        canonical="https://iscalestudio.com/services/ai-ml-development"
+        schema={pageSchema}
+      />
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/services" className="text-[#8629e4] hover:text-[#9929ea] text-sm font-medium mb-4 block">

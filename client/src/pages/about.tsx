@@ -4,8 +4,20 @@ import { motion } from "framer-motion";
 import { Lightbulb, Zap, Target, Users, Award, Brain, Rocket, TrendingUp, ArrowRight } from "lucide-react";
 import teamImg from "@assets/generated_images/professional_team_collaboration.png";
 import workspaceImg from "@assets/generated_images/modern_ai_workspace_environment.png";
+import { SEOHead, createBreadcrumbSchema, createWebPageSchema } from "@/components/seo/seo-head";
 
 export default function About() {
+  const aboutSchema = [
+    createWebPageSchema(
+      "About iScale Studio | AI Development Company Philippines",
+      "Learn about iScale Studio, a Philippines-based AI development agency helping businesses transform through AI-powered solutions, workflow automation, and intelligent agents.",
+      "https://iscalestudio.com/about"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "About", url: "https://iscalestudio.com/about" }
+    ])
+  ];
   const values = [
     {
       icon: Brain,
@@ -49,6 +61,12 @@ export default function About() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="About iScale Studio | AI Development Company Philippines"
+        description="Learn about iScale Studio, a Philippines-based AI development agency helping businesses transform through AI-powered solutions, workflow automation, and intelligent agents."
+        canonical="https://iscalestudio.com/about"
+        schema={aboutSchema}
+      />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -3,8 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { SEOHead, createBreadcrumbSchema, createWebPageSchema } from "@/components/seo/seo-head";
 
 export default function Blog() {
+  const blogSchema = [
+    createWebPageSchema(
+      "AI & Automation Insights | iScale Studio Blog",
+      "Stay updated with the latest insights on AI development, workflow automation, AI agents, and digital transformation trends from iScale Studio.",
+      "https://iscalestudio.com/blog"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Blog", url: "https://iscalestudio.com/blog" }
+    ])
+  ];
   const posts = [
     {
       id: 1,
@@ -130,6 +142,12 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen pt-20 bg-background">
+      <SEOHead
+        title="AI & Automation Insights | iScale Studio Blog"
+        description="Stay updated with the latest insights on AI development, workflow automation, AI agents, and digital transformation trends from iScale Studio."
+        canonical="https://iscalestudio.com/blog"
+        schema={blogSchema}
+      />
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div

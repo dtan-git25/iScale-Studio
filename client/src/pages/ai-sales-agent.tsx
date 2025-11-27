@@ -3,10 +3,32 @@ import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function AISalesAgent() {
+  const pageSchema = [
+    createServiceSchema(
+      "AI Sales Agent",
+      "Automate lead qualification, prospect engagement, and deal management with intelligent AI-powered sales automation. Close more deals faster with 24/7 sales engagement.",
+      "https://iscalestudio.com/ai-sales-agent"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Services", url: "https://iscalestudio.com/services" },
+      { name: "AI Agents", url: "https://iscalestudio.com/services/ai-agents" },
+      { name: "AI Sales Agent", url: "https://iscalestudio.com/ai-sales-agent" }
+    ])
+  ];
+
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <>
+      <SEOHead
+        title="AI Sales Agent | Automate Lead Qualification | iScale Studio"
+        description="Automate lead qualification, prospect engagement, and deal management with intelligent AI-powered sales automation. Close more deals faster with 24/7 sales engagement."
+        canonical="https://iscalestudio.com/ai-sales-agent"
+        schema={pageSchema}
+      />
+      <div className="min-h-screen pt-20 pb-12">
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/">
@@ -92,5 +114,6 @@ export default function AISalesAgent() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -2,10 +2,31 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createWebPageSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function CaseStudy1() {
+  const pageSchema = [
+    createWebPageSchema(
+      "E-Commerce Platform with AI Recommendation Engine | iScale Studio Case Study",
+      "How we built an intelligent AI recommendation system that increased customer engagement by 150% and revenue by 45% for an e-commerce platform.",
+      "https://iscalestudio.com/case-study-1"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Case Studies", url: "https://iscalestudio.com/case-studies" },
+      { name: "E-Commerce AI Recommendation Engine", url: "https://iscalestudio.com/case-study-1" }
+    ])
+  ];
+
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <>
+      <SEOHead
+        title="E-Commerce Platform with AI Recommendation Engine | iScale Studio Case Study"
+        description="How we built an intelligent AI recommendation system that increased customer engagement by 150% and revenue by 45% for an e-commerce platform."
+        canonical="https://iscalestudio.com/case-study-1"
+        schema={pageSchema}
+      />
+      <div className="min-h-screen pt-20 pb-12">
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,5 +137,6 @@ export default function CaseStudy1() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -2,10 +2,31 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createWebPageSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function CaseStudy5() {
+  const pageSchema = [
+    createWebPageSchema(
+      "Marketing Automation Workflow | iScale Studio Case Study",
+      "Campaign setup automation reducing setup time by 60% and improving conversions by 28% with intelligent workflow templates.",
+      "https://iscalestudio.com/case-study-5"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Case Studies", url: "https://iscalestudio.com/case-studies" },
+      { name: "Marketing Automation Workflow", url: "https://iscalestudio.com/case-study-5" }
+    ])
+  ];
+
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <>
+      <SEOHead
+        title="Marketing Automation Workflow | iScale Studio Case Study"
+        description="Campaign setup automation reducing setup time by 60% and improving conversions by 28% with intelligent workflow templates."
+        canonical="https://iscalestudio.com/case-study-5"
+        schema={pageSchema}
+      />
+      <div className="min-h-screen pt-20 pb-12">
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,5 +133,6 @@ export default function CaseStudy5() {
         </div>
       </section>
     </div>
+    </>
   );
 }

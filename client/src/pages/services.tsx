@@ -8,8 +8,20 @@ import workflowImg from "@assets/generated_images/workflow_automation_process_di
 import aiAgentImg from "@assets/generated_images/ai_agent_assistant_interface.png";
 import ecommerceImg from "@assets/generated_images/e-commerce_platform_interface.png";
 import mlDevImg from "@assets/generated_images/machine_learning_model_development_dashboard.png";
+import { SEOHead, createBreadcrumbSchema, createWebPageSchema } from "@/components/seo/seo-head";
 
 export default function Services() {
+  const servicesSchema = [
+    createWebPageSchema(
+      "AI Development Services Philippines | Web, App & Automation Solutions",
+      "Explore iScale Studio's AI development services: AI web & app development, workflow automation, AI agents, e-commerce solutions, and custom ML models for Philippine businesses.",
+      "https://iscalestudio.com/services"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Services", url: "https://iscalestudio.com/services" }
+    ])
+  ];
   const services = [
     {
       id: "ai-web-development",
@@ -132,6 +144,12 @@ export default function Services() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="AI Development Services Philippines | Web, App & Automation Solutions"
+        description="Explore iScale Studio's AI development services: AI web & app development, workflow automation, AI agents, e-commerce solutions, and custom ML models for Philippine businesses."
+        canonical="https://iscalestudio.com/services"
+        schema={servicesSchema}
+      />
       {/* Hero Header */}
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

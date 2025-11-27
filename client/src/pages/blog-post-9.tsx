@@ -2,10 +2,38 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createArticleSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
+
+const pageSchema = [
+  createArticleSchema(
+    "Data Privacy in the Age of AI: Compliance and Best Practices",
+    "Navigating GDPR, CCPA, and emerging regulations while implementing AI systems responsibly.",
+    "2024-11-16",
+    "https://iscalestudio.com/blog-post-9",
+    "Security"
+  ),
+  createBreadcrumbSchema([
+    { name: "Home", url: "https://iscalestudio.com" },
+    { name: "Blog", url: "https://iscalestudio.com/blog" },
+    { name: "Data Privacy in the Age of AI: Compliance and Best Practices", url: "https://iscalestudio.com/blog-post-9" }
+  ])
+];
 
 export default function BlogPost9() {
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="Data Privacy in the Age of AI: Compliance and Best Practices | iScale Studio Blog"
+        description="Navigating GDPR, CCPA, and emerging regulations while implementing AI systems responsibly."
+        canonical="https://iscalestudio.com/blog-post-9"
+        type="article"
+        schema={pageSchema}
+        article={{
+          publishedTime: "2024-11-16",
+          author: "iScale Studio",
+          section: "Security"
+        }}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

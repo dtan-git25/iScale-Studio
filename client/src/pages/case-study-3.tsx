@@ -2,10 +2,31 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createWebPageSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function CaseStudy3() {
+  const pageSchema = [
+    createWebPageSchema(
+      "Healthcare Data Analytics System | iScale Studio Case Study",
+      "Predictive analytics platform that improves treatment outcomes by 35% with 92% prediction accuracy for 100K+ patients.",
+      "https://iscalestudio.com/case-study-3"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Case Studies", url: "https://iscalestudio.com/case-studies" },
+      { name: "Healthcare Data Analytics", url: "https://iscalestudio.com/case-study-3" }
+    ])
+  ];
+
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <>
+      <SEOHead
+        title="Healthcare Data Analytics System | iScale Studio Case Study"
+        description="Predictive analytics platform that improves treatment outcomes by 35% with 92% prediction accuracy for 100K+ patients."
+        canonical="https://iscalestudio.com/case-study-3"
+        schema={pageSchema}
+      />
+      <div className="min-h-screen pt-20 pb-12">
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,5 +133,6 @@ export default function CaseStudy3() {
         </div>
       </section>
     </div>
+    </>
   );
 }

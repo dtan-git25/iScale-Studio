@@ -110,9 +110,9 @@ export default function Footer() {
                   {[
                     { label: "AI Web Development", href: "/services/ai-web-development" },
                     { label: "AI App Development", href: "/services/ai-app-development" },
-                    { label: "Workflow Automation", href: "/services" },
-                    { label: "AI Agents", href: "/services" },
-                    { label: "E-commerce Solutions", href: "/services" },
+                    { label: "Workflow Automation", href: "/services/workflow-automation" },
+                    { label: "AI Agents", href: "/services/ai-agents" },
+                    { label: "E-commerce Solutions", href: "/services/ecommerce-solutions" },
                     { label: "Custom AI/ML Models", href: "/services/ai-ml-development" }
                   ].map((item, idx) => (
                     <li key={idx}>

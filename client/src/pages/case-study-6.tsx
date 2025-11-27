@@ -2,10 +2,31 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createWebPageSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function CaseStudy6() {
+  const pageSchema = [
+    createWebPageSchema(
+      "AI-Powered Customer Support System | iScale Studio Case Study",
+      "Intelligent chatbot handling 75% of support tickets automatically with 90% faster response times and 4.8/5 customer satisfaction.",
+      "https://iscalestudio.com/case-study-6"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Case Studies", url: "https://iscalestudio.com/case-studies" },
+      { name: "AI-Powered Customer Support", url: "https://iscalestudio.com/case-study-6" }
+    ])
+  ];
+
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <>
+      <SEOHead
+        title="AI-Powered Customer Support System | iScale Studio Case Study"
+        description="Intelligent chatbot handling 75% of support tickets automatically with 90% faster response times and 4.8/5 customer satisfaction."
+        canonical="https://iscalestudio.com/case-study-6"
+        schema={pageSchema}
+      />
+      <div className="min-h-screen pt-20 pb-12">
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,5 +133,6 @@ export default function CaseStudy6() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -4,8 +4,22 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import aiAgentImg from "@assets/generated_images/ai_agent_concept.png";
+import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function AIAgentsPage() {
+  const pageSchema = [
+    createServiceSchema(
+      "AI Agent Development",
+      "Autonomous AI agents for customer service, document processing, and multi-step business logic using GPT, LLMs, and custom chatbots.",
+      "https://iscalestudio.com/services/ai-agents"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Services", url: "https://iscalestudio.com/services" },
+      { name: "AI Agent Development", url: "https://iscalestudio.com/services/ai-agents" }
+    ])
+  ];
+
   const features = [
     "Custom GPT & LLM Integration",
     "Customer Service Chatbots",
@@ -24,6 +38,12 @@ export default function AIAgentsPage() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="AI Agent Development | Chatbots & Autonomous Agents Philippines | iScale Studio"
+        description="Deploy autonomous AI agents for 24/7 customer support, document processing, and complex business logic. Reduce support costs by up to 70%."
+        canonical="https://iscalestudio.com/services/ai-agents"
+        schema={pageSchema}
+      />
       {/* Header */}
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

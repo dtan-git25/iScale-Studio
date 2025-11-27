@@ -1,8 +1,20 @@
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
+import { SEOHead, createWebPageSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function TermsOfService() {
+  const pageSchema = [
+    createWebPageSchema(
+      "Terms of Service | iScale Studio",
+      "Read iScale Studio's terms of service including usage agreements, service delivery terms, payment policies, and intellectual property rights.",
+      "https://iscalestudio.com/terms-of-service"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Terms of Service", url: "https://iscalestudio.com/terms-of-service" }
+    ])
+  ];
   const sections = [
     {
       title: "1. Agreement to Terms",
@@ -72,6 +84,12 @@ export default function TermsOfService() {
 
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="Terms of Service | iScale Studio"
+        description="Read iScale Studio's terms of service including usage agreements, service delivery terms, payment policies, and intellectual property rights."
+        canonical="https://iscalestudio.com/terms-of-service"
+        schema={pageSchema}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

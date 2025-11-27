@@ -3,10 +3,32 @@ import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function AISupportAgent() {
+  const pageSchema = [
+    createServiceSchema(
+      "AI Support Agent",
+      "Provide instant 24/7 customer support with intelligent troubleshooting, automatic ticket resolution, and seamless human escalation. Reduce response times by 90%.",
+      "https://iscalestudio.com/ai-support-agent"
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://iscalestudio.com" },
+      { name: "Services", url: "https://iscalestudio.com/services" },
+      { name: "AI Agents", url: "https://iscalestudio.com/services/ai-agents" },
+      { name: "AI Support Agent", url: "https://iscalestudio.com/ai-support-agent" }
+    ])
+  ];
+
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <>
+      <SEOHead
+        title="AI Support Agent | 24/7 Customer Service Automation | iScale Studio"
+        description="Provide instant 24/7 customer support with intelligent troubleshooting, automatic ticket resolution, and seamless human escalation. Reduce response times by 90%."
+        canonical="https://iscalestudio.com/ai-support-agent"
+        schema={pageSchema}
+      />
+      <div className="min-h-screen pt-20 pb-12">
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/">
@@ -92,5 +114,6 @@ export default function AISupportAgent() {
         </div>
       </section>
     </div>
+    </>
   );
 }

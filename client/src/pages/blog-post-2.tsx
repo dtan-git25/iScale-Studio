@@ -2,10 +2,38 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead, createArticleSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
+
+const pageSchema = [
+  createArticleSchema(
+    "Streamlining Operations with n8n and OpenAI",
+    "A technical deep dive into building a custom invoice processing pipeline using low-code tools.",
+    "2023-10-12",
+    "https://iscalestudio.com/blog-post-2",
+    "Tutorial"
+  ),
+  createBreadcrumbSchema([
+    { name: "Home", url: "https://iscalestudio.com" },
+    { name: "Blog", url: "https://iscalestudio.com/blog" },
+    { name: "Streamlining Operations with n8n and OpenAI", url: "https://iscalestudio.com/blog-post-2" }
+  ])
+];
 
 export default function BlogPost2() {
   return (
     <div className="min-h-screen pt-20 pb-12">
+      <SEOHead
+        title="Streamlining Operations with n8n and OpenAI | iScale Studio Blog"
+        description="A technical deep dive into building a custom invoice processing pipeline using low-code tools."
+        canonical="https://iscalestudio.com/blog-post-2"
+        type="article"
+        schema={pageSchema}
+        article={{
+          publishedTime: "2023-10-12",
+          author: "iScale Studio",
+          section: "Tutorial"
+        }}
+      />
       {/* Header */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
