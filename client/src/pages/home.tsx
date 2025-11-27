@@ -28,7 +28,7 @@ import appDevImg from "@assets/generated_images/ai_mobile_app_development_interf
 import workflowImg from "@assets/generated_images/workflow_automation_process_diagram.png";
 import aiAgentImg from "@assets/generated_images/ai_agent_assistant_interface.png";
 import ecommerceSvcImg from "@assets/generated_images/e-commerce_platform_interface.png";
-import mlDevImg from "@assets/generated_images/machine_learning_model_development_dashboard.png";
+import mlDevImg from "@assets/generated_images/ml_model_development_dashboard.png";
 
 // Tech Stack Component
 function TechStack() {
