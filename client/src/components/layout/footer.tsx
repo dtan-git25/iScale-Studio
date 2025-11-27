@@ -82,8 +82,9 @@ export default function Footer() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1, y: -3 }}
                         className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#9929ea]/10 to-[#5808fb]/10 border border-[#9929ea]/30 flex items-center justify-center text-[#8629e4] hover:from-[#9929ea] hover:to-[#5808fb] hover:text-white hover:border-[#9929ea] transition-all"
+                        aria-label={`Visit our ${social.label} page`}
                       >
-                        <Icon className={social.label === "X" ? "h-5 w-5" : "h-5 w-5"} />
+                        <Icon className="h-5 w-5" aria-hidden="true" />
                       </motion.a>
                     );
                   })}

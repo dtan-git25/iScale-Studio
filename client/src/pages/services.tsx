@@ -190,26 +190,24 @@ export default function Services() {
                 transition={{ delay: idx * 0.1 }}
                 className="group"
               >
-                <Link href={service.href || `/services/${service.id}`}>
-                  <a className="block h-full">
-                    <motion.div
-                      whileHover={{ y: -8 }}
-                      transition={{ duration: 0.3 }}
-                      className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all h-full flex flex-col"
-                    >
-                      <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                        <service.icon className="h-7 w-7 text-white" />
-                      </div>
-                      
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
-                      <p className="text-sm text-[#8629e4] font-medium mb-3">{service.subtitle}</p>
-                      <p className="text-gray-700 mb-6 flex-grow">{service.shortDesc}</p>
-                      
-                      <div className="flex items-center text-[#8629e4] font-medium group-hover:translate-x-2 transition-transform">
-                        Explore <ArrowRight className="ml-2 h-4 w-4" />
-                      </div>
-                    </motion.div>
-                  </a>
+                <Link href={service.href || `/services/${service.id}`} className="block h-full">
+                  <motion.div
+                    whileHover={{ y: -8 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all h-full flex flex-col"
+                  >
+                    <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                      <service.icon className="h-7 w-7 text-white" />
+                    </div>
+                    
+                    <h2 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h2>
+                    <p className="text-sm text-[#8629e4] font-medium mb-3">{service.subtitle}</p>
+                    <p className="text-gray-700 mb-6 flex-grow">{service.shortDesc}</p>
+                    
+                    <div className="flex items-center text-[#8629e4] font-medium group-hover:translate-x-2 transition-transform">
+                      Explore {service.title} <ArrowRight className="ml-2 h-4 w-4" />
+                    </div>
+                  </motion.div>
                 </Link>
               </motion.div>
             ))}

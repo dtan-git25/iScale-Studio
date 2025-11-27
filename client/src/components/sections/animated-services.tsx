@@ -95,13 +95,8 @@ export function AnimatedServices() {
                       ))}
                     </div>
 
-                    <Link href="/services">
-                      <motion.a
-                        className="inline-flex items-center text-sm font-medium text-[#9929ea] hover:text-[#8629e4] transition-colors group/link"
-                        whileHover={{ x: 5 }}
-                      >
-                        Learn More <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
-                      </motion.a>
+                    <Link href="/services" className="inline-flex items-center text-sm font-medium text-[#9929ea] hover:text-[#8629e4] transition-colors group/link">
+                      Learn More About {service.title} <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>

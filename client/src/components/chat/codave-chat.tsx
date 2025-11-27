@@ -77,6 +77,7 @@ export function CoDaveChat() {
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white shadow-lg hover:shadow-xl transition-all flex items-center justify-center z-40 group"
         data-testid="button-chat-toggle"
+        aria-label={isOpen ? "Close chat" : "Open chat assistant"}
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
@@ -87,7 +88,7 @@ export function CoDaveChat() {
               exit={{ rotate: 0, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <X className="h-6 w-6" />
+              <X className="h-6 w-6" aria-hidden="true" />
             </motion.div>
           ) : (
             <motion.div
@@ -97,7 +98,7 @@ export function CoDaveChat() {
               exit={{ rotate: 0, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <MessageCircle className="h-6 w-6" />
+              <MessageCircle className="h-6 w-6" aria-hidden="true" />
             </motion.div>
           )}
         </AnimatePresence

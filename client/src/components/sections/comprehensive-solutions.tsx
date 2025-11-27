@@ -156,13 +156,14 @@ export function ComprehensiveSolutions() {
                       ))}
                     </ul>
 
-                    {/* Learn More ArrowLeftRight */}
+                    {/* Learn More Button */}
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       className="w-full bg-black text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-gray-800 transition-colors"
+                      aria-label={`Learn more about ${solution.title}`}
                     >
-                      Learn More
+                      Learn More About {solution.title}
                     </motion.button>
                   </div>
                 </motion.div>
