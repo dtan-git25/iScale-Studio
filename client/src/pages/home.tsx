@@ -24,6 +24,7 @@ import chatbotImg from "@assets/generated_images/ai_chatbot_application.png";
 import realEstateImg from "@assets/generated_images/real_estate_mobile_app.png";
 import healthcareImg from "@assets/generated_images/healthcare_management_system.png";
 import appDevImg from "@assets/generated_images/ai_mobile_app_development_interface.png";
+import webDevImg from "@assets/generated_images/futuristic_web_development_concept.png";
 
 // Tech Stack Component
 function TechStack() {
@@ -214,63 +215,56 @@ export default function Home() {
 
       </section>
 
-      {/* AI App Development Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-purple-50/20">
+      {/* AI Web Development Section */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
-                Build intelligent applications
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">AI App Development</h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                We create custom web and mobile applications infused with Artificial Intelligence. From predictive analytics to personalized user experiences, our apps do more than function—they think.
-              </p>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
+              <span className="w-2 h-2 rounded-full bg-[#8629e4]"></span>
+              Build intelligent web applications
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">AI Web Development</h2>
+            <p className="text-lg text-gray-700 max-w-2xl">
+              We create custom web applications infused with Artificial Intelligence. From predictive analytics dashboards to AI-powered recommendation engines, our web solutions combine modern design with intelligent functionality.
+            </p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-            >
-              <img src={appDevImg} alt="AI App Development" className="rounded-xl shadow-lg" />
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <h3 className="text-3xl font-bold">Key Features</h3>
-              <ul className="space-y-3">
-                {[
-                  "Native Mobile App Development (iOS & Android)",
-                  "Cross-Platform Applications with React Native",
-                  "AI-Powered Mobile Assistants",
-                  "Offline-First AI Processing",
-                  "Computer Vision & Image Recognition Apps",
-                  "Enterprise Mobile Solutions"
-                ].map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8">
+                <h3 className="text-sm font-bold text-gray-900 mb-6 uppercase tracking-wide">KEY FEATURES</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Custom React & Next.js Applications",
+                    "AI-Powered Dashboards & Analytics",
+                    "Progressive Web Apps (PWA)",
+                    "Real-time Data Visualization",
+                    "Intelligent Search & Recommendation Systems"
+                  ].map((feature, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-[#8629e4] flex-shrink-0" />
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Link href="/services/ai-app-development">
+              <div className="flex flex-wrap gap-4">
+                <Link href="/services/ai-web-development">
                   <Button variant="outline" className="rounded-full px-6 h-11 border-gray-300 hover:bg-gray-50">
-                    Full Details
+                    Full Details →
                   </Button>
                 </Link>
                 <Link href="/booking">
@@ -279,6 +273,15 @@ export default function Home() {
                   </Button>
                 </Link>
               </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img src={webDevImg} alt="AI Web Development" className="rounded-xl shadow-lg w-full" />
             </motion.div>
           </div>
         </div>
