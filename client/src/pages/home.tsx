@@ -189,6 +189,9 @@ export default function Home() {
 
       </section>
 
+      {/* About Section */}
+      <AnimatedAbout />
+
       {/* Services Overview Grid */}
       <section className="py-24 relative overflow-hidden">
         <motion.div
@@ -288,9 +291,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* About Section */}
-      <AnimatedAbout />
 
       {/* AI Web Development Section */}
       <section className="py-24 md:py-32 bg-gradient-to-b from-white via-cyan-50/30 to-white relative overflow-hidden">
