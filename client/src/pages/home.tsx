@@ -856,7 +856,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {[
               {
                 title: "E-Commerce Platform with AI Recommendation Engine",
@@ -878,13 +878,6 @@ export default function Home() {
                 industry: "FinTech",
                 link: "/case-study-2",
                 gradient: "from-blue-500 to-cyan-500"
-              },
-              {
-                title: "AI-Powered Customer Support System",
-                result: "75% Automation",
-                industry: "Customer Service",
-                link: "/case-study-6",
-                gradient: "from-red-500 to-pink-500"
               }
             ].map((study, idx) => (
               <Link key={idx} href={study.link}>
