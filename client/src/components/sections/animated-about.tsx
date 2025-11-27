@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { Link } from "wouter";
+import { CheckCircle2 } from "lucide-react";
 
 export function AnimatedAbout() {
   const highlights = [
@@ -95,23 +94,6 @@ export function AnimatedAbout() {
                   <span className="text-gray-700 font-medium">{highlight}</span>
                 </motion.div>
               ))}
-            </motion.div>
-
-            {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-            >
-              <Link href="/booking">
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#9929ea] to-[#5808fb] text-white font-bold rounded-full hover:shadow-lg hover:shadow-[#9929ea]/40 transition-all"
-                >
-                  Start Your Project <ArrowRight className="h-4 w-4" />
-                </motion.a>
-              </Link>
             </motion.div>
           </motion.div>
 
