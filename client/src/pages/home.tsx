@@ -276,9 +276,9 @@ export default function Home() {
                         <service.icon className="h-7 w-7 text-white" />
                       </div>
                       
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                      <p className="text-sm text-[#8629e4] font-medium mb-4">{service.subtitle}</p>
-                      <p className="text-gray-700 flex-grow">{service.shortDesc}</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                      <p className="text-xs text-[#8629e4] font-medium mb-4 uppercase tracking-wide">{service.subtitle}</p>
+                      <p className="text-gray-700 text-sm flex-grow leading-relaxed">{service.shortDesc}</p>
                     </motion.div>
                   </a>
                 </Link>
