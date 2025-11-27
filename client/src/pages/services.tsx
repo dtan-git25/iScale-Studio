@@ -60,7 +60,8 @@ export default function Services() {
       ],
       image: workflowImg,
       icon: "Zap",
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-purple-500 to-pink-500",
+      href: "/services/workflow-automation"
     },
     {
       id: "ai-agents",
@@ -77,7 +78,8 @@ export default function Services() {
       ],
       image: aiAgentImg,
       icon: "Target",
-      gradient: "from-pink-500 to-rose-500"
+      gradient: "from-pink-500 to-rose-500",
+      href: "/services/ai-agents"
     },
     {
       id: "ecommerce-solutions",
@@ -95,7 +97,8 @@ export default function Services() {
       ],
       image: ecommerceImg,
       icon: "Shield",
-      gradient: "from-emerald-500 to-teal-500"
+      gradient: "from-emerald-500 to-teal-500",
+      href: "/services/ecommerce-solutions"
     }
   ];
 
@@ -138,7 +141,7 @@ export default function Services() {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, idx) => (
               <motion.div
                 key={service.id}
@@ -148,7 +151,7 @@ export default function Services() {
                 transition={{ delay: idx * 0.1 }}
                 className="group"
               >
-                <Link href={`/services/${service.id}`}>
+                <Link href={service.href || `/services/${service.id}`}>
                   <a className="block h-full">
                     <motion.div
                       whileHover={{ y: -8 }}
