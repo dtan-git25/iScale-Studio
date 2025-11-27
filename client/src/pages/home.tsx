@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Smartphone, Bot, ShoppingCart, Brain } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -190,6 +190,124 @@ export default function Home() {
 
         {/* Interactive Hero Section */}
         <InteractiveHero />
+      </section>
+
+      {/* Services Overview Grid */}
+      <section className="py-24 relative overflow-hidden">
+        <motion.div
+          animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
+          transition={{ duration: 15, repeat: Infinity }}
+          className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/10 to-transparent rounded-full blur-3xl pointer-events-none"
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
+                Our Services
+              </div>
+              <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+                Comprehensive AI & Digital Solutions
+              </h2>
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                From intelligent web and mobile apps to custom ML models and workflow automation, we deliver end-to-end solutions tailored to your business needs.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                id: "ai-web-development",
+                title: "AI Web Development",
+                subtitle: "Build intelligent web applications",
+                shortDesc: "Custom web applications powered by cutting-edge AI technology.",
+                icon: Globe,
+                gradient: "from-cyan-500 to-blue-500",
+                href: "/services/ai-web-development"
+              },
+              {
+                id: "ai-app-development",
+                title: "AI App Development",
+                subtitle: "Build intelligent mobile apps",
+                shortDesc: "Custom mobile apps powered by cutting-edge AI technology.",
+                icon: Smartphone,
+                gradient: "from-blue-500 to-indigo-500",
+                href: "/services/ai-app-development"
+              },
+              {
+                id: "workflow-automation",
+                title: "Workflow Automation",
+                subtitle: "Eliminate manual tasks",
+                shortDesc: "Enterprise-grade automation workflows that connect your tools and run on autopilot.",
+                icon: Zap,
+                gradient: "from-purple-500 to-pink-500",
+                href: "/services/workflow-automation"
+              },
+              {
+                id: "ai-agents",
+                title: "AI Agent Development",
+                subtitle: "Deploy digital workforce",
+                shortDesc: "Autonomous AI agents that handle complex inquiries and multi-step business logic.",
+                icon: Bot,
+                gradient: "from-pink-500 to-rose-500",
+                href: "/services/ai-agents"
+              },
+              {
+                id: "ecommerce-solutions",
+                title: "E-commerce Solutions",
+                subtitle: "Elevate your online store",
+                shortDesc: "Powerful e-commerce platforms with integrated AI features to drive sales.",
+                icon: ShoppingCart,
+                gradient: "from-emerald-500 to-teal-500",
+                href: "/services/ecommerce-solutions"
+              },
+              {
+                id: "ai-ml-development",
+                title: "Custom AI/ML Models",
+                subtitle: "Build proprietary ML models",
+                shortDesc: "Custom machine learning models tailored to your specific data and business needs.",
+                icon: Brain,
+                gradient: "from-orange-500 to-yellow-500",
+                href: "/services/ai-ml-development"
+              }
+            ].map((service, idx) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group"
+              >
+                <Link href={service.href}>
+                  <a className="block h-full">
+                    <motion.div
+                      whileHover={{ y: -8 }}
+                      transition={{ duration: 0.3 }}
+                      className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all h-full flex flex-col"
+                    >
+                      <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                        <service.icon className="h-7 w-7 text-white" />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                      <p className="text-sm text-[#8629e4] font-medium mb-3">{service.subtitle}</p>
+                      <p className="text-gray-700 mb-6 flex-grow">{service.shortDesc}</p>
+                      
+                      <div className="flex items-center text-[#8629e4] font-medium group-hover:translate-x-2 transition-transform">
+                        Explore <ArrowRight className="ml-2 h-4 w-4" />
+                      </div>
+                    </motion.div>
+                  </a>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* About Section */}
