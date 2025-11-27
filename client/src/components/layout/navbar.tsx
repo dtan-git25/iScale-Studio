@@ -13,6 +13,26 @@ export default function Navbar() {
   const [location] = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // Helper function to check if location is within a service or its subpages
+  const isServiceActive = (href: string, submenu?: any[]) => {
+    if (location === href) return true;
+    if (submenu) {
+      return submenu.some(item => location === item.href);
+    }
+    return false;
+  };
+
+  // Check if any service is active
+  const isAnyServiceActive = () => {
+    return location.startsWith("/services") || 
+           location === "/ai-sales-agent" || 
+           location === "/ai-support-agent" || 
+           location === "/ai-marketing-agent" || 
+           location === "/ai-admin-agent" || 
+           location === "/ai-research-agent" || 
+           location === "/ai-content-agent";
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -91,7 +111,7 @@ export default function Navbar() {
               <button
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 className={`text-sm font-medium transition-all flex items-center gap-1 ${
-                  location === "/services" ? "text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#5808fb]" : "text-gray-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb]"
+                  isAnyServiceActive() ? "text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#5808fb]" : "text-gray-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb]"
                 }`}
               >
                 Services
@@ -117,7 +137,11 @@ export default function Navbar() {
                               setServicesDropdownOpen(false);
                               setExpandedSubmenu(null);
                             }}
-                            className="flex-1 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#8629e4] transition-colors"
+                            className={`flex-1 px-4 py-3 text-sm transition-colors ${
+                              isServiceActive(link.href, link.submenu) 
+                                ? "text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#5808fb] font-semibold" 
+                                : "text-gray-700 hover:bg-gray-50 hover:text-[#8629e4]"
+                            }`}
                           >
                             {link.name}
                           </Link>
@@ -159,7 +183,11 @@ export default function Navbar() {
                         onClick={() => {
                           setServicesDropdownOpen(false);
                         }}
-                        className="flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#8629e4] transition-colors border-b border-gray-100 last:border-b-0"
+                        className={`flex items-center justify-between px-4 py-3 text-sm transition-colors border-b border-gray-100 last:border-b-0 ${
+                          location === link.href 
+                            ? "text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#5808fb] font-semibold" 
+                            : "text-gray-700 hover:bg-gray-50 hover:text-[#8629e4]"
+                        }`}
                       >
                         <span>{link.name}</span>
                       </Link>
