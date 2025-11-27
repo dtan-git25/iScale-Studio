@@ -102,7 +102,8 @@ export default function Footer() {
                 <div className="h-1 w-12 bg-gradient-to-r from-[#9929ea] to-[#5808fb] rounded-full mb-6"></div>
                 <ul className="space-y-3">
                   {[
-                    { label: "AI Web & App", href: "/services" },
+                    { label: "AI Web Development", href: "/services/ai-web-development" },
+                    { label: "AI App Development", href: "/services/ai-app-development" },
                     { label: "Workflow Automation", href: "/services" },
                     { label: "AI Agents", href: "/services" },
                     { label: "E-commerce Solutions", href: "/services" },
