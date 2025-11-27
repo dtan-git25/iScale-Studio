@@ -274,7 +274,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="order-1 lg:order-2"
             >
-              <img src={webDevImg} alt="AI Web Development" className="rounded-xl shadow-lg w-full h-auto" />
+              <img src={webDevImg} alt="AI Web Development" className="rounded-xl shadow-lg" />
             </motion.div>
           </div>
         </div>
