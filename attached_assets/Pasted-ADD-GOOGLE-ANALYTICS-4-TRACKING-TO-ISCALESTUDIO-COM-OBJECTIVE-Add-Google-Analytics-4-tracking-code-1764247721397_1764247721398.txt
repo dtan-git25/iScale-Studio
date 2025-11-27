@@ -1,0 +1,141 @@
+ADD GOOGLE ANALYTICS 4 TRACKING TO ISCALESTUDIO.COM
+
+OBJECTIVE: Add Google Analytics 4 tracking code to track website visitors and behavior.
+
+═══════════════════════════════════════════════════════════
+TASK DESCRIPTION
+═══════════════════════════════════════════════════════════
+
+Add the following Google Analytics 4 (GA4) tracking code to the main HTML file to enable website analytics tracking.
+
+═══════════════════════════════════════════════════════════
+STEP-BY-STEP INSTRUCTIONS
+═══════════════════════════════════════════════════════════
+
+## Step 1: Locate the Main HTML File
+
+Find and open the main index.html file. This is likely located at:
+- /index.html
+- /public/index.html
+- /src/index.html (if applicable)
+
+## Step 2: Find the <head> Section
+
+Locate the <head> tag in the HTML file. You'll add the tracking code inside this section.
+
+## Step 3: Add Google Analytics Code
+
+Insert the following code in the <head> section, preferably near the top after the <meta> tags but BEFORE other <script> tags:
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1TSQ46FW5G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'G-1TSQ46FW5G');
+</script>
+```
+
+## Step 4: Verify Placement
+
+After adding the code, the <head> section should look similar to this:
+```html
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="iScale Studio is a Philippines-based AI development agency..." />
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TSQ46FW5G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-1TSQ46FW5G');
+  </script>
+  
+  <title>iScale Studio | AI Development & Automation Agency Philippines</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  
+  <!-- Rest of existing head content -->
+</head>
+```
+
+═══════════════════════════════════════════════════════════
+CRITICAL REQUIREMENTS
+═══════════════════════════════════════════════════════════
+
+✅ Add code INSIDE the <head> section (not in <body>)
+✅ Place BEFORE other scripts for best tracking accuracy
+✅ Keep the "async" attribute on the first script tag
+✅ Do NOT modify the tracking ID: G-1TSQ46FW5G
+✅ Keep both <script> tags together (they work as a pair)
+✅ Maintain proper indentation for code readability
+
+═══════════════════════════════════════════════════════════
+WHAT NOT TO DO
+═══════════════════════════════════════════════════════════
+
+❌ Do NOT place code in <body> section
+❌ Do NOT modify or change the tracking ID
+❌ Do NOT remove the "async" attribute
+❌ Do NOT separate the two script tags
+❌ Do NOT place it after closing </head> tag
+
+═══════════════════════════════════════════════════════════
+AFTER IMPLEMENTATION
+═══════════════════════════════════════════════════════════
+
+Once you've added the code:
+
+1. Save the file
+2. Ensure the build process completes successfully
+3. The code will be active after deployment
+4. Tracking will start immediately upon deployment
+
+═══════════════════════════════════════════════════════════
+EXPECTED RESULT
+═══════════════════════════════════════════════════════════
+
+After deployment, the Google Analytics code will:
+- Track all page views automatically
+- Collect visitor data (location, device, browser)
+- Track user behavior and session duration
+- Provide insights in Google Analytics dashboard
+- Show real-time active users
+
+═══════════════════════════════════════════════════════════
+VERIFICATION
+═══════════════════════════════════════════════════════════
+
+After you add the code, confirm that:
+- The code is inside <head> tags
+- Both script tags are present
+- The tracking ID is G-1TSQ46FW5G
+- The file saves without errors
+- The build completes successfully
+
+I will test the implementation after deployment by checking the page source code.
+
+═══════════════════════════════════════════════════════════
+SUMMARY
+═══════════════════════════════════════════════════════════
+
+**What to do:**
+Add the Google Analytics tracking code to the <head> section of index.html
+
+**Where to add it:**
+Inside <head>, after meta tags, before other scripts
+
+**Tracking ID:**
+G-1TSQ46FW5G (do not change)
+
+**Impact:**
+- No visual changes to the website
+- Minimal performance impact (async loading)
+- Enables comprehensive analytics tracking
+
+Please proceed with adding this code to the index.html file now.
