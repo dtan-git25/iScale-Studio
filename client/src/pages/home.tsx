@@ -279,10 +279,6 @@ export default function Home() {
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
                       <p className="text-sm text-[#8629e4] font-medium mb-3">{service.subtitle}</p>
                       <p className="text-gray-700 mb-6 flex-grow">{service.shortDesc}</p>
-                      
-                      <div className="flex items-center text-[#8629e4] font-medium group-hover:translate-x-2 transition-transform">
-                        Explore <ArrowRight className="ml-2 h-4 w-4" />
-                      </div>
                     </motion.div>
                   </a>
                 </Link>
