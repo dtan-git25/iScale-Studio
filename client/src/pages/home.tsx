@@ -13,11 +13,6 @@ import { AnimatedFeatures } from "@/components/sections/animated-features";
 import { Reviews } from "@/components/sections/reviews";
 import { AnimatedFAQ } from "@/components/sections/animated-faq";
 import { AnimatedAbout } from "@/components/sections/animated-about";
-import heroImage from "@assets/optimized_images/abstract_ai_neural_network_background.webp";
-import servicesImage from "@assets/optimized_images/abstract_ai_neural_network_visualization.webp";
-import processImage from "@assets/optimized_images/digital_workflow_automation_process.webp";
-import featuresImage from "@assets/optimized_images/tech_expertise_collaboration_network.webp";
-import portfolioImage from "@assets/optimized_images/ai_machine_learning_data_flow.webp";
 import fintechImg from "@assets/optimized_images/fintech_dashboard_project.webp";
 import ecommerceImg from "@assets/optimized_images/e-commerce_platform_project.webp";
 import marketingImg from "@assets/optimized_images/marketing_automation_system.webp";
@@ -146,34 +141,28 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-20 pb-0 lg:pt-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
-                AI-Powered Digital Solutions
-              </div>
-              <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-4">
-                Transform Your Business with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#2DBFBA]">AI-Powered</span> Digital Solutions
-              </h1>
-              <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Custom AI-powered applications, intelligent workflow automation, and autonomous agents designed for Philippine businesses to scale faster and operate smarter.
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Link href="/booking">
-                  <Button size="lg" className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
-                    Schedule a Consultation
-                  </Button>
-                </Link>
-                <Link href="/portfolio">
-                  <Button variant="outline" size="lg" className="rounded-full px-8 h-12 text-base border-gray-300 hover:bg-gray-50">
-                    View Our Solutions
-                  </Button>
-                </Link>
-              </div>
-            </motion.div>
+          <div className="text-center mb-12 animate-fade-in-up">
+            <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
+              AI-Powered Digital Solutions
+            </div>
+            <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-4">
+              Transform Your Business with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#2DBFBA]">AI-Powered</span> Digital Solutions
+            </h1>
+            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Custom AI-powered applications, intelligent workflow automation, and autonomous agents designed for Philippine businesses to scale faster and operate smarter.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="/booking">
+                <Button size="lg" className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
+                  Schedule a Consultation
+                </Button>
+              </Link>
+              <Link href="/portfolio">
+                <Button variant="outline" size="lg" className="rounded-full px-8 h-12 text-base border-gray-300 hover:bg-gray-50">
+                  View Our Solutions
+                </Button>
+              </Link>
+            </div>
           </div>
 
           {/* Client Testimonials */}
@@ -197,13 +186,9 @@ export default function Home() {
                     role: "Tech Lead"
                   }
                 ].map((testimonial, idx) => (
-                  <motion.div
+                  <div
                     key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1, duration: 0.6 }}
-                    className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm border border-white/40 rounded-xl p-6 shadow-md hover:shadow-lg transition-all"
+                    className={`bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm border border-white/40 rounded-xl p-6 shadow-md hover:shadow-lg transition-all animate-fade-in-up-delay-${idx + 1}`}
                   >
                     <div className="flex gap-1 mb-3">
                       {[...Array(5)].map((_, i) => (
@@ -215,7 +200,7 @@ export default function Home() {
                       <p className="text-gray-900 font-semibold text-sm">{testimonial.author}</p>
                       <p className="text-[#8629e4] text-xs">{testimonial.role}</p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>

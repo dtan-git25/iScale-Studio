@@ -29,14 +29,25 @@
     <meta name="geo.region" content="PH-TAR" />
     <meta name="geo.placename" content="Capas, Tarlac, Philippines" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TSQ46FW5G"></script>
+    <!-- Google tag (gtag.js) - Deferred to improve FCP -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      
-      gtag('config', 'G-1TSQ46FW5G');
+      function loadGA() {
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-1TSQ46FW5G';
+        s.async = true;
+        s.onload = function() {
+          gtag('js', new Date());
+          gtag('config', 'G-1TSQ46FW5G');
+        };
+        document.head.appendChild(s);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(loadGA, 2000);
+      } else {
+        window.addEventListener('load', function() { setTimeout(loadGA, 2000); });
+      }
     </script>
     
     <!-- Preconnect to external resources -->
