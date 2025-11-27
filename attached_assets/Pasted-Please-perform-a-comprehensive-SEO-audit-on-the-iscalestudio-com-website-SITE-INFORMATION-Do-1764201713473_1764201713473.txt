@@ -1,0 +1,61 @@
+Please perform a comprehensive SEO audit on the iscalestudio.com website.
+
+SITE INFORMATION:
+- Domain: iscalestudio.com
+- Business: iScale Studio - AI-powered digital solutions
+- Primary Service: AI Web & App Development
+- Secondary Services: Workflow Automation, AI Agents
+- Goal: Lead generation through consultation booking
+
+SEO AUDIT CHECKLIST:
+
+1. META TAGS & HTML STRUCTURE:
+   - Check if all pages have unique <title> tags (50-60 characters)
+   - Verify meta descriptions exist (150-160 characters)
+   - Confirm Open Graph tags for social sharing
+   - Check for proper heading hierarchy (H1, H2, H3)
+   - Verify canonical URLs are set
+
+2. TECHNICAL SEO:
+   - Check if robots.txt exists and is properly configured
+   - Verify sitemap.xml exists and is accessible
+   - Test page load speed and performance
+   - Check mobile responsiveness
+   - Verify HTTPS is properly configured
+   - Check for broken links (404 errors)
+   - Test structured data/schema markup
+
+3. ON-PAGE SEO:
+   - Check image alt tags are present and descriptive
+   - Verify internal linking structure
+   - Check URL structure (clean, descriptive URLs)
+   - Verify keyword usage in headings and content
+   - Check content quality and keyword density
+
+4. CONTENT OPTIMIZATION:
+   - Verify unique content on each page
+   - Check for duplicate content issues
+   - Verify call-to-action placement and clarity
+   - Check readability and content structure
+
+5. PERFORMANCE:
+   - Analyze page load times
+   - Check image optimization and compression
+   - Verify CSS/JS minification
+   - Test Core Web Vitals (LCP, FID, CLS)
+
+6. FILES TO CHECK/CREATE:
+   - /robots.txt
+   - /sitemap.xml
+   - All page HTML files for meta tags
+   - Any analytics/tracking code integration
+
+DELIVERABLE:
+Provide a detailed report with:
+1. Current SEO status (what's working)
+2. Issues found (what needs fixing)
+3. Specific recommendations with priority levels (High/Medium/Low)
+4. Code examples for implementing fixes
+5. Overall SEO score estimation
+
+Please scan all files in the project, analyze the live site structure, and provide actionable recommendations to improve SEO performance.
