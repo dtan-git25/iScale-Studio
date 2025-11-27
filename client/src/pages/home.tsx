@@ -195,6 +195,131 @@ export default function Home() {
       {/* About Section */}
       <AnimatedAbout />
 
+      {/* AI Web Development Section */}
+      <section className="py-24 md:py-32 bg-gradient-to-b from-white via-cyan-50/30 to-white relative overflow-hidden">
+        <motion.div
+          animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
+          transition={{ duration: 20, repeat: Infinity }}
+          className="absolute top-20 left-0 w-80 h-80 bg-gradient-to-br from-cyan-500/12 to-transparent rounded-full blur-3xl pointer-events-none"
+        />
+        <motion.div
+          animate={{ x: [0, -50, 50, 0], y: [0, 30, -30, 0] }}
+          transition={{ duration: 18, repeat: Infinity }}
+          className="absolute bottom-20 right-0 w-72 h-72 bg-gradient-to-br from-blue-500/12 to-transparent rounded-full blur-3xl pointer-events-none"
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
+                Web Development
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4">
+                AI-Powered Web Development for Enterprise Solutions
+              </h2>
+              <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto">
+                Custom web applications enhanced with artificial intelligence, featuring intelligent dashboards, AI-powered recommendations, and real-time data visualization.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                icon: "🌐",
+                title: "Smart Dashboards",
+                description: "AI-powered dashboards with predictive analytics and real-time insights for data-driven decisions",
+                features: ["Live Analytics", "AI Insights", "Real-time Data"]
+              },
+              {
+                icon: "🎯",
+                title: "Intelligent Recommendations",
+                description: "Smart recommendation engines that learn from user behavior and boost conversions",
+                features: ["Personalization", "Smart Algorithms", "Conversion Boost"]
+              },
+              {
+                icon: "⚡",
+                title: "High Performance",
+                description: "Lightning-fast web applications optimized with AI-driven caching and intelligent load balancing",
+                features: ["Fast Loading", "Smart Caching", "Optimized"]
+              },
+              {
+                icon: "🔍",
+                title: "Intelligent Search",
+                description: "Advanced search capabilities with AI understanding natural language queries and context",
+                features: ["NLP Search", "Semantic Search", "Smart Filters"]
+              },
+              {
+                icon: "📊",
+                title: "Data Visualization",
+                description: "Beautiful, interactive charts and visualizations that make complex data easy to understand",
+                features: ["Charts", "Graphs", "Interactive UI"]
+              },
+              {
+                icon: "🛡️",
+                title: "Enterprise Security",
+                description: "Built with security-first approach featuring AI-powered threat detection and prevention",
+                features: ["AI Security", "SSL/TLS", "Data Protection"]
+              }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="group"
+              >
+                <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <div className="text-5xl mb-4">{item.icon}</div>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#9929ea] group-hover:to-[#5808fb] transition-all">
+                    {item.title}
+                  </h3>
+                  
+                  <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                    {item.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {item.features.map((feature, i) => (
+                      <Badge key={i} className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 text-gray-700 hover:from-cyan-500/20 hover:to-blue-500/20 transition-all text-xs">
+                        {feature}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-r from-cyan-500/15 to-blue-500/15 border border-cyan-500/40 rounded-2xl p-8 sm:p-12 backdrop-blur-md text-center"
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+              Ready to build your next AI-powered web platform?
+            </h3>
+            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+              Let's create an intelligent web solution that drives engagement and delivers measurable results.
+            </p>
+            <Link href="/services/ai-web-development">
+              <Button className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
+                Explore Web Development <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* AI-Powered App Development Section */}
       <section className="py-24 md:py-32 bg-gradient-to-b from-white via-purple-50/30 to-white relative overflow-hidden">
         <motion.div
@@ -219,10 +344,10 @@ export default function Home() {
                 App Development
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4">
-                AI-Powered App Development for Modern Businesses
+                AI-Powered Mobile & Desktop Apps
               </h2>
               <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto">
-                Custom web and mobile applications enhanced with artificial intelligence, delivering smarter features, faster processes, and exceptional user experiences.
+                Custom mobile and desktop applications enhanced with artificial intelligence, delivering powerful features, seamless performance, and intelligent user experiences.
               </p>
             </motion.div>
           </div>
@@ -230,40 +355,40 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {[
               {
+                icon: "📱",
+                title: "Native Mobile Apps",
+                description: "iOS and Android native apps with seamless AI integration and offline capabilities",
+                features: ["iOS/Android", "Native Performance", "Offline Mode"]
+              },
+              {
                 icon: "🤖",
-                title: "Intelligent Features",
-                description: "AI-powered recommendations, predictive analytics, and smart automation built into every app",
-                features: ["Personalization", "Smart Search", "Predictive UI"]
+                title: "AI Assistants",
+                description: "Intelligent mobile assistants that understand context and provide personalized guidance",
+                features: ["NLP Integration", "Personalization", "Smart Learning"]
               },
               {
                 icon: "⚡",
                 title: "Lightning Fast",
                 description: "Optimized performance with AI-driven caching and intelligent resource management",
-                features: ["Fast Loading", "Smart Caching", "Optimized Code"]
+                features: ["Fast Loading", "Smart Caching", "Optimized"]
+              },
+              {
+                icon: "📸",
+                title: "Computer Vision",
+                description: "Advanced image recognition and processing capabilities built into your app",
+                features: ["Image Recognition", "OCR", "Real-time Processing"]
               },
               {
                 icon: "🔒",
                 title: "Secure & Scalable",
-                description: "Enterprise-grade security with AI-powered threat detection and auto-scaling infrastructure",
-                features: ["AI Security", "Auto-Scaling", "99.9% Uptime"]
+                description: "Enterprise-grade security with AI-powered threat detection and auto-scaling",
+                features: ["AI Security", "Auto-Scaling", "Encryption"]
               },
               {
-                icon: "📱",
-                title: "Mobile & Web",
-                description: "Native mobile apps and responsive web applications with seamless AI integration",
-                features: ["iOS/Android", "Responsive", "Cross-Platform"]
-              },
-              {
-                icon: "🧠",
-                title: "Machine Learning",
-                description: "Custom ML models that learn from user behavior and improve over time",
-                features: ["Custom Models", "Real-time Learning", "Analytics"]
-              },
-              {
-                icon: "🔄",
-                title: "Continuous Improvement",
-                description: "Built-in monitoring and AI-driven optimization that evolves with your business",
-                features: ["Performance Tracking", "Auto-Optimization", "A/B Testing"]
+                icon: "📊",
+                title: "Smart Analytics",
+                description: "Built-in monitoring and AI-driven insights that track user behavior and app performance",
+                features: ["User Analytics", "Performance Tracking", "Insights"]
               }
             ].map((item, idx) => (
               <motion.div
@@ -306,14 +431,14 @@ export default function Home() {
             className="bg-gradient-to-r from-[#9929ea]/15 to-[#2DBFBA]/15 border border-[#9929ea]/40 rounded-2xl p-8 sm:p-12 backdrop-blur-md text-center"
           >
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
-              Ready to build your next AI-powered app?
+              Ready to build your next AI-powered mobile or desktop app?
             </h3>
             <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-              Let's discuss your vision and create an intelligent application that scales with your business.
+              Let's discuss your vision and create an intelligent application that delivers powerful features to your users.
             </p>
-            <Link href="/services/ai-development">
+            <Link href="/services/ai-app-development">
               <Button className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
-                Explore AI Development <ArrowRight className="ml-2 h-4 w-4" />
+                Explore App Development <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </motion.div>
