@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { PenSquare } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { InteractiveHero } from "@/components/hero/interactive-hero";
 import { AnimatedServices } from "@/components/sections/animated-services";
 import { AnimatedProcess } from "@/components/sections/animated-process";
 import { AnimatedFeatures } from "@/components/sections/animated-features";
@@ -188,8 +187,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Interactive Hero Section */}
-        <InteractiveHero />
       </section>
 
       {/* Services Overview Grid */}
