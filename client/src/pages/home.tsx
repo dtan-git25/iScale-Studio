@@ -498,7 +498,7 @@ export default function Home() {
                   </p>
 
                   {/* Key Features Box */}
-                  <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                  <div className="bg-gradient-to-r from-white via-white to-[#2DBFBA]/10 rounded-xl p-6 border border-gray-100/50">
                     <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wide mb-4">Key Features</h4>
                     <ul className="space-y-3">
                       {service.features.map((feature, i) => (
