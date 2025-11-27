@@ -530,13 +530,13 @@ export default function Home() {
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
-                    className="relative h-[400px]"
+                    className="relative"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-[#9929ea]/20 to-[#2DBFBA]/20 rounded-2xl blur-2xl opacity-50"></div>
                     <img 
                       src={service.image} 
                       alt={service.title}
-                      className="relative rounded-2xl shadow-2xl w-full h-full object-cover"
+                      className="relative rounded-2xl shadow-2xl w-full object-cover"
                     />
                   </motion.div>
                 </div>
