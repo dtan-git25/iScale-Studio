@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, Zap, Target, Clock, Shield, Globe, Smartphone, Bot, ShoppingCart } from "lucide-react";
+import { CheckCircle2, ArrowRight, Zap, Target, Clock, Shield, Globe, Smartphone, Bot, ShoppingCart, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import webDevImg from "@assets/generated_images/futuristic_web_development_concept.png";
@@ -99,6 +99,25 @@ export default function Services() {
       icon: ShoppingCart,
       gradient: "from-emerald-500 to-teal-500",
       href: "/services/ecommerce-solutions"
+    },
+    {
+      id: "ai-ml-development",
+      title: "Custom AI/ML Models",
+      subtitle: "Build proprietary ML models",
+      shortDesc: "Custom machine learning models tailored to your specific data and business needs.",
+      description: "We develop custom machine learning models that unlock actionable insights from your data. From predictive analytics to computer vision, our models are built to solve your specific business challenges.",
+      features: [
+        "Predictive Analytics & Forecasting",
+        "Computer Vision & Image Classification",
+        "Natural Language Processing (NLP)",
+        "Customer Churn & Risk Prediction",
+        "Custom Model Training & Optimization",
+        "Real-time Model Inference & Deployment"
+      ],
+      image: webDevImg,
+      icon: Brain,
+      gradient: "from-orange-500 to-yellow-500",
+      href: "/services/ai-ml-development"
     }
   ];
 

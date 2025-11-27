@@ -13,6 +13,7 @@ import AIAppDevelopment from "@/pages/services/ai-app-development";
 import WorkflowAutomation from "@/pages/services/workflow-automation";
 import AIAgents from "@/pages/services/ai-agents";
 import EcommerceSolutions from "@/pages/services/ecommerce-solutions";
+import AIMLDevelopment from "@/pages/services/ai-ml-development";
 import Portfolio from "@/pages/portfolio";
 import About from "@/pages/about";
 import Blog from "@/pages/blog";
@@ -70,6 +71,7 @@ function Router() {
           <Route path="/services/workflow-automation" component={WorkflowAutomation} />
           <Route path="/services/ai-agents" component={AIAgents} />
           <Route path="/services/ecommerce-solutions" component={EcommerceSolutions} />
+          <Route path="/services/ai-ml-development" component={AIMLDevelopment} />
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/about" component={About} />
           <Route path="/blog" component={Blog} />
