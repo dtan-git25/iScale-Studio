@@ -850,6 +850,27 @@ export default function Home() {
                 industry: "FinTech",
                 link: "/case-study-2",
                 gradient: "from-blue-500 to-cyan-500"
+              },
+              {
+                title: "Marketing Automation for SaaS Company",
+                result: "+120% Lead Gen",
+                industry: "SaaS",
+                link: "/case-study-4",
+                gradient: "from-purple-500 to-indigo-500"
+              },
+              {
+                title: "Supply Chain AI Optimization",
+                result: "25% Cost Reduction",
+                industry: "Logistics",
+                link: "/case-study-5",
+                gradient: "from-yellow-500 to-amber-500"
+              },
+              {
+                title: "Customer Service AI Chatbot System",
+                result: "70% Issue Resolution",
+                industry: "Retail",
+                link: "/case-study-6",
+                gradient: "from-cyan-500 to-blue-500"
               }
             ].map((study, idx) => (
               <Link key={idx} href={study.link}>
