@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import workflowImg from "@assets/generated_images/workflow_automation_concept.png";
 
@@ -100,6 +101,87 @@ export default function WorkflowAutomationPage() {
                     <p className="text-lg text-gray-700 font-medium">{benefit}</p>
                   </div>
                 </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Featured Automation Capabilities */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-20"
+          >
+            <h2 className="text-4xl font-bold mb-12">Featured Automation Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: "⚙️",
+                  title: "Process Automation",
+                  description: "Automate repetitive tasks and manual workflows to boost productivity and reduce operational costs",
+                  features: ["RPA", "Task Scheduling", "Batch Processing"]
+                },
+                {
+                  icon: "🔗",
+                  title: "Seamless Integration",
+                  description: "Connect all your business tools and systems with intelligent automation bridges",
+                  features: ["API Integration", "Data Sync", "Multi-System"]
+                },
+                {
+                  icon: "📊",
+                  title: "Data-Driven Workflows",
+                  description: "Make intelligent decisions with real-time data processing and analytics-driven automation",
+                  features: ["Real-time Processing", "Smart Routing", "Data Analytics"]
+                },
+                {
+                  icon: "🤝",
+                  title: "Collaborative Automation",
+                  description: "Enable teams to work smarter with automated handoffs and intelligent task distribution",
+                  features: ["Task Routing", "Team Collaboration", "Approval Workflows"]
+                },
+                {
+                  icon: "📈",
+                  title: "Business Intelligence",
+                  description: "Gain visibility into your processes with detailed analytics, dashboards, and performance metrics",
+                  features: ["Analytics", "Reporting", "Insights"]
+                },
+                {
+                  icon: "🔐",
+                  title: "Secure & Compliant",
+                  description: "Maintain security and compliance with audit trails, access controls, and data protection",
+                  features: ["Audit Logs", "Access Control", "Compliance"]
+                }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  className="group"
+                >
+                  <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div className="text-5xl mb-4">{item.icon}</div>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#9929ea] group-hover:to-[#5808fb] transition-all">
+                      {item.title}
+                    </h3>
+                    
+                    <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                      {item.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {item.features.map((feature, i) => (
+                        <Badge key={i} className="bg-gradient-to-r from-[#9929ea]/10 to-[#5808fb]/10 border border-[#9929ea]/30 text-gray-700 hover:from-[#9929ea]/20 hover:to-[#5808fb]/20 transition-all text-xs">
+                          {feature}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
