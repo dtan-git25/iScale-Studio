@@ -5,6 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { PenSquare } from "lucide-react";
+import boosterioLogo from "@assets/generated_images/boosterio_tech_company_logo.png";
+import atomicSeoLogo from "@assets/generated_images/atomic_seo_agency_logo.png";
+import voleyLogo from "@assets/generated_images/voley_sports_brand_logo.png";
+import ibmMediaLogo from "@assets/generated_images/ibm_media_company_logo.png";
+import greenhostLogo from "@assets/generated_images/greenhost_eco-friendly_hosting_logo.png";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AnimatedServices } from "@/components/sections/animated-services";
 import { AnimatedProcess } from "@/components/sections/animated-process";
@@ -169,17 +174,23 @@ export default function Home() {
           <div className="flex justify-center mt-16">
             <div className="w-full">
               <p className="text-center text-xs text-gray-700 mb-8 uppercase tracking-wide">Trusted by leading companies</p>
-              <div className="flex justify-center items-center gap-12 flex-wrap">
-                {["Boosterio", "Atomic SEO", "Voley", "IBM Media", "GreenHost"].map((client, idx) => (
+              <div className="flex justify-center items-center gap-8 md:gap-12 flex-wrap">
+                {[
+                  { logo: boosterioLogo, name: "Boosterio" },
+                  { logo: atomicSeoLogo, name: "Atomic SEO" },
+                  { logo: voleyLogo, name: "Voley" },
+                  { logo: ibmMediaLogo, name: "IBM Media" },
+                  { logo: greenhostLogo, name: "GreenHost" }
+                ].map((client, idx) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.08, duration: 0.5 }}
-                    className="flex items-center justify-center"
+                    className="flex items-center justify-center hover:scale-110 transition-transform"
                   >
-                    <span className="text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors">{client}</span>
+                    <img src={client.logo} alt={client.name} className="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
                   </motion.div>
                 ))}
               </div>
