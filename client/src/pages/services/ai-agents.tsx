@@ -3,7 +3,7 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import aiAgentImg from "@assets/generated_images/ai_agent_concept.png";
+import aiAgentImg from "@assets/optimized_images/ai_agent_concept.webp";
 import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function AIAgentsPage() {
@@ -181,14 +181,13 @@ export default function AIAgentsPage() {
                   link: "/ai-content-agent"
                 }
               ].map((item, idx) => (
-                <Link key={idx} href={item.link}>
-                  <motion.a
+                <Link key={idx} href={item.link} className="group block cursor-pointer h-full">
+                  <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
                     whileHover={{ y: -8 }}
-                    className="group block cursor-pointer h-full"
                   >
                     <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
                       <div className="text-5xl mb-4">{item.icon}</div>
@@ -209,7 +208,7 @@ export default function AIAgentsPage() {
                         ))}
                       </div>
                     </div>
-                  </motion.a>
+                  </motion.div>
                 </Link>
               ))}
             </div>

@@ -148,10 +148,20 @@ Preferred communication style: Simple, everyday language.
 
 **Date Handling:** date-fns v3.6.0
 
-**Performance Considerations:**
+**Performance Optimizations (PageSpeed):**
+- **Image Optimization:** All images converted to WebP format (96-98% size reduction from original PNGs)
+  - Optimized images stored in: `attached_assets/optimized_images/`
+  - Original images remain in: `attached_assets/generated_images/`
+  - Optimization script: `scripts/optimize-images.js` (uses Sharp library)
+- **Code Splitting:** React.lazy() implemented for all 35+ route components in App.tsx
+  - Suspense boundary with loading spinner for smooth transitions
+  - Significantly reduces initial bundle size
+- **Font Loading:** Non-blocking font loading with preload and media="print" strategy
+  - Reduced font weights to only essential: 400, 500, 600, 700
+  - Removed JetBrains Mono from initial load (not used on primary pages)
+- **Server Compression:** Gzip/Brotli compression enabled in production via Express middleware
+- **Static Asset Caching:** Long-term caching (1 year) for immutable assets (JS, CSS, images, fonts)
 - Source map optimization (@jridgewell/trace-mapping)
-- Asset preloading and font optimization
-- Lazy loading strategies for route-based code splitting
 
 **SEO Infrastructure:**
 - Sitemap.xml with 35+ URLs, proper priority weighting

@@ -3,6 +3,7 @@ import { type Server } from "node:http";
 import path from "node:path";
 
 import express, { type Express, type Request } from "express";
+import compression from "compression";
 
 import runApp from "./app";
 
@@ -15,10 +16,30 @@ export async function serveStatic(app: Express, server: Server) {
     );
   }
 
-  app.use(express.static(distPath));
+  app.use(compression());
 
-  // fall through to index.html if the file doesn't exist
+  app.use((req, res, next) => {
+    if (req.path.endsWith('.html') || req.path === '/' || !req.path.includes('.')) {
+      res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    }
+    next();
+  });
+
+  app.use(express.static(distPath, {
+    maxAge: "1y",
+    etag: true,
+    index: false,
+    setHeaders: (res, filePath) => {
+      if (filePath.match(/\.(js|css|woff2?|ttf|eot)$/)) {
+        res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+      } else if (filePath.match(/\.(png|jpg|jpeg|gif|webp|svg|ico)$/)) {
+        res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+      }
+    }
+  }));
+
   app.use("*", (_req, res) => {
+    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     res.sendFile(path.resolve(distPath, "index.html"));
   });
 }

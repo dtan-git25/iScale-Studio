@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Zap, Target, Clock, Shield, Globe, Smartphone, Bot, ShoppingCart, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import webDevImg from "@assets/generated_images/ai_web_development_modern_interface.png";
-import appDevImg from "@assets/generated_images/ai_mobile_app_development_interface.png";
-import workflowImg from "@assets/generated_images/workflow_automation_process_diagram.png";
-import aiAgentImg from "@assets/generated_images/ai_agent_assistant_interface.png";
-import ecommerceImg from "@assets/generated_images/e-commerce_platform_interface.png";
-import mlDevImg from "@assets/generated_images/machine_learning_model_development_dashboard.png";
+import webDevImg from "@assets/optimized_images/ai_web_development_modern_interface.webp";
+import appDevImg from "@assets/optimized_images/ai_mobile_app_development_interface.webp";
+import workflowImg from "@assets/optimized_images/workflow_automation_process_diagram.webp";
+import aiAgentImg from "@assets/optimized_images/ai_agent_assistant_interface.webp";
+import ecommerceImg from "@assets/optimized_images/e-commerce_platform_interface.webp";
+import mlDevImg from "@assets/optimized_images/ml_models_development_dashboard.webp";
 import { SEOHead, createBreadcrumbSchema, createWebPageSchema } from "@/components/seo/seo-head";
 
 export default function Services() {

@@ -3,12 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
-import fintechImg from "@assets/generated_images/fintech_dashboard_project.png";
-import ecommerceImg from "@assets/generated_images/e-commerce_platform_project.png";
-import marketingImg from "@assets/generated_images/marketing_automation_system.png";
-import chatbotImg from "@assets/generated_images/ai_chatbot_application.png";
-import realEstateImg from "@assets/generated_images/real_estate_mobile_app.png";
-import healthcareImg from "@assets/generated_images/healthcare_management_system.png";
+import fintechImg from "@assets/optimized_images/fintech_dashboard_project.webp";
+import ecommerceImg from "@assets/optimized_images/e-commerce_platform_project.webp";
+import marketingImg from "@assets/optimized_images/marketing_automation_system.webp";
+import chatbotImg from "@assets/optimized_images/ai_chatbot_application.webp";
+import realEstateImg from "@assets/optimized_images/real_estate_mobile_app.webp";
+import healthcareImg from "@assets/optimized_images/healthcare_management_system.webp";
 import { SEOHead, createBreadcrumbSchema, createWebPageSchema } from "@/components/seo/seo-head";
 
 export default function Portfolio() {

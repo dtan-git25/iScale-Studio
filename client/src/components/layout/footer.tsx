@@ -33,10 +33,8 @@ export default function Footer() {
               <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
                 Let's discuss how AI and automation can help you scale faster and operate smarter.
               </p>
-              <Link href="/booking">
-                <a className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-[#9929ea] to-[#5808fb] text-white font-bold hover:shadow-lg hover:shadow-[#9929ea]/40 transition-all hover:scale-105">
-                  Schedule a Consultation <ArrowRight className="h-4 w-4" />
-                </a>
+              <Link href="/booking" className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-[#9929ea] to-[#5808fb] text-white font-bold hover:shadow-lg hover:shadow-[#9929ea]/40 transition-all hover:scale-105">
+                Schedule a Consultation <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </motion.div>
@@ -67,10 +65,8 @@ export default function Footer() {
               className="group"
             >
               <div className="bg-gradient-to-br from-white/95 to-white/40 backdrop-blur-xl border border-white/60 p-8 rounded-2xl hover:border-[#8629e4]/40 transition-all duration-300 h-full shadow-lg hover:shadow-xl">
-                <Link href="/">
-                  <a className="flex items-center mb-6 group-hover:scale-105 transition-transform">
-                    <img src={logo} alt="iScale Studio" className="h-10 w-auto" />
-                  </a>
+                <Link href="/" className="flex items-center mb-6 group-hover:scale-105 transition-transform">
+                  <img src={logo} alt="iScale Studio" className="h-10 w-auto" />
                 </Link>
                 <p className="text-gray-700 text-sm leading-relaxed mb-6">
                   Empowering businesses with cutting-edge AI solutions, intelligent workflow automation, and custom software development.
@@ -116,11 +112,9 @@ export default function Footer() {
                     { label: "Custom AI/ML Models", href: "/services/ai-ml-development" }
                   ].map((item, idx) => (
                     <li key={idx}>
-                      <Link href={item.href}>
-                        <a className="text-gray-700 text-sm hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb] transition-all flex items-center gap-2 group/link">
-                          <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#9929ea] to-[#5808fb] group-hover/link:scale-150 transition-transform"></span>
-                          {item.label}
-                        </a>
+                      <Link href={item.href} className="text-gray-700 text-sm hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb] transition-all flex items-center gap-2 group/link">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#9929ea] to-[#5808fb] group-hover/link:scale-150 transition-transform"></span>
+                        {item.label}
                       </Link>
                     </li>
                   ))}
@@ -149,11 +143,9 @@ export default function Footer() {
                     { label: "Contact", href: "/booking" }
                   ].map((item, idx) => (
                     <li key={idx}>
-                      <Link href={item.href}>
-                        <a className="text-gray-700 text-sm hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2DBFBA] hover:to-[#8629e4] transition-all flex items-center gap-2 group/link">
-                          <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#2DBFBA] to-[#5808fb] group-hover/link:scale-150 transition-transform"></span>
-                          {item.label}
-                        </a>
+                      <Link href={item.href} className="text-gray-700 text-sm hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2DBFBA] hover:to-[#8629e4] transition-all flex items-center gap-2 group/link">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#2DBFBA] to-[#5808fb] group-hover/link:scale-150 transition-transform"></span>
+                        {item.label}
                       </Link>
                     </li>
                   ))}
@@ -194,12 +186,8 @@ export default function Footer() {
           <div className="border-t border-white/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-700">
             <p>&copy; {new Date().getFullYear()} iScale Studio. All rights reserved.</p>
             <div className="flex space-x-6">
-              <Link href="/privacy-policy">
-                <a className="hover:text-[#8629e4] transition-colors">Privacy Policy</a>
-              </Link>
-              <Link href="/terms-of-service">
-                <a className="hover:text-[#8629e4] transition-colors">Terms of Service</a>
-              </Link>
+              <Link href="/privacy-policy" className="hover:text-[#8629e4] transition-colors">Privacy Policy</Link>
+              <Link href="/terms-of-service" className="hover:text-[#8629e4] transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>

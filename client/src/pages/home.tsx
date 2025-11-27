@@ -13,23 +13,23 @@ import { AnimatedFeatures } from "@/components/sections/animated-features";
 import { Reviews } from "@/components/sections/reviews";
 import { AnimatedFAQ } from "@/components/sections/animated-faq";
 import { AnimatedAbout } from "@/components/sections/animated-about";
-import heroImage from "@assets/generated_images/abstract_ai_neural_network_background.png";
-import servicesImage from "@assets/generated_images/abstract_ai_neural_network_visualization.png";
-import processImage from "@assets/generated_images/digital_workflow_automation_process.png";
-import featuresImage from "@assets/generated_images/tech_expertise_collaboration_network.png";
-import portfolioImage from "@assets/generated_images/ai_machine_learning_data_flow.png";
-import fintechImg from "@assets/generated_images/fintech_dashboard_project.png";
-import ecommerceImg from "@assets/generated_images/e-commerce_platform_project.png";
-import marketingImg from "@assets/generated_images/marketing_automation_system.png";
-import chatbotImg from "@assets/generated_images/ai_chatbot_application.png";
-import realEstateImg from "@assets/generated_images/real_estate_mobile_app.png";
-import healthcareImg from "@assets/generated_images/healthcare_management_system.png";
-import webDevImg from "@assets/generated_images/ai_web_development_modern_interface.png";
-import appDevImg from "@assets/generated_images/ai_mobile_app_development_interface.png";
-import workflowImg from "@assets/generated_images/workflow_automation_process_diagram.png";
-import aiAgentImg from "@assets/generated_images/ai_agent_assistant_interface.png";
-import ecommerceSvcImg from "@assets/generated_images/e-commerce_platform_interface.png";
-import mlDevImg from "@assets/generated_images/ml_models_development_dashboard.png";
+import heroImage from "@assets/optimized_images/abstract_ai_neural_network_background.webp";
+import servicesImage from "@assets/optimized_images/abstract_ai_neural_network_visualization.webp";
+import processImage from "@assets/optimized_images/digital_workflow_automation_process.webp";
+import featuresImage from "@assets/optimized_images/tech_expertise_collaboration_network.webp";
+import portfolioImage from "@assets/optimized_images/ai_machine_learning_data_flow.webp";
+import fintechImg from "@assets/optimized_images/fintech_dashboard_project.webp";
+import ecommerceImg from "@assets/optimized_images/e-commerce_platform_project.webp";
+import marketingImg from "@assets/optimized_images/marketing_automation_system.webp";
+import chatbotImg from "@assets/optimized_images/ai_chatbot_application.webp";
+import realEstateImg from "@assets/optimized_images/real_estate_mobile_app.webp";
+import healthcareImg from "@assets/optimized_images/healthcare_management_system.webp";
+import webDevImg from "@assets/optimized_images/ai_web_development_modern_interface.webp";
+import appDevImg from "@assets/optimized_images/ai_mobile_app_development_interface.webp";
+import workflowImg from "@assets/optimized_images/workflow_automation_process_diagram.webp";
+import aiAgentImg from "@assets/optimized_images/ai_agent_assistant_interface.webp";
+import ecommerceSvcImg from "@assets/optimized_images/e-commerce_platform_interface.webp";
+import mlDevImg from "@assets/optimized_images/ml_models_development_dashboard.webp";
 
 // Tech Stack Component
 function TechStack() {
@@ -310,22 +310,20 @@ export default function Home() {
                 transition={{ delay: idx * 0.1 }}
                 className="group"
               >
-                <Link href={service.href}>
-                  <a className="block h-full">
-                    <motion.div
-                      whileHover={{ y: -8 }}
-                      transition={{ duration: 0.3 }}
-                      className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all h-full flex flex-col"
-                    >
-                      <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                        <service.icon className="h-7 w-7 text-white" />
-                      </div>
-                      
-                      <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                      <p className="text-xs text-[#8629e4] font-medium mb-4 uppercase tracking-wide">{service.subtitle}</p>
-                      <p className="text-gray-700 text-sm flex-grow leading-relaxed">{service.shortDesc}</p>
-                    </motion.div>
-                  </a>
+                <Link href={service.href} className="block h-full">
+                  <motion.div
+                    whileHover={{ y: -8 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all h-full flex flex-col"
+                  >
+                    <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <service.icon className="h-7 w-7 text-white" />
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                    <p className="text-xs text-[#8629e4] font-medium mb-4 uppercase tracking-wide">{service.subtitle}</p>
+                    <p className="text-gray-700 text-sm flex-grow leading-relaxed">{service.shortDesc}</p>
+                  </motion.div>
                 </Link>
               </motion.div>
             ))}
@@ -891,15 +889,14 @@ export default function Home() {
                 gradient: "from-cyan-500 to-blue-500"
               }
             ].map((study, idx) => (
-              <Link key={idx} href={study.link}>
-                <motion.a
+              <Link key={idx} href={study.link} className="group block cursor-pointer h-full" data-testid={`homepage-case-study-${idx}`}>
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                   whileHover={{ y: -6 }}
-                  className="group block cursor-pointer h-full"
-                  data-testid={`homepage-case-study-${idx}`}
+                  className="h-full"
                 >
                   <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col">
                     <div className={`h-1 w-16 bg-gradient-to-r ${study.gradient} rounded-full mb-4`}></div>
@@ -919,7 +916,7 @@ export default function Home() {
                       <ArrowRight className="h-5 w-5 text-[#9929ea] group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
-                </motion.a>
+                </motion.div>
               </Link>
             ))}
           </div>
@@ -1000,15 +997,14 @@ export default function Home() {
                 gradient: "from-red-500 to-pink-500"
               }
             ].map((post, idx) => (
-              <Link key={idx} href={post.link}>
-                <motion.a
+              <Link key={idx} href={post.link} className="group block cursor-pointer h-full" data-testid={`homepage-blog-card-${idx}`}>
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className="group block cursor-pointer h-full"
-                  data-testid={`homepage-blog-card-${idx}`}
+                  className="h-full"
                 >
                   <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col">
                     <div className={`h-1 w-16 bg-gradient-to-r ${post.gradient} rounded-full mb-4`}></div>
@@ -1030,7 +1026,7 @@ export default function Home() {
                       Read Article <ArrowRight className="ml-2 h-4 w-4" />
                     </div>
                   </div>
-                </motion.a>
+                </motion.div>
               </Link>
             ))}
           </div>

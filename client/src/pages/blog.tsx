@@ -175,14 +175,12 @@ export default function Blog() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10">
           {posts.map((post, idx) => (
-            <Link key={post.id} href={post.link}>
-              <motion.a
+            <Link key={post.id} href={post.link} className="group block cursor-pointer" data-testid={`blog-card-${post.id}`}>
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group block cursor-pointer"
-                data-testid={`blog-card-${post.id}`}
               >
                 <motion.div
                   animate={{ y: [0, -5, 0] }}
@@ -213,7 +211,7 @@ export default function Blog() {
                     </div>
                   </div>
                 </motion.div>
-              </motion.a>
+              </motion.div>
             </Link>
           ))}
         </div>

@@ -148,15 +148,13 @@ export default function CaseStudies() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {caseStudies.map((study, idx) => (
-              <Link key={study.id} href={study.link}>
-                <motion.a
+              <Link key={study.id} href={study.link} className="group block cursor-pointer h-full" data-testid={`case-study-card-${study.id}`}>
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className="group block cursor-pointer h-full"
-                  data-testid={`case-study-card-${study.id}`}
                 >
                   <div className="h-full bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col">
                     {/* Header with gradient bar */}
@@ -202,7 +200,7 @@ export default function CaseStudies() {
                       </div>
                     </div>
                   </div>
-                </motion.a>
+                </motion.div>
               </Link>
             ))}
           </div>

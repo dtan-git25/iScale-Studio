@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Lightbulb, Zap, Target, Users, Award, Brain, Rocket, TrendingUp, ArrowRight } from "lucide-react";
-import teamImg from "@assets/generated_images/professional_team_collaboration.png";
-import workspaceImg from "@assets/generated_images/modern_ai_workspace_environment.png";
+import teamImg from "@assets/optimized_images/professional_team_collaboration.webp";
+import workspaceImg from "@assets/optimized_images/modern_ai_workspace_environment.webp";
 import { SEOHead, createBreadcrumbSchema, createWebPageSchema } from "@/components/seo/seo-head";
 
 export default function About() {

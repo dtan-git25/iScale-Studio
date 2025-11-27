@@ -3,7 +3,7 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import workflowImg from "@assets/generated_images/workflow_automation_concept.png";
+import workflowImg from "@assets/optimized_images/workflow_automation_concept.webp";
 import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function WorkflowAutomationPage() {

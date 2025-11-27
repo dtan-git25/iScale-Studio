@@ -1,0 +1,130 @@
+CRITICAL: Fix PageSpeed Performance Issues for iscalestudio.com Mobile
+
+Current Performance Score: 26/100 (POOR)
+Target: 90+ (GOOD)
+
+## PRIORITY 1 - Image Optimization (CRITICAL)
+The biggest issues are related to images. Fix these immediately:
+
+1. **Properly Size Images**
+   - Images are being served at much larger dimensions than displayed
+   - Resize all images to their actual display size
+   - Example: If image displays at 400px wide, don't serve 1200px image
+
+2. **Convert to Modern Formats (WebP)**
+   - Convert all PNG/JPG images to WebP format
+   - Provide fallback for older browsers
+   - This can reduce file size by 25-50%
+
+3. **Compress Images**
+   - Reduce image file sizes without visible quality loss
+   - Use tools like imagemin or sharp
+   - Target: Keep images under 100KB each where possible
+
+4. **Implement Lazy Loading**
+   - Add loading="lazy" attribute to all images below the fold
+   - Only load images as user scrolls to them
+   - Example: <img src="image.jpg" loading="lazy" alt="description">
+
+5. **Add Width/Height Attributes**
+   - Add explicit width and height to all <img> tags
+   - This prevents layout shift (CLS issues)
+   - Example: <img src="image.jpg" width="800" height="600" alt="description">
+
+## PRIORITY 2 - Eliminate Render-Blocking Resources
+
+1. **Defer JavaScript**
+   - Add defer or async attributes to non-critical scripts
+   - Move scripts to bottom of body or use defer
+   - Example: <script src="script.js" defer></script>
+
+2. **Minimize CSS**
+   - Inline critical CSS (above-the-fold styles)
+   - Defer non-critical CSS
+   - Remove unused CSS rules
+
+3. **Optimize Font Loading**
+   - Add font-display: swap to @font-face rules
+   - Preload critical fonts
+   - Consider using system fonts to eliminate web font loading
+
+## PRIORITY 3 - Reduce JavaScript Execution Time
+
+1. **Minimize JavaScript**
+   - Remove console.log statements
+   - Remove unused code and libraries
+   - Minify all JavaScript files
+
+2. **Code Splitting**
+   - Only load JavaScript needed for current page
+   - Split large bundles into smaller chunks
+
+## PRIORITY 4 - Server & Caching
+
+1. **Enable Text Compression**
+   - Ensure gzip or brotli compression is enabled
+   - Compress HTML, CSS, and JavaScript
+
+2. **Browser Caching**
+   - Set proper cache headers for static assets
+   - Cache images, CSS, JS for longer periods
+
+3. **Reduce Server Response Time**
+   - Optimize any server-side processing
+   - Check Replit hosting performance
+
+## PRIORITY 5 - Core Web Vitals
+
+1. **Largest Contentful Paint (LCP)**
+   - Target: Under 2.5 seconds
+   - Optimize hero image loading
+   - Preload key resources
+
+2. **Cumulative Layout Shift (CLS)**
+   - Target: Under 0.1
+   - Add dimensions to all images and videos
+   - Reserve space for dynamic content
+
+3. **First Input Delay (FID)**
+   - Target: Under 100ms
+   - Reduce JavaScript execution time
+   - Break up long tasks
+
+## IMPLEMENTATION STEPS:
+
+1. **Start with images** (this will have biggest impact):
+   - Audit all image files in the project
+   - Resize to appropriate dimensions
+   - Convert to WebP with fallbacks
+   - Add lazy loading
+   - Add width/height attributes
+
+2. **Fix JavaScript**:
+   - Add defer to script tags
+   - Remove unused code
+   - Minify files
+
+3. **Optimize CSS**:
+   - Inline critical styles
+   - Defer non-critical CSS
+   - Remove unused rules
+
+4. **Test after each major change**:
+   - Run PageSpeed Insights again
+   - Document improvements
+   - Continue to next priority
+
+## SPECIFIC FILES TO CHECK:
+- Look for images in: /public, /assets, /images folders
+- Check all HTML files for: <img>, <script>, <link> tags
+- Review CSS files for: unused rules, unoptimized fonts
+- Check JavaScript for: console.logs, unused libraries
+
+## DELIVERABLES:
+After fixes, provide:
+1. New PageSpeed score (target: 90+)
+2. List of specific changes made
+3. Before/after file sizes
+4. Any remaining issues to address
+
+START WITH IMAGES - they're typically 50-70% of page weight and will give you the biggest performance boost immediately.
