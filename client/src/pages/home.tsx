@@ -921,6 +921,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Technologies Section */}
+      <TechStack />
+
       {/* Blog Section */}
       <section className="py-24 md:py-32 bg-white relative overflow-hidden">
         <motion.div
@@ -1022,9 +1025,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-      {/* Technologies Section */}
-      <TechStack />
 
       {/* Reviews Section */}
       <Reviews />
