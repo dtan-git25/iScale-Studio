@@ -322,40 +322,44 @@ export default function Home() {
           className="absolute bottom-20 right-0 w-72 h-72 bg-gradient-to-br from-[#9929ea]/8 to-transparent rounded-full blur-3xl pointer-events-none"
         />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-28">
           {/* AI Web & App Development */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
           >
-            <div className="space-y-6">
-              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
+            <div className="space-y-8">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-purple-100 border border-purple-200 text-[#8629e4] text-xs font-semibold">
                 Build intelligent applications
               </div>
-              <h3 className="text-4xl font-bold">AI Web & App Development</h3>
-              <p className="text-lg text-gray-700">
+              <h3 className="text-5xl font-bold text-gray-900">AI Web & App Development</h3>
+              <p className="text-base text-gray-700 leading-relaxed">
                 We create custom web and mobile applications infused with Artificial Intelligence. From predictive analytics to personalized user experiences, our apps do more than just function—they think.
               </p>
-              <div className="space-y-3">
-                <h4 className="font-bold text-gray-900">KEY FEATURES</h4>
-                {["Custom React & Node.js Applications", "AI-Powered E-commerce Solutions", "Progressive Web Apps (PWAs)", "Native Mobile App Development", "Intelligent Search & Recommendation Systems"].map((feature, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <Check className="h-5 w-5 text-[#8629e4]" />
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
+              <div className="space-y-4 pt-2">
+                <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wide">KEY FEATURES</h4>
+                <div className="space-y-2.5">
+                  {["Custom React & Node.js Applications", "AI-Powered E-commerce Solutions", "Progressive Web Apps (PWAs)", "Native Mobile App Development", "Intelligent Search & Recommendation Systems"].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+                        <Check className="h-4 w-4 text-[#8629e4]" />
+                      </div>
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="flex gap-4 pt-6">
+              <div className="flex gap-4 pt-4">
                 <Link href="/services/ai-web-development">
-                  <Button variant="outline" className="border-gray-300">
-                    Full Details <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="outline" className="border-gray-300 text-sm px-6">
+                    Full Details <ArrowRight className="ml-2 h-3.5 w-3.5" />
                   </Button>
                 </Link>
                 <Link href="/booking">
-                  <Button className="btn-gradient border-0">
+                  <Button className="btn-gradient border-0 text-sm px-6">
                     Book a Call
                   </Button>
                 </Link>
@@ -365,7 +369,7 @@ export default function Home() {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <img src={servicesImage} alt="AI Web & App Development" className="rounded-2xl shadow-2xl" />
+              <img src={servicesImage} alt="AI Web & App Development" className="rounded-2xl shadow-2xl w-full" />
             </motion.div>
           </motion.div>
 
@@ -375,39 +379,44 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:grid-flow-dense"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
           >
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
+              className="lg:order-2"
             >
-              <img src={processImage} alt="Workflow Automation" className="rounded-2xl shadow-2xl" />
+              <img src={processImage} alt="Workflow Automation" className="rounded-2xl shadow-2xl w-full" />
             </motion.div>
-            <div className="space-y-6">
-              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
+            <div className="space-y-8 lg:order-1">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-purple-100 border border-purple-200 text-[#8629e4] text-xs font-semibold">
                 Eliminate repetitive work
               </div>
-              <h3 className="text-4xl font-bold">Workflow Automation</h3>
-              <p className="text-lg text-gray-700">
+              <h3 className="text-5xl font-bold text-gray-900">Workflow Automation</h3>
+              <p className="text-base text-gray-700 leading-relaxed">
                 Stop wasting time on repetitive tasks. We design and implement enterprise-grade automation workflows that connect your favorite tools and run your business on autopilot.
               </p>
-              <div className="space-y-3">
-                <h4 className="font-bold text-gray-900">KEY FEATURES</h4>
-                {["Business Process Automation (n8n, Make)", "CRM & Marketing Automation", "Data Synchronization & ETL", "Custom API Integrations", "No-code/Low-code Solutions"].map((feature, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <Check className="h-5 w-5 text-[#8629e4]" />
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
+              <div className="space-y-4 pt-2">
+                <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wide">KEY FEATURES</h4>
+                <div className="space-y-2.5">
+                  {["Business Process Automation (n8n, Make)", "CRM & Marketing Automation", "Data Synchronization & ETL", "Custom API Integrations", "No-code/Low-code Solutions"].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+                        <Check className="h-4 w-4 text-[#8629e4]" />
+                      </div>
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="flex gap-4 pt-6">
+              <div className="flex gap-4 pt-4">
                 <Link href="/services/workflow-automation">
-                  <Button variant="outline" className="border-gray-300">
-                    Full Details <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="outline" className="border-gray-300 text-sm px-6">
+                    Full Details <ArrowRight className="ml-2 h-3.5 w-3.5" />
                   </Button>
                 </Link>
                 <Link href="/booking">
-                  <Button className="btn-gradient border-0">
+                  <Button className="btn-gradient border-0 text-sm px-6">
                     Book a Call
                   </Button>
                 </Link>
@@ -421,33 +430,37 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
           >
-            <div className="space-y-6">
-              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
+            <div className="space-y-8">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-purple-100 border border-purple-200 text-[#8629e4] text-xs font-semibold">
                 Deploy digital workforce
               </div>
-              <h3 className="text-4xl font-bold">AI Agent Development</h3>
-              <p className="text-lg text-gray-700">
+              <h3 className="text-5xl font-bold text-gray-900">AI Agent Development</h3>
+              <p className="text-base text-gray-700 leading-relaxed">
                 Deploy autonomous AI agents capable of handling complex customer inquiries, processing documents, and executing multi-step business logic without human intervention.
               </p>
-              <div className="space-y-3">
-                <h4 className="font-bold text-gray-900">KEY FEATURES</h4>
-                {["Custom GPT & LLM Integration", "Customer Service Chatbots", "Document Processing Agents", "Multi-Agent Systems", "Business Intelligence Assistants"].map((feature, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <Check className="h-5 w-5 text-[#8629e4]" />
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
+              <div className="space-y-4 pt-2">
+                <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wide">KEY FEATURES</h4>
+                <div className="space-y-2.5">
+                  {["Custom GPT & LLM Integration", "Customer Service Chatbots", "Document Processing Agents", "Multi-Agent Systems", "Business Intelligence Assistants"].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+                        <Check className="h-4 w-4 text-[#8629e4]" />
+                      </div>
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="flex gap-4 pt-6">
+              <div className="flex gap-4 pt-4">
                 <Link href="/services/ai-agents">
-                  <Button variant="outline" className="border-gray-300">
-                    Full Details <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="outline" className="border-gray-300 text-sm px-6">
+                    Full Details <ArrowRight className="ml-2 h-3.5 w-3.5" />
                   </Button>
                 </Link>
                 <Link href="/booking">
-                  <Button className="btn-gradient border-0">
+                  <Button className="btn-gradient border-0 text-sm px-6">
                     Book a Call
                   </Button>
                 </Link>
@@ -457,7 +470,7 @@ export default function Home() {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <img src={chatbotImg} alt="AI Agent Development" className="rounded-2xl shadow-2xl" />
+              <img src={chatbotImg} alt="AI Agent Development" className="rounded-2xl shadow-2xl w-full" />
             </motion.div>
           </motion.div>
 
@@ -467,39 +480,44 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:grid-flow-dense"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
           >
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
+              className="lg:order-2"
             >
-              <img src={ecommerceImg} alt="E-commerce Solutions" className="rounded-2xl shadow-2xl" />
+              <img src={ecommerceImg} alt="E-commerce Solutions" className="rounded-2xl shadow-2xl w-full" />
             </motion.div>
-            <div className="space-y-6">
-              <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
+            <div className="space-y-8 lg:order-1">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-purple-100 border border-purple-200 text-[#8629e4] text-xs font-semibold">
                 Elevate your online store
               </div>
-              <h3 className="text-4xl font-bold">E-commerce Solutions</h3>
-              <p className="text-lg text-gray-700">
+              <h3 className="text-5xl font-bold text-gray-900">E-commerce Solutions</h3>
+              <p className="text-base text-gray-700 leading-relaxed">
                 Build powerful, scalable e-commerce platforms powered by AI features. From product recommendations to intelligent inventory management, we create solutions that drive sales and customer satisfaction.
               </p>
-              <div className="space-y-3">
-                <h4 className="font-bold text-gray-900">KEY FEATURES</h4>
-                {["Custom E-commerce Platform Development", "AI-Powered Product Recommendations", "Smart Inventory & Order Management", "Payment Gateway Integration", "Scalable & Customer Support"].map((feature, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <Check className="h-5 w-5 text-[#8629e4]" />
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
+              <div className="space-y-4 pt-2">
+                <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wide">KEY FEATURES</h4>
+                <div className="space-y-2.5">
+                  {["Custom E-commerce Platform Development", "AI-Powered Product Recommendations", "Smart Inventory & Order Management", "Payment Gateway Integration", "Analytics & Conversion Optimization"].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+                        <Check className="h-4 w-4 text-[#8629e4]" />
+                      </div>
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="flex gap-4 pt-6">
+              <div className="flex gap-4 pt-4">
                 <Link href="/services/ecommerce-solutions">
-                  <Button variant="outline" className="border-gray-300">
-                    Full Details <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="outline" className="border-gray-300 text-sm px-6">
+                    Full Details <ArrowRight className="ml-2 h-3.5 w-3.5" />
                   </Button>
                 </Link>
                 <Link href="/booking">
-                  <Button className="btn-gradient border-0">
+                  <Button className="btn-gradient border-0 text-sm px-6">
                     Book a Call
                   </Button>
                 </Link>
