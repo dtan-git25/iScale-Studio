@@ -420,7 +420,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-cyan-500/15 to-blue-500/15 border border-cyan-500/40 rounded-2xl p-8 sm:p-12 backdrop-blur-md text-center"
+            className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 sm:p-12 shadow-lg hover:shadow-2xl transition-all text-center"
           >
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
               Ready to build your next AI-powered web platform?
@@ -545,7 +545,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-[#9929ea]/15 to-[#2DBFBA]/15 border border-[#9929ea]/40 rounded-2xl p-8 sm:p-12 backdrop-blur-md text-center"
+            className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 sm:p-12 shadow-lg hover:shadow-2xl transition-all text-center"
           >
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
               Ready to build your next AI-powered mobile or desktop app?
@@ -670,7 +670,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-orange-500/15 to-yellow-500/15 border border-orange-500/40 rounded-2xl p-8 sm:p-12 backdrop-blur-md text-center"
+            className="bg-gradient-to-br from-white/90 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl p-8 sm:p-12 shadow-lg hover:shadow-2xl transition-all text-center"
           >
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
               Ready to unlock insights from your data?
