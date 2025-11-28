@@ -205,20 +205,6 @@ export default function WorkflowAutomationPage() {
               ))}
             </div>
           </motion.div>
-
-          {/* CTA Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center space-y-6"
-          >
-            <h2 className="text-4xl font-bold">Ready to Automate Your Business?</h2>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Let's discuss which workflows can be automated first to deliver the biggest impact.
-            </p>
-          </motion.div>
         </div>
       </section>
     </div>
