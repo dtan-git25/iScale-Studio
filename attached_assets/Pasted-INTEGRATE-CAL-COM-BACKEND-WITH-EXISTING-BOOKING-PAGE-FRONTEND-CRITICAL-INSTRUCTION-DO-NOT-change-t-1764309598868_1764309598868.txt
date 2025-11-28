@@ -1,0 +1,414 @@
+INTEGRATE CAL.COM BACKEND WITH EXISTING BOOKING PAGE FRONTEND
+
+CRITICAL INSTRUCTION:
+DO NOT change the existing booking page UI/design. ONLY add functionality to make it work with Cal.com API.
+
+PROJECT GOAL:
+Connect the existing beautiful booking page calendar interface to Cal.com's API so that:
+1. The calendar shows real availability from Cal.com
+2. Users can book appointments that sync to Cal.com
+3. Calendar invites and Zoom links are sent automatically
+4. Bookings are manageable in Cal.com dashboard
+
+═══════════════════════════════════════════════════════════
+STEP 1: INSTALL REQUIRED DEPENDENCIES
+═══════════════════════════════════════════════════════════
+
+Run these commands:
+```bashnpm install axios date-fns
+
+═══════════════════════════════════════════════════════════
+STEP 2: ENVIRONMENT VARIABLES SETUP
+═══════════════════════════════════════════════════════════
+
+Add these to .env file (create if doesn't exist):CALCOM_API_KEY=cal_live_xxxxxxxxxxxxxxxxxxxxx
+CALCOM_EVENT_TYPE_ID=123456
+CALCOM_USERNAME=your-username
+
+NOTE: I will provide actual values later. For now, use placeholders.
+
+═══════════════════════════════════════════════════════════
+STEP 3: CREATE BACKEND API ROUTES
+═══════════════════════════════════════════════════════════
+
+Create file: `/server/routes/cal.js` (or appropriate backend location)
+```javascriptconst express = require('express');
+const router = express.Router();
+const axios = require('axios');const CAL_API_KEY = process.env.CALCOM_API_KEY;
+const CAL_EVENT_TYPE_ID = process.env.CALCOM_EVENT_TYPE_ID;
+const CAL_API_URL = 'https://api.cal.com/v1';// Middleware to check API key
+const checkApiKey = (req, res, next) => {
+if (!CAL_API_KEY) {
+return res.status(500).json({ error: 'Cal.com API key not configured' });
+}
+next();
+};// GET AVAILABLE SLOTS FOR A DATE
+router.get('/availability', checkApiKey, async (req, res) => {
+const { date } = req.query;if (!date) {
+return res.status(400).json({ error: 'Date parameter required' });
+}try {
+// Format: YYYY-MM-DD to ISO datetime
+const startTime = ${date}T00:00:00Z;
+const endTime = ${date}T23:59:59Z;const response = await axios.get(
+  `${CAL_API_URL}/slots`,
+  {
+    params: {
+      eventTypeId: CAL_EVENT_TYPE_ID,
+      startTime: startTime,
+      endTime: endTime
+    },
+    headers: {
+      'Authorization': `Bearer ${CAL_API_KEY}`
+    }
+  }
+);// Transform Cal.com slots to frontend format
+const slots = response.data.slots.map(slot => {
+  const slotTime = new Date(slot.time);
+  return {
+    time: slotTime.toLocaleTimeString('en-US', { 
+      hour: 'numeric', 
+      minute: '2-digit',
+      hour12: true 
+    }),
+    available: true,
+    rawTime: slot.time
+  };
+});res.json({ success: true, slots });
+} catch (error) {
+console.error('Error fetching availability:', error.response?.data || error.message);
+res.status(500).json({
+success: false,
+error: 'Failed to fetch availability',
+details: error.response?.data
+});
+}
+});// CREATE BOOKING
+router.post('/book', checkApiKey, async (req, res) => {
+const { selectedSlot, name, email, phone, company, service, message } = req.body;// Validation
+if (!selectedSlot || !name || !email) {
+return res.status(400).json({
+success: false,
+error: 'Missing required fields: selectedSlot, name, email'
+});
+}try {
+const bookingData = {
+eventTypeId: parseInt(CAL_EVENT_TYPE_ID),
+start: selectedSlot, // Should be ISO datetime from frontend
+responses: {
+name: name,
+email: email,
+guests: [],
+location: { optionValue: '', value: 'integrations:zoom' }
+},
+metadata: {
+phone: phone || '',
+company: company || '',
+service: service || 'AI Web & App Development',
+notes: message || ''
+},
+timeZone: 'Asia/Manila',
+language: 'en'
+};const response = await axios.post(
+  `${CAL_API_URL}/bookings`,
+  bookingData,
+  {
+    headers: {
+      'Authorization': `Bearer ${CAL_API_KEY}`,
+      'Content-Type': 'application/json',
+      'cal-api-version': '2024-08-13'
+    }
+  }
+);res.json({ 
+  success: true, 
+  booking: response.data,
+  message: 'Booking confirmed! Check your email for calendar invite and Zoom link.' 
+});
+} catch (error) {
+console.error('Booking error:', error.response?.data || error.message);
+res.status(500).json({
+success: false,
+error: 'Failed to create booking',
+details: error.response?.data
+});
+}
+});// GET UPCOMING BOOKINGS (for dashboard later)
+router.get('/bookings', checkApiKey, async (req, res) => {
+try {
+const response = await axios.get(
+${CAL_API_URL}/bookings,
+{
+headers: {
+'Authorization': Bearer ${CAL_API_KEY}
+}
+}
+);res.json({ success: true, bookings: response.data });
+} catch (error) {
+console.error('Error fetching bookings:', error.response?.data || error.message);
+res.status(500).json({
+success: false,
+error: 'Failed to fetch bookings'
+});
+}
+});module.exports = router;
+
+Then register this route in your main server file (server.js or app.js):
+```javascriptconst calRoutes = require('./routes/cal');
+app.use('/api/cal', calRoutes);
+
+═══════════════════════════════════════════════════════════
+STEP 4: UPDATE BOOKING PAGE FRONTEND
+═══════════════════════════════════════════════════════════
+
+Locate the booking page file (likely `/client/src/pages/booking.tsx` or similar).
+
+ADD THESE FUNCTIONS AND STATE (do not remove existing UI code):
+```typescriptimport { useState, useEffect } from 'react';
+import { format, addDays, startOfDay } from 'date-fns';// Add these state variables at the top of your component
+const [selectedDate, setSelectedDate] = useState<string | null>(null);
+const [selectedTime, setSelectedTime] = useState<string | null>(null);
+const [selectedSlotRaw, setSelectedSlotRaw] = useState<string | null>(null);
+const [availableSlots, setAvailableSlots] = useState<any[]>([]);
+const [availableDates, setAvailableDates] = useState<any[]>([]);
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState<string | null>(null);const [formData, setFormData] = useState({
+name: '',
+email: '',
+phone: '',
+company: '',
+service: 'AI Web & App Development',
+message: ''
+});// Generate next 30 days (excluding Sundays)
+useEffect(() => {
+const dates = [];
+const today = new Date();for (let i = 0; i < 30; i++) {
+const date = new Date(today);
+date.setDate(today.getDate() + i);// Skip Sundays
+if (date.getDay() !== 0) {
+  dates.push({
+    dayName: format(date, 'EEE'),
+    monthDay: format(date, 'MMM d'),
+    fullDate: format(date, 'yyyy-MM-dd')
+  });
+}
+}setAvailableDates(dates.slice(0, 10)); // Show first 10 dates
+}, []);// Fetch available time slots when date is selected
+const fetchAvailableSlots = async (date: string) => {
+setLoading(true);
+setError(null);try {
+const response = await fetch(/api/cal/availability?date=${date});
+const data = await response.json();if (data.success) {
+  setAvailableSlots(data.slots);
+} else {
+  setError('Failed to load available times');
+}
+} catch (err) {
+console.error('Error fetching slots:', err);
+setError('Failed to load available times');
+} finally {
+setLoading(false);
+}
+};// Handle date selection
+const handleDateSelect = (date: string) => {
+setSelectedDate(date);
+setSelectedTime(null);
+setSelectedSlotRaw(null);
+fetchAvailableSlots(date);
+};// Handle time selection
+const handleTimeSelect = (time: string, rawTime: string) => {
+setSelectedTime(time);
+setSelectedSlotRaw(rawTime);
+};// Handle form submission
+const handleConfirmBooking = async () => {
+// Validation
+if (!selectedDate || !selectedTime || !formData.name || !formData.email) {
+alert('Please fill in all required fields and select a date & time');
+return;
+}// Email validation
+const emailRegex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+if (!emailRegex.test(formData.email)) {
+alert('Please enter a valid email address');
+return;
+}setLoading(true);
+setError(null);try {
+const response = await fetch('/api/cal/book', {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify({
+selectedSlot: selectedSlotRaw,
+...formData
+})
+});const result = await response.json();if (result.success) {
+  // Redirect to confirmation page
+  window.location.href = '/booking-confirmed';
+} else {
+  alert(result.error || 'Booking failed. Please try again.');
+}
+} catch (err) {
+console.error('Booking error:', err);
+alert('An error occurred. Please try again.');
+} finally {
+setLoading(false);
+}
+};
+
+NOW UPDATE YOUR EXISTING UI ELEMENTS:
+
+1. **Date buttons** - Add onClick handler:
+```jsx{availableDates.map((date) => (
+<button
+key={date.fullDate}
+className={date-box ${selectedDate === date.fullDate ? 'selected' : ''}}
+onClick={() => handleDateSelect(date.fullDate)}
+
+
+<span>{date.dayName}</span>
+<span>{date.monthDay}</span>
+  </button>
+))}
+````
+
+Time slot buttons - Update to use fetched slots:
+
+{loading ? (
+  <p>Loading available times...</p>
+) : availableSlots.length > 0 ? (
+  availableSlots.map((slot) => (
+    <button
+      key={slot.time}
+      className={`time-slot ${selectedTime === slot.time ? 'selected' : ''}`}
+      onClick={() => handleTimeSelect(slot.time, slot.rawTime)}
+    >
+      {slot.time}
+    </button>
+  ))
+) : (
+  <p>No available times for this date</p>
+)}
+````
+
+Confirm button - Add onClick handler:
+
+<button
+className="confirm-button"
+onClick={handleConfirmBooking}
+disabled={loading || !selectedDate || !selectedTime}
+
+
+{loading ? 'Processing...' : 'Confirm Booking'}
+</button>
+
+4. **Add form inputs** (if not already present):
+```jsx<div className="booking-form">
+  <input
+    type="text"
+    placeholder="Full Name *"
+    value={formData.name}
+    onChange={(e) => setFormData({...formData, name: e.target.value})}
+    required
+  /><input
+type="email"
+placeholder="Email *"
+value={formData.email}
+onChange={(e) => setFormData({...formData, email: e.target.value})}
+required
+/><input
+type="tel"
+placeholder="Phone Number"
+value={formData.phone}
+onChange={(e) => setFormData({...formData, phone: e.target.value})}
+/><input
+type="text"
+placeholder="Company Name"
+value={formData.company}
+onChange={(e) => setFormData({...formData, company: e.target.value})}
+/><select
+value={formData.service}
+onChange={(e) => setFormData({...formData, service: e.target.value})}
+
+
+<option>AI Web & App Development</option>
+<option>Workflow Automation</option>
+<option>AI Agents</option>
+  </select>  <textarea
+    placeholder="Tell us about your project"
+    value={formData.message}
+    onChange={(e) => setFormData({...formData, message: e.target.value})}
+    rows={4}
+  />
+</div>
+````
+
+═══════════════════════════════════════════════════════════
+STEP 5: CREATE CONFIRMATION PAGE
+═══════════════════════════════════════════════════════════
+
+Create new file: `/client/src/pages/booking-confirmed.tsx`
+```tsxexport default function BookingConfirmed() {
+return (
+<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-white">
+<div className="max-w-2xl mx-auto px-4 text-center">
+<div className="bg-white rounded-2xl shadow-xl p-12">
+{/* Success Icon */}
+<div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+<svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+</svg>
+</div>      <h1 className="text-3xl font-bold text-gray-900 mb-4">
+        Booking Confirmed! 🎉
+      </h1>      <p className="text-lg text-gray-600 mb-8">
+        Your consultation has been successfully scheduled. We've sent a calendar invite and Zoom link to your email.
+      </p>      <div className="bg-purple-50 rounded-lg p-6 mb-8">
+        <h2 className="font-semibold text-gray-900 mb-3">What's Next?</h2>
+        <ul className="text-left text-gray-700 space-y-2">
+          <li>✉️ Check your email for the calendar invite</li>
+          <li>📅 Add the meeting to your calendar</li>
+          <li>🔗 Use the Zoom link in the email to join</li>
+          <li>📝 Prepare any questions about your project</li>
+        </ul>
+      </div>      <a 
+        href="/"
+        className="inline-block bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
+      >
+        Return to Home
+      </a>
+    </div>
+  </div>
+</div>
+);
+}
+
+Add route in your router configuration.
+
+═══════════════════════════════════════════════════════════
+STEP 6: TESTING CHECKLIST
+═══════════════════════════════════════════════════════════
+
+After implementation, test:
+1. ✅ Dates display correctly (next 30 days, no Sundays)
+2. ✅ Clicking a date fetches available time slots
+3. ✅ Time slots display correctly (9:00 AM format)
+4. ✅ Selecting time highlights it
+5. ✅ Form validation works (required fields)
+6. ✅ Confirm button creates booking in Cal.com
+7. ✅ Redirects to confirmation page on success
+8. ✅ Email with calendar invite is received
+9. ✅ Zoom link is included in email
+
+═══════════════════════════════════════════════════════════
+DELIVERABLES
+═══════════════════════════════════════════════════════════
+
+1. Backend API routes for Cal.com integration
+2. Updated booking page with functionality (UI unchanged)
+3. Confirmation page
+4. Environment variable setup
+5. Error handling and loading states
+6. Form validation
+
+CRITICAL REMINDERS:
+- DO NOT change existing UI design or styling
+- ONLY add functionality and state management
+- Keep all existing CSS classes and layouts
+- Test thoroughly before marking as complete
+
+Please implement all steps above now. Confirm when complete and show me any errors encountered.
