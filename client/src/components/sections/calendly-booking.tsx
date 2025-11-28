@@ -296,32 +296,64 @@ export function CalendlyBooking() {
                   </div>
 
                   <div>
-                    <p className="text-sm font-medium text-gray-700 mb-3">Pick a time</p>
                     {slotsLoading ? (
                       <div className="flex items-center justify-center py-8">
                         <Loader2 className="h-6 w-6 animate-spin text-[#9929ea]" />
                         <span className="ml-2 text-gray-600">Loading available times...</span>
                       </div>
                     ) : availableSlots.length > 0 ? (
-                      <div className="grid grid-cols-3 gap-2">
-                        {availableSlots.map((slot, idx) => (
-                          <motion.button
-                            key={slot.time}
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: (idx * 0.05) + 0.2 }}
-                            onClick={() => handleTimeSelect(slot.time, slot.rawTime)}
-                            className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
-                              selectedTime === slot.time
-                                ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
-                                : "border-gray-200 text-gray-700"
-                            }`}
-                            data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
-                          >
-                            {slot.time}
-                          </motion.button>
-                        ))}
+                      <div className="space-y-4">
+                        {/* Morning Slots */}
+                        {availableSlots.filter(slot => slot.time.includes('AM')).length > 0 && (
+                          <div>
+                            <p className="text-sm font-medium text-gray-700 mb-2">Morning</p>
+                            <div className="grid grid-cols-3 gap-2">
+                              {availableSlots.filter(slot => slot.time.includes('AM')).map((slot, idx) => (
+                                <motion.button
+                                  key={slot.time}
+                                  initial={{ opacity: 0, y: 10 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ delay: idx * 0.05 }}
+                                  onClick={() => handleTimeSelect(slot.time, slot.rawTime)}
+                                  className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
+                                    selectedTime === slot.time
+                                      ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
+                                      : "border-gray-200 text-gray-700"
+                                  }`}
+                                  data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
+                                >
+                                  {slot.time}
+                                </motion.button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Afternoon Slots */}
+                        {availableSlots.filter(slot => slot.time.includes('PM')).length > 0 && (
+                          <div>
+                            <p className="text-sm font-medium text-gray-700 mb-2">Afternoon</p>
+                            <div className="grid grid-cols-3 gap-2">
+                              {availableSlots.filter(slot => slot.time.includes('PM')).map((slot, idx) => (
+                                <motion.button
+                                  key={slot.time}
+                                  initial={{ opacity: 0, y: 10 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ delay: idx * 0.05 }}
+                                  onClick={() => handleTimeSelect(slot.time, slot.rawTime)}
+                                  className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
+                                    selectedTime === slot.time
+                                      ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
+                                      : "border-gray-200 text-gray-700"
+                                  }`}
+                                  data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
+                                >
+                                  {slot.time}
+                                </motion.button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     ) : selectedDate ? (
                       <p className="text-gray-600 text-center py-4">No available times for this date</p>
