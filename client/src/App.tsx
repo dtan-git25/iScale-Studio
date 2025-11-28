@@ -47,6 +47,7 @@ const AIAdminAgent = lazy(() => import("@/pages/ai-admin-agent"));
 const AIResearchAgent = lazy(() => import("@/pages/ai-research-agent"));
 const AIContentAgent = lazy(() => import("@/pages/ai-content-agent"));
 const Booking = lazy(() => import("@/pages/booking"));
+const BookingConfirmed = lazy(() => import("@/pages/booking-confirmed"));
 const PrivacyPolicy = lazy(() => import("@/pages/privacy-policy"));
 const TermsOfService = lazy(() => import("@/pages/terms-of-service"));
 
@@ -111,6 +112,7 @@ function Router() {
             <Route path="/ai-research-agent" component={AIResearchAgent} />
             <Route path="/ai-content-agent" component={AIContentAgent} />
             <Route path="/booking" component={Booking} />
+            <Route path="/booking-confirmed" component={BookingConfirmed} />
             <Route path="/privacy-policy" component={PrivacyPolicy} />
             <Route path="/terms-of-service" component={TermsOfService} />
             <Route component={NotFound} />
