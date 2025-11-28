@@ -204,27 +204,6 @@ export default function CaseStudies() {
               </Link>
             ))}
           </div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="text-center mt-20"
-          >
-            <div className="bg-gradient-to-r from-[#9929ea]/10 to-[#2DBFBA]/10 border border-[#9929ea]/20 rounded-2xl p-8 sm:p-12">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Transform Your Business?</h3>
-              <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-                Let's discuss how we can create a custom solution for your specific challenges and goals.
-              </p>
-              <Link href="/booking">
-                <Button className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
-                  Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>
