@@ -204,24 +204,6 @@ export default function AIMLDevelopmentPage() {
               ))}
             </div>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center space-y-6"
-          >
-            <h2 className="text-4xl font-bold">Ready to Build Custom ML Models?</h2>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Let's discuss your data challenges and create machine learning models that drive business results.
-            </p>
-            <Link href="/booking">
-              <Button size="lg" className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
-                Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </motion.div>
         </div>
       </section>
     </div>
