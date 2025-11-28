@@ -213,20 +213,6 @@ export default function AIAgentsPage() {
               ))}
             </div>
           </motion.div>
-
-          {/* CTA Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center space-y-6"
-          >
-            <h2 className="text-4xl font-bold">Ready to Deploy Your AI Agents?</h2>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Let's discuss how intelligent agents can transform your customer service and operations.
-            </p>
-          </motion.div>
         </div>
       </section>
     </div>
