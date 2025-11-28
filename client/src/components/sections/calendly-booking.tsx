@@ -38,7 +38,7 @@ export function CalendlyBooking() {
   });
 
   const [datePageIndex, setDatePageIndex] = useState(0);
-  const datesPerPage = 5;
+  const datesPerPage = 4;
 
   const allDates = (() => {
     const dates: DateOption[] = [];
@@ -273,7 +273,7 @@ export function CalendlyBooking() {
                         </button>
                       </div>
                     </div>
-                    <div className="grid grid-cols-5 gap-2">
+                    <div className="grid grid-cols-4 gap-2">
                       {availableDates.map((d, idx) => (
                         <motion.button
                           key={d.fullDate}
@@ -307,7 +307,7 @@ export function CalendlyBooking() {
                         {availableSlots.filter(slot => slot.time.includes('AM')).length > 0 && (
                           <div>
                             <p className="text-sm font-medium text-gray-700 mb-2">Morning</p>
-                            <div className="grid grid-cols-3 gap-2">
+                            <div className="grid grid-cols-4 gap-2">
                               {availableSlots.filter(slot => slot.time.includes('AM')).map((slot, idx) => (
                                 <motion.button
                                   key={slot.time}
@@ -333,7 +333,7 @@ export function CalendlyBooking() {
                         {availableSlots.filter(slot => slot.time.includes('PM')).length > 0 && (
                           <div>
                             <p className="text-sm font-medium text-gray-700 mb-2">Afternoon</p>
-                            <div className="grid grid-cols-3 gap-2">
+                            <div className="grid grid-cols-4 gap-2">
                               {availableSlots.filter(slot => slot.time.includes('PM')).map((slot, idx) => (
                                 <motion.button
                                   key={slot.time}
