@@ -58,7 +58,7 @@ function TechStack() {
             <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
               Technology Stack
             </div>
-            <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Built With Industry-Leading Tools</h2>
+            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">Built With Industry-Leading Tools</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               We partner with the best technologies available to build robust, scalable, and innovative solutions that power modern businesses.
             </p>
@@ -323,7 +323,7 @@ export default function Home() {
               <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
                 What We Offer
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Core Services</h2>
+              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">Our Core Services</h2>
               <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                 Comprehensive AI and automation solutions to transform your business operations.
               </p>
@@ -505,7 +505,7 @@ export default function Home() {
               <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
                 Why Choose Us
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4">Why Choose Our Services?</h2>
+              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">Why Choose Our Services?</h2>
               <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                 We deliver solutions that directly impact your business growth and operational efficiency.
               </p>
@@ -558,7 +558,7 @@ export default function Home() {
               <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
                 Our Process
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Proven Approach</h2>
+              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">Our Proven Approach</h2>
               <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                 A structured methodology designed to deliver exceptional results while ensuring transparency and continuous collaboration.
               </p>
@@ -627,7 +627,7 @@ export default function Home() {
               <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
                 Our Work
               </div>
-              <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Showcase of Our Projects</h2>
+              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">Showcase of Our Projects</h2>
               <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                 Explore our recent projects showcasing expertise, innovation, and impact across various industries.
               </p>
@@ -784,7 +784,7 @@ export default function Home() {
               <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
                 Case Studies
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4">Real Results From Real Projects</h2>
+              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">Real Results From Real Projects</h2>
               <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto">
                 Explore how we've helped businesses transform operations and achieve measurable growth with AI and automation.
               </p>
@@ -906,7 +906,7 @@ export default function Home() {
               <div className="inline-block px-3 py-1 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium mb-4">
                 Latest Insights
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4">Industry Insights & Resources</h2>
+              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">Industry Insights & Resources</h2>
               <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto">
                 Stay updated with our latest articles on AI, automation, and the future of technology.
               </p>
