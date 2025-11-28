@@ -20,11 +20,8 @@ export default function Footer() {
 
   return (
     <>
-      {/* Booking Section */}
-      <CalendlyBooking />
-
       {/* CTA Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white pt-0 pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -44,6 +41,9 @@ export default function Footer() {
           </motion.div>
         </div>
       </section>
+
+      {/* Booking Section */}
+      <CalendlyBooking />
 
       <footer className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white pt-20 pb-12">
         {/* Animated Background Elements */}
