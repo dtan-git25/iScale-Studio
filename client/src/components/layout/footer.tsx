@@ -45,7 +45,7 @@ export default function Footer() {
       {/* Booking Section */}
       <CalendlyBooking />
 
-      <footer className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white pt-20 pb-12">
+      <footer className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white pt-8 pb-12">
         {/* Animated Background Elements */}
         <div className="absolute top-10 right-0 w-96 h-96 bg-gradient-to-br from-[#9929ea]/8 to-transparent rounded-full blur-3xl pointer-events-none animate-float-slow" />
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-[#2DBFBA]/8 to-transparent rounded-full blur-3xl pointer-events-none animate-float-slow-reverse" />

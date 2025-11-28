@@ -174,7 +174,7 @@ export function CalendlyBooking() {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-8 relative overflow-hidden">
       <motion.div
         animate={{ x: [0, 50, -50, 0], y: [0, -30, 30, 0] }}
         transition={{ duration: 15, repeat: Infinity }}
