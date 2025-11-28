@@ -433,7 +433,7 @@ export default function Home() {
                     <span className="text-[#8629e4] text-sm font-medium">{service.subtitle}</span>
                   </div>
                   
-                  <h3 className="text-2xl lg:text-3xl font-black tracking-tight text-gray-900">{service.title}</h3>
+                  <h3 className="text-xl lg:text-2xl font-black tracking-tight text-gray-900">{service.title}</h3>
                   
                   <p className="text-gray-700 text-lg leading-relaxed">
                     {service.description}
