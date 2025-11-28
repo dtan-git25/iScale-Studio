@@ -62,38 +62,54 @@ export function CalendlyBooking() {
     setAvailableDates(allDates.slice(datePageIndex * datesPerPage, (datePageIndex + 1) * datesPerPage));
   }, [datePageIndex]);
 
-  const fetchAvailableSlots = async (date: string) => {
+  // Auto-select first date on load
+  useEffect(() => {
+    if (allDates.length > 0 && !selectedDate) {
+      const firstDate = allDates[0].fullDate;
+      setSelectedDate(firstDate);
+      fetchAvailableSlots(firstDate, true);
+    }
+  }, []);
+
+  const fetchAvailableSlots = async (date: string, autoSelectFirst: boolean = false) => {
     setSlotsLoading(true);
     setError(null);
+
+    const fallbackSlots = [
+      { time: "9:00 AM", available: true, rawTime: `${date}T09:00:00+08:00` },
+      { time: "10:00 AM", available: true, rawTime: `${date}T10:00:00+08:00` },
+      { time: "11:00 AM", available: true, rawTime: `${date}T11:00:00+08:00` },
+      { time: "2:00 PM", available: true, rawTime: `${date}T14:00:00+08:00` },
+      { time: "3:00 PM", available: true, rawTime: `${date}T15:00:00+08:00` },
+      { time: "4:00 PM", available: true, rawTime: `${date}T16:00:00+08:00` }
+    ];
 
     try {
       const response = await fetch(`/api/cal/availability?date=${date}`);
       const data = await response.json();
 
-      if (data.success) {
+      if (data.success && data.slots.length > 0) {
         setAvailableSlots(data.slots);
+        if (autoSelectFirst && data.slots.length > 0) {
+          setSelectedTime(data.slots[0].time);
+          setSelectedSlotRaw(data.slots[0].rawTime);
+        }
       } else {
         setError('Failed to load available times');
-        setAvailableSlots([
-          { time: "9:00 AM", available: true, rawTime: `${date}T09:00:00+08:00` },
-          { time: "10:00 AM", available: true, rawTime: `${date}T10:00:00+08:00` },
-          { time: "11:00 AM", available: true, rawTime: `${date}T11:00:00+08:00` },
-          { time: "2:00 PM", available: true, rawTime: `${date}T14:00:00+08:00` },
-          { time: "3:00 PM", available: true, rawTime: `${date}T15:00:00+08:00` },
-          { time: "4:00 PM", available: true, rawTime: `${date}T16:00:00+08:00` }
-        ]);
+        setAvailableSlots(fallbackSlots);
+        if (autoSelectFirst) {
+          setSelectedTime(fallbackSlots[0].time);
+          setSelectedSlotRaw(fallbackSlots[0].rawTime);
+        }
       }
     } catch (err) {
       console.error('Error fetching slots:', err);
       setError('Failed to load available times');
-      setAvailableSlots([
-        { time: "9:00 AM", available: true, rawTime: `${date}T09:00:00+08:00` },
-        { time: "10:00 AM", available: true, rawTime: `${date}T10:00:00+08:00` },
-        { time: "11:00 AM", available: true, rawTime: `${date}T11:00:00+08:00` },
-        { time: "2:00 PM", available: true, rawTime: `${date}T14:00:00+08:00` },
-        { time: "3:00 PM", available: true, rawTime: `${date}T15:00:00+08:00` },
-        { time: "4:00 PM", available: true, rawTime: `${date}T16:00:00+08:00` }
-      ]);
+      setAvailableSlots(fallbackSlots);
+      if (autoSelectFirst) {
+        setSelectedTime(fallbackSlots[0].time);
+        setSelectedSlotRaw(fallbackSlots[0].rawTime);
+      }
     } finally {
       setSlotsLoading(false);
     }
