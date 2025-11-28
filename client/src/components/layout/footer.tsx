@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Facebook, Linkedin, Instagram, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@assets/optimized_images/iScale_Studio_logo_optimized.webp";
@@ -11,6 +11,9 @@ const XLogo = ({ className }: { className?: string }) => (
 );
 
 export default function Footer() {
+  const [location] = useLocation();
+  const isBookingPage = location === '/booking';
+
   const socialLinks = [
     { icon: Facebook, href: "https://facebook.com/iscalestudio/", label: "Facebook" },
     { icon: XLogo, href: "https://x.com/iscalestudio/", label: "X" },
@@ -43,7 +46,7 @@ export default function Footer() {
       </section>
 
       {/* Booking Section */}
-      <CalendlyBooking />
+      {!isBookingPage && <CalendlyBooking />}
 
       <footer className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white pt-8 pb-12">
         {/* Animated Background Elements */}
