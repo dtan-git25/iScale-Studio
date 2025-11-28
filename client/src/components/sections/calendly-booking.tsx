@@ -284,7 +284,7 @@ export function CalendlyBooking() {
                           className={`p-3 rounded-lg border-2 transition-all ${
                             selectedDate === d.fullDate
                               ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea]/20 to-[#5808fb]/20"
-                              : "border-gray-200 hover:border-[#9929ea]"
+                              : "border-gray-100 bg-gray-50 hover:border-[#9929ea] hover:bg-white"
                           }`}
                           data-testid={`button-date-${d.fullDate}`}
                         >
@@ -318,7 +318,7 @@ export function CalendlyBooking() {
                                   className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
                                     selectedTime === slot.time
                                       ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
-                                      : "border-gray-200 text-gray-700"
+                                      : "border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
                                   }`}
                                   data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
                                 >
@@ -344,7 +344,7 @@ export function CalendlyBooking() {
                                   className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
                                     selectedTime === slot.time
                                       ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
-                                      : "border-gray-200 text-gray-700"
+                                      : "border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
                                   }`}
                                   data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
                                 >
