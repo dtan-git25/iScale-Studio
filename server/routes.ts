@@ -5,6 +5,7 @@ import axios from "axios";
 
 const CAL_API_KEY = process.env.CALCOM_API_KEY;
 const CAL_EVENT_TYPE_ID = process.env.CALCOM_EVENT_TYPE_ID;
+const CAL_USERNAME = process.env.CALCOM_USERNAME;
 const CAL_API_URL = 'https://api.cal.com/v1';
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -13,13 +14,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // GET AVAILABLE SLOTS FOR A DATE
   app.get('/api/cal/availability', async (req, res) => {
     if (!CAL_API_KEY) {
-      return res.status(500).json({ error: 'Cal.com API key not configured' });
+      return res.status(500).json({ success: false, error: 'Cal.com API key not configured' });
     }
 
     const { date } = req.query;
 
     if (!date) {
-      return res.status(400).json({ error: 'Date parameter required' });
+      return res.status(400).json({ success: false, error: 'Date parameter required' });
     }
 
     try {
@@ -30,30 +31,38 @@ export async function registerRoutes(app: Express): Promise<Server> {
         `${CAL_API_URL}/slots`,
         {
           params: {
+            apiKey: CAL_API_KEY,
             eventTypeId: CAL_EVENT_TYPE_ID,
             startTime: startTime,
             endTime: endTime
-          },
-          headers: {
-            'Authorization': `Bearer ${CAL_API_KEY}`
           }
         }
       );
 
-      const slots = response.data.slots?.map((slot: any) => {
-        const slotTime = new Date(slot.time);
-        return {
-          time: slotTime.toLocaleTimeString('en-US', { 
-            hour: 'numeric', 
-            minute: '2-digit',
-            hour12: true 
-          }),
-          available: true,
-          rawTime: slot.time
-        };
-      }) || [];
+      // Cal.com returns slots grouped by date
+      const slotsData = response.data.slots || {};
+      const allSlots: any[] = [];
+      
+      // Flatten slots from all dates
+      Object.values(slotsData).forEach((dateSlots: any) => {
+        if (Array.isArray(dateSlots)) {
+          dateSlots.forEach((slot: any) => {
+            const slotTime = new Date(slot.time);
+            allSlots.push({
+              time: slotTime.toLocaleTimeString('en-US', { 
+                hour: 'numeric', 
+                minute: '2-digit',
+                hour12: true,
+                timeZone: 'Asia/Manila'
+              }),
+              available: true,
+              rawTime: slot.time
+            });
+          });
+        }
+      });
 
-      res.json({ success: true, slots });
+      res.json({ success: true, slots: allSlots });
     } catch (error: any) {
       console.error('Error fetching availability:', error.response?.data || error.message);
       res.status(500).json({
@@ -104,13 +113,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       };
 
       const response = await axios.post(
-        `${CAL_API_URL}/bookings`,
+        `${CAL_API_URL}/bookings?apiKey=${CAL_API_KEY}`,
         bookingData,
         {
           headers: {
-            'Authorization': `Bearer ${CAL_API_KEY}`,
-            'Content-Type': 'application/json',
-            'cal-api-version': '2024-08-13'
+            'Content-Type': 'application/json'
           }
         }
       );
@@ -133,15 +140,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // GET UPCOMING BOOKINGS
   app.get('/api/cal/bookings', async (req, res) => {
     if (!CAL_API_KEY) {
-      return res.status(500).json({ error: 'Cal.com API key not configured' });
+      return res.status(500).json({ success: false, error: 'Cal.com API key not configured' });
     }
 
     try {
       const response = await axios.get(
         `${CAL_API_URL}/bookings`,
         {
-          headers: {
-            'Authorization': `Bearer ${CAL_API_KEY}`
+          params: {
+            apiKey: CAL_API_KEY
           }
         }
       );
