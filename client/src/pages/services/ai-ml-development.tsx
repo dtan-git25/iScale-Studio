@@ -3,7 +3,7 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import mlDevImg from "@assets/optimized_images/machine_learning_model_development_dashboard_small.webp";
+import mlDevImg from "@assets/generated_images/machine_learning_model_dashboard.png";
 import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function AIMLDevelopmentPage() {

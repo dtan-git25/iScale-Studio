@@ -3,7 +3,7 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import aiAgentImg from "@assets/optimized_images/ai_agent_concept_small.webp";
+import aiAgentImg from "@assets/generated_images/ai_agent_customer_service_dashboard.png";
 import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function AIAgentsPage() {

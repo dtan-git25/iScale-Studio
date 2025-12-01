@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import ecommerceImg from "@assets/optimized_images/e-commerce_platform_interface_small.webp";
+import ecommerceImg from "@assets/generated_images/e-commerce_platform_management_dashboard.png";
 import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
 export default function EcommerceSolutionsPage() {
