@@ -13,18 +13,18 @@ import { AnimatedFeatures } from "@/components/sections/animated-features";
 import { Reviews } from "@/components/sections/reviews";
 import { AnimatedFAQ } from "@/components/sections/animated-faq";
 import { AnimatedAbout } from "@/components/sections/animated-about";
-import fintechImg from "@assets/optimized_images/fintech_dashboard_project.webp";
-import ecommerceImg from "@assets/optimized_images/e-commerce_platform_project.webp";
-import marketingImg from "@assets/optimized_images/marketing_automation_system.webp";
-import chatbotImg from "@assets/optimized_images/ai_chatbot_application.webp";
-import realEstateImg from "@assets/optimized_images/real_estate_mobile_app.webp";
-import healthcareImg from "@assets/optimized_images/healthcare_management_system.webp";
-import webDevImg from "@assets/optimized_images/ai_web_development_modern_interface_small.webp";
-import appDevImg from "@assets/optimized_images/ai_mobile_app_development_interface_small.webp";
-import workflowImg from "@assets/optimized_images/workflow_automation_process_diagram_small.webp";
-import aiAgentImg from "@assets/optimized_images/ai_agent_concept_small.webp";
-import ecommerceSvcImg from "@assets/optimized_images/e-commerce_platform_interface_small.webp";
-import mlDevImg from "@assets/optimized_images/machine_learning_model_development_dashboard_small.webp";
+import fintechImg from "@assets/generated_images/fintech_banking_dashboard_project.png";
+import ecommerceImg from "@assets/generated_images/e-commerce_marketplace_platform.png";
+import marketingImg from "@assets/generated_images/marketing_automation_system_dashboard.png";
+import chatbotImg from "@assets/generated_images/ai_chatbot_application_interface.png";
+import realEstateImg from "@assets/generated_images/real_estate_mobile_app_interface.png";
+import healthcareImg from "@assets/generated_images/healthcare_management_system_dashboard.png";
+import webDevImg from "@assets/generated_images/ai_web_development_dashboard_interface.png";
+import appDevImg from "@assets/generated_images/mobile_app_development_with_ai_features.png";
+import workflowImg from "@assets/generated_images/workflow_automation_system_diagram.png";
+import aiAgentImg from "@assets/generated_images/ai_agent_customer_service_dashboard.png";
+import ecommerceSvcImg from "@assets/generated_images/e-commerce_platform_management_dashboard.png";
+import mlDevImg from "@assets/generated_images/machine_learning_model_dashboard.png";
 
 // Tech Stack Component
 function TechStack() {
