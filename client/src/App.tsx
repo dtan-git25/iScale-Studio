@@ -21,25 +21,25 @@ const AIMLDevelopment = lazy(() => import("@/pages/services/ai-ml-development"))
 const Portfolio = lazy(() => import("@/pages/portfolio"));
 const About = lazy(() => import("@/pages/about"));
 const Blog = lazy(() => import("@/pages/blog"));
-const BlogPost1 = lazy(() => import("@/pages/blog-post-1"));
-const BlogPost2 = lazy(() => import("@/pages/blog-post-2"));
-const BlogPost3 = lazy(() => import("@/pages/blog-post-3"));
-const BlogPost4 = lazy(() => import("@/pages/blog-post-4"));
-const BlogPost5 = lazy(() => import("@/pages/blog-post-5"));
-const BlogPost6 = lazy(() => import("@/pages/blog-post-6"));
-const BlogPost7 = lazy(() => import("@/pages/blog-post-7"));
-const BlogPost8 = lazy(() => import("@/pages/blog-post-8"));
-const BlogPost9 = lazy(() => import("@/pages/blog-post-9"));
-const BlogPost10 = lazy(() => import("@/pages/blog-post-10"));
-const BlogPost11 = lazy(() => import("@/pages/blog-post-11"));
-const BlogPost12 = lazy(() => import("@/pages/blog-post-12"));
+const BlogAutonomousAIAgents = lazy(() => import("@/pages/autonomous-ai-agents-business"));
+const BlogN8nOpenAI = lazy(() => import("@/pages/streamlining-operations-n8n-openai"));
+const BlogVectorDatabase = lazy(() => import("@/pages/vector-database-rag-guide"));
+const BlogAICustomerSupport = lazy(() => import("@/pages/ai-customer-support-automation"));
+const BlogFirstAIWorkflow = lazy(() => import("@/pages/first-ai-workflow-guide"));
+const BlogAIEcommerce = lazy(() => import("@/pages/ai-ecommerce-personalization"));
+const BlogGenerativeAIROI = lazy(() => import("@/pages/generative-ai-roi"));
+const BlogNodeKubernetes = lazy(() => import("@/pages/node-kubernetes-microservices"));
+const BlogDataPrivacy = lazy(() => import("@/pages/ai-data-privacy-compliance"));
+const BlogMLPredictive = lazy(() => import("@/pages/machine-learning-predictive-analytics"));
+const BlogServerless = lazy(() => import("@/pages/serverless-architecture-guide"));
+const BlogDisasterRecovery = lazy(() => import("@/pages/disaster-recovery-continuity"));
 const CaseStudies = lazy(() => import("@/pages/case-studies"));
-const CaseStudy1 = lazy(() => import("@/pages/case-study-1"));
-const CaseStudy2 = lazy(() => import("@/pages/case-study-2"));
-const CaseStudy3 = lazy(() => import("@/pages/case-study-3"));
-const CaseStudy4 = lazy(() => import("@/pages/case-study-4"));
-const CaseStudy5 = lazy(() => import("@/pages/case-study-5"));
-const CaseStudy6 = lazy(() => import("@/pages/case-study-6"));
+const CaseEcommerceAI = lazy(() => import("@/pages/ecommerce-ai-recommendations"));
+const CaseFintechAutomation = lazy(() => import("@/pages/fintech-automation-platform"));
+const CaseHealthcareAnalytics = lazy(() => import("@/pages/healthcare-analytics-system"));
+const CaseRealEstateAI = lazy(() => import("@/pages/real-estate-ai-matching"));
+const CaseMarketingAutomation = lazy(() => import("@/pages/marketing-automation-workflow"));
+const CaseAICustomerSupport = lazy(() => import("@/pages/ai-customer-support-system"));
 const AISalesAgent = lazy(() => import("@/pages/ai-sales-agent"));
 const AISupportAgent = lazy(() => import("@/pages/ai-support-agent"));
 const AIMarketingAgent = lazy(() => import("@/pages/ai-marketing-agent"));
@@ -86,25 +86,25 @@ function Router() {
             <Route path="/portfolio" component={Portfolio} />
             <Route path="/about" component={About} />
             <Route path="/blog" component={Blog} />
-            <Route path="/blog-post-1" component={BlogPost1} />
-            <Route path="/blog-post-2" component={BlogPost2} />
-            <Route path="/blog-post-3" component={BlogPost3} />
-            <Route path="/blog-post-4" component={BlogPost4} />
-            <Route path="/blog-post-5" component={BlogPost5} />
-            <Route path="/blog-post-6" component={BlogPost6} />
-            <Route path="/blog-post-7" component={BlogPost7} />
-            <Route path="/blog-post-8" component={BlogPost8} />
-            <Route path="/blog-post-9" component={BlogPost9} />
-            <Route path="/blog-post-10" component={BlogPost10} />
-            <Route path="/blog-post-11" component={BlogPost11} />
-            <Route path="/blog-post-12" component={BlogPost12} />
+            <Route path="/blog/autonomous-ai-agents-business" component={BlogAutonomousAIAgents} />
+            <Route path="/blog/streamlining-operations-n8n-openai" component={BlogN8nOpenAI} />
+            <Route path="/blog/vector-database-rag-guide" component={BlogVectorDatabase} />
+            <Route path="/blog/ai-customer-support-automation" component={BlogAICustomerSupport} />
+            <Route path="/blog/first-ai-workflow-guide" component={BlogFirstAIWorkflow} />
+            <Route path="/blog/ai-ecommerce-personalization" component={BlogAIEcommerce} />
+            <Route path="/blog/generative-ai-roi" component={BlogGenerativeAIROI} />
+            <Route path="/blog/node-kubernetes-microservices" component={BlogNodeKubernetes} />
+            <Route path="/blog/ai-data-privacy-compliance" component={BlogDataPrivacy} />
+            <Route path="/blog/machine-learning-predictive-analytics" component={BlogMLPredictive} />
+            <Route path="/blog/serverless-architecture-guide" component={BlogServerless} />
+            <Route path="/blog/disaster-recovery-continuity" component={BlogDisasterRecovery} />
             <Route path="/case-studies" component={CaseStudies} />
-            <Route path="/case-study-1" component={CaseStudy1} />
-            <Route path="/case-study-2" component={CaseStudy2} />
-            <Route path="/case-study-3" component={CaseStudy3} />
-            <Route path="/case-study-4" component={CaseStudy4} />
-            <Route path="/case-study-5" component={CaseStudy5} />
-            <Route path="/case-study-6" component={CaseStudy6} />
+            <Route path="/portfolio/ecommerce-ai-recommendations" component={CaseEcommerceAI} />
+            <Route path="/portfolio/fintech-automation-platform" component={CaseFintechAutomation} />
+            <Route path="/portfolio/healthcare-analytics-system" component={CaseHealthcareAnalytics} />
+            <Route path="/portfolio/real-estate-ai-matching" component={CaseRealEstateAI} />
+            <Route path="/portfolio/marketing-automation-workflow" component={CaseMarketingAutomation} />
+            <Route path="/portfolio/ai-customer-support-system" component={CaseAICustomerSupport} />
             <Route path="/ai-sales-agent" component={AISalesAgent} />
             <Route path="/ai-support-agent" component={AISupportAgent} />
             <Route path="/ai-marketing-agent" component={AIMarketingAgent} />

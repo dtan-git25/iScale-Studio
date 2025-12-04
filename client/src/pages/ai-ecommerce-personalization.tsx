@@ -9,13 +9,13 @@ const pageSchema = [
     "The Future of E-Commerce: AI-Powered Personalization at Scale",
     "Explore how AI recommendation engines are driving revenue growth and transforming the online shopping experience.",
     "2024-10-30",
-    "https://iscalestudio.com/blog-post-6",
+    "https://iscalestudio.com/blog/ai-ecommerce-personalization",
     "AI Trends"
   ),
   createBreadcrumbSchema([
     { name: "Home", url: "https://iscalestudio.com" },
     { name: "Blog", url: "https://iscalestudio.com/blog" },
-    { name: "The Future of E-Commerce: AI-Powered Personalization at Scale", url: "https://iscalestudio.com/blog-post-6" }
+    { name: "The Future of E-Commerce: AI-Powered Personalization at Scale", url: "https://iscalestudio.com/blog/ai-ecommerce-personalization" }
   ])
 ];
 
@@ -25,7 +25,7 @@ export default function BlogPost6() {
       <SEOHead
         title="The Future of E-Commerce: AI-Powered Personalization at Scale | iScale Studio Blog"
         description="Explore how AI recommendation engines are driving revenue growth and transforming the online shopping experience."
-        canonical="https://iscalestudio.com/blog-post-6"
+        canonical="https://iscalestudio.com/blog/ai-ecommerce-personalization"
         type="article"
         schema={pageSchema}
         article={{

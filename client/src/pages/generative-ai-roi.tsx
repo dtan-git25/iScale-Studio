@@ -9,13 +9,13 @@ const pageSchema = [
     "Generative AI in Business: From Hype to ROI",
     "Understanding how to measure and maximize return on investment from generative AI initiatives.",
     "2024-11-20",
-    "https://iscalestudio.com/blog-post-7",
+    "https://iscalestudio.com/blog/generative-ai-roi",
     "AI Trends"
   ),
   createBreadcrumbSchema([
     { name: "Home", url: "https://iscalestudio.com" },
     { name: "Blog", url: "https://iscalestudio.com/blog" },
-    { name: "Generative AI in Business: From Hype to ROI", url: "https://iscalestudio.com/blog-post-7" }
+    { name: "Generative AI in Business: From Hype to ROI", url: "https://iscalestudio.com/blog/generative-ai-roi" }
   ])
 ];
 
@@ -25,7 +25,7 @@ export default function BlogPost7() {
       <SEOHead
         title="Generative AI in Business: From Hype to ROI | iScale Studio Blog"
         description="Understanding how to measure and maximize return on investment from generative AI initiatives."
-        canonical="https://iscalestudio.com/blog-post-7"
+        canonical="https://iscalestudio.com/blog/generative-ai-roi"
         type="article"
         schema={pageSchema}
         article={{

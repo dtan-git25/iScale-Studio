@@ -9,12 +9,12 @@ export default function CaseStudy5() {
     createWebPageSchema(
       "Marketing Automation Workflow | iScale Studio Case Study",
       "Campaign setup automation reducing setup time by 60% and improving conversions by 28% with intelligent workflow templates.",
-      "https://iscalestudio.com/case-study-5"
+      "https://iscalestudio.com/portfolio/marketing-automation-workflow"
     ),
     createBreadcrumbSchema([
       { name: "Home", url: "https://iscalestudio.com" },
       { name: "Case Studies", url: "https://iscalestudio.com/case-studies" },
-      { name: "Marketing Automation Workflow", url: "https://iscalestudio.com/case-study-5" }
+      { name: "Marketing Automation Workflow", url: "https://iscalestudio.com/portfolio/marketing-automation-workflow" }
     ])
   ];
 
@@ -23,7 +23,7 @@ export default function CaseStudy5() {
       <SEOHead
         title="Marketing Automation Workflow | iScale Studio Case Study"
         description="Campaign setup automation reducing setup time by 60% and improving conversions by 28% with intelligent workflow templates."
-        canonical="https://iscalestudio.com/case-study-5"
+        canonical="https://iscalestudio.com/portfolio/marketing-automation-workflow"
         schema={pageSchema}
       />
       <div className="min-h-screen pt-20 pb-12">

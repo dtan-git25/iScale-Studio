@@ -9,13 +9,13 @@ const pageSchema = [
     "The Rise of Autonomous AI Agents in Business",
     "How companies are moving beyond simple chatbots to fully autonomous agents that can execute complex tasks.",
     "2023-10-24",
-    "https://iscalestudio.com/blog-post-1",
+    "https://iscalestudio.com/blog/autonomous-ai-agents-business",
     "AI Trends"
   ),
   createBreadcrumbSchema([
     { name: "Home", url: "https://iscalestudio.com" },
     { name: "Blog", url: "https://iscalestudio.com/blog" },
-    { name: "The Rise of Autonomous AI Agents in Business", url: "https://iscalestudio.com/blog-post-1" }
+    { name: "The Rise of Autonomous AI Agents in Business", url: "https://iscalestudio.com/blog/autonomous-ai-agents-business" }
   ])
 ];
 
@@ -25,7 +25,7 @@ export default function BlogPost1() {
       <SEOHead
         title="The Rise of Autonomous AI Agents in Business | iScale Studio Blog"
         description="How companies are moving beyond simple chatbots to fully autonomous agents that can execute complex tasks."
-        canonical="https://iscalestudio.com/blog-post-1"
+        canonical="https://iscalestudio.com/blog/autonomous-ai-agents-business"
         type="article"
         schema={pageSchema}
         article={{

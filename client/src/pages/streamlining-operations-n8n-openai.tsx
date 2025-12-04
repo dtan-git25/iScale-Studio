@@ -9,13 +9,13 @@ const pageSchema = [
     "Streamlining Operations with n8n and OpenAI",
     "A technical deep dive into building a custom invoice processing pipeline using low-code tools.",
     "2023-10-12",
-    "https://iscalestudio.com/blog-post-2",
+    "https://iscalestudio.com/blog/streamlining-operations-n8n-openai",
     "Tutorial"
   ),
   createBreadcrumbSchema([
     { name: "Home", url: "https://iscalestudio.com" },
     { name: "Blog", url: "https://iscalestudio.com/blog" },
-    { name: "Streamlining Operations with n8n and OpenAI", url: "https://iscalestudio.com/blog-post-2" }
+    { name: "Streamlining Operations with n8n and OpenAI", url: "https://iscalestudio.com/blog/streamlining-operations-n8n-openai" }
   ])
 ];
 
@@ -25,7 +25,7 @@ export default function BlogPost2() {
       <SEOHead
         title="Streamlining Operations with n8n and OpenAI | iScale Studio Blog"
         description="A technical deep dive into building a custom invoice processing pipeline using low-code tools."
-        canonical="https://iscalestudio.com/blog-post-2"
+        canonical="https://iscalestudio.com/blog/streamlining-operations-n8n-openai"
         type="article"
         schema={pageSchema}
         article={{

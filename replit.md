@@ -56,6 +56,10 @@ Preferred communication style: Simple, everyday language.
 - Meta descriptions optimized for Philippines market
 - Article meta tag cleanup on navigation (prevents stale metadata)
 - robots.txt and sitemap.xml at /public/ directory
+- **SEO-Friendly URL Structure (December 2024 Refactor):**
+  - Blog posts: `/blog/{descriptive-slug}` (e.g., `/blog/autonomous-ai-agents-business`)
+  - Case studies: `/portfolio/{descriptive-slug}` (e.g., `/portfolio/ecommerce-ai-recommendations`)
+  - All 18 content pages use keyword-rich slugs for improved search visibility
 
 **Special Features:**
 - Calendly integration for consultation booking
@@ -169,7 +173,18 @@ Preferred communication style: Simple, everyday language.
 - Source map optimization (@jridgewell/trace-mapping)
 
 **SEO Infrastructure:**
-- Sitemap.xml with 35+ URLs, proper priority weighting
+- Sitemap.xml with 35+ URLs, proper priority weighting (updated December 2024)
 - robots.txt with crawl directives
 - JSON-LD structured data on all pages
 - Meta tag optimization across all routes
+- SEO-friendly URL slugs for all blog posts and case studies
+
+## Recent Changes
+
+**December 4, 2024 - SEO URL Refactor:**
+- Converted all 12 blog post URLs from `/blog-post-N` to `/blog/{descriptive-slug}` format
+- Converted all 6 case study URLs from `/case-study-N` to `/portfolio/{descriptive-slug}` format
+- Updated App.tsx routes, lazy imports, and component names
+- Updated internal links in blog.tsx, case-studies.tsx, and home.tsx
+- Updated canonical URLs and breadcrumb schemas in all 18 content files
+- Updated sitemap.xml with new URL structure

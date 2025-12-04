@@ -797,42 +797,42 @@ export default function Home() {
                 title: "E-Commerce Platform with AI Recommendation Engine",
                 result: "+45% Revenue",
                 industry: "E-Commerce",
-                link: "/case-study-1",
+                link: "/portfolio/ecommerce-ai-recommendations",
                 gradient: "from-pink-500 to-rose-500"
               },
               {
                 title: "Healthcare Data Analytics System",
                 result: "35% Better Outcomes",
                 industry: "Healthcare",
-                link: "/case-study-3",
+                link: "/portfolio/healthcare-analytics-system",
                 gradient: "from-emerald-500 to-teal-500"
               },
               {
                 title: "Financial Services Automation Platform",
                 result: "80% Automation",
                 industry: "FinTech",
-                link: "/case-study-2",
+                link: "/portfolio/fintech-automation-platform",
                 gradient: "from-blue-500 to-cyan-500"
               },
               {
                 title: "Marketing Automation for SaaS Company",
                 result: "+120% Lead Gen",
                 industry: "SaaS",
-                link: "/case-study-4",
+                link: "/portfolio/real-estate-ai-matching",
                 gradient: "from-purple-500 to-indigo-500"
               },
               {
                 title: "Supply Chain AI Optimization",
                 result: "25% Cost Reduction",
                 industry: "Logistics",
-                link: "/case-study-5",
+                link: "/portfolio/marketing-automation-workflow",
                 gradient: "from-yellow-500 to-amber-500"
               },
               {
                 title: "Customer Service AI Chatbot System",
                 result: "70% Issue Resolution",
                 industry: "Retail",
-                link: "/case-study-6",
+                link: "/portfolio/ai-customer-support-system",
                 gradient: "from-cyan-500 to-blue-500"
               }
             ].map((study, idx) => (
@@ -920,7 +920,7 @@ export default function Home() {
                 excerpt: "How companies are moving beyond simple chatbots to fully autonomous agents that can execute complex tasks.",
                 date: "Oct 24, 2023",
                 category: "AI Trends",
-                link: "/blog-post-1",
+                link: "/blog/autonomous-ai-agents-business",
                 gradient: "from-pink-500 to-rose-500"
               },
               {
@@ -928,7 +928,7 @@ export default function Home() {
                 excerpt: "Learn how to create intelligent automation workflows without writing code. We walk through real examples.",
                 date: "Nov 8, 2024",
                 category: "Tutorial",
-                link: "/blog-post-5",
+                link: "/blog/first-ai-workflow-guide",
                 gradient: "from-amber-500 to-orange-500"
               },
               {
@@ -936,7 +936,7 @@ export default function Home() {
                 excerpt: "Explore how AI recommendation engines are driving revenue growth and transforming online shopping.",
                 date: "Oct 30, 2024",
                 category: "AI Trends",
-                link: "/blog-post-6",
+                link: "/blog/ai-ecommerce-personalization",
                 gradient: "from-red-500 to-pink-500"
               }
             ].map((post, idx) => (

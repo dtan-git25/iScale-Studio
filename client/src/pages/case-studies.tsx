@@ -26,7 +26,7 @@ export default function CaseStudies() {
       result: "+45% Revenue",
       timeline: "4 months",
       gradient: "from-pink-500 to-rose-500",
-      link: "/case-study-1",
+      link: "/portfolio/ecommerce-ai-recommendations",
       metrics: {
         engagement: "150%",
         revenue: "45%",
@@ -41,7 +41,7 @@ export default function CaseStudies() {
       result: "80% Automation",
       timeline: "3 months",
       gradient: "from-blue-500 to-cyan-500",
-      link: "/case-study-2",
+      link: "/portfolio/fintech-automation-platform",
       metrics: {
         timeSaved: "80%",
         processing: "10 min",
@@ -56,7 +56,7 @@ export default function CaseStudies() {
       result: "35% Better Outcomes",
       timeline: "5 months",
       gradient: "from-emerald-500 to-teal-500",
-      link: "/case-study-3",
+      link: "/portfolio/healthcare-analytics-system",
       metrics: {
         outcomes: "35%",
         prediction: "92%",
@@ -71,7 +71,7 @@ export default function CaseStudies() {
       result: "40% Better Matches",
       timeline: "4 months",
       gradient: "from-amber-500 to-orange-500",
-      link: "/case-study-4",
+      link: "/portfolio/real-estate-ai-matching",
       metrics: {
         matches: "40%",
         conversion: "3.5x",
@@ -86,7 +86,7 @@ export default function CaseStudies() {
       result: "28% More Conversions",
       timeline: "6 weeks",
       gradient: "from-violet-500 to-purple-500",
-      link: "/case-study-5",
+      link: "/portfolio/marketing-automation-workflow",
       metrics: {
         setupTime: "60%",
         conversions: "28%",
@@ -101,7 +101,7 @@ export default function CaseStudies() {
       result: "75% Automation",
       timeline: "2 months",
       gradient: "from-red-500 to-pink-500",
-      link: "/case-study-6",
+      link: "/portfolio/ai-customer-support-system",
       metrics: {
         tickets: "75%",
         responseTime: "90%",

@@ -26,7 +26,7 @@ export default function Blog() {
       category: "AI Trends",
       readTime: "5 min read",
       gradient: "from-pink-500 to-rose-500",
-      link: "/blog-post-1"
+      link: "/blog/autonomous-ai-agents-business"
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ export default function Blog() {
       category: "Tutorial",
       readTime: "12 min read",
       gradient: "from-purple-500 to-violet-500",
-      link: "/blog-post-2"
+      link: "/blog/streamlining-operations-n8n-openai"
     },
     {
       id: 3,
@@ -46,7 +46,7 @@ export default function Blog() {
       category: "Tech Stack",
       readTime: "8 min read",
       gradient: "from-blue-500 to-cyan-500",
-      link: "/blog-post-3"
+      link: "/blog/vector-database-rag-guide"
     },
     {
       id: 4,
@@ -56,7 +56,7 @@ export default function Blog() {
       category: "Case Study",
       readTime: "7 min read",
       gradient: "from-emerald-500 to-teal-500",
-      link: "/blog-post-4"
+      link: "/blog/ai-customer-support-automation"
     },
     {
       id: 5,
@@ -66,7 +66,7 @@ export default function Blog() {
       category: "Tutorial",
       readTime: "10 min read",
       gradient: "from-amber-500 to-orange-500",
-      link: "/blog-post-5"
+      link: "/blog/first-ai-workflow-guide"
     },
     {
       id: 6,
@@ -76,7 +76,7 @@ export default function Blog() {
       category: "AI Trends",
       readTime: "6 min read",
       gradient: "from-red-500 to-pink-500",
-      link: "/blog-post-6"
+      link: "/blog/ai-ecommerce-personalization"
     },
     {
       id: 7,
@@ -86,7 +86,7 @@ export default function Blog() {
       category: "AI Trends",
       readTime: "9 min read",
       gradient: "from-indigo-500 to-purple-500",
-      link: "/blog-post-7"
+      link: "/blog/generative-ai-roi"
     },
     {
       id: 8,
@@ -96,7 +96,7 @@ export default function Blog() {
       category: "Tech Stack",
       readTime: "11 min read",
       gradient: "from-blue-600 to-cyan-600",
-      link: "/blog-post-8"
+      link: "/blog/node-kubernetes-microservices"
     },
     {
       id: 9,
@@ -106,7 +106,7 @@ export default function Blog() {
       category: "Security",
       readTime: "8 min read",
       gradient: "from-rose-500 to-red-500",
-      link: "/blog-post-9"
+      link: "/blog/ai-data-privacy-compliance"
     },
     {
       id: 10,
@@ -116,7 +116,7 @@ export default function Blog() {
       category: "Data Science",
       readTime: "9 min read",
       gradient: "from-green-500 to-emerald-500",
-      link: "/blog-post-10"
+      link: "/blog/machine-learning-predictive-analytics"
     },
     {
       id: 11,
@@ -126,7 +126,7 @@ export default function Blog() {
       category: "Cloud Infrastructure",
       readTime: "10 min read",
       gradient: "from-orange-500 to-yellow-500",
-      link: "/blog-post-11"
+      link: "/blog/serverless-architecture-guide"
     },
     {
       id: 12,
@@ -136,7 +136,7 @@ export default function Blog() {
       category: "DevOps",
       readTime: "11 min read",
       gradient: "from-violet-600 to-purple-600",
-      link: "/blog-post-12"
+      link: "/blog/disaster-recovery-continuity"
     }
   ];
 

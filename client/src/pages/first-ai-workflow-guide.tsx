@@ -9,13 +9,13 @@ const pageSchema = [
     "Building Your First AI Workflow: A Step-by-Step Guide",
     "Learn how to create intelligent automation workflows without writing code. We walk through real examples using popular no-code platforms.",
     "2024-11-08",
-    "https://iscalestudio.com/blog-post-5",
+    "https://iscalestudio.com/blog/first-ai-workflow-guide",
     "Tutorial"
   ),
   createBreadcrumbSchema([
     { name: "Home", url: "https://iscalestudio.com" },
     { name: "Blog", url: "https://iscalestudio.com/blog" },
-    { name: "Building Your First AI Workflow: A Step-by-Step Guide", url: "https://iscalestudio.com/blog-post-5" }
+    { name: "Building Your First AI Workflow: A Step-by-Step Guide", url: "https://iscalestudio.com/blog/first-ai-workflow-guide" }
   ])
 ];
 
@@ -25,7 +25,7 @@ export default function BlogPost5() {
       <SEOHead
         title="Building Your First AI Workflow: A Step-by-Step Guide | iScale Studio Blog"
         description="Learn how to create intelligent automation workflows without writing code. We walk through real examples using popular no-code platforms."
-        canonical="https://iscalestudio.com/blog-post-5"
+        canonical="https://iscalestudio.com/blog/first-ai-workflow-guide"
         type="article"
         schema={pageSchema}
         article={{

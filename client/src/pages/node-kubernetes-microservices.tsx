@@ -9,13 +9,13 @@ const pageSchema = [
     "Building Scalable Microservices with Node.js and Kubernetes",
     "A comprehensive guide to containerizing and orchestrating Node.js applications for enterprise-scale deployment.",
     "2024-11-18",
-    "https://iscalestudio.com/blog-post-8",
+    "https://iscalestudio.com/blog/node-kubernetes-microservices",
     "Tech Stack"
   ),
   createBreadcrumbSchema([
     { name: "Home", url: "https://iscalestudio.com" },
     { name: "Blog", url: "https://iscalestudio.com/blog" },
-    { name: "Building Scalable Microservices with Node.js and Kubernetes", url: "https://iscalestudio.com/blog-post-8" }
+    { name: "Building Scalable Microservices with Node.js and Kubernetes", url: "https://iscalestudio.com/blog/node-kubernetes-microservices" }
   ])
 ];
 
@@ -25,7 +25,7 @@ export default function BlogPost8() {
       <SEOHead
         title="Building Scalable Microservices with Node.js and Kubernetes | iScale Studio Blog"
         description="A comprehensive guide to containerizing and orchestrating Node.js applications for enterprise-scale deployment."
-        canonical="https://iscalestudio.com/blog-post-8"
+        canonical="https://iscalestudio.com/blog/node-kubernetes-microservices"
         type="article"
         schema={pageSchema}
         article={{
