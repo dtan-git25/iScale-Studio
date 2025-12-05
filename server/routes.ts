@@ -117,7 +117,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }
       };
 
-      // Add phone number if provided (must be E.164 format)
+      // Add phone number if provided for SMS reminders (must be E.164 format)
       if (phone) {
         // Format phone to E.164 if it's a Philippine number
         let formattedPhone = phone.replace(/\s+/g, '').replace(/-/g, '');
@@ -126,38 +126,42 @@ export async function registerRoutes(app: Express): Promise<Server> {
         } else if (!formattedPhone.startsWith('+')) {
           formattedPhone = '+63' + formattedPhone;
         }
-        bookingData.invitee.phone_number = formattedPhone;
+        bookingData.invitee.text_reminder_number = formattedPhone;
       }
 
-      // Add custom answers for additional fields
-      const answers = [];
+      // Add custom questions and answers for additional fields
+      const questionsAndAnswers = [];
+      let position = 0;
       if (company) {
-        answers.push({
+        questionsAndAnswers.push({
           question: "Company Name",
-          answer: company
+          answer: company,
+          position: position++
         });
       }
       if (service) {
-        answers.push({
+        questionsAndAnswers.push({
           question: "Service Interest",
-          answer: service
+          answer: service,
+          position: position++
         });
       }
       if (message) {
-        answers.push({
+        questionsAndAnswers.push({
           question: "Tell us about your project",
-          answer: message
+          answer: message,
+          position: position++
         });
       }
       
-      if (answers.length > 0) {
-        bookingData.answers = answers;
+      if (questionsAndAnswers.length > 0) {
+        bookingData.questions_and_answers = questionsAndAnswers;
       }
 
       console.log('Booking request:', JSON.stringify(bookingData, null, 2));
 
       const response = await axios.post(
-        `${CALENDLY_API_URL}/scheduling/invitees`,
+        `${CALENDLY_API_URL}/invitees`,
         bookingData,
         { headers: calendlyHeaders }
       );
