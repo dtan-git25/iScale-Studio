@@ -8,7 +8,6 @@ interface TimeSlot {
   time: string;
   available: boolean;
   rawTime: string;
-  schedulingUrl?: string;
 }
 
 interface DateOption {
@@ -22,7 +21,6 @@ export function CalendlyBooking() {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [selectedSlotRaw, setSelectedSlotRaw] = useState<string | null>(null);
-  const [selectedSchedulingUrl, setSelectedSchedulingUrl] = useState<string | null>(null);
   const [availableSlots, setAvailableSlots] = useState<TimeSlot[]>([]);
   const [availableDates, setAvailableDates] = useState<DateOption[]>([]);
   const [loading, setLoading] = useState(false);
@@ -87,7 +85,7 @@ export function CalendlyBooking() {
     ];
 
     try {
-      const response = await fetch(`/api/calendly/availability?date=${date}`);
+      const response = await fetch(`/api/cal/availability?date=${date}`);
       const data = await response.json();
 
       if (data.success && data.slots.length > 0) {
@@ -95,7 +93,6 @@ export function CalendlyBooking() {
         if (autoSelectFirst && data.slots.length > 0) {
           setSelectedTime(data.slots[0].time);
           setSelectedSlotRaw(data.slots[0].rawTime);
-          setSelectedSchedulingUrl(data.slots[0].schedulingUrl || null);
         }
       } else {
         setError('Failed to load available times');
@@ -122,14 +119,12 @@ export function CalendlyBooking() {
     setSelectedDate(date);
     setSelectedTime(null);
     setSelectedSlotRaw(null);
-    setSelectedSchedulingUrl(null);
     fetchAvailableSlots(date);
   };
 
-  const handleTimeSelect = (time: string, rawTime: string, schedulingUrl?: string) => {
+  const handleTimeSelect = (time: string, rawTime: string) => {
     setSelectedTime(time);
     setSelectedSlotRaw(rawTime);
-    setSelectedSchedulingUrl(schedulingUrl || null);
   };
 
   const handleContinueToForm = () => {
@@ -150,21 +145,15 @@ export function CalendlyBooking() {
       return;
     }
 
-    if (!selectedSchedulingUrl) {
-      setError('Please select an available time slot from the calendar. The time you selected is not available.');
-      return;
-    }
-
     setLoading(true);
     setError(null);
 
     try {
-      const response = await fetch('/api/calendly/book', {
+      const response = await fetch('/api/cal/book', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           selectedSlot: selectedSlotRaw,
-          schedulingUrl: selectedSchedulingUrl,
           ...formData
         })
       });
@@ -172,11 +161,7 @@ export function CalendlyBooking() {
       const result = await response.json();
 
       if (result.success) {
-        if (result.bookingUrl) {
-          window.location.href = result.bookingUrl;
-        } else {
-          setLocation('/booking-confirmed');
-        }
+        setLocation('/booking-confirmed');
       } else {
         setError(result.error || 'Booking failed. Please try again.');
       }
@@ -345,7 +330,7 @@ export function CalendlyBooking() {
                                   initial={{ opacity: 0, y: 10 }}
                                   animate={{ opacity: 1, y: 0 }}
                                   transition={{ delay: idx * 0.05 }}
-                                  onClick={() => handleTimeSelect(slot.time, slot.rawTime, slot.schedulingUrl)}
+                                  onClick={() => handleTimeSelect(slot.time, slot.rawTime)}
                                   className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
                                     selectedTime === slot.time
                                       ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
@@ -371,7 +356,7 @@ export function CalendlyBooking() {
                                   initial={{ opacity: 0, y: 10 }}
                                   animate={{ opacity: 1, y: 0 }}
                                   transition={{ delay: idx * 0.05 }}
-                                  onClick={() => handleTimeSelect(slot.time, slot.rawTime, slot.schedulingUrl)}
+                                  onClick={() => handleTimeSelect(slot.time, slot.rawTime)}
                                   className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
                                     selectedTime === slot.time
                                       ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
