@@ -361,57 +361,73 @@ export function CalendlyBooking() {
                       </div>
                     ) : availableSlots.length > 0 ? (
                       <div className="space-y-4">
-                        {/* Morning Slots */}
-                        {availableSlots.filter(slot => slot.time.includes('AM')).length > 0 && (
-                          <div>
-                            <p className="text-sm font-medium text-gray-700 mb-2">Morning</p>
-                            <div className="grid grid-cols-4 gap-2">
-                              {availableSlots.filter(slot => slot.time.includes('AM')).map((slot, idx) => (
-                                <motion.button
-                                  key={slot.time}
-                                  initial={{ opacity: 0, y: 10 }}
-                                  animate={{ opacity: 1, y: 0 }}
-                                  transition={{ delay: idx * 0.05 }}
-                                  onClick={() => handleTimeSelect(slot)}
-                                  className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
-                                    selectedTime === slot.time
-                                      ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
-                                      : "border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
-                                  }`}
-                                  data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
-                                >
-                                  {slot.time}
-                                </motion.button>
-                              ))}
+                        {/* Morning Slots - includes AM times and 12:00 PM, 12:30 PM */}
+                        {(() => {
+                          const isMorningSlot = (time: string) => {
+                            if (time.includes('AM')) return true;
+                            if (time.startsWith('12:') && time.includes('PM')) return true;
+                            return false;
+                          };
+                          const morningSlots = availableSlots.filter(slot => isMorningSlot(slot.time));
+                          return morningSlots.length > 0 && (
+                            <div>
+                              <p className="text-sm font-medium text-gray-700 mb-2">Morning</p>
+                              <div className="grid grid-cols-4 gap-2">
+                                {morningSlots.map((slot, idx) => (
+                                  <motion.button
+                                    key={slot.time}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: idx * 0.05 }}
+                                    onClick={() => handleTimeSelect(slot)}
+                                    className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
+                                      selectedTime === slot.time
+                                        ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
+                                        : "border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
+                                    }`}
+                                    data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
+                                  >
+                                    {slot.time}
+                                  </motion.button>
+                                ))}
+                              </div>
                             </div>
-                          </div>
-                        )}
+                          );
+                        })()}
 
-                        {/* Afternoon Slots */}
-                        {availableSlots.filter(slot => slot.time.includes('PM')).length > 0 && (
-                          <div>
-                            <p className="text-sm font-medium text-gray-700 mb-2">Afternoon</p>
-                            <div className="grid grid-cols-4 gap-2">
-                              {availableSlots.filter(slot => slot.time.includes('PM')).map((slot, idx) => (
-                                <motion.button
-                                  key={slot.time}
-                                  initial={{ opacity: 0, y: 10 }}
-                                  animate={{ opacity: 1, y: 0 }}
-                                  transition={{ delay: idx * 0.05 }}
-                                  onClick={() => handleTimeSelect(slot)}
-                                  className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
-                                    selectedTime === slot.time
-                                      ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
-                                      : "border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
-                                  }`}
-                                  data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
-                                >
-                                  {slot.time}
-                                </motion.button>
-                              ))}
+                        {/* Afternoon Slots - 1:00 PM and later */}
+                        {(() => {
+                          const isAfternoonSlot = (time: string) => {
+                            if (time.includes('AM')) return false;
+                            if (time.startsWith('12:') && time.includes('PM')) return false;
+                            return time.includes('PM');
+                          };
+                          const afternoonSlots = availableSlots.filter(slot => isAfternoonSlot(slot.time));
+                          return afternoonSlots.length > 0 && (
+                            <div>
+                              <p className="text-sm font-medium text-gray-700 mb-2">Afternoon</p>
+                              <div className="grid grid-cols-4 gap-2">
+                                {afternoonSlots.map((slot, idx) => (
+                                  <motion.button
+                                    key={slot.time}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: idx * 0.05 }}
+                                    onClick={() => handleTimeSelect(slot)}
+                                    className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
+                                      selectedTime === slot.time
+                                        ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
+                                        : "border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
+                                    }`}
+                                    data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
+                                  >
+                                    {slot.time}
+                                  </motion.button>
+                                ))}
+                              </div>
                             </div>
-                          </div>
-                        )}
+                          );
+                        })()}
                       </div>
                     ) : selectedDate ? (
                       <div className="text-center py-6">
