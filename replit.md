@@ -113,9 +113,11 @@ Preferred communication style: Simple, everyday language.
 
 **Third-Party Services:**
 
-1. **Calendly** - Appointment scheduling integration
-   - Embedded booking widget on `/booking` page
-   - Free consultation scheduling flow
+1. **Calendly** - Appointment scheduling integration (REST API v2)
+   - Custom booking UI on `/booking` page with Calendly API backend
+   - API endpoints: `/api/calendly/availability`, `/api/calendly/book`, `/api/calendly/bookings`
+   - Environment variables: `CALENDLY_API_KEY`, `CALENDLY_EVENT_TYPE_URI`
+   - Features: Real-time slot availability, programmatic booking, confirmation emails via Calendly
 
 2. **Font Services** - Google Fonts
    - Preconnected for performance
@@ -180,6 +182,14 @@ Preferred communication style: Simple, everyday language.
 - SEO-friendly URL slugs for all blog posts and case studies
 
 ## Recent Changes
+
+**December 5, 2024 - Calendly API Integration:**
+- Replaced Cal.com integration with Calendly REST API v2
+- Implemented `/api/calendly/availability` for fetching available time slots
+- Implemented `/api/calendly/book` for programmatic event booking via Create Event Invitee endpoint
+- Implemented `/api/calendly/bookings` for listing scheduled events
+- Maintained existing custom booking UI (no visual changes)
+- Added timezone handling (Asia/Manila) and future-time validation
 
 **December 4, 2024 - SEO URL Refactor:**
 - Converted all 12 blog post URLs from `/blog-post-N` to `/blog/{descriptive-slug}` format
