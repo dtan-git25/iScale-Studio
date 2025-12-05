@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, User, CheckCircle2, Loader2 } from "lucide-react";
+import { Calendar, Clock, User, CheckCircle2, Loader2, ExternalLink } from "lucide-react";
 import { format, addDays } from "date-fns";
 import { useLocation } from "wouter";
 
@@ -16,6 +16,14 @@ interface DateOption {
   fullDate: string;
 }
 
+declare global {
+  interface Window {
+    Calendly?: {
+      initPopupWidget: (options: { url: string }) => void;
+    };
+  }
+}
+
 export function CalendlyBooking() {
   const [, setLocation] = useLocation();
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
@@ -27,6 +35,7 @@ export function CalendlyBooking() {
   const [slotsLoading, setSlotsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [step, setStep] = useState<'datetime' | 'form'>('datetime');
+  const [useCalendlyEmbed, setUseCalendlyEmbed] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -39,6 +48,8 @@ export function CalendlyBooking() {
 
   const [datePageIndex, setDatePageIndex] = useState(0);
   const datesPerPage = 4;
+
+  const calendlyUrl = "https://calendly.com/iscalestudio/30min";
 
   const allDates = (() => {
     const dates: DateOption[] = [];
@@ -62,13 +73,26 @@ export function CalendlyBooking() {
     setAvailableDates(allDates.slice(datePageIndex * datesPerPage, (datePageIndex + 1) * datesPerPage));
   }, [datePageIndex]);
 
-  // Auto-select first date on load
   useEffect(() => {
     if (allDates.length > 0 && !selectedDate) {
       const firstDate = allDates[0].fullDate;
       setSelectedDate(firstDate);
       fetchAvailableSlots(firstDate, true);
     }
+  }, []);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.head.appendChild(script);
+    
+    return () => {
+      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
   }, []);
 
   const fetchAvailableSlots = async (date: string, autoSelectFirst: boolean = false) => {
@@ -85,7 +109,7 @@ export function CalendlyBooking() {
     ];
 
     try {
-      const response = await fetch(`/api/cal/availability?date=${date}`);
+      const response = await fetch(`/api/calendly/availability?date=${date}`);
       const data = await response.json();
 
       if (data.success && data.slots.length > 0) {
@@ -95,7 +119,6 @@ export function CalendlyBooking() {
           setSelectedSlotRaw(data.slots[0].rawTime);
         }
       } else {
-        setError('Failed to load available times');
         setAvailableSlots(fallbackSlots);
         if (autoSelectFirst) {
           setSelectedTime(fallbackSlots[0].time);
@@ -104,7 +127,6 @@ export function CalendlyBooking() {
       }
     } catch (err) {
       console.error('Error fetching slots:', err);
-      setError('Failed to load available times');
       setAvailableSlots(fallbackSlots);
       if (autoSelectFirst) {
         setSelectedTime(fallbackSlots[0].time);
@@ -133,6 +155,23 @@ export function CalendlyBooking() {
     }
   };
 
+  const openCalendlyPopup = () => {
+    const prefillParams = new URLSearchParams({
+      name: formData.name,
+      email: formData.email,
+      a1: formData.company || '',
+      a2: formData.service || '',
+    });
+    
+    const url = `${calendlyUrl}?${prefillParams.toString()}`;
+    
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({ url });
+    } else {
+      window.open(url, '_blank');
+    }
+  };
+
   const handleConfirmBooking = async () => {
     if (!selectedDate || !selectedTime || !formData.name || !formData.email) {
       setError('Please fill in all required fields');
@@ -149,7 +188,7 @@ export function CalendlyBooking() {
     setError(null);
 
     try {
-      const response = await fetch('/api/cal/book', {
+      const response = await fetch('/api/calendly/book', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -163,11 +202,18 @@ export function CalendlyBooking() {
       if (result.success) {
         setLocation('/booking-confirmed');
       } else {
-        setError(result.error || 'Booking failed. Please try again.');
+        if (result.error?.includes('paid plan') || response.status === 403) {
+          setUseCalendlyEmbed(true);
+          openCalendlyPopup();
+        } else {
+          setError(result.error || 'Booking failed. Please try again or use the direct booking link below.');
+          setUseCalendlyEmbed(true);
+        }
       }
     } catch (err) {
       console.error('Booking error:', err);
-      setError('An error occurred. Please try again.');
+      setError('An error occurred. Please use the direct booking link below.');
+      setUseCalendlyEmbed(true);
     } finally {
       setLoading(false);
     }
@@ -253,6 +299,27 @@ export function CalendlyBooking() {
                   </div>
                 </motion.div>
               </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="mt-8 p-4 bg-gradient-to-r from-[#9929ea]/10 to-[#5808fb]/10 rounded-xl"
+              >
+                <p className="text-sm text-gray-700 mb-2">
+                  <strong>Prefer to book directly?</strong>
+                </p>
+                <a
+                  href={calendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[#9929ea] hover:text-[#5808fb] font-medium text-sm transition-colors"
+                  data-testid="link-calendly-direct"
+                >
+                  Open Calendly Scheduler <ExternalLink className="h-4 w-4" />
+                </a>
+              </motion.div>
             </div>
 
             <div>
@@ -319,7 +386,6 @@ export function CalendlyBooking() {
                       </div>
                     ) : availableSlots.length > 0 ? (
                       <div className="space-y-4">
-                        {/* Morning Slots */}
                         {availableSlots.filter(slot => slot.time.includes('AM')).length > 0 && (
                           <div>
                             <p className="text-sm font-medium text-gray-700 mb-2">Morning</p>
@@ -345,7 +411,6 @@ export function CalendlyBooking() {
                           </div>
                         )}
 
-                        {/* Afternoon Slots */}
                         {availableSlots.filter(slot => slot.time.includes('PM')).length > 0 && (
                           <div>
                             <p className="text-sm font-medium text-gray-700 mb-2">Afternoon</p>
@@ -418,6 +483,19 @@ export function CalendlyBooking() {
                   {error && (
                     <div className="bg-red-50 text-red-600 rounded-lg p-3 mb-4 text-sm">
                       {error}
+                    </div>
+                  )}
+
+                  {useCalendlyEmbed && (
+                    <div className="bg-blue-50 text-blue-700 rounded-lg p-4 mb-4">
+                      <p className="text-sm font-medium mb-2">Complete your booking on Calendly:</p>
+                      <button
+                        onClick={openCalendlyPopup}
+                        className="inline-flex items-center gap-2 bg-[#9929ea] hover:bg-[#8629e4] text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm"
+                        data-testid="button-open-calendly"
+                      >
+                        Open Calendly <ExternalLink className="h-4 w-4" />
+                      </button>
                     </div>
                   )}
 
@@ -521,7 +599,7 @@ export function CalendlyBooking() {
                   </motion.button>
 
                   <p className="text-xs text-center text-gray-700 mt-4">
-                    We'll send you a calendar invite and Zoom link
+                    We'll send you a calendar invite and meeting details
                   </p>
                 </>
               )}
