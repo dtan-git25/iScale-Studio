@@ -295,8 +295,6 @@ export function CalendlyBooking() {
             <div>
               {step === 'datetime' ? (
                 <>
-                  <h3 className="text-2xl font-bold mb-6 text-gray-900">Select a Time</h3>
-
                   <div className="mb-8">
                     <div className="flex items-center justify-between mb-3">
                       <p className="text-sm font-medium text-gray-700">Pick a date</p>
