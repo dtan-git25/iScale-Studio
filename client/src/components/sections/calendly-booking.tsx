@@ -379,11 +379,14 @@ export function CalendlyBooking() {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: idx * 0.05 }}
-                                    onClick={() => handleTimeSelect(slot)}
-                                    className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
-                                      selectedTime === slot.time
-                                        ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
-                                        : "border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
+                                    onClick={() => slot.available && handleTimeSelect(slot)}
+                                    disabled={!slot.available}
+                                    className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all ${
+                                      !slot.available
+                                        ? "border-gray-100 bg-gray-100 text-gray-400 cursor-not-allowed line-through"
+                                        : selectedTime === slot.time
+                                          ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
+                                          : "border-gray-100 bg-gray-50 text-gray-700 hover:border-[#9929ea] hover:bg-white"
                                     }`}
                                     data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
                                   >
@@ -413,11 +416,14 @@ export function CalendlyBooking() {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: idx * 0.05 }}
-                                    onClick={() => handleTimeSelect(slot)}
-                                    className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all hover:border-[#9929ea] ${
-                                      selectedTime === slot.time
-                                        ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
-                                        : "border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
+                                    onClick={() => slot.available && handleTimeSelect(slot)}
+                                    disabled={!slot.available}
+                                    className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all ${
+                                      !slot.available
+                                        ? "border-gray-100 bg-gray-100 text-gray-400 cursor-not-allowed line-through"
+                                        : selectedTime === slot.time
+                                          ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
+                                          : "border-gray-100 bg-gray-50 text-gray-700 hover:border-[#9929ea] hover:bg-white"
                                     }`}
                                     data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
                                   >
