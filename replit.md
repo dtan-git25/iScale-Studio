@@ -114,8 +114,10 @@ Preferred communication style: Simple, everyday language.
 **Third-Party Services:**
 
 1. **Calendly** - Appointment scheduling integration
-   - Embedded booking widget on `/booking` page
-   - Free consultation scheduling flow
+   - Embedded booking widget via `react-calendly` InlineWidget
+   - Scheduling link: https://calendly.com/david-jthan/30min
+   - 30-minute free consultation scheduling flow
+   - Customized with iScale Studio brand colors (#9929ea)
 
 2. **Font Services** - Google Fonts
    - Preconnected for performance
@@ -180,6 +182,13 @@ Preferred communication style: Simple, everyday language.
 - SEO-friendly URL slugs for all blog posts and case studies
 
 ## Recent Changes
+
+**December 5, 2024 - Calendly Integration:**
+- Replaced custom Cal.com booking system with Calendly embedded widget
+- Installed `react-calendly` package for React integration
+- Simplified booking flow using Calendly's InlineWidget component
+- Removed Cal.com API routes from server (no longer needed)
+- Calendly handles all scheduling, confirmation emails, and calendar integration
 
 **December 4, 2024 - SEO URL Refactor:**
 - Converted all 12 blog post URLs from `/blog-post-N` to `/blog/{descriptive-slug}` format
