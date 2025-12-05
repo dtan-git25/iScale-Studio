@@ -1,0 +1,98 @@
+Task: Fix Booking Confirmation Flow - Direct API Booking with Success Message
+Current Problem:
+When users click "Confirm Booking" button, they get an error "The requested path does not exist". The current implementation appears to be redirecting to a Calendly link instead of booking directly through the API.
+Required Solution:
+
+Direct API Booking (No Redirect):
+
+When "Confirm Booking" button is clicked, submit booking data directly to Calendly API
+Use the Calendly API endpoint: POST https://api.calendly.com/scheduling/invitees
+DO NOT redirect users to Calendly's hosted booking page
+Keep users on the current page throughout the entire booking process
+
+
+API Request Format:
+
+javascript// Example booking request
+POST https://api.calendly.com/scheduling/invitees
+Headers:
+  Authorization: Bearer YOUR_CALENDLY_API_KEY
+  Content-Type: application/json
+
+Body:
+{
+  "event_type": "CALENDLY_EVENT_TYPE_URI",
+  "invitee": {
+    "name": "Full Name from form",
+    "email": "Email from form",
+    "phone_number": "Phone from form"
+  },
+  "start_time": "Selected time slot in ISO format",
+  "answers": [
+    {
+      "question": "Company Name",
+      "answer": "Company name from form"
+    },
+    {
+      "question": "Service Interest",
+      "answer": "Service interest from dropdown"
+    },
+    {
+      "question": "Tell us about your project",
+      "answer": "Project description from form"
+    }
+  ]
+}
+
+Success Response Handling:
+
+After successful booking (HTTP 201 response), hide the booking form
+Display a success message/component with:
+
+✅ Confirmation message: "Thank You for Booking!"
+📅 Booking details (date, time)
+📧 Message: "We've sent a confirmation email to [user's email]"
+🔗 Calendar invite confirmation
+Optional: Button to "Book Another Consultation" or "Return to Homepage"
+
+
+
+
+Error Handling:
+
+If booking fails, show user-friendly error message
+Keep form data intact so user can retry
+Log detailed error for debugging
+
+
+UI States to Handle:
+
+Initial State: Show booking form
+Loading State: Show spinner/loading indicator when submitting
+Success State: Show thank you message with booking confirmation
+Error State: Show error message with retry option
+
+
+
+Files to Update:
+
+Frontend component handling the booking form submission
+API route/endpoint that processes the booking request
+Add success confirmation component/view
+
+Testing Checklist:
+
+✅ Form submits without redirect
+✅ Booking appears in Calendly dashboard
+✅ User sees success message on same page
+✅ Confirmation email is sent by Calendly
+✅ Error handling works properly
+
+Important Notes:
+
+Use the CALENDLY_API_KEY and CALENDLY_EVENT_TYPE_URI from environment variables
+Ensure phone number format is E.164 format (e.g., +639560623082)
+Selected time must be available in the event type's schedule
+All required fields must be validated before API submission
+
+Please implement this fix so users can complete bookings directly on our custom UI without any redirects, and see a proper confirmation message upon success.

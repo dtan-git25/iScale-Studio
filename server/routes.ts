@@ -86,85 +86,129 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // CREATE BOOKING
+  // CREATE BOOKING - Direct API booking without redirect
   app.post('/api/calendly/book', async (req, res) => {
     if (!CALENDLY_API_KEY) {
       return res.status(500).json({ success: false, error: 'Calendly API key not configured' });
     }
 
-    const { schedulingUrl, name, email, phone, company, service, message } = req.body;
+    if (!CALENDLY_EVENT_TYPE_URI) {
+      return res.status(500).json({ success: false, error: 'Calendly Event Type URI not configured' });
+    }
 
-    if (!schedulingUrl || !name || !email) {
+    const { startTime, name, email, phone, company, service, message } = req.body;
+
+    if (!startTime || !name || !email) {
       return res.status(400).json({
         success: false,
-        error: 'Missing required fields: schedulingUrl, name, email'
+        error: 'Missing required fields: startTime, name, email'
       });
     }
 
     try {
+      // Build booking payload for POST /scheduling/invitees endpoint
       const bookingData: any = {
-        scheduling_url: schedulingUrl,
-        email: email,
-        name: name,
-        timezone: 'Asia/Manila'
+        event_type: CALENDLY_EVENT_TYPE_URI,
+        start_time: startTime,
+        invitee: {
+          name: name,
+          email: email,
+          timezone: 'Asia/Manila'
+        }
       };
 
-      const questionsAndAnswers = [];
+      // Add phone number if provided (must be E.164 format)
       if (phone) {
-        questionsAndAnswers.push({
-          question: "Phone Number",
-          answer: phone,
-          position: 0
-        });
+        // Format phone to E.164 if it's a Philippine number
+        let formattedPhone = phone.replace(/\s+/g, '').replace(/-/g, '');
+        if (formattedPhone.startsWith('0')) {
+          formattedPhone = '+63' + formattedPhone.substring(1);
+        } else if (!formattedPhone.startsWith('+')) {
+          formattedPhone = '+63' + formattedPhone;
+        }
+        bookingData.invitee.phone_number = formattedPhone;
       }
+
+      // Add custom answers for additional fields
+      const answers = [];
       if (company) {
-        questionsAndAnswers.push({
+        answers.push({
           question: "Company Name",
-          answer: company,
-          position: 1
+          answer: company
         });
       }
       if (service) {
-        questionsAndAnswers.push({
+        answers.push({
           question: "Service Interest",
-          answer: service,
-          position: 2
+          answer: service
         });
       }
       if (message) {
-        questionsAndAnswers.push({
-          question: "Project Details",
-          answer: message,
-          position: 3
+        answers.push({
+          question: "Tell us about your project",
+          answer: message
         });
       }
       
-      if (questionsAndAnswers.length > 0) {
-        bookingData.questions_and_answers = questionsAndAnswers;
+      if (answers.length > 0) {
+        bookingData.answers = answers;
       }
 
+      console.log('Booking request:', JSON.stringify(bookingData, null, 2));
+
       const response = await axios.post(
-        `${CALENDLY_API_URL}/event_invitees`,
+        `${CALENDLY_API_URL}/scheduling/invitees`,
         bookingData,
         { headers: calendlyHeaders }
       );
 
+      // Extract booking details for confirmation
+      const bookingResult = response.data.resource || response.data;
+      const eventTime = new Date(startTime);
+      
       res.json({ 
         success: true, 
-        booking: response.data.resource,
-        message: 'Booking confirmed! Check your email for calendar invite.' 
+        booking: {
+          uri: bookingResult.uri,
+          email: email,
+          name: name,
+          startTime: startTime,
+          formattedDate: eventTime.toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            timeZone: 'Asia/Manila'
+          }),
+          formattedTime: eventTime.toLocaleTimeString('en-US', {
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true,
+            timeZone: 'Asia/Manila'
+          })
+        },
+        message: 'Booking confirmed! A confirmation email has been sent to your email address.' 
       });
     } catch (error: any) {
       console.error('Booking error:', error.response?.data || error.message);
       
-      const errorMessage = error.response?.data?.message || 
-                          error.response?.data?.title ||
-                          'Failed to create booking';
+      const errorData = error.response?.data;
+      let errorMessage = 'Failed to create booking. Please try again.';
+      
+      if (errorData?.message) {
+        errorMessage = errorData.message;
+      } else if (errorData?.title) {
+        errorMessage = errorData.title;
+      } else if (errorData?.details) {
+        errorMessage = Array.isArray(errorData.details) 
+          ? errorData.details.map((d: any) => d.message).join(', ')
+          : errorData.details;
+      }
       
       res.status(error.response?.status || 500).json({
         success: false,
         error: errorMessage,
-        details: error.response?.data
+        details: errorData
       });
     }
   });

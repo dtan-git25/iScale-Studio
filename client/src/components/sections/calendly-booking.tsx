@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, User, CheckCircle2, Loader2 } from "lucide-react";
+import { Calendar, Clock, User, CheckCircle2, Loader2, Mail, ArrowLeft, Home } from "lucide-react";
 import { format, addDays } from "date-fns";
-import { useLocation } from "wouter";
+import { Link } from "wouter";
 
 interface TimeSlot {
   time: string;
@@ -17,8 +17,14 @@ interface DateOption {
   fullDate: string;
 }
 
+interface BookingConfirmation {
+  formattedDate: string;
+  formattedTime: string;
+  email: string;
+  name: string;
+}
+
 export function CalendlyBooking() {
-  const [, setLocation] = useLocation();
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [selectedSlotRaw, setSelectedSlotRaw] = useState<string | null>(null);
@@ -28,7 +34,8 @@ export function CalendlyBooking() {
   const [loading, setLoading] = useState(false);
   const [slotsLoading, setSlotsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [step, setStep] = useState<'datetime' | 'form'>('datetime');
+  const [step, setStep] = useState<'datetime' | 'form' | 'success'>('datetime');
+  const [bookingConfirmation, setBookingConfirmation] = useState<BookingConfirmation | null>(null);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -132,7 +139,7 @@ export function CalendlyBooking() {
       return;
     }
 
-    if (!selectedSchedulingUrl) {
+    if (!selectedSlotRaw) {
       setError('Please select a valid time slot. Try selecting a different date.');
       return;
     }
@@ -151,7 +158,7 @@ export function CalendlyBooking() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          schedulingUrl: selectedSchedulingUrl,
+          startTime: selectedSlotRaw,
           ...formData
         })
       });
@@ -159,7 +166,14 @@ export function CalendlyBooking() {
       const result = await response.json();
 
       if (result.success) {
-        setLocation('/booking-confirmed');
+        // Set booking confirmation data and show success view
+        setBookingConfirmation({
+          formattedDate: result.booking.formattedDate,
+          formattedTime: result.booking.formattedTime,
+          email: formData.email,
+          name: formData.name
+        });
+        setStep('success');
       } else {
         setError(result.error || 'Booking failed. Please try again.');
       }
@@ -168,6 +182,31 @@ export function CalendlyBooking() {
       setError('An error occurred. Please try again.');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleBookAnother = () => {
+    // Reset all states for a new booking
+    setSelectedDate(null);
+    setSelectedTime(null);
+    setSelectedSlotRaw(null);
+    setSelectedSchedulingUrl(null);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      service: 'AI Web & App Development',
+      message: ''
+    });
+    setBookingConfirmation(null);
+    setStep('datetime');
+    setDatePageIndex(0);
+    // Re-initialize with first date
+    if (allDates.length > 0) {
+      const firstDate = allDates[0].fullDate;
+      setSelectedDate(firstDate);
+      fetchAvailableSlots(firstDate, true);
     }
   };
 
@@ -397,7 +436,7 @@ export function CalendlyBooking() {
                     Continue
                   </motion.button>
                 </>
-              ) : (
+              ) : step === 'form' ? (
                 <>
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-2xl font-bold text-gray-900">Your Details</h3>
@@ -530,7 +569,109 @@ export function CalendlyBooking() {
                     We'll send you a calendar invite and Zoom link
                   </p>
                 </>
-              )}
+              ) : step === 'success' && bookingConfirmation ? (
+                <>
+                  <div className="text-center py-8">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: "spring", duration: 0.5 }}
+                      className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center"
+                    >
+                      <CheckCircle2 className="h-10 w-10 text-white" />
+                    </motion.div>
+                    
+                    <motion.h3
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                      className="text-2xl font-bold text-gray-900 mb-2"
+                    >
+                      Thank You for Booking!
+                    </motion.h3>
+                    
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 }}
+                      className="text-gray-600 mb-6"
+                    >
+                      Your consultation has been confirmed
+                    </motion.p>
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4 }}
+                      className="bg-gradient-to-r from-[#9929ea]/10 to-[#5808fb]/10 rounded-xl p-6 mb-6 text-left"
+                    >
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#9929ea] to-[#5808fb] flex items-center justify-center">
+                            <Calendar className="h-5 w-5 text-white" />
+                          </div>
+                          <div>
+                            <p className="text-sm text-gray-600">Date</p>
+                            <p className="font-semibold text-gray-900">{bookingConfirmation.formattedDate}</p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#9929ea] to-[#5808fb] flex items-center justify-center">
+                            <Clock className="h-5 w-5 text-white" />
+                          </div>
+                          <div>
+                            <p className="text-sm text-gray-600">Time</p>
+                            <p className="font-semibold text-gray-900">{bookingConfirmation.formattedTime} (Manila Time)</p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#9929ea] to-[#5808fb] flex items-center justify-center">
+                            <Mail className="h-5 w-5 text-white" />
+                          </div>
+                          <div>
+                            <p className="text-sm text-gray-600">Confirmation sent to</p>
+                            <p className="font-semibold text-gray-900">{bookingConfirmation.email}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.5 }}
+                      className="text-sm text-gray-600 mb-6"
+                    >
+                      Check your email for a calendar invite with Zoom meeting details
+                    </motion.p>
+
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.6 }}
+                      className="flex flex-col sm:flex-row gap-3 justify-center"
+                    >
+                      <button
+                        onClick={handleBookAnother}
+                        className="px-6 py-3 border-2 border-[#9929ea] text-[#9929ea] font-semibold rounded-xl hover:bg-[#9929ea]/5 transition-colors flex items-center justify-center gap-2"
+                        data-testid="button-book-another"
+                      >
+                        <ArrowLeft className="h-4 w-4" />
+                        Book Another Consultation
+                      </button>
+                      
+                      <Link href="/">
+                        <a className="px-6 py-3 bg-gradient-to-r from-[#9929ea] to-[#5808fb] text-white font-semibold rounded-xl hover:from-[#8629e4] hover:to-[#4a07eb] transition-all flex items-center justify-center gap-2" data-testid="link-home">
+                          <Home className="h-4 w-4" />
+                          Return to Homepage
+                        </a>
+                      </Link>
+                    </motion.div>
+                  </div>
+                </>
+              ) : null}
             </div>
           </div>
         </motion.div>
