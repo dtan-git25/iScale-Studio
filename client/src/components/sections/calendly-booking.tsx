@@ -118,7 +118,7 @@ export function CalendlyBooking() {
     setSelectedTime(null);
     setSelectedSlotRaw(null);
     setSelectedSchedulingUrl(null);
-    fetchAvailableSlots(date);
+    fetchAvailableSlots(date, true);
   };
 
   const handleTimeSelect = (slot: TimeSlot) => {
