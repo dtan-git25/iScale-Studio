@@ -396,12 +396,15 @@ export function CalendlyBooking() {
                           );
                         })()}
 
-                        {/* Afternoon Slots - 1:00 PM and later */}
+                        {/* Afternoon Slots - 1:00 PM to 4:30 PM */}
                         {(() => {
                           const isAfternoonSlot = (time: string) => {
                             if (time.includes('AM')) return false;
                             if (time.startsWith('12:') && time.includes('PM')) return false;
-                            return time.includes('PM');
+                            if (!time.includes('PM')) return false;
+                            // Extract hour from time string (e.g., "5:00 PM" -> 5)
+                            const hour = parseInt(time.split(':')[0]);
+                            return hour >= 1 && hour < 5;
                           };
                           const afternoonSlots = availableSlots.filter(slot => isAfternoonSlot(slot.time));
                           return afternoonSlots.length > 0 && (
@@ -409,6 +412,43 @@ export function CalendlyBooking() {
                               <p className="text-sm font-medium text-gray-700 mb-2">Afternoon</p>
                               <div className="grid grid-cols-4 gap-2">
                                 {afternoonSlots.map((slot, idx) => (
+                                  <motion.button
+                                    key={slot.time}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: idx * 0.05 }}
+                                    onClick={() => slot.available && handleTimeSelect(slot)}
+                                    disabled={!slot.available}
+                                    className={`py-2 px-3 rounded-lg border-2 text-sm font-medium transition-all ${
+                                      !slot.available
+                                        ? "border-gray-100 bg-gray-100 text-gray-400 cursor-not-allowed line-through"
+                                        : selectedTime === slot.time
+                                          ? "border-[#9929ea] bg-gradient-to-br from-[#9929ea] to-[#5808fb] text-white"
+                                          : "border-gray-100 bg-gray-50 text-gray-700 hover:border-[#9929ea] hover:bg-white"
+                                    }`}
+                                    data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
+                                  >
+                                    {slot.time}
+                                  </motion.button>
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })()}
+
+                        {/* Evening Slots - 5:00 PM to 8:30 PM */}
+                        {(() => {
+                          const isEveningSlot = (time: string) => {
+                            if (!time.includes('PM')) return false;
+                            const hour = parseInt(time.split(':')[0]);
+                            return hour >= 5 && hour < 9;
+                          };
+                          const eveningSlots = availableSlots.filter(slot => isEveningSlot(slot.time));
+                          return eveningSlots.length > 0 && (
+                            <div>
+                              <p className="text-sm font-medium text-gray-700 mb-2">Evening</p>
+                              <div className="grid grid-cols-4 gap-2">
+                                {eveningSlots.map((slot, idx) => (
                                   <motion.button
                                     key={slot.time}
                                     initial={{ opacity: 0, y: 10 }}
