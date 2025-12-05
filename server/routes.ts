@@ -106,7 +106,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
 
     try {
-      // Build booking payload for POST /scheduling/invitees endpoint
+      // Build booking payload for POST /invitees endpoint
       const bookingData: any = {
         event_type: CALENDLY_EVENT_TYPE_URI,
         start_time: startTime,
@@ -114,6 +114,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
           name: name,
           email: email,
           timezone: 'Asia/Manila'
+        },
+        // CRITICAL: Must match event type's configured location
+        location: {
+          kind: "zoom_conference"
         }
       };
 
@@ -129,33 +133,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
         bookingData.invitee.text_reminder_number = formattedPhone;
       }
 
-      // Add custom questions and answers for additional fields
-      const questionsAndAnswers = [];
-      let position = 0;
+      // Add custom question answer - combine all info into the one configured question
+      // The exact question text in Calendly: "Please share anything that will help prepare for our meeting."
+      const answerParts = [];
       if (company) {
-        questionsAndAnswers.push({
-          question: "Company Name",
-          answer: company,
-          position: position++
-        });
+        answerParts.push(`Company: ${company}`);
       }
       if (service) {
-        questionsAndAnswers.push({
-          question: "Service Interest",
-          answer: service,
-          position: position++
-        });
+        answerParts.push(`Service Interest: ${service}`);
       }
       if (message) {
-        questionsAndAnswers.push({
-          question: "Tell us about your project",
-          answer: message,
-          position: position++
-        });
+        answerParts.push(`Project Details: ${message}`);
       }
       
-      if (questionsAndAnswers.length > 0) {
-        bookingData.questions_and_answers = questionsAndAnswers;
+      if (answerParts.length > 0) {
+        bookingData.questions_and_answers = [{
+          question: "Please share anything that will help prepare for our meeting.",
+          answer: answerParts.join('\n'),
+          position: 0
+        }];
       }
 
       console.log('Booking request:', JSON.stringify(bookingData, null, 2));

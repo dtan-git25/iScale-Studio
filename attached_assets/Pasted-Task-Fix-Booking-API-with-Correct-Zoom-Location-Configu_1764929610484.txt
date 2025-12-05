@@ -1,0 +1,154 @@
+Task: Fix Booking API with Correct Zoom Location Configuration
+Confirmed Event Type Location:
+json"locations": [{"kind": "zoom_conference"}]
+The event type is configured for Zoom meetings. Now we need to update the booking API call to include this location properly.
+Fix the Backend Booking Endpoint:
+Update your /api/booking/create endpoint with the correct Calendly API format:
+javascriptapp.post('/api/booking/create', async (req, res) => {
+  try {
+    const { name, email, phone, company, service, projectDetails, selectedTime } = req.body;
+
+    // Validate required fields
+    if (!name || !email || !selectedTime) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'Missing required fields: name, email, and selectedTime are required' 
+      });
+    }
+
+    console.log('Creating booking with data:', { name, email, selectedTime });
+
+    // Prepare booking payload for Calendly API
+    const bookingPayload = {
+      event_type_uuid: process.env.CALENDLY_EVENT_TYPE_URI.split('/').pop(), // Extract UUID: 0a5fbaa9-a1d0-4179-92ba-b34d667cb415
+      start_time: selectedTime, // Must be ISO 8601 format (e.g., "2025-12-06T09:30:00Z")
+      invitee: {
+        name: name,
+        email: email,
+      },
+      // CRITICAL: Add location with correct kind
+      location: {
+        kind: "zoom_conference"
+      }
+    };
+
+    // Add phone if provided
+    if (phone) {
+      bookingPayload.invitee.phone_number = phone;
+    }
+
+    // Add custom question answers
+    if (company || service || projectDetails) {
+      bookingPayload.answers = [];
+      
+      // The event type has this custom question configured
+      if (projectDetails) {
+        bookingPayload.answers.push({
+          question: "Please share anything that will help prepare for our meeting.",
+          answer: projectDetails
+        });
+      }
+      
+      // Add company and service as additional context if needed
+      if (company || service) {
+        const additionalInfo = [
+          company && `Company: ${company}`,
+          service && `Service Interest: ${service}`
+        ].filter(Boolean).join('\n');
+        
+        if (projectDetails) {
+          bookingPayload.answers[0].answer += `\n\n${additionalInfo}`;
+        } else {
+          bookingPayload.answers.push({
+            question: "Please share anything that will help prepare for our meeting.",
+            answer: additionalInfo
+          });
+        }
+      }
+    }
+
+    console.log('Sending to Calendly API:', JSON.stringify(bookingPayload, null, 2));
+
+    // Call Calendly API to create the booking
+    const calendlyResponse = await fetch('https://api.calendly.com/scheduled_events', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.CALENDLY_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(bookingPayload)
+    });
+
+    const calendlyData = await calendlyResponse.json();
+
+    if (!calendlyResponse.ok) {
+      console.error('Calendly API Error:', JSON.stringify(calendlyData, null, 2));
+      return res.status(calendlyResponse.status).json({
+        success: false,
+        message: calendlyData.message || 'Failed to create booking with Calendly',
+        error: calendlyData
+      });
+    }
+
+    console.log('Booking created successfully:', calendlyData);
+
+    // Return success response
+    return res.json({
+      success: true,
+      message: 'Booking confirmed successfully!',
+      booking: {
+        id: calendlyData.resource?.uri,
+        start_time: calendlyData.resource?.start_time,
+        end_time: calendlyData.resource?.end_time,
+        meeting_url: calendlyData.resource?.location?.join_url, // Zoom link
+        status: calendlyData.resource?.status
+      }
+    });
+
+  } catch (error) {
+    console.error('Booking creation error:', error);
+    return res.status(500).json({
+      success: false,
+      message: 'An error occurred while creating the booking',
+      error: error.message
+    });
+  }
+});
+Important Notes:
+
+Event Type UUID: Extract just the UUID from the full URI:
+
+Full URI: https://api.calendly.com/event_types/0a5fbaa9-a1d0-4179-92ba-b34d667cb415
+UUID needed: 0a5fbaa9-a1d0-4179-92ba-b34d667cb415
+
+
+Start Time Format: Must be ISO 8601 format with timezone:
+
+Correct: "2025-12-06T09:30:00Z" or "2025-12-06T09:30:00+08:00"
+Wrong: "2025-12-06 09:30:00" or "12/06/2025 9:30 AM"
+
+
+Location: Must match event type configuration exactly:
+
+javascript   location: {
+     kind: "zoom_conference"
+   }
+
+Custom Questions: The event has one question: "Please share anything that will help prepare for our meeting." - use this exact text.
+
+Test the Booking Flow:
+
+User fills form in YOUR custom UI
+User selects time slot in YOUR custom UI
+User clicks "Confirm Booking"
+Backend creates booking via Calendly API (with correct zoom_conference location)
+Frontend receives success response
+Frontend shows "Thank You" success message in YOUR custom UI
+
+Success Response Should Include:
+
+Booking confirmation
+Zoom meeting link
+Calendar invite details
+
+This should fix the "Specified location kind is not configured" error completely!
