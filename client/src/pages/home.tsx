@@ -146,7 +146,8 @@ export default function Home() {
               AI-Powered Digital Solutions
             </div>
             <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-4">
-              Transform Your Business with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#2DBFBA]">AI-Powered</span> Digital Solutions
+              Transform Your Business<br />
+              with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9929ea] to-[#2DBFBA]">AI-Powered</span> Solutions
             </h1>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
               Custom AI-powered applications, intelligent workflow automation, and autonomous agents designed for Philippine businesses to scale faster and operate smarter.
