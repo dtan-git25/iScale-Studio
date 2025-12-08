@@ -143,7 +143,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 animate-fade-in-up">
             <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
-              AI-Powered Digital Solutions
+              Build Smarter. Scale Faster.
             </div>
             <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-4">
               Transform Your Business<br />
