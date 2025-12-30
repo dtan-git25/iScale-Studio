@@ -267,66 +267,25 @@ export function CalendlyBooking() {
                           <span className="ml-2 text-sm text-gray-600">Checking availability...</span>
                         </div>
                       ) : availableSlots.length > 0 ? (
-                        <div className="space-y-5">
-                          {/* Morning */}
-                          {(() => {
-                            const slots = availableSlots.filter(s => s.time.includes('AM') || (s.time.startsWith('12:') && s.time.includes('PM')));
-                            return slots.length > 0 && (
-                              <div>
-                                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Morning</p>
-                                <div className="grid grid-cols-2 gap-2">
-                                  {slots.map((slot) => (
-                                    <button
-                                      key={slot.time}
-                                      onClick={() => slot.available && handleTimeSelect(slot)}
-                                      disabled={!slot.available}
-                                      className={`py-3 px-4 rounded-xl border-2 text-sm font-medium transition-all flex items-center justify-between ${
-                                        !slot.available
-                                          ? "border-gray-50 bg-gray-50 text-gray-300 cursor-not-allowed line-through"
-                                          : selectedTime === slot.time
-                                            ? "border-[#2DBFBA] bg-[#2DBFBA] text-white shadow-md"
-                                            : "border-gray-100 bg-white text-gray-700 hover:border-[#2DBFBA] hover:text-[#2DBFBA]"
-                                      }`}
-                                      data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
-                                    >
-                                      <span>{slot.time}</span>
-                                      {selectedTime === slot.time && <CheckCircle2 className="h-4 w-4" />}
-                                    </button>
-                                  ))}
-                                </div>
-                              </div>
-                            );
-                          })()}
-
-                          {/* Afternoon & Evening */}
-                          {(() => {
-                            const slots = availableSlots.filter(s => !s.time.includes('AM') && !(s.time.startsWith('12:') && s.time.includes('PM')));
-                            return slots.length > 0 && (
-                              <div>
-                                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Afternoon & Evening</p>
-                                <div className="grid grid-cols-2 gap-2">
-                                  {slots.map((slot) => (
-                                    <button
-                                      key={slot.time}
-                                      onClick={() => slot.available && handleTimeSelect(slot)}
-                                      disabled={!slot.available}
-                                      className={`py-3 px-4 rounded-xl border-2 text-sm font-medium transition-all flex items-center justify-between ${
-                                        !slot.available
-                                          ? "border-gray-50 bg-gray-50 text-gray-300 cursor-not-allowed line-through"
-                                          : selectedTime === slot.time
-                                            ? "border-[#2DBFBA] bg-[#2DBFBA] text-white shadow-md"
-                                            : "border-gray-100 bg-white text-gray-700 hover:border-[#2DBFBA] hover:text-[#2DBFBA]"
-                                      }`}
-                                      data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
-                                    >
-                                      <span>{slot.time}</span>
-                                      {selectedTime === slot.time && <CheckCircle2 className="h-4 w-4" />}
-                                    </button>
-                                  ))}
-                                </div>
-                              </div>
-                            );
-                          })()}
+                        <div className="space-y-2">
+                          {availableSlots.map((slot) => (
+                            <button
+                              key={slot.time}
+                              onClick={() => slot.available && handleTimeSelect(slot)}
+                              disabled={!slot.available}
+                              className={`w-full py-3 px-4 rounded-xl border-2 text-sm font-medium transition-all flex items-center justify-between ${
+                                !slot.available
+                                  ? "border-gray-50 bg-gray-50 text-gray-300 cursor-not-allowed line-through"
+                                  : selectedTime === slot.time
+                                    ? "border-[#2DBFBA] bg-[#2DBFBA] text-white shadow-md"
+                                    : "border-gray-100 bg-white text-gray-700 hover:border-[#2DBFBA] hover:text-[#2DBFBA]"
+                              }`}
+                              data-testid={`button-time-${slot.time.replace(/\s/g, '-')}`}
+                            >
+                              <span>{slot.time}</span>
+                              {selectedTime === slot.time && <CheckCircle2 className="h-4 w-4" />}
+                            </button>
+                          ))}
                         </div>
                       ) : selectedDate ? (
                         <div className="text-center py-12 bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200">
