@@ -189,8 +189,8 @@ export function CalendlyBooking() {
         >
           {step === 'datetime' ? (
             <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 lg:gap-8">
-              {/* Info Column - 30% */}
-              <div className="lg:col-span-3">
+              {/* Info Column - 40% */}
+              <div className="lg:col-span-4">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -226,8 +226,8 @@ export function CalendlyBooking() {
                 </div>
               </div>
 
-              {/* Calendar Column - 50% */}
-              <div className="lg:col-span-5">
+              {/* Calendar Column - 40% */}
+              <div className="lg:col-span-4">
                 <p className="text-sm font-bold text-gray-900 mb-3">Select a Date</p>
                 <div className="bg-white p-3 rounded-xl border border-gray-100 shadow-sm">
                   <Calendar
