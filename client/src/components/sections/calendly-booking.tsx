@@ -42,7 +42,7 @@ export function CalendlyBooking() {
     email: '',
     phone: '',
     company: '',
-    service: 'AI Web Development',
+    service: 'Web Development',
     message: ''
   });
 
@@ -585,8 +585,8 @@ export function CalendlyBooking() {
                         className="w-full px-4 py-2 rounded-lg border-2 border-gray-200 focus:border-[#9929ea] focus:outline-none transition-colors bg-white"
                         data-testid="select-service"
                       >
-                        <option value="AI Web Development">AI Web Development</option>
-                        <option value="AI App Development">AI App Development</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="App Development">App Development</option>
                         <option value="Workflow Automation">Workflow Automation</option>
                         <option value="AI Agents">AI Agents</option>
                         <option value="E-commerce Solutions">E-commerce Solutions</option>

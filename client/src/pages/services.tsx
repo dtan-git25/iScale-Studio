@@ -25,7 +25,7 @@ export default function Services() {
   const services = [
     {
       id: "ai-web-development",
-      title: "AI Web Development",
+      title: "Web Development",
       subtitle: "Build intelligent web applications",
       shortDesc: "Custom web applications powered by cutting-edge AI technology.",
       description: "We create custom web applications infused with Artificial Intelligence. From predictive analytics dashboards to AI-powered recommendation engines, our web solutions combine modern design with intelligent functionality.",
@@ -43,7 +43,7 @@ export default function Services() {
     },
     {
       id: "ai-app-development",
-      title: "AI App Development",
+      title: "App Development",
       subtitle: "Build intelligent mobile apps",
       shortDesc: "Custom mobile apps powered by cutting-edge AI technology.",
       description: "We create custom mobile and desktop applications infused with Artificial Intelligence. From AI-powered assistants to intelligent data processing, our apps deliver powerful functionality right in your users' hands.",
