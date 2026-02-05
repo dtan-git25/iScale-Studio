@@ -3,47 +3,47 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import webDevImg from "@assets/generated_images/ai_app_development_dashboard_interface.png";
+import webDevImg from "@assets/generated_images/ai_web_development_dashboard_interface.png";
 import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
-export default function AIAppDevelopmentPage() {
+export default function WebDevelopmentPage() {
   const pageSchema = [
     createServiceSchema(
-      "App Development",
-      "Custom web application development with AI-powered features, intelligent dashboards, and seamless user experiences.",
-      "https://iscalestudio.com/services/ai-app-development"
+      "Web Development",
+      "Custom web applications powered by AI including React, Next.js dashboards, PWAs, and intelligent search & recommendation systems.",
+      "https://iscalestudio.com/services/web-development"
     ),
     createBreadcrumbSchema([
       { name: "Home", url: "https://iscalestudio.com" },
       { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "App Development", url: "https://iscalestudio.com/services/ai-app-development" }
+      { name: "Web Development", url: "https://iscalestudio.com/services/web-development" }
     ])
   ];
 
   const features = [
-    "Custom Web Application Development",
-    "Intelligent Dashboards & Internal Tools",
-    "AI-Powered Search & Data Processing",
-    "Cloud-Native Scalable Solutions",
-    "Progressive Web Apps (PWA) with AI Features",
-    "Native iOS & Android Mobile Apps"
+    "Custom React & Next.js Applications",
+    "AI-Powered Dashboards & Analytics",
+    "Progressive Web Apps (PWA)",
+    "Real-time Data Visualization",
+    "Intelligent Search & Recommendation Systems",
+    "Full-Stack AI Integration"
   ];
 
   const benefits = [
-    "Tailored solutions built for your specific business logic",
-    "High-performance web apps that scale with your growth",
-    "Enhanced data insights through custom AI modules",
-    "Seamless integration with your existing workflow",
-    "Modern, responsive designs optimized for all devices",
-    "Reduced development time with modular architecture"
+    "Faster time-to-market with intelligent automation",
+    "Enhanced user experiences with personalization",
+    "Reduced operational costs through smart algorithms",
+    "Competitive advantage with cutting-edge technology",
+    "Seamless integration with existing systems",
+    "Scalable architecture for growth"
   ];
 
   return (
     <div className="min-h-screen pt-20">
       <SEOHead
-        title="App Development | Custom Web Apps Philippines | iScale Studio"
-        description="Custom AI-powered web applications and internal tools. We build intelligent, scalable web solutions tailored to your business needs, with mobile support."
-        canonical="https://iscalestudio.com/services/ai-app-development"
+        title="Web Development Services Philippines | iScale Studio"
+        description="Custom AI-powered web applications with React, Next.js, dashboards, PWAs, and intelligent recommendation systems. Transform your web presence with AI."
+        canonical="https://iscalestudio.com/services/web-development"
         schema={pageSchema}
       />
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
@@ -57,11 +57,11 @@ export default function AIAppDevelopmentPage() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
-              App Development
+              Web Development
             </div>
-            <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Build Custom Web Applications</h1>
+            <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Build Intelligent Web Applications</h1>
             <p className="text-xl text-gray-700 max-w-3xl">
-              We specialize in building custom, high-performance web applications tailored to your business needs. From intelligent internal tools to customer-facing platforms, we deliver scalable solutions that drive growth.
+              We create custom web applications infused with Artificial Intelligence. From predictive analytics dashboards to AI-powered recommendation engines, our web solutions combine modern design with intelligent functionality.
             </p>
           </motion.div>
         </div>
@@ -76,7 +76,7 @@ export default function AIAppDevelopmentPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img src={webDevImg} alt="Custom Web App Development" className="rounded-xl shadow-lg" width="600" height="327" />
+              <img src={webDevImg} alt="Web Development" className="rounded-xl shadow-lg" width="600" height="327" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -87,7 +87,7 @@ export default function AIAppDevelopmentPage() {
             >
               <h2 className="text-4xl font-bold">What We Deliver</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Our expertise is focused on creating sophisticated web applications that solve complex business challenges. We also provide native iOS and Android development for businesses that need a dedicated mobile presence.
+                Our web development expertise spans across modern frameworks like React, Next.js, and Node.js. We leverage the latest AI technologies to create web applications that aren't just functional, but intelligent and adaptive.
               </p>
               <ul className="space-y-3">
                 {features.map((feature, i) => (
@@ -107,7 +107,7 @@ export default function AIAppDevelopmentPage() {
             transition={{ duration: 0.6 }}
             className="bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl p-12 mb-20"
           >
-            <h2 className="text-4xl font-bold mb-12">Why Choose Our App Development?</h2>
+            <h2 className="text-4xl font-bold mb-12">Why Choose Our Web Development?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {benefits.map((benefit, i) => (
                 <div key={i} className="flex gap-4">
@@ -124,7 +124,7 @@ export default function AIAppDevelopmentPage() {
             </div>
           </motion.div>
 
-          {/* Featured App Development Capabilities */}
+          {/* Featured Web Development Capabilities */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -132,44 +132,44 @@ export default function AIAppDevelopmentPage() {
             transition={{ duration: 0.6 }}
             className="mb-20"
           >
-            <h2 className="text-4xl font-bold mb-12">Featured Development Capabilities</h2>
+            <h2 className="text-4xl font-bold mb-12">Featured Web Development Capabilities</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: "💻",
-                  title: "Custom Web Apps",
-                  description: "Full-stack web applications built with modern frameworks for maximum speed and reliability",
-                  features: ["React/Next.js", "Scalable Backend", "Custom Logic"]
+                  icon: "🌐",
+                  title: "Smart Dashboards",
+                  description: "AI-powered dashboards with predictive analytics and real-time insights for data-driven decisions",
+                  features: ["Live Analytics", "AI Insights", "Real-time Data"]
+                },
+                {
+                  icon: "🎯",
+                  title: "Intelligent Recommendations",
+                  description: "Smart recommendation engines that learn from user behavior and boost conversions",
+                  features: ["Personalization", "Smart Algorithms", "Conversion Boost"]
+                },
+                {
+                  icon: "⚡",
+                  title: "High Performance",
+                  description: "Lightning-fast web applications optimized with AI-driven caching and intelligent load balancing",
+                  features: ["Fast Loading", "Smart Caching", "Optimized"]
+                },
+                {
+                  icon: "🔍",
+                  title: "Intelligent Search",
+                  description: "Advanced search capabilities with AI understanding natural language queries and context",
+                  features: ["NLP Search", "Semantic Search", "Smart Filters"]
                 },
                 {
                   icon: "📊",
-                  title: "Intelligent Dashboards",
-                  description: "Data-driven interfaces that provide real-time insights and business intelligence",
-                  features: ["Real-time Data", "Custom Charts", "AI Insights"]
+                  title: "Data Visualization",
+                  description: "Beautiful, interactive charts and visualizations that make complex data easy to understand",
+                  features: ["Charts", "Graphs", "Interactive UI"]
                 },
                 {
-                  icon: "🌐",
-                  title: "Cloud-Native",
-                  description: "Optimized for the cloud with auto-scaling and high availability built-in",
-                  features: ["Serverless", "Edge Computing", "Scalable"]
-                },
-                {
-                  icon: "📱",
-                  title: "Mobile Ready",
-                  description: "iOS and Android apps developed to complement your web presence",
-                  features: ["React Native", "Cross-Platform", "App Store Ready"]
-                },
-                {
-                  icon: "🔒",
-                  title: "Secure & Compliant",
-                  description: "Enterprise-grade security and data protection for your business data",
-                  features: ["Encrypted", "Auth Systems", "Access Control"]
-                },
-                {
-                  icon: "⚙️",
-                  title: "Internal Tools",
-                  description: "Custom software built to automate your internal operations and boost productivity",
-                  features: ["Admin Panels", "Workflows", "Automation"]
+                  icon: "🛡️",
+                  title: "Enterprise Security",
+                  description: "Built with security-first approach featuring AI-powered threat detection and prevention",
+                  features: ["AI Security", "SSL/TLS", "Data Protection"]
                 }
               ].map((item, idx) => (
                 <motion.div
@@ -194,7 +194,7 @@ export default function AIAppDevelopmentPage() {
                     
                     <div className="flex flex-wrap gap-2">
                       {item.features.map((feature, i) => (
-                        <Badge key={i} className="bg-gradient-to-r from-[#9929ea]/10 to-[#5808fb]/10 border border-[#9929ea]/30 text-gray-700 hover:from-[#9929ea]/20 hover:to-[#5808fb]/20 transition-all text-xs">
+                        <Badge key={i} className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 text-gray-700 hover:from-cyan-500/20 hover:to-blue-500/20 transition-all text-xs">
                           {feature}
                         </Badge>
                       ))}
@@ -203,6 +203,24 @@ export default function AIAppDevelopmentPage() {
                 </motion.div>
               ))}
             </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center space-y-6"
+          >
+            <h2 className="text-4xl font-bold">Ready to Build Your Intelligent Web Application?</h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              Let's discuss how AI can transform your web application and help you stay ahead of the competition.
+            </p>
+            <Link href="/booking">
+              <Button size="lg" className="btn-gradient border-0 rounded-full px-8 h-12 text-base shadow-lg shadow-[#9929ea]/40">
+                Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>

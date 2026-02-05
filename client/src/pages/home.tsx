@@ -235,7 +235,7 @@ export default function Home() {
                 shortDesc: "Custom web applications powered by cutting-edge AI technology.",
                 icon: Globe,
                 gradient: "from-cyan-500 to-blue-500",
-                href: "/services/ai-web-development"
+                href: "/services/web-development"
               },
               {
                 id: "ai-app-development",
@@ -244,7 +244,7 @@ export default function Home() {
                 shortDesc: "Custom mobile apps powered by cutting-edge AI technology.",
                 icon: Smartphone,
                 gradient: "from-blue-500 to-indigo-500",
-                href: "/services/ai-app-development"
+                href: "/services/app-development"
               },
               {
                 id: "workflow-automation",
@@ -346,7 +346,7 @@ export default function Home() {
                   "Intelligent Search & Recommendation Systems"
                 ],
                 image: webDevImg,
-                href: "/services/ai-web-development"
+                href: "/services/web-development"
               },
               {
                 title: "App Development",
@@ -360,7 +360,7 @@ export default function Home() {
                   "Computer Vision & Image Recognition"
                 ],
                 image: appDevImg,
-                href: "/services/ai-app-development"
+                href: "/services/app-development"
               },
               {
                 title: "Workflow Automation",

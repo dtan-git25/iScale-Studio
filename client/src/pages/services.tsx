@@ -39,7 +39,7 @@ export default function Services() {
       image: webDevImg,
       icon: Globe,
       gradient: "from-cyan-500 to-blue-500",
-      href: "/services/ai-web-development"
+      href: "/services/web-development"
     },
     {
       id: "ai-app-development",
@@ -57,7 +57,7 @@ export default function Services() {
       image: appDevImg,
       icon: Smartphone,
       gradient: "from-blue-500 to-indigo-500",
-      href: "/services/ai-app-development"
+      href: "/services/app-development"
     },
     {
       id: "workflow-automation",
