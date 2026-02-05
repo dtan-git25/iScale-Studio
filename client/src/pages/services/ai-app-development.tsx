@@ -9,40 +9,40 @@ import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/componen
 export default function AIAppDevelopmentPage() {
   const pageSchema = [
     createServiceSchema(
-      "AI App Development",
-      "Native and cross-platform mobile app development with AI-powered features, computer vision, and intelligent assistants.",
+      "App Development",
+      "Custom web application development with AI-powered features, intelligent dashboards, and seamless user experiences.",
       "https://iscalestudio.com/services/ai-app-development"
     ),
     createBreadcrumbSchema([
       { name: "Home", url: "https://iscalestudio.com" },
       { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "AI App Development", url: "https://iscalestudio.com/services/ai-app-development" }
+      { name: "App Development", url: "https://iscalestudio.com/services/ai-app-development" }
     ])
   ];
 
   const features = [
-    "Native Mobile App Development (iOS & Android)",
-    "Cross-Platform Applications with React Native",
-    "AI-Powered Mobile Assistants",
-    "Offline-First AI Processing",
-    "Computer Vision & Image Recognition Apps",
-    "Enterprise Mobile Solutions"
+    "Custom Web Application Development",
+    "Intelligent Dashboards & Internal Tools",
+    "AI-Powered Search & Data Processing",
+    "Cloud-Native Scalable Solutions",
+    "Progressive Web Apps (PWA) with AI Features",
+    "Native iOS & Android Mobile Apps"
   ];
 
   const benefits = [
-    "Faster time-to-market with intelligent automation",
-    "Enhanced user experiences with personalization",
-    "Reduced operational costs through smart algorithms",
-    "Competitive advantage with cutting-edge technology",
-    "Seamless integration with existing systems",
-    "Optimized performance for mobile devices"
+    "Tailored solutions built for your specific business logic",
+    "High-performance web apps that scale with your growth",
+    "Enhanced data insights through custom AI modules",
+    "Seamless integration with your existing workflow",
+    "Modern, responsive designs optimized for all devices",
+    "Reduced development time with modular architecture"
   ];
 
   return (
     <div className="min-h-screen pt-20">
       <SEOHead
-        title="AI App Development | Mobile & Desktop Apps Philippines | iScale Studio"
-        description="Custom AI-powered mobile and desktop applications with React Native, computer vision, intelligent assistants, and offline AI processing."
+        title="App Development | Custom Web Apps Philippines | iScale Studio"
+        description="Custom AI-powered web applications and internal tools. We build intelligent, scalable web solutions tailored to your business needs, with mobile support."
         canonical="https://iscalestudio.com/services/ai-app-development"
         schema={pageSchema}
       />
@@ -57,11 +57,11 @@ export default function AIAppDevelopmentPage() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
-              AI App Development
+              App Development
             </div>
-            <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Build Intelligent Mobile Apps</h1>
+            <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Build Custom Web Applications</h1>
             <p className="text-xl text-gray-700 max-w-3xl">
-              We create custom mobile and desktop applications infused with Artificial Intelligence. From AI-powered assistants to intelligent data processing, our apps deliver powerful functionality right in your users' hands.
+              We specialize in building custom, high-performance web applications tailored to your business needs. From intelligent internal tools to customer-facing platforms, we deliver scalable solutions that drive growth.
             </p>
           </motion.div>
         </div>
@@ -76,7 +76,7 @@ export default function AIAppDevelopmentPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img src={webDevImg} alt="AI App Development" className="rounded-xl shadow-lg" width="600" height="327" />
+              <img src={webDevImg} alt="Custom Web App Development" className="rounded-xl shadow-lg" width="600" height="327" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -87,7 +87,7 @@ export default function AIAppDevelopmentPage() {
             >
               <h2 className="text-4xl font-bold">What We Deliver</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Our AI app development expertise spans across native iOS/Android development and cross-platform frameworks. We leverage the latest AI technologies to create mobile applications that are intelligent, responsive, and user-friendly.
+                Our expertise is focused on creating sophisticated web applications that solve complex business challenges. We also provide native iOS and Android development for businesses that need a dedicated mobile presence.
               </p>
               <ul className="space-y-3">
                 {features.map((feature, i) => (
@@ -107,7 +107,7 @@ export default function AIAppDevelopmentPage() {
             transition={{ duration: 0.6 }}
             className="bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl p-12 mb-20"
           >
-            <h2 className="text-4xl font-bold mb-12">Why Choose Our AI App Development?</h2>
+            <h2 className="text-4xl font-bold mb-12">Why Choose Our App Development?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {benefits.map((benefit, i) => (
                 <div key={i} className="flex gap-4">
@@ -132,44 +132,44 @@ export default function AIAppDevelopmentPage() {
             transition={{ duration: 0.6 }}
             className="mb-20"
           >
-            <h2 className="text-4xl font-bold mb-12">Featured App Development Capabilities</h2>
+            <h2 className="text-4xl font-bold mb-12">Featured Development Capabilities</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: "📱",
-                  title: "Native Mobile Apps",
-                  description: "iOS and Android native apps with seamless AI integration and offline capabilities",
-                  features: ["iOS/Android", "Native Performance", "Offline Mode"]
-                },
-                {
-                  icon: "🤖",
-                  title: "AI Assistants",
-                  description: "Intelligent mobile assistants that understand context and provide personalized guidance",
-                  features: ["NLP Integration", "Personalization", "Smart Learning"]
-                },
-                {
-                  icon: "⚡",
-                  title: "Lightning Fast",
-                  description: "Optimized performance with AI-driven caching and intelligent resource management",
-                  features: ["Fast Loading", "Smart Caching", "Optimized"]
-                },
-                {
-                  icon: "📸",
-                  title: "Computer Vision",
-                  description: "Advanced image recognition and processing capabilities built into your app",
-                  features: ["Image Recognition", "OCR", "Real-time Processing"]
-                },
-                {
-                  icon: "🔒",
-                  title: "Secure & Scalable",
-                  description: "Enterprise-grade security with AI-powered threat detection and auto-scaling",
-                  features: ["AI Security", "Auto-Scaling", "Encryption"]
+                  icon: "💻",
+                  title: "Custom Web Apps",
+                  description: "Full-stack web applications built with modern frameworks for maximum speed and reliability",
+                  features: ["React/Next.js", "Scalable Backend", "Custom Logic"]
                 },
                 {
                   icon: "📊",
-                  title: "Smart Analytics",
-                  description: "Built-in monitoring and AI-driven insights that track user behavior and app performance",
-                  features: ["User Analytics", "Performance Tracking", "Insights"]
+                  title: "Intelligent Dashboards",
+                  description: "Data-driven interfaces that provide real-time insights and business intelligence",
+                  features: ["Real-time Data", "Custom Charts", "AI Insights"]
+                },
+                {
+                  icon: "🌐",
+                  title: "Cloud-Native",
+                  description: "Optimized for the cloud with auto-scaling and high availability built-in",
+                  features: ["Serverless", "Edge Computing", "Scalable"]
+                },
+                {
+                  icon: "📱",
+                  title: "Mobile Ready",
+                  description: "iOS and Android apps developed to complement your web presence",
+                  features: ["React Native", "Cross-Platform", "App Store Ready"]
+                },
+                {
+                  icon: "🔒",
+                  title: "Secure & Compliant",
+                  description: "Enterprise-grade security and data protection for your business data",
+                  features: ["Encrypted", "Auth Systems", "Access Control"]
+                },
+                {
+                  icon: "⚙️",
+                  title: "Internal Tools",
+                  description: "Custom software built to automate your internal operations and boost productivity",
+                  features: ["Admin Panels", "Workflows", "Automation"]
                 }
               ].map((item, idx) => (
                 <motion.div
