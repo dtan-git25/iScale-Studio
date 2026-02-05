@@ -59,7 +59,7 @@ export default function WebDevelopmentPage() {
             <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
               Web Development
             </div>
-            <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Build Intelligent Web Applications</h1>
+            <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Build Intelligent Website</h1>
             <p className="text-xl text-gray-700 max-w-3xl">
               We create custom web applications infused with Artificial Intelligence. From predictive analytics dashboards to AI-powered recommendation engines, our web solutions combine modern design with intelligent functionality.
             </p>
