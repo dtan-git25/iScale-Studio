@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { CalendlyBooking } from "@/components/sections/calendly-booking";
+import { BookingWidget } from "@/components/sections/booking-widget";
 import { SEOHead, createBreadcrumbSchema, createWebPageSchema } from "@/components/seo/seo-head";
 
 export default function BookingPage() {
@@ -44,8 +44,8 @@ export default function BookingPage() {
         </div>
       </section>
 
-      {/* Calendly Booking Section */}
-      <CalendlyBooking />
+      {/* Booking Section */}
+      <BookingWidget />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Facebook, Linkedin, Instagram, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@assets/optimized_images/iScale_Studio_logo_optimized.webp";
-import { CalendlyBooking } from "@/components/sections/calendly-booking";
+import { BookingWidget } from "@/components/sections/booking-widget";
 
 const XLogo = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -46,7 +46,7 @@ export default function Footer() {
       </section>
 
       {/* Booking Section */}
-      {!isBookingPage && <CalendlyBooking />}
+      {!isBookingPage && <BookingWidget />}
 
       <footer className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white pt-8 pb-12">
         {/* Animated Background Elements */}

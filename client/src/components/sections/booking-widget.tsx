@@ -27,7 +27,7 @@ interface BookingConfirmation {
   name: string;
 }
 
-export function CalendlyBooking() {
+export function BookingWidget() {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [selectedSlotRaw, setSelectedSlotRaw] = useState<string | null>(null);

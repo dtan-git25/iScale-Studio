@@ -62,7 +62,7 @@ Preferred communication style: Simple, everyday language.
   - All 18 content pages use keyword-rich slugs for improved search visibility
 
 **Special Features:**
-- Calendly integration for consultation booking
+- Cal.com integration for consultation booking
 - CoDave AI chat component for visitor engagement
 - Responsive design with mobile-first approach
 - Custom animations and gradient backgrounds throughout
@@ -113,11 +113,12 @@ Preferred communication style: Simple, everyday language.
 
 **Third-Party Services:**
 
-1. **Calendly** - Appointment scheduling integration (REST API v2)
-   - Custom booking UI on `/booking` page with Calendly API backend
-   - API endpoints: `/api/calendly/availability`, `/api/calendly/book`, `/api/calendly/bookings`
-   - Environment variables: `CALENDLY_API_KEY`, `CALENDLY_EVENT_TYPE_URI`
-   - Features: Real-time slot availability, programmatic booking, confirmation emails via Calendly
+1. **Cal.com** - Appointment scheduling integration (API v2)
+   - Custom booking UI on `/booking` page with Cal.com API backend
+   - API endpoints: `/api/cal/availability`, `/api/cal/book`
+   - Environment variables: `CALCOM_API_KEY`, `CALCOM_EVENT_TYPE_ID`
+   - Features: Real-time slot availability, programmatic booking, confirmation emails via Cal.com
+   - Bot protection: honeypot field, reCAPTCHA v3 (score-gated server-side), and Vercel WAF rate-limiting
 
 2. **Font Services** - Google Fonts
    - Preconnected for performance
@@ -182,6 +183,15 @@ Preferred communication style: Simple, everyday language.
 - SEO-friendly URL slugs for all blog posts and case studies
 
 ## Recent Changes
+
+**June 2026 - Vercel Migration & Cal.com:**
+- Migrated from Replit to Vercel (static frontend + serverless API functions)
+- Switched booking from Calendly back to Cal.com API v2 (free-plan bookings)
+- Renamed API routes to `/api/cal/*`; env vars now `CALCOM_API_KEY` / `CALCOM_EVENT_TYPE_ID`
+- Added reCAPTCHA v3 (score-gated, fail-closed) + Vercel WAF rate-limiting; retained honeypot
+- Replaced axios with native fetch in the serverless functions (10s timeout, crash-proof handlers)
+- Added enforcing Content-Security-Policy + security headers (X-Frame-Options, HSTS, nosniff, Referrer-Policy)
+- Renamed the booking UI component `CalendlyBooking` → `BookingWidget` (provider-agnostic)
 
 **December 5, 2024 - Calendly API Integration:**
 - Replaced Cal.com integration with Calendly REST API v2
