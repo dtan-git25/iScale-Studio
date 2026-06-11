@@ -6,17 +6,17 @@ import { Link } from "wouter";
 import webDevImg from "@assets/generated_images/ai_app_development_dashboard_interface.png";
 import { SEOHead, createServiceSchema, createBreadcrumbSchema } from "@/components/seo/seo-head";
 
-export default function AppDevelopmentPage() {
+export default function CustomWebApplicationPage() {
   const pageSchema = [
     createServiceSchema(
-      "App Development",
+      "Custom Web Application",
       "Custom web application development with AI-powered features, intelligent dashboards, and seamless user experiences.",
-      "https://iscalestudio.com/services/app-development"
+      "https://iscalestudio.com/services/custom-web-application"
     ),
     createBreadcrumbSchema([
       { name: "Home", url: "https://iscalestudio.com" },
       { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "App Development", url: "https://iscalestudio.com/services/app-development" }
+      { name: "Custom Web Application", url: "https://iscalestudio.com/services/custom-web-application" }
     ])
   ];
 
@@ -41,9 +41,9 @@ export default function AppDevelopmentPage() {
   return (
     <div className="min-h-screen pt-20">
       <SEOHead
-        title="App Development | Custom Web Apps Philippines | iScale Studio"
+        title="Custom Web Application | Custom Web Apps Philippines | iScale Studio"
         description="Custom AI-powered web applications and internal tools. We build intelligent, scalable web solutions tailored to your business needs, with mobile support."
-        canonical="https://iscalestudio.com/services/app-development"
+        canonical="https://iscalestudio.com/services/custom-web-application"
         schema={pageSchema}
       />
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">
@@ -57,7 +57,7 @@ export default function AppDevelopmentPage() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-gray-300 text-[#8629e4] text-sm font-medium">
-              App Development
+              Custom Web Application
             </div>
             <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Build Custom Web Applications</h1>
             <p className="text-xl text-gray-700 max-w-3xl">
@@ -76,7 +76,7 @@ export default function AppDevelopmentPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img src={webDevImg} alt="Custom Web App Development" className="rounded-xl shadow-lg" width="600" height="327" />
+              <img src={webDevImg} alt="Custom Web Application" className="rounded-xl shadow-lg" width="600" height="327" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -107,7 +107,7 @@ export default function AppDevelopmentPage() {
             transition={{ duration: 0.6 }}
             className="bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl p-12 mb-20"
           >
-            <h2 className="text-4xl font-bold mb-12">Why Choose Our App Development?</h2>
+            <h2 className="text-4xl font-bold mb-12">Why Choose Our Custom Web Application?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {benefits.map((benefit, i) => (
                 <div key={i} className="flex gap-4">
@@ -124,7 +124,7 @@ export default function AppDevelopmentPage() {
             </div>
           </motion.div>
 
-          {/* Featured App Development Capabilities */}
+          {/* Featured Custom Web Application Capabilities */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

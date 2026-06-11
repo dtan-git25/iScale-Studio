@@ -13,7 +13,7 @@ import { useLocation } from "wouter";
 const Home = lazy(() => import("@/pages/home"));
 const Services = lazy(() => import("@/pages/services"));
 const WebDevelopment = lazy(() => import("@/pages/services/web-development"));
-const AppDevelopment = lazy(() => import("@/pages/services/app-development"));
+const CustomWebApplication = lazy(() => import("@/pages/services/custom-web-application"));
 const WorkflowAutomation = lazy(() => import("@/pages/services/workflow-automation"));
 const AIAgents = lazy(() => import("@/pages/services/ai-agents"));
 const EcommerceSolutions = lazy(() => import("@/pages/services/ecommerce-solutions"));
@@ -78,7 +78,7 @@ function Router() {
             <Route path="/" component={Home} />
             <Route path="/services" component={Services} />
             <Route path="/services/web-development" component={WebDevelopment} />
-            <Route path="/services/app-development" component={AppDevelopment} />
+            <Route path="/services/custom-web-application" component={CustomWebApplication} />
             <Route path="/services/workflow-automation" component={WorkflowAutomation} />
             <Route path="/services/ai-agents" component={AIAgents} />
             <Route path="/services/ecommerce-solutions" component={EcommerceSolutions} />

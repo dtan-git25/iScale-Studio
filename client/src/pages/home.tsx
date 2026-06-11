@@ -239,12 +239,12 @@ export default function Home() {
               },
               {
                 id: "ai-app-development",
-                title: "App Development",
+                title: "Custom Web Application",
                 subtitle: "Build intelligent mobile apps",
                 shortDesc: "Custom mobile apps powered by cutting-edge AI technology.",
                 icon: Smartphone,
                 gradient: "from-blue-500 to-indigo-500",
-                href: "/services/app-development"
+                href: "/services/custom-web-application"
               },
               {
                 id: "workflow-automation",
@@ -349,7 +349,7 @@ export default function Home() {
                 href: "/services/web-development"
               },
               {
-                title: "App Development",
+                title: "Custom Web Application",
                 subtitle: "Build intelligent mobile apps",
                 description: "We create custom mobile and desktop applications infused with Artificial Intelligence. From AI-powered assistants to intelligent data processing, our apps deliver powerful functionality right in your users' hands.",
                 features: [
@@ -360,7 +360,7 @@ export default function Home() {
                   "Computer Vision & Image Recognition"
                 ],
                 image: appDevImg,
-                href: "/services/app-development"
+                href: "/services/custom-web-application"
               },
               {
                 title: "Workflow Automation",

@@ -105,7 +105,7 @@ export default function Footer() {
                 <ul className="space-y-3">
                   {[
                     { label: "Web Development", href: "/services/web-development" },
-                    { label: "App Development", href: "/services/app-development" },
+                    { label: "Custom Web Application", href: "/services/custom-web-application" },
                     { label: "Workflow Automation", href: "/services/workflow-automation" },
                     { label: "AI Agents", href: "/services/ai-agents" },
                     { label: "E-commerce Solutions", href: "/services/ecommerce-solutions" },
