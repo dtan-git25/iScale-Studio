@@ -19,6 +19,9 @@ const bookingSchema = z.object({
     }),
   // Honeypot: real users never fill this; bots that auto-fill every field will.
   company_url: z.string().max(200).optional(),
+  // reCAPTCHA v3 token. Optional in the schema so a missing/short token doesn't
+  // fail zod parsing — it's required LOGICALLY and verified below (fail-closed).
+  recaptchaToken: z.string().max(5000).optional(),
 });
 
 type BookingInput = z.infer<typeof bookingSchema>;
@@ -36,6 +39,13 @@ const calcomHeaders = {
   "cal-api-version": CALCOM_BOOKINGS_API_VERSION,
   "Content-Type": "application/json",
 };
+
+// reCAPTCHA v3 (invisible) bot protection. Secret is read from env and never
+// hardcoded; verification fails CLOSED (reject the booking) on any problem.
+const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
+const RECAPTCHA_VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify";
+const RECAPTCHA_MIN_SCORE = 0.5;
+const RECAPTCHA_ACTION = "book";
 
 // Build the confirmation object returned to the client (used for both real
 // bookings and honeypot fake-success responses). Never throws: an unparseable
@@ -89,6 +99,69 @@ async function fetchWithTimeout(url: string, init: RequestInit): Promise<Respons
   }
 }
 
+// Verify a reCAPTCHA v3 token with Google. Returns true ONLY when Google
+// confirms success === true, score >= threshold, and the expected action.
+// Fails CLOSED (returns false) on a missing secret/token, a non-2xx or non-JSON
+// siteverify response, a timeout/network error, a low score, or a wrong action —
+// so a booking is never created when verification could not be completed.
+async function verifyRecaptcha(token: string | undefined): Promise<boolean> {
+  if (!RECAPTCHA_SECRET_KEY) {
+    console.error("reCAPTCHA verification skipped: RECAPTCHA_SECRET_KEY not configured — failing closed");
+    return false;
+  }
+  if (!token) {
+    console.error("reCAPTCHA verification failed: no token provided");
+    return false;
+  }
+
+  try {
+    const params = new URLSearchParams({
+      secret: RECAPTCHA_SECRET_KEY,
+      response: token,
+    });
+
+    const response = await fetchWithTimeout(RECAPTCHA_VERIFY_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
+    });
+
+    if (!response.ok) {
+      console.error("reCAPTCHA siteverify HTTP error:", response.status);
+      return false;
+    }
+
+    let result: any = {};
+    try {
+      result = await response.json();
+    } catch {
+      console.error("reCAPTCHA siteverify returned non-JSON body");
+      return false;
+    }
+
+    const ok =
+      result?.success === true &&
+      typeof result?.score === "number" &&
+      result.score >= RECAPTCHA_MIN_SCORE &&
+      result?.action === RECAPTCHA_ACTION;
+
+    if (!ok) {
+      // Log the decision factors server-side only (no PII).
+      console.error("reCAPTCHA verification rejected:", {
+        success: result?.success,
+        score: result?.score,
+        action: result?.action,
+        errorCodes: result?.["error-codes"],
+      });
+    }
+    return ok;
+  } catch (error: any) {
+    // Timeout (AbortError) or network failure verifying — fail closed.
+    console.error("reCAPTCHA verification error:", error?.name ?? error?.message ?? error);
+    return false;
+  }
+}
+
 // CREATE BOOKING - Direct API booking without redirect
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Outermost safety net: ANY unexpected throw (in our code OR in the error
@@ -130,7 +203,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const data: BookingInput = parsed.data;
-    const { startTime, name, email, phone, company, service, message, company_url } = data;
+    const { startTime, name, email, phone, company, service, message, company_url, recaptchaToken } = data;
 
     // Honeypot: if the hidden field is filled, it's a bot. Return a normal-looking
     // success WITHOUT contacting Cal.com so the bot believes it succeeded.
@@ -140,6 +213,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         success: true,
         booking: buildConfirmation(startTime, name, email),
         message: SUCCESS_MESSAGE,
+      });
+    }
+
+    // reCAPTCHA v3 verification — runs AFTER honeypot + zod, BEFORE any Cal.com
+    // call. Fails closed: a missing secret/token, verify error/timeout, low score,
+    // or wrong action all reject the booking without creating a calendar event.
+    const recaptchaOk = await verifyRecaptcha(recaptchaToken);
+    if (!recaptchaOk) {
+      return safeJson(res, 403, {
+        success: false,
+        error: "Verification failed, please try again.",
       });
     }
 

@@ -4,6 +4,9 @@ import { Calendar, Clock, User, CheckCircle2, Loader2, Mail, ArrowLeft, Home } f
 import { format, addDays } from "date-fns";
 import { Link } from "wouter";
 
+// reCAPTCHA v3 (invisible) public site key — safe to embed in the client bundle.
+const RECAPTCHA_SITE_KEY = '6Lc-DRktAAAAAGuuQOE6D3xacYbeAcRdbmUFetx0';
+
 interface TimeSlot {
   time: string;
   available: boolean;
@@ -81,6 +84,43 @@ export function CalendlyBooking() {
     }
   }, []);
 
+  // Load the invisible reCAPTCHA v3 script once. If it's slow or blocked, the
+  // form still works — token retrieval degrades gracefully below.
+  useEffect(() => {
+    const src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+    if (document.querySelector(`script[src="${src}"]`)) return;
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  }, []);
+
+  // Get a reCAPTCHA v3 token for the "book" action. Waits briefly for the script
+  // to become ready; returns null (without throwing) if grecaptcha never loads.
+  const getRecaptchaToken = async (): Promise<string | null> => {
+    const waitForGrecaptcha = async (timeoutMs = 5000): Promise<any | null> => {
+      const start = Date.now();
+      while (Date.now() - start < timeoutMs) {
+        const g = (window as any).grecaptcha;
+        if (g && typeof g.execute === 'function') return g;
+        await new Promise((r) => setTimeout(r, 100));
+      }
+      return null;
+    };
+
+    const grecaptcha = await waitForGrecaptcha();
+    if (!grecaptcha) return null;
+
+    try {
+      await new Promise<void>((resolve) => grecaptcha.ready(() => resolve()));
+      const token: string = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'book' });
+      return token || null;
+    } catch {
+      return null;
+    }
+  };
+
   const fetchAvailableSlots = async (date: string, autoSelectFirst: boolean = false) => {
     setSlotsLoading(true);
     setError(null);
@@ -155,12 +195,21 @@ export function CalendlyBooking() {
     setError(null);
 
     try {
+      // Obtain a reCAPTCHA v3 token before submitting. If it can't be obtained
+      // (script blocked/slow), fail gracefully without crashing the form.
+      const recaptchaToken = await getRecaptchaToken();
+      if (!recaptchaToken) {
+        setError('Could not verify your request. Please refresh the page and try again.');
+        return;
+      }
+
       const response = await fetch('/api/cal/book', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           startTime: selectedSlotRaw,
-          ...formData
+          ...formData,
+          recaptchaToken
         })
       });
 
