@@ -86,7 +86,7 @@ export function CalendlyBooking() {
     setError(null);
 
     try {
-      const response = await fetch(`/api/calendly/availability?date=${date}`);
+      const response = await fetch(`/api/cal/availability?date=${date}`);
       const data = await response.json();
 
       if (data.success) {
@@ -155,7 +155,7 @@ export function CalendlyBooking() {
     setError(null);
 
     try {
-      const response = await fetch('/api/calendly/book', {
+      const response = await fetch('/api/cal/book', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
