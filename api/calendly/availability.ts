@@ -1,5 +1,4 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import axios from "axios";
 
 const CALCOM_API_KEY = process.env.CALCOM_API_KEY;
 const CALCOM_EVENT_TYPE_ID = process.env.CALCOM_EVENT_TYPE_ID;
@@ -20,6 +19,19 @@ const calcomHeaders = {
 function safeJson(res: VercelResponse, status: number, body: unknown) {
   if (!res.headersSent) {
     res.status(status).json(body);
+  }
+}
+
+// fetch with a hard 10s timeout via AbortController. On timeout the fetch
+// rejects with an AbortError (name === "AbortError"); the timer is always
+// cleared in finally. Any other rejection is a network failure.
+async function fetchWithTimeout(url: string, init: RequestInit): Promise<Response> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), CALCOM_TIMEOUT_MS);
+  try {
+    return await fetch(url, { ...init, signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
@@ -52,19 +64,37 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     try {
-      const response = await axios.get(`${CALCOM_API_URL}/slots`, {
-        headers: calcomHeaders,
-        params: {
-          eventTypeId: Number(CALCOM_EVENT_TYPE_ID),
-          start: date,
-          end: date,
-        },
-        timeout: CALCOM_TIMEOUT_MS,
+      const params = new URLSearchParams({
+        eventTypeId: String(Number(CALCOM_EVENT_TYPE_ID)),
+        start: date,
+        end: date,
       });
+
+      const response = await fetchWithTimeout(`${CALCOM_API_URL}/slots?${params.toString()}`, {
+        method: "GET",
+        headers: calcomHeaders,
+      });
+
+      // fetch does not throw on non-2xx — check explicitly. Log status server-side,
+      // return the SAME generic message (never leak Cal.com's body).
+      if (!response.ok) {
+        const detail = await response.text().catch(() => undefined);
+        console.error("Error fetching availability: upstream status", response.status, detail);
+        return safeJson(res, 500, { success: false, error: "Failed to fetch availability" });
+      }
+
+      // Parse JSON defensively — a non-JSON 2xx body must not throw; treat as empty
+      // (matches the prior axios behavior: empty slots, still a 200).
+      let payload: any = {};
+      try {
+        payload = await response.json();
+      } catch {
+        payload = {};
+      }
 
       // Cal.com shape: { data: { "YYYY-MM-DD": [ { start: "2026-06-23T01:00:00.000Z" }, ... ] } }
       const dataObj: Record<string, Array<{ start?: string; time?: string }>> =
-        response?.data?.data || {};
+        payload?.data || {};
 
       // Prefer the requested date's bucket; fall back to flattening all keys in
       // case Cal.com buckets a slot under an adjacent (UTC) date.
@@ -94,13 +124,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=120");
       return safeJson(res, 200, { success: true, slots });
     } catch (error: any) {
-      if (error?.code === "ECONNABORTED" || error?.code === "ETIMEDOUT") {
-        console.error("Availability request to Cal.com timed out:", error?.message);
+      if (error?.name === "AbortError") {
+        console.error("Availability request to Cal.com timed out");
         return safeJson(res, 504, { success: false, error: "Service temporarily unavailable" });
       }
 
-      // Log the real Cal.com error server-side only; return a generic message.
-      console.error("Error fetching availability:", error?.response?.data ?? error?.message ?? error);
+      // Network failure or other rejection — log server-side, return generic message.
+      console.error("Error fetching availability:", error?.message ?? error);
       return safeJson(res, 500, { success: false, error: "Failed to fetch availability" });
     }
   } catch (fatal: any) {

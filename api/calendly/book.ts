@@ -1,5 +1,4 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import axios from "axios";
 import { z } from "zod";
 
 // Schema is defined inline (not imported from api/_lib) so this function has
@@ -74,6 +73,19 @@ const GENERIC_ERROR = "Failed to create booking. Please try again.";
 function safeJson(res: VercelResponse, status: number, body: unknown) {
   if (!res.headersSent) {
     res.status(status).json(body);
+  }
+}
+
+// fetch with a hard 10s timeout via AbortController. On timeout the fetch
+// rejects with an AbortError (name === "AbortError"); the timer is always
+// cleared in finally. Any other rejection is a network failure.
+async function fetchWithTimeout(url: string, init: RequestInit): Promise<Response> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), CALCOM_TIMEOUT_MS);
+  try {
+    return await fetch(url, { ...init, signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
@@ -182,14 +194,61 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       console.log("Booking received for startTime:", startTime);
 
-      const response = await axios.post(`${CALCOM_API_URL}/bookings`, bookingData, {
+      const response = await fetchWithTimeout(`${CALCOM_API_URL}/bookings`, {
+        method: "POST",
         headers: calcomHeaders,
-        timeout: CALCOM_TIMEOUT_MS,
+        body: JSON.stringify(bookingData),
       });
+
+      // fetch does not throw on non-2xx — inspect status + body explicitly (this
+      // logic previously lived in the axios catch block).
+      if (!response.ok) {
+        // Read the error body defensively for slot-taken detection + server log.
+        let errorData: any = undefined;
+        try {
+          errorData = await response.json();
+        } catch {
+          errorData = undefined;
+        }
+
+        // Log the real Cal.com error server-side only.
+        console.error("Booking error: upstream status", response.status, errorData ?? "");
+
+        // Slot-taken is the one case that's safe + useful to surface to the user.
+        const calcomMessage = String(
+          errorData?.error?.message ?? errorData?.message ?? "",
+        ).toLowerCase();
+        const slotTaken =
+          (response.status === 400 || response.status === 409) &&
+          (calcomMessage.includes("available") ||
+            calcomMessage.includes("already") ||
+            calcomMessage.includes("booked") ||
+            calcomMessage.includes("no_available"));
+
+        if (slotTaken) {
+          return safeJson(res, 409, {
+            success: false,
+            error: "That time is no longer available, please pick another slot.",
+          });
+        }
+
+        // Normalize any other upstream status (401/403/429/5xx) to 502 — never
+        // pass the raw upstream status through to the client.
+        return safeJson(res, 502, { success: false, error: GENERIC_ERROR });
+      }
+
+      // 2xx — parse defensively. A non-JSON body must not throw; treat as empty
+      // (matches the prior axios behavior: 200 success with an undefined uri).
+      let payload: any = {};
+      try {
+        payload = await response.json();
+      } catch {
+        payload = {};
+      }
 
       // Cal.com success shape: { status: "success", data: { id, uid, start, ... } }
       // Read every field defensively — the booking is nested under data.
-      const result = response?.data?.data ?? response?.data ?? {};
+      const result = payload?.data ?? payload ?? {};
       const bookingId = result?.uid ?? result?.id;
       const confirmStart =
         typeof result?.start === "string" && result.start ? result.start : startTime;
@@ -205,36 +264,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         message: SUCCESS_MESSAGE,
       });
     } catch (error: any) {
-      if (error?.code === "ECONNABORTED" || error?.code === "ETIMEDOUT") {
-        console.error("Booking request to Cal.com timed out:", error?.message);
+      if (error?.name === "AbortError") {
+        console.error("Booking request to Cal.com timed out");
         return safeJson(res, 504, { success: false, error: "Service temporarily unavailable" });
       }
 
-      const status: number | undefined = error?.response?.status;
-      const errorData = error?.response?.data;
-
-      // Log the real Cal.com error server-side only.
-      console.error("Booking error:", errorData ?? error?.message ?? error);
-
-      // Slot-taken is the one case that's safe + useful to surface to the user.
-      const calcomMessage = String(
-        errorData?.error?.message ?? errorData?.message ?? "",
-      ).toLowerCase();
-      const slotTaken =
-        (status === 400 || status === 409) &&
-        (calcomMessage.includes("available") ||
-          calcomMessage.includes("already") ||
-          calcomMessage.includes("booked") ||
-          calcomMessage.includes("no_available"));
-
-      if (slotTaken) {
-        return safeJson(res, 409, {
-          success: false,
-          error: "That time is no longer available, please pick another slot.",
-        });
-      }
-
-      return safeJson(res, status ?? 500, { success: false, error: GENERIC_ERROR });
+      // Network failure or other rejection — log server-side, return generic message.
+      console.error("Booking error:", error?.message ?? error);
+      return safeJson(res, 500, { success: false, error: GENERIC_ERROR });
     }
   } catch (fatal: any) {
     // Last-resort guard: anything that slipped past the inner handling.
