@@ -64,6 +64,7 @@ export default function Navbar() {
   const serviceLinks = [
     { name: "Web Development", href: "/services/web-development" },
     { name: "Custom Web Application", href: "/services/custom-web-application" },
+    { name: "Mobile App Development", href: "/services/mobile-app-development" },
     { name: "Workflow Automation", href: "/services/workflow-automation" },
     {
       name: "AI Agent Development",

@@ -14,6 +14,7 @@ const Home = lazy(() => import("@/pages/home"));
 const Services = lazy(() => import("@/pages/services"));
 const WebDevelopment = lazy(() => import("@/pages/services/web-development"));
 const CustomWebApplication = lazy(() => import("@/pages/services/custom-web-application"));
+const MobileAppDevelopment = lazy(() => import("@/pages/services/mobile-app-development"));
 const WorkflowAutomation = lazy(() => import("@/pages/services/workflow-automation"));
 const AIAgents = lazy(() => import("@/pages/services/ai-agents"));
 const EcommerceSolutions = lazy(() => import("@/pages/services/ecommerce-solutions"));
@@ -79,6 +80,7 @@ function Router() {
             <Route path="/services" component={Services} />
             <Route path="/services/web-development" component={WebDevelopment} />
             <Route path="/services/custom-web-application" component={CustomWebApplication} />
+            <Route path="/services/mobile-app-development" component={MobileAppDevelopment} />
             <Route path="/services/workflow-automation" component={WorkflowAutomation} />
             <Route path="/services/ai-agents" component={AIAgents} />
             <Route path="/services/ecommerce-solutions" component={EcommerceSolutions} />
