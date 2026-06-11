@@ -28,10 +28,13 @@ const CALCOM_API_KEY = process.env.CALCOM_API_KEY;
 const CALCOM_EVENT_TYPE_ID = process.env.CALCOM_EVENT_TYPE_ID;
 const CALCOM_API_URL = "https://api.cal.com/v2";
 const CALCOM_TIMEOUT_MS = 10000;
+// Pinned Cal.com API version for the bookings endpoint. Bump deliberately when
+// migrating — a silent drift here can change the request/response schema.
+const CALCOM_BOOKINGS_API_VERSION = "2024-08-13";
 
 const calcomHeaders = {
   Authorization: `Bearer ${CALCOM_API_KEY}`,
-  "cal-api-version": "2024-08-13",
+  "cal-api-version": CALCOM_BOOKINGS_API_VERSION,
   "Content-Type": "application/json",
 };
 

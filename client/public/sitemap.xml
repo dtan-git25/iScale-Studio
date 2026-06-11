@@ -3,19 +3,19 @@
   <!-- Main Pages -->
   <url>
     <loc>https://iscalestudio.com/</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/about</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/services</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -23,37 +23,37 @@
   <!-- Service Pages -->
   <url>
     <loc>https://iscalestudio.com/services/web-development</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/services/app-development</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/services/workflow-automation</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/services/ai-agents</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/services/ecommerce-solutions</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/services/ai-ml-development</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -61,37 +61,37 @@
   <!-- AI Agent Pages -->
   <url>
     <loc>https://iscalestudio.com/ai-sales-agent</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/ai-support-agent</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/ai-marketing-agent</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/ai-admin-agent</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/ai-research-agent</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/ai-content-agent</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -99,49 +99,49 @@
   <!-- Portfolio & Case Studies -->
   <url>
     <loc>https://iscalestudio.com/portfolio</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/case-studies</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/portfolio/ecommerce-ai-recommendations</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/portfolio/fintech-automation-platform</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/portfolio/healthcare-analytics-system</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/portfolio/real-estate-ai-matching</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/portfolio/marketing-automation-workflow</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/portfolio/ai-customer-support-system</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -149,79 +149,79 @@
   <!-- Blog -->
   <url>
     <loc>https://iscalestudio.com/blog</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/blog/autonomous-ai-agents-business</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/blog/streamlining-operations-n8n-openai</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/blog/vector-database-rag-guide</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/blog/ai-customer-support-automation</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/blog/first-ai-workflow-guide</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/blog/ai-ecommerce-personalization</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/blog/generative-ai-roi</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/blog/node-kubernetes-microservices</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/blog/ai-data-privacy-compliance</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/blog/machine-learning-predictive-analytics</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/blog/serverless-architecture-guide</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/blog/disaster-recovery-continuity</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -229,19 +229,19 @@
   <!-- Other Pages -->
   <url>
     <loc>https://iscalestudio.com/booking</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/privacy-policy</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://iscalestudio.com/terms-of-service</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -5,10 +5,13 @@ const CALCOM_API_KEY = process.env.CALCOM_API_KEY;
 const CALCOM_EVENT_TYPE_ID = process.env.CALCOM_EVENT_TYPE_ID;
 const CALCOM_API_URL = "https://api.cal.com/v2";
 const CALCOM_TIMEOUT_MS = 10000;
+// Pinned Cal.com API version for the slots endpoint. Bump deliberately when
+// migrating — a silent drift here can change the response shape.
+const CALCOM_SLOTS_API_VERSION = "2024-09-04";
 
 const calcomHeaders = {
   Authorization: `Bearer ${CALCOM_API_KEY}`,
-  "cal-api-version": "2024-09-04",
+  "cal-api-version": CALCOM_SLOTS_API_VERSION,
   "Content-Type": "application/json",
 };
 
@@ -84,6 +87,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           schedulingUrl: undefined as string | undefined,
         }));
 
+      // Cache successful slot results at the Vercel edge ~60s (per-date, since the
+      // date is in the query string). A just-booked slot may show available for up
+      // to 60s — fine, the book endpoint handles the slot-taken case. Errors are
+      // never cached (this header is only set on the success path).
+      res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=120");
       return safeJson(res, 200, { success: true, slots });
     } catch (error: any) {
       if (error?.code === "ECONNABORTED" || error?.code === "ETIMEDOUT") {

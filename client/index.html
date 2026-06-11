@@ -72,6 +72,10 @@
       .animate-fadeIn{animation:fadeIn .6s ease-out forwards}
     </style>
     
+    <!-- TODO(logo): JSON-LD logo/image below point to /opengraph.jpg as a stopgap
+         (a real logo.png did not exist and a broken ref must not ship). Replace with
+         a dedicated square logo.png (>=112x112) when available — affects this block
+         and the LocalBusiness schema. og:image/twitter:image are intentionally separate. -->
     <!-- Organization Schema (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -80,9 +84,9 @@
       "@id": "https://iscalestudio.com/#organization",
       "name": "iScale Studio",
       "url": "https://iscalestudio.com",
-      "logo": "https://iscalestudio.com/logo.png",
+      "logo": "https://iscalestudio.com/opengraph.jpg",
       "description": "Philippines-based AI development agency specializing in web development, workflow automation, AI agents, and custom ML solutions.",
-      "image": "https://iscalestudio.com/logo.png",
+      "image": "https://iscalestudio.com/opengraph.jpg",
       "email": "hello@iscalestudio.com",
       "telephone": "+63-956-0623-082",
       "address": {
@@ -129,7 +133,7 @@
       "@type": "LocalBusiness",
       "@id": "https://iscalestudio.com/#localbusiness",
       "name": "iScale Studio",
-      "image": "https://iscalestudio.com/logo.png",
+      "image": "https://iscalestudio.com/opengraph.jpg",
       "url": "https://iscalestudio.com",
       "telephone": "+63-956-0623-082",
       "email": "hello@iscalestudio.com",
