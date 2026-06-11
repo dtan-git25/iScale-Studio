@@ -26,7 +26,7 @@ export default function CustomWebApplicationPage() {
     "AI-Powered Search & Data Processing",
     "Cloud-Native Scalable Solutions",
     "Progressive Web Apps (PWA) with AI Features",
-    "Native iOS & Android Mobile Apps"
+    "Secure Authentication & User Management"
   ];
 
   const benefits = [
@@ -42,7 +42,7 @@ export default function CustomWebApplicationPage() {
     <div className="min-h-screen pt-20">
       <SEOHead
         title="Custom Web Application | Custom Web Apps Philippines | iScale Studio"
-        description="Custom AI-powered web applications and internal tools. We build intelligent, scalable web solutions tailored to your business needs, with mobile support."
+        description="Custom AI-powered web applications and internal tools. We build intelligent, scalable web solutions tailored to your business needs."
         canonical="https://iscalestudio.com/services/custom-web-application"
         schema={pageSchema}
       />
@@ -87,7 +87,7 @@ export default function CustomWebApplicationPage() {
             >
               <h2 className="text-4xl font-bold">What We Deliver</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Our expertise is focused on creating sophisticated web applications that solve complex business challenges. We also provide native iOS and Android development for businesses that need a dedicated mobile presence.
+                Our expertise is focused on creating sophisticated web applications that solve complex business challenges — from intelligent internal tools and dashboards to high-performance customer-facing platforms.
               </p>
               <ul className="space-y-3">
                 {features.map((feature, i) => (
@@ -154,10 +154,10 @@ export default function CustomWebApplicationPage() {
                   features: ["Serverless", "Edge Computing", "Scalable"]
                 },
                 {
-                  icon: "📱",
-                  title: "Mobile Ready",
-                  description: "iOS and Android apps developed to complement your web presence",
-                  features: ["React Native", "Cross-Platform", "App Store Ready"]
+                  icon: "⚡",
+                  title: "High Performance",
+                  description: "Lightning-fast load times and smooth interactions, optimized for the web and SEO",
+                  features: ["Optimized", "Fast Load", "SEO-Friendly"]
                 },
                 {
                   icon: "🔒",

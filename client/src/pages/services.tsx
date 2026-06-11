@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, Zap, Target, Clock, Shield, Globe, Smartphone, Bot, ShoppingCart, Brain } from "lucide-react";
+import { CheckCircle2, ArrowRight, Zap, Target, Clock, Shield, Globe, Smartphone, LayoutDashboard, Bot, ShoppingCart, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import webDevImg from "@assets/optimized_images/ai_web_development_modern_interface.webp";
 import appDevImg from "@assets/optimized_images/ai_mobile_app_development_interface.webp";
+import customWebImg from "@assets/optimized_images/futuristic_web_development_concept.webp";
 import workflowImg from "@assets/optimized_images/workflow_automation_process_diagram.webp";
 import aiAgentImg from "@assets/optimized_images/ai_agent_assistant_interface.webp";
 import ecommerceImg from "@assets/optimized_images/e-commerce_platform_interface.webp";
@@ -44,20 +45,38 @@ export default function Services() {
     {
       id: "ai-app-development",
       title: "Custom Web Application",
-      subtitle: "Build intelligent mobile apps",
-      shortDesc: "Custom mobile apps powered by cutting-edge AI technology.",
-      description: "We create custom mobile and desktop applications infused with Artificial Intelligence. From AI-powered assistants to intelligent data processing, our apps deliver powerful functionality right in your users' hands.",
+      subtitle: "Build intelligent web platforms",
+      shortDesc: "Custom web applications and internal tools powered by cutting-edge AI technology.",
+      description: "We build custom, high-performance web applications tailored to your business logic. From intelligent internal tools and dashboards to customer-facing platforms, we deliver scalable web solutions that drive growth.",
       features: [
-        "Native Mobile App Development",
-        "Cross-Platform Applications",
-        "AI-Powered Mobile Assistants",
-        "Offline-First AI Processing",
-        "Computer Vision & Image Recognition"
+        "Custom Web Application Development",
+        "Intelligent Dashboards & Internal Tools",
+        "AI-Powered Search & Data Processing",
+        "Cloud-Native Scalable Solutions",
+        "Progressive Web Apps (PWA)"
+      ],
+      image: customWebImg,
+      icon: LayoutDashboard,
+      gradient: "from-blue-500 to-indigo-500",
+      href: "/services/custom-web-application"
+    },
+    {
+      id: "mobile-app-development",
+      title: "Mobile App Development",
+      subtitle: "Build native & cross-platform apps",
+      shortDesc: "Native iOS and Android apps plus cross-platform React Native development.",
+      description: "We design and build native iOS and Android apps, plus cross-platform apps with React Native — from first concept through App Store and Google Play launch.",
+      features: [
+        "Native iOS Apps (Swift & SwiftUI)",
+        "Native Android Apps (Kotlin & Jetpack Compose)",
+        "Cross-Platform Apps (React Native & Expo)",
+        "App Store & Google Play Deployment",
+        "Mobile UI/UX Design"
       ],
       image: appDevImg,
       icon: Smartphone,
-      gradient: "from-blue-500 to-indigo-500",
-      href: "/services/custom-web-application"
+      gradient: "from-indigo-500 to-blue-600",
+      href: "/services/mobile-app-development"
     },
     {
       id: "workflow-automation",
