@@ -43,7 +43,8 @@ export function CalendlyBooking() {
     phone: '',
     company: '',
     service: 'Web Development',
-    message: ''
+    message: '',
+    company_url: '' // honeypot — must stay empty for real users
   });
 
   const [datePageIndex, setDatePageIndex] = useState(0);
@@ -197,7 +198,8 @@ export function CalendlyBooking() {
       phone: '',
       company: '',
       service: 'AI Web Development',
-      message: ''
+      message: '',
+      company_url: ''
     });
     setBookingConfirmation(null);
     setStep('datetime');
@@ -527,6 +529,21 @@ export function CalendlyBooking() {
                   )}
 
                   <div className="space-y-4">
+                    {/* Honeypot — hidden from real users, catches bots that auto-fill every field.
+                        Not type=hidden (bots skip those); offscreen + not tab-reachable. */}
+                    <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+                      <label htmlFor="company_url">Company URL</label>
+                      <input
+                        type="text"
+                        id="company_url"
+                        name="company_url"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={formData.company_url}
+                        onChange={(e) => setFormData({...formData, company_url: e.target.value})}
+                      />
+                    </div>
+
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
                       <input

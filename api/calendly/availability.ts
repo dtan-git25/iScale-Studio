@@ -4,6 +4,7 @@ import axios from "axios";
 const CALENDLY_API_KEY = process.env.CALENDLY_API_KEY;
 const CALENDLY_EVENT_TYPE_URI = process.env.CALENDLY_EVENT_TYPE_URI;
 const CALENDLY_API_URL = "https://api.calendly.com";
+const CALENDLY_TIMEOUT_MS = 10000;
 
 const calendlyHeaders = {
   Authorization: `Bearer ${CALENDLY_API_KEY}`,
@@ -55,6 +56,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           start_time: startTime,
           end_time: endTime,
         },
+        timeout: CALENDLY_TIMEOUT_MS,
       },
     );
 
@@ -76,11 +78,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     res.json({ success: true, slots });
   } catch (error: any) {
+    if (error.code === "ECONNABORTED" || error.code === "ETIMEDOUT") {
+      console.error("Availability request to Calendly timed out:", error.message);
+      return res.status(504).json({ success: false, error: "Service temporarily unavailable" });
+    }
+
+    // Log the real Calendly error server-side only; return a generic message.
     console.error("Error fetching availability:", error.response?.data || error.message);
     res.status(500).json({
       success: false,
       error: "Failed to fetch availability",
-      details: error.response?.data,
     });
   }
 }

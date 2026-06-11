@@ -1,14 +1,44 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import axios from "axios";
+import { bookingSchema, type BookingInput } from "../_lib/booking-schema";
 
 const CALENDLY_API_KEY = process.env.CALENDLY_API_KEY;
 const CALENDLY_EVENT_TYPE_URI = process.env.CALENDLY_EVENT_TYPE_URI;
 const CALENDLY_API_URL = "https://api.calendly.com";
+const CALENDLY_TIMEOUT_MS = 10000;
 
 const calendlyHeaders = {
   Authorization: `Bearer ${CALENDLY_API_KEY}`,
   "Content-Type": "application/json",
 };
+
+// Build the confirmation object returned to the client (used for both real
+// bookings and honeypot fake-success responses).
+function buildConfirmation(startTime: string, name: string, email: string, uri?: string) {
+  const eventTime = new Date(startTime);
+  return {
+    uri,
+    email,
+    name,
+    startTime,
+    formattedDate: eventTime.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: "Asia/Manila",
+    }),
+    formattedTime: eventTime.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+      timeZone: "Asia/Manila",
+    }),
+  };
+}
+
+const SUCCESS_MESSAGE =
+  "Booking confirmed! A confirmation email has been sent to your email address.";
 
 // CREATE BOOKING - Direct API booking without redirect
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -24,29 +54,58 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ success: false, error: "Calendly Event Type URI not configured" });
   }
 
-  const { startTime, name, email, phone, company, service, message } = req.body;
+  // Validate + length-cap the public input. Never echo the raw zod error to
+  // the client; log it server-side only.
+  const parsed = bookingSchema.safeParse(req.body);
+  if (!parsed.success) {
+    console.error("Booking validation failed:", parsed.error.flatten());
+    return res.status(400).json({ success: false, error: "Invalid input" });
+  }
 
-  if (!startTime || !name || !email) {
-    return res.status(400).json({
-      success: false,
-      error: "Missing required fields: startTime, name, email",
+  const data: BookingInput = parsed.data;
+  const { startTime, name, email, phone, company, service, message, company_url } = data;
+
+  // Honeypot: if the hidden field is filled, it's a bot. Return a normal-looking
+  // success WITHOUT contacting Calendly so the bot believes it succeeded.
+  if (company_url && company_url.trim() !== "") {
+    console.error("Booking rejected: honeypot triggered");
+    return res.json({
+      success: true,
+      booking: buildConfirmation(startTime, name, email),
+      message: SUCCESS_MESSAGE,
     });
   }
 
   try {
     // Build booking payload for POST /invitees endpoint
-    const bookingData: any = {
+    const bookingData = {
       event_type: CALENDLY_EVENT_TYPE_URI,
       start_time: startTime,
       invitee: {
-        name: name,
-        email: email,
+        name,
+        email,
         timezone: "Asia/Manila",
+      } as {
+        name: string;
+        email: string;
+        timezone: string;
+        text_reminder_number?: string;
       },
       // CRITICAL: Must match event type's configured location
       location: {
         kind: "zoom_conference",
       },
+    } as {
+      event_type: string;
+      start_time: string;
+      invitee: {
+        name: string;
+        email: string;
+        timezone: string;
+        text_reminder_number?: string;
+      };
+      location: { kind: string };
+      questions_and_answers?: Array<{ question: string; answer: string; position: number }>;
     };
 
     // Add phone number if provided for SMS reminders (must be E.164 format)
@@ -63,7 +122,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Add custom question answer - combine all info into the one configured question
     // The exact question text in Calendly: "Please share anything that will help prepare for our meeting."
-    const answerParts = [];
+    const answerParts: string[] = [];
     if (company) {
       answerParts.push(`Company: ${company}`);
     }
@@ -82,61 +141,33 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }];
     }
 
-    console.log("Booking request:", JSON.stringify(bookingData, null, 2));
+    console.log("Booking received for startTime:", startTime);
 
     const response = await axios.post(
       `${CALENDLY_API_URL}/invitees`,
       bookingData,
-      { headers: calendlyHeaders },
+      { headers: calendlyHeaders, timeout: CALENDLY_TIMEOUT_MS },
     );
 
     // Extract booking details for confirmation
     const bookingResult = response.data.resource || response.data;
-    const eventTime = new Date(startTime);
 
     res.json({
       success: true,
-      booking: {
-        uri: bookingResult.uri,
-        email: email,
-        name: name,
-        startTime: startTime,
-        formattedDate: eventTime.toLocaleDateString("en-US", {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          timeZone: "Asia/Manila",
-        }),
-        formattedTime: eventTime.toLocaleTimeString("en-US", {
-          hour: "numeric",
-          minute: "2-digit",
-          hour12: true,
-          timeZone: "Asia/Manila",
-        }),
-      },
-      message: "Booking confirmed! A confirmation email has been sent to your email address.",
+      booking: buildConfirmation(startTime, name, email, bookingResult.uri),
+      message: SUCCESS_MESSAGE,
     });
   } catch (error: any) {
-    console.error("Booking error:", error.response?.data || error.message);
-
-    const errorData = error.response?.data;
-    let errorMessage = "Failed to create booking. Please try again.";
-
-    if (errorData?.message) {
-      errorMessage = errorData.message;
-    } else if (errorData?.title) {
-      errorMessage = errorData.title;
-    } else if (errorData?.details) {
-      errorMessage = Array.isArray(errorData.details)
-        ? errorData.details.map((d: any) => d.message).join(", ")
-        : errorData.details;
+    if (error.code === "ECONNABORTED" || error.code === "ETIMEDOUT") {
+      console.error("Booking request to Calendly timed out:", error.message);
+      return res.status(504).json({ success: false, error: "Service temporarily unavailable" });
     }
 
+    // Log the real Calendly error server-side only; return a generic message.
+    console.error("Booking error:", error.response?.data || error.message);
     res.status(error.response?.status || 500).json({
       success: false,
-      error: errorMessage,
-      details: errorData,
+      error: "Failed to create booking. Please try again.",
     });
   }
 }
