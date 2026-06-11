@@ -1,13 +1,14 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import axios from "axios";
 
-const CALENDLY_API_KEY = process.env.CALENDLY_API_KEY;
-const CALENDLY_EVENT_TYPE_URI = process.env.CALENDLY_EVENT_TYPE_URI;
-const CALENDLY_API_URL = "https://api.calendly.com";
-const CALENDLY_TIMEOUT_MS = 10000;
+const CALCOM_API_KEY = process.env.CALCOM_API_KEY;
+const CALCOM_EVENT_TYPE_ID = process.env.CALCOM_EVENT_TYPE_ID;
+const CALCOM_API_URL = "https://api.cal.com/v2";
+const CALCOM_TIMEOUT_MS = 10000;
 
-const calendlyHeaders = {
-  Authorization: `Bearer ${CALENDLY_API_KEY}`,
+const calcomHeaders = {
+  Authorization: `Bearer ${CALCOM_API_KEY}`,
+  "cal-api-version": "2024-09-04",
   "Content-Type": "application/json",
 };
 
@@ -17,12 +18,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ success: false, error: "Method not allowed" });
   }
 
-  if (!CALENDLY_API_KEY) {
-    return res.status(500).json({ success: false, error: "Calendly API key not configured" });
+  if (!CALCOM_API_KEY) {
+    return res.status(500).json({ success: false, error: "Cal.com API key not configured" });
   }
 
-  if (!CALENDLY_EVENT_TYPE_URI) {
-    return res.status(500).json({ success: false, error: "Calendly Event Type URI not configured" });
+  if (!CALCOM_EVENT_TYPE_ID) {
+    return res.status(500).json({ success: false, error: "Cal.com Event Type ID not configured" });
   }
 
   const date = Array.isArray(req.query.date) ? req.query.date[0] : req.query.date;
@@ -32,58 +33,49 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const now = new Date();
-
-    const manilaStartOfDay = new Date(`${date}T00:00:00+08:00`);
-    const manilaEndOfDay = new Date(`${date}T23:59:59+08:00`);
-
-    let startTime: string;
-    const nowPlus10Min = new Date(now.getTime() + 10 * 60 * 1000);
-
-    if (manilaStartOfDay < nowPlus10Min) {
-      startTime = nowPlus10Min.toISOString();
-    } else {
-      startTime = manilaStartOfDay.toISOString();
-    }
-    const endTime = manilaEndOfDay.toISOString();
-
-    const response = await axios.get(
-      `${CALENDLY_API_URL}/event_type_available_times`,
-      {
-        headers: calendlyHeaders,
-        params: {
-          event_type: CALENDLY_EVENT_TYPE_URI,
-          start_time: startTime,
-          end_time: endTime,
-        },
-        timeout: CALENDLY_TIMEOUT_MS,
+    const response = await axios.get(`${CALCOM_API_URL}/slots`, {
+      headers: calcomHeaders,
+      params: {
+        eventTypeId: Number(CALCOM_EVENT_TYPE_ID),
+        start: date,
+        end: date,
       },
-    );
+      timeout: CALCOM_TIMEOUT_MS,
+    });
 
-    const availableTimes = response.data.collection || [];
-    const slots = availableTimes.map((slot: any) => {
-      const slotTime = new Date(slot.start_time);
-      return {
-        time: slotTime.toLocaleTimeString("en-US", {
+    // Cal.com shape: { data: { "YYYY-MM-DD": [ { start: "2026-06-23T01:00:00.000Z" }, ... ] } }
+    const dataObj: Record<string, Array<{ start?: string; time?: string }>> =
+      response.data?.data || {};
+
+    // Prefer the requested date's bucket; fall back to flattening all keys in
+    // case Cal.com buckets a slot under an adjacent (UTC) date.
+    const rawSlots = Array.isArray(dataObj[date])
+      ? dataObj[date]
+      : Object.values(dataObj).flat();
+
+    const slots = rawSlots
+      .map((slot) => slot.start || slot.time)
+      .filter((raw): raw is string => Boolean(raw))
+      .map((raw) => ({
+        time: new Date(raw).toLocaleTimeString("en-US", {
           hour: "numeric",
           minute: "2-digit",
           hour12: true,
           timeZone: "Asia/Manila",
         }),
-        available: slot.status === "available",
-        rawTime: slot.start_time,
-        schedulingUrl: slot.scheduling_url,
-      };
-    });
+        available: true,
+        rawTime: raw,
+        schedulingUrl: undefined as string | undefined,
+      }));
 
     res.json({ success: true, slots });
   } catch (error: any) {
     if (error.code === "ECONNABORTED" || error.code === "ETIMEDOUT") {
-      console.error("Availability request to Calendly timed out:", error.message);
+      console.error("Availability request to Cal.com timed out:", error.message);
       return res.status(504).json({ success: false, error: "Service temporarily unavailable" });
     }
 
-    // Log the real Calendly error server-side only; return a generic message.
+    // Log the real Cal.com error server-side only; return a generic message.
     console.error("Error fetching availability:", error.response?.data || error.message);
     res.status(500).json({
       success: false,
