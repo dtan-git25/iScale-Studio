@@ -119,9 +119,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       // Cache successful slot results at the Vercel edge ~60s (per-date, since the
       // date is in the query string). A just-booked slot may show available for up
-      // to 60s — fine, the book endpoint handles the slot-taken case. Errors are
-      // never cached (this header is only set on the success path).
-      res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=120");
+      // to 60s — fine, the book endpoint handles the slot-taken case. Set on the
+      // success (200) path only — errors are never cached.
+      //
+      // NOTE: Vercel STRIPS `s-maxage`/`stale-while-revalidate` from the browser-
+      // facing `Cache-Control` (the client sees "public, max-age=0, must-revalidate"),
+      // while still caching at the edge. We ALSO set `CDN-Cache-Control` — which
+      // Vercel does NOT strip and DOES return to the client — so the directive is
+      // explicit, controls the edge cache directly, and is verifiable via curl.
+      // Confirm a real edge hit with the `x-vercel-cache` (HIT) and `age` headers.
+      const cacheControl = "public, s-maxage=60, stale-while-revalidate=120";
+      res.setHeader("Cache-Control", cacheControl);
+      res.setHeader("CDN-Cache-Control", cacheControl);
       return safeJson(res, 200, { success: true, slots });
     } catch (error: any) {
       if (error?.name === "AbortError") {
