@@ -10,12 +10,12 @@ export default function EcommerceSolutionsPage() {
     createServiceSchema(
       "E-commerce Solutions",
       "AI-powered e-commerce platforms with product recommendations, smart inventory management, payment integration, and conversion optimization.",
-      "https://iscalestudio.com/services/ecommerce-solutions"
+      "https://www.iscalestudio.com/services/ecommerce-solutions"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "E-commerce Solutions", url: "https://iscalestudio.com/services/ecommerce-solutions" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" },
+      { name: "E-commerce Solutions", url: "https://www.iscalestudio.com/services/ecommerce-solutions" }
     ])
   ];
 
@@ -42,7 +42,7 @@ export default function EcommerceSolutionsPage() {
       <SEOHead
         title="AI-Powered E-commerce Solutions Philippines | iScale Studio"
         description="Build scalable e-commerce platforms with AI product recommendations, smart inventory management, payment integration, and 24/7 AI chatbots."
-        canonical="https://iscalestudio.com/services/ecommerce-solutions"
+        canonical="https://www.iscalestudio.com/services/ecommerce-solutions"
         schema={pageSchema}
       />
       {/* Header */}

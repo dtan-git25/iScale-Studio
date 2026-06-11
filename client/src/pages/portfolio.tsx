@@ -16,11 +16,11 @@ export default function Portfolio() {
     createWebPageSchema(
       "Our Work | AI & Automation Project Portfolio | iScale Studio",
       "Explore iScale Studio's portfolio of successful AI and automation projects including e-commerce AI assistants, workflow automation, fintech dashboards, and more.",
-      "https://iscalestudio.com/portfolio"
+      "https://www.iscalestudio.com/portfolio"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Portfolio", url: "https://iscalestudio.com/portfolio" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Portfolio", url: "https://www.iscalestudio.com/portfolio" }
     ])
   ];
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -129,7 +129,7 @@ export default function Portfolio() {
       <SEOHead
         title="Our Work | AI & Automation Project Portfolio | iScale Studio"
         description="Explore iScale Studio's portfolio of successful AI and automation projects including e-commerce AI assistants, workflow automation, fintech dashboards, and more."
-        canonical="https://iscalestudio.com/portfolio"
+        canonical="https://www.iscalestudio.com/portfolio"
         schema={portfolioSchema}
       />
       {/* Hero Header */}

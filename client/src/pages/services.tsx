@@ -15,11 +15,11 @@ export default function Services() {
     createWebPageSchema(
       "AI Development Services Philippines | Web, App & Automation Solutions",
       "Explore iScale Studio's AI development services: AI web & app development, workflow automation, AI agents, and e-commerce solutions for Philippine businesses.",
-      "https://iscalestudio.com/services"
+      "https://www.iscalestudio.com/services"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" }
     ])
   ];
   const services = [
@@ -146,7 +146,7 @@ export default function Services() {
       <SEOHead
         title="AI Development Services Philippines | Web, App & Automation Solutions"
         description="Explore iScale Studio's AI development services: AI web & app development, workflow automation, AI agents, and e-commerce solutions for Philippine businesses."
-        canonical="https://iscalestudio.com/services"
+        canonical="https://www.iscalestudio.com/services"
         schema={servicesSchema}
       />
       {/* Hero Header */}

@@ -11,12 +11,12 @@ export default function WorkflowAutomationPage() {
     createServiceSchema(
       "Workflow Automation",
       "Enterprise-grade business process automation using n8n, Make, Zapier with custom API integrations and no-code solutions.",
-      "https://iscalestudio.com/services/workflow-automation"
+      "https://www.iscalestudio.com/services/workflow-automation"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "Workflow Automation", url: "https://iscalestudio.com/services/workflow-automation" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" },
+      { name: "Workflow Automation", url: "https://www.iscalestudio.com/services/workflow-automation" }
     ])
   ];
 
@@ -41,7 +41,7 @@ export default function WorkflowAutomationPage() {
       <SEOHead
         title="Workflow Automation Services Philippines | n8n, Make, Zapier | iScale Studio"
         description="Eliminate manual tasks with enterprise-grade workflow automation. Save 20-30 hours weekly with n8n, Make, custom API integrations and no-code solutions."
-        canonical="https://iscalestudio.com/services/workflow-automation"
+        canonical="https://www.iscalestudio.com/services/workflow-automation"
         schema={pageSchema}
       />
       {/* Header */}

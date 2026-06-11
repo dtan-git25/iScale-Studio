@@ -8,11 +8,11 @@ export default function TermsOfService() {
     createWebPageSchema(
       "Terms of Service | iScale Studio",
       "Read iScale Studio's terms of service including usage agreements, service delivery terms, payment policies, and intellectual property rights.",
-      "https://iscalestudio.com/terms-of-service"
+      "https://www.iscalestudio.com/terms-of-service"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Terms of Service", url: "https://iscalestudio.com/terms-of-service" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Terms of Service", url: "https://www.iscalestudio.com/terms-of-service" }
     ])
   ];
   const sections = [
@@ -87,7 +87,7 @@ export default function TermsOfService() {
       <SEOHead
         title="Terms of Service | iScale Studio"
         description="Read iScale Studio's terms of service including usage agreements, service delivery terms, payment policies, and intellectual property rights."
-        canonical="https://iscalestudio.com/terms-of-service"
+        canonical="https://www.iscalestudio.com/terms-of-service"
         schema={pageSchema}
       />
       {/* Header */}

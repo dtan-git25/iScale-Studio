@@ -9,13 +9,13 @@ const pageSchema = [
     "Serverless Architecture: When and Why to Go Serverless",
     "Making the right architectural choice between serverless and traditional infrastructure.",
     "2024-11-12",
-    "https://iscalestudio.com/blog/serverless-architecture-guide",
+    "https://www.iscalestudio.com/blog/serverless-architecture-guide",
     "Cloud Infrastructure"
   ),
   createBreadcrumbSchema([
-    { name: "Home", url: "https://iscalestudio.com" },
-    { name: "Blog", url: "https://iscalestudio.com/blog" },
-    { name: "Serverless Architecture: When and Why to Go Serverless", url: "https://iscalestudio.com/blog/serverless-architecture-guide" }
+    { name: "Home", url: "https://www.iscalestudio.com" },
+    { name: "Blog", url: "https://www.iscalestudio.com/blog" },
+    { name: "Serverless Architecture: When and Why to Go Serverless", url: "https://www.iscalestudio.com/blog/serverless-architecture-guide" }
   ])
 ];
 
@@ -25,7 +25,7 @@ export default function BlogPost11() {
       <SEOHead
         title="Serverless Architecture: When and Why to Go Serverless | iScale Studio Blog"
         description="Making the right architectural choice between serverless and traditional infrastructure."
-        canonical="https://iscalestudio.com/blog/serverless-architecture-guide"
+        canonical="https://www.iscalestudio.com/blog/serverless-architecture-guide"
         type="article"
         schema={pageSchema}
         article={{

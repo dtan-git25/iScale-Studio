@@ -11,12 +11,12 @@ export default function CustomWebApplicationPage() {
     createServiceSchema(
       "Custom Web Application",
       "Custom web application development with AI-powered features, intelligent dashboards, and seamless user experiences.",
-      "https://iscalestudio.com/services/custom-web-application"
+      "https://www.iscalestudio.com/services/custom-web-application"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "Custom Web Application", url: "https://iscalestudio.com/services/custom-web-application" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" },
+      { name: "Custom Web Application", url: "https://www.iscalestudio.com/services/custom-web-application" }
     ])
   ];
 
@@ -43,7 +43,7 @@ export default function CustomWebApplicationPage() {
       <SEOHead
         title="Custom Web Application | Custom Web Apps Philippines | iScale Studio"
         description="Custom AI-powered web applications and internal tools. We build intelligent, scalable web solutions tailored to your business needs."
-        canonical="https://iscalestudio.com/services/custom-web-application"
+        canonical="https://www.iscalestudio.com/services/custom-web-application"
         schema={pageSchema}
       />
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">

@@ -9,13 +9,13 @@ const pageSchema = [
     "From Manual to Intelligent: How AI Changed Customer Support",
     "Discover how businesses are using AI agents to handle 70% of support tickets instantly, improving customer satisfaction and reducing costs.",
     "2024-11-15",
-    "https://iscalestudio.com/blog/ai-customer-support-automation",
+    "https://www.iscalestudio.com/blog/ai-customer-support-automation",
     "Case Study"
   ),
   createBreadcrumbSchema([
-    { name: "Home", url: "https://iscalestudio.com" },
-    { name: "Blog", url: "https://iscalestudio.com/blog" },
-    { name: "From Manual to Intelligent: How AI Changed Customer Support", url: "https://iscalestudio.com/blog/ai-customer-support-automation" }
+    { name: "Home", url: "https://www.iscalestudio.com" },
+    { name: "Blog", url: "https://www.iscalestudio.com/blog" },
+    { name: "From Manual to Intelligent: How AI Changed Customer Support", url: "https://www.iscalestudio.com/blog/ai-customer-support-automation" }
   ])
 ];
 
@@ -25,7 +25,7 @@ export default function BlogPost4() {
       <SEOHead
         title="From Manual to Intelligent: How AI Changed Customer Support | iScale Studio Blog"
         description="Discover how businesses are using AI agents to handle 70% of support tickets instantly, improving customer satisfaction and reducing costs."
-        canonical="https://iscalestudio.com/blog/ai-customer-support-automation"
+        canonical="https://www.iscalestudio.com/blog/ai-customer-support-automation"
         type="article"
         schema={pageSchema}
         article={{

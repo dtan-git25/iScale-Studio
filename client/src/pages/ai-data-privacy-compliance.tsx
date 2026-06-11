@@ -9,13 +9,13 @@ const pageSchema = [
     "Data Privacy in the Age of AI: Compliance and Best Practices",
     "Navigating GDPR, CCPA, and emerging regulations while implementing AI systems responsibly.",
     "2024-11-16",
-    "https://iscalestudio.com/blog/ai-data-privacy-compliance",
+    "https://www.iscalestudio.com/blog/ai-data-privacy-compliance",
     "Security"
   ),
   createBreadcrumbSchema([
-    { name: "Home", url: "https://iscalestudio.com" },
-    { name: "Blog", url: "https://iscalestudio.com/blog" },
-    { name: "Data Privacy in the Age of AI: Compliance and Best Practices", url: "https://iscalestudio.com/blog/ai-data-privacy-compliance" }
+    { name: "Home", url: "https://www.iscalestudio.com" },
+    { name: "Blog", url: "https://www.iscalestudio.com/blog" },
+    { name: "Data Privacy in the Age of AI: Compliance and Best Practices", url: "https://www.iscalestudio.com/blog/ai-data-privacy-compliance" }
   ])
 ];
 
@@ -25,7 +25,7 @@ export default function BlogPost9() {
       <SEOHead
         title="Data Privacy in the Age of AI: Compliance and Best Practices | iScale Studio Blog"
         description="Navigating GDPR, CCPA, and emerging regulations while implementing AI systems responsibly."
-        canonical="https://iscalestudio.com/blog/ai-data-privacy-compliance"
+        canonical="https://www.iscalestudio.com/blog/ai-data-privacy-compliance"
         type="article"
         schema={pageSchema}
         article={{

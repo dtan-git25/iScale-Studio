@@ -6,11 +6,11 @@ export default function BookingPage() {
     createWebPageSchema(
       "Book a Free AI Consultation | iScale Studio Philippines",
       "Schedule a free 30-minute consultation with our AI solutions architects. Discuss your business automation and AI development needs with iScale Studio.",
-      "https://iscalestudio.com/booking"
+      "https://www.iscalestudio.com/booking"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Book Consultation", url: "https://iscalestudio.com/booking" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Book Consultation", url: "https://www.iscalestudio.com/booking" }
     ])
   ];
 
@@ -19,7 +19,7 @@ export default function BookingPage() {
       <SEOHead
         title="Book a Free AI Consultation | iScale Studio Philippines"
         description="Schedule a free 30-minute consultation with our AI solutions architects. Discuss your business automation and AI development needs with iScale Studio."
-        canonical="https://iscalestudio.com/booking"
+        canonical="https://www.iscalestudio.com/booking"
         schema={bookingSchema}
       />
       {/* Booking Section */}

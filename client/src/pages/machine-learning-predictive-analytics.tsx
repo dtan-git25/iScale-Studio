@@ -9,13 +9,13 @@ const pageSchema = [
     "The Role of Machine Learning in Predictive Analytics",
     "Leveraging machine learning to forecast trends and make data-driven business decisions.",
     "2024-11-14",
-    "https://iscalestudio.com/blog/machine-learning-predictive-analytics",
+    "https://www.iscalestudio.com/blog/machine-learning-predictive-analytics",
     "Data Science"
   ),
   createBreadcrumbSchema([
-    { name: "Home", url: "https://iscalestudio.com" },
-    { name: "Blog", url: "https://iscalestudio.com/blog" },
-    { name: "The Role of Machine Learning in Predictive Analytics", url: "https://iscalestudio.com/blog/machine-learning-predictive-analytics" }
+    { name: "Home", url: "https://www.iscalestudio.com" },
+    { name: "Blog", url: "https://www.iscalestudio.com/blog" },
+    { name: "The Role of Machine Learning in Predictive Analytics", url: "https://www.iscalestudio.com/blog/machine-learning-predictive-analytics" }
   ])
 ];
 
@@ -25,7 +25,7 @@ export default function BlogPost10() {
       <SEOHead
         title="The Role of Machine Learning in Predictive Analytics | iScale Studio Blog"
         description="Leveraging machine learning to forecast trends and make data-driven business decisions."
-        canonical="https://iscalestudio.com/blog/machine-learning-predictive-analytics"
+        canonical="https://www.iscalestudio.com/blog/machine-learning-predictive-analytics"
         type="article"
         schema={pageSchema}
         article={{

@@ -8,11 +8,11 @@ export default function PrivacyPolicy() {
     createWebPageSchema(
       "Privacy Policy | iScale Studio",
       "Learn how iScale Studio collects, uses, and protects your personal information. Our commitment to data privacy and security for our AI development services.",
-      "https://iscalestudio.com/privacy-policy"
+      "https://www.iscalestudio.com/privacy-policy"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Privacy Policy", url: "https://iscalestudio.com/privacy-policy" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Privacy Policy", url: "https://www.iscalestudio.com/privacy-policy" }
     ])
   ];
   const sections = [
@@ -71,7 +71,7 @@ export default function PrivacyPolicy() {
       <SEOHead
         title="Privacy Policy | iScale Studio"
         description="Learn how iScale Studio collects, uses, and protects your personal information. Our commitment to data privacy and security for our AI development services."
-        canonical="https://iscalestudio.com/privacy-policy"
+        canonical="https://www.iscalestudio.com/privacy-policy"
         schema={pageSchema}
       />
       {/* Header */}

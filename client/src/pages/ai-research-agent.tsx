@@ -10,13 +10,13 @@ export default function AIResearchAgent() {
     createServiceSchema(
       "AI Research Agent",
       "Conduct intelligent market research, competitor analysis, and trend identification with AI-powered data synthesis. Get 10x more data coverage with real-time insights.",
-      "https://iscalestudio.com/ai-research-agent"
+      "https://www.iscalestudio.com/ai-research-agent"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "AI Agents", url: "https://iscalestudio.com/services/ai-agents" },
-      { name: "AI Research Agent", url: "https://iscalestudio.com/ai-research-agent" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" },
+      { name: "AI Agents", url: "https://www.iscalestudio.com/services/ai-agents" },
+      { name: "AI Research Agent", url: "https://www.iscalestudio.com/ai-research-agent" }
     ])
   ];
 
@@ -25,7 +25,7 @@ export default function AIResearchAgent() {
       <SEOHead
         title="AI Research Agent | Automated Data Research | iScale Studio"
         description="Conduct intelligent market research, competitor analysis, and trend identification with AI-powered data synthesis. Get 10x more data coverage with real-time insights."
-        canonical="https://iscalestudio.com/ai-research-agent"
+        canonical="https://www.iscalestudio.com/ai-research-agent"
         schema={pageSchema}
       />
       <div className="min-h-screen pt-20 pb-12">

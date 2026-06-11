@@ -10,13 +10,13 @@ export default function AIMarketingAgent() {
     createServiceSchema(
       "AI Marketing Agent",
       "Optimize marketing campaigns with AI-powered automation. Manage A/B testing, audience targeting, and ROI optimization across all channels with data-driven insights.",
-      "https://iscalestudio.com/ai-marketing-agent"
+      "https://www.iscalestudio.com/ai-marketing-agent"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "AI Agents", url: "https://iscalestudio.com/services/ai-agents" },
-      { name: "AI Marketing Agent", url: "https://iscalestudio.com/ai-marketing-agent" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" },
+      { name: "AI Agents", url: "https://www.iscalestudio.com/services/ai-agents" },
+      { name: "AI Marketing Agent", url: "https://www.iscalestudio.com/ai-marketing-agent" }
     ])
   ];
 
@@ -25,7 +25,7 @@ export default function AIMarketingAgent() {
       <SEOHead
         title="AI Marketing Agent | Automated Campaign Management | iScale Studio"
         description="Optimize marketing campaigns with AI-powered automation. Manage A/B testing, audience targeting, and ROI optimization across all channels with data-driven insights."
-        canonical="https://iscalestudio.com/ai-marketing-agent"
+        canonical="https://www.iscalestudio.com/ai-marketing-agent"
         schema={pageSchema}
       />
       <div className="min-h-screen pt-20 pb-12">

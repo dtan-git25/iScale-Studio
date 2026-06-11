@@ -10,13 +10,13 @@ export default function AIAdminAgent() {
     createServiceSchema(
       "AI Admin Agent",
       "Automate administrative tasks with AI-powered workflow optimization. Handle scheduling, document processing, and data management with 80% task automation.",
-      "https://iscalestudio.com/ai-admin-agent"
+      "https://www.iscalestudio.com/ai-admin-agent"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "AI Agents", url: "https://iscalestudio.com/services/ai-agents" },
-      { name: "AI Admin Agent", url: "https://iscalestudio.com/ai-admin-agent" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" },
+      { name: "AI Agents", url: "https://www.iscalestudio.com/services/ai-agents" },
+      { name: "AI Admin Agent", url: "https://www.iscalestudio.com/ai-admin-agent" }
     ])
   ];
 
@@ -25,7 +25,7 @@ export default function AIAdminAgent() {
       <SEOHead
         title="AI Admin Agent | Administrative Task Automation | iScale Studio"
         description="Automate administrative tasks with AI-powered workflow optimization. Handle scheduling, document processing, and data management with 80% task automation."
-        canonical="https://iscalestudio.com/ai-admin-agent"
+        canonical="https://www.iscalestudio.com/ai-admin-agent"
         schema={pageSchema}
       />
       <div className="min-h-screen pt-20 pb-12">

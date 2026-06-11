@@ -11,12 +11,12 @@ export default function MobileAppDevelopmentPage() {
     createServiceSchema(
       "Mobile App Development",
       "Native iOS and Android app development plus cross-platform React Native apps, from design through App Store and Google Play deployment.",
-      "https://iscalestudio.com/services/mobile-app-development"
+      "https://www.iscalestudio.com/services/mobile-app-development"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "Mobile App Development", url: "https://iscalestudio.com/services/mobile-app-development" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" },
+      { name: "Mobile App Development", url: "https://www.iscalestudio.com/services/mobile-app-development" }
     ])
   ];
 
@@ -43,7 +43,7 @@ export default function MobileAppDevelopmentPage() {
       <SEOHead
         title="Mobile App Development | iOS, Android & React Native | iScale Studio"
         description="Native iOS (Swift) and Android (Kotlin) apps plus cross-platform React Native development. We design, build, and ship mobile apps to the App Store and Google Play."
-        canonical="https://iscalestudio.com/services/mobile-app-development"
+        canonical="https://www.iscalestudio.com/services/mobile-app-development"
         schema={pageSchema}
       />
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">

@@ -10,13 +10,13 @@ export default function AIContentAgent() {
     createServiceSchema(
       "AI Content Agent",
       "Scale content production with AI-powered creation and optimization. Generate blog posts, social media content, and marketing copy with brand voice consistency.",
-      "https://iscalestudio.com/ai-content-agent"
+      "https://www.iscalestudio.com/ai-content-agent"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "AI Agents", url: "https://iscalestudio.com/services/ai-agents" },
-      { name: "AI Content Agent", url: "https://iscalestudio.com/ai-content-agent" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" },
+      { name: "AI Agents", url: "https://www.iscalestudio.com/services/ai-agents" },
+      { name: "AI Content Agent", url: "https://www.iscalestudio.com/ai-content-agent" }
     ])
   ];
 
@@ -25,7 +25,7 @@ export default function AIContentAgent() {
       <SEOHead
         title="AI Content Agent | Automated Content Creation | iScale Studio"
         description="Scale content production with AI-powered creation and optimization. Generate blog posts, social media content, and marketing copy with brand voice consistency."
-        canonical="https://iscalestudio.com/ai-content-agent"
+        canonical="https://www.iscalestudio.com/ai-content-agent"
         schema={pageSchema}
       />
       <div className="min-h-screen pt-20 pb-12">

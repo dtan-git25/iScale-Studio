@@ -9,12 +9,12 @@ export default function CaseStudy6() {
     createWebPageSchema(
       "AI-Powered Customer Support System | iScale Studio Case Study",
       "Intelligent chatbot handling 75% of support tickets automatically with 90% faster response times and 4.8/5 customer satisfaction.",
-      "https://iscalestudio.com/portfolio/ai-customer-support-system"
+      "https://www.iscalestudio.com/portfolio/ai-customer-support-system"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Case Studies", url: "https://iscalestudio.com/case-studies" },
-      { name: "AI-Powered Customer Support", url: "https://iscalestudio.com/portfolio/ai-customer-support-system" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Case Studies", url: "https://www.iscalestudio.com/case-studies" },
+      { name: "AI-Powered Customer Support", url: "https://www.iscalestudio.com/portfolio/ai-customer-support-system" }
     ])
   ];
 
@@ -23,7 +23,7 @@ export default function CaseStudy6() {
       <SEOHead
         title="AI-Powered Customer Support System | iScale Studio Case Study"
         description="Intelligent chatbot handling 75% of support tickets automatically with 90% faster response times and 4.8/5 customer satisfaction."
-        canonical="https://iscalestudio.com/portfolio/ai-customer-support-system"
+        canonical="https://www.iscalestudio.com/portfolio/ai-customer-support-system"
         schema={pageSchema}
       />
       <div className="min-h-screen pt-20 pb-12">

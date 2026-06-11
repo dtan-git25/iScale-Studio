@@ -97,7 +97,7 @@ export function SEOHead({
 
 export const siteConfig = {
   name: "iScale Studio",
-  url: "https://iscalestudio.com",
+  url: "https://www.iscalestudio.com",
   phone: "+63-956-0623-082",
   email: "hello@iscalestudio.com",
   address: {
@@ -118,10 +118,10 @@ export const siteConfig = {
 export const createLocalBusinessSchema = () => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://iscalestudio.com/#organization",
+  "@id": "https://www.iscalestudio.com/#organization",
   "name": "iScale Studio",
-  "image": "https://iscalestudio.com/logo.png",
-  "url": "https://iscalestudio.com",
+  "image": "https://www.iscalestudio.com/logo.png",
+  "url": "https://www.iscalestudio.com",
   "telephone": "+63-956-0623-082",
   "email": "hello@iscalestudio.com",
   "address": {
@@ -166,7 +166,7 @@ export const createServiceSchema = (
   "provider": {
     "@type": "Organization",
     "name": "iScale Studio",
-    "url": "https://iscalestudio.com"
+    "url": "https://www.iscalestudio.com"
   },
   "areaServed": {
     "@type": "Country",
@@ -193,14 +193,14 @@ export const createArticleSchema = (
   "author": {
     "@type": "Organization",
     "name": "iScale Studio",
-    "url": "https://iscalestudio.com"
+    "url": "https://www.iscalestudio.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "iScale Studio",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://iscalestudio.com/logo.png"
+      "url": "https://www.iscalestudio.com/logo.png"
     }
   },
   "articleSection": section,
@@ -234,7 +234,7 @@ export const createWebPageSchema = (
   "isPartOf": {
     "@type": "WebSite",
     "name": "iScale Studio",
-    "url": "https://iscalestudio.com"
+    "url": "https://www.iscalestudio.com"
   },
   "publisher": {
     "@type": "Organization",

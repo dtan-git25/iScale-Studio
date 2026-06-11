@@ -9,12 +9,12 @@ export default function CaseStudy1() {
     createWebPageSchema(
       "E-Commerce Platform with AI Recommendation Engine | iScale Studio Case Study",
       "How we built an intelligent AI recommendation system that increased customer engagement by 150% and revenue by 45% for an e-commerce platform.",
-      "https://iscalestudio.com/portfolio/ecommerce-ai-recommendations"
+      "https://www.iscalestudio.com/portfolio/ecommerce-ai-recommendations"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Case Studies", url: "https://iscalestudio.com/case-studies" },
-      { name: "E-Commerce AI Recommendation Engine", url: "https://iscalestudio.com/portfolio/ecommerce-ai-recommendations" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Case Studies", url: "https://www.iscalestudio.com/case-studies" },
+      { name: "E-Commerce AI Recommendation Engine", url: "https://www.iscalestudio.com/portfolio/ecommerce-ai-recommendations" }
     ])
   ];
 
@@ -23,7 +23,7 @@ export default function CaseStudy1() {
       <SEOHead
         title="E-Commerce Platform with AI Recommendation Engine | iScale Studio Case Study"
         description="How we built an intelligent AI recommendation system that increased customer engagement by 150% and revenue by 45% for an e-commerce platform."
-        canonical="https://iscalestudio.com/portfolio/ecommerce-ai-recommendations"
+        canonical="https://www.iscalestudio.com/portfolio/ecommerce-ai-recommendations"
         schema={pageSchema}
       />
       <div className="min-h-screen pt-20 pb-12">

@@ -9,12 +9,12 @@ export default function CaseStudy4() {
     createWebPageSchema(
       "Real Estate Platform with AI Matching | iScale Studio Case Study",
       "Intelligent property matching connecting buyers and sellers with 40% better matches and 3.5x higher conversion rates.",
-      "https://iscalestudio.com/portfolio/real-estate-ai-matching"
+      "https://www.iscalestudio.com/portfolio/real-estate-ai-matching"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Case Studies", url: "https://iscalestudio.com/case-studies" },
-      { name: "Real Estate AI Matching", url: "https://iscalestudio.com/portfolio/real-estate-ai-matching" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Case Studies", url: "https://www.iscalestudio.com/case-studies" },
+      { name: "Real Estate AI Matching", url: "https://www.iscalestudio.com/portfolio/real-estate-ai-matching" }
     ])
   ];
 
@@ -23,7 +23,7 @@ export default function CaseStudy4() {
       <SEOHead
         title="Real Estate Platform with AI Matching | iScale Studio Case Study"
         description="Intelligent property matching connecting buyers and sellers with 40% better matches and 3.5x higher conversion rates."
-        canonical="https://iscalestudio.com/portfolio/real-estate-ai-matching"
+        canonical="https://www.iscalestudio.com/portfolio/real-estate-ai-matching"
         schema={pageSchema}
       />
       <div className="min-h-screen pt-20 pb-12">

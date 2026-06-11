@@ -10,13 +10,13 @@ export default function AISalesAgent() {
     createServiceSchema(
       "AI Sales Agent",
       "Automate lead qualification, prospect engagement, and deal management with intelligent AI-powered sales automation. Close more deals faster with 24/7 sales engagement.",
-      "https://iscalestudio.com/ai-sales-agent"
+      "https://www.iscalestudio.com/ai-sales-agent"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "AI Agents", url: "https://iscalestudio.com/services/ai-agents" },
-      { name: "AI Sales Agent", url: "https://iscalestudio.com/ai-sales-agent" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" },
+      { name: "AI Agents", url: "https://www.iscalestudio.com/services/ai-agents" },
+      { name: "AI Sales Agent", url: "https://www.iscalestudio.com/ai-sales-agent" }
     ])
   ];
 
@@ -25,7 +25,7 @@ export default function AISalesAgent() {
       <SEOHead
         title="AI Sales Agent | Automate Lead Qualification | iScale Studio"
         description="Automate lead qualification, prospect engagement, and deal management with intelligent AI-powered sales automation. Close more deals faster with 24/7 sales engagement."
-        canonical="https://iscalestudio.com/ai-sales-agent"
+        canonical="https://www.iscalestudio.com/ai-sales-agent"
         schema={pageSchema}
       />
       <div className="min-h-screen pt-20 pb-12">

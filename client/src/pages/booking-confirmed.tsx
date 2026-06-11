@@ -8,12 +8,12 @@ export default function BookingConfirmed() {
     createWebPageSchema(
       "Booking Confirmed | iScale Studio",
       "Your consultation with iScale Studio has been successfully scheduled.",
-      "https://iscalestudio.com/booking-confirmed"
+      "https://www.iscalestudio.com/booking-confirmed"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Book Consultation", url: "https://iscalestudio.com/booking" },
-      { name: "Confirmed", url: "https://iscalestudio.com/booking-confirmed" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Book Consultation", url: "https://www.iscalestudio.com/booking" },
+      { name: "Confirmed", url: "https://www.iscalestudio.com/booking-confirmed" }
     ])
   ];
 
@@ -22,7 +22,7 @@ export default function BookingConfirmed() {
       <SEOHead
         title="Booking Confirmed | iScale Studio"
         description="Your consultation with iScale Studio has been successfully scheduled."
-        canonical="https://iscalestudio.com/booking-confirmed"
+        canonical="https://www.iscalestudio.com/booking-confirmed"
         schema={pageSchema}
       />
 

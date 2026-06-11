@@ -11,12 +11,12 @@ export default function AIAgentsPage() {
     createServiceSchema(
       "AI Agent Development",
       "Autonomous AI agents for customer service, document processing, and multi-step business logic using GPT, LLMs, and custom chatbots.",
-      "https://iscalestudio.com/services/ai-agents"
+      "https://www.iscalestudio.com/services/ai-agents"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "AI Agent Development", url: "https://iscalestudio.com/services/ai-agents" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" },
+      { name: "AI Agent Development", url: "https://www.iscalestudio.com/services/ai-agents" }
     ])
   ];
 
@@ -41,7 +41,7 @@ export default function AIAgentsPage() {
       <SEOHead
         title="AI Agent Development | Chatbots & Autonomous Agents Philippines | iScale Studio"
         description="Deploy autonomous AI agents for 24/7 customer support, document processing, and complex business logic. Reduce support costs by up to 70%."
-        canonical="https://iscalestudio.com/services/ai-agents"
+        canonical="https://www.iscalestudio.com/services/ai-agents"
         schema={pageSchema}
       />
       {/* Header */}

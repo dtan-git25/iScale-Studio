@@ -9,13 +9,13 @@ const pageSchema = [
     "Why Every Modern App Needs a Vector Database",
     "Understanding RAG (Retrieval Augmented Generation) and how it powers context-aware AI applications.",
     "2023-09-28",
-    "https://iscalestudio.com/blog/vector-database-rag-guide",
+    "https://www.iscalestudio.com/blog/vector-database-rag-guide",
     "Tech Stack"
   ),
   createBreadcrumbSchema([
-    { name: "Home", url: "https://iscalestudio.com" },
-    { name: "Blog", url: "https://iscalestudio.com/blog" },
-    { name: "Why Every Modern App Needs a Vector Database", url: "https://iscalestudio.com/blog/vector-database-rag-guide" }
+    { name: "Home", url: "https://www.iscalestudio.com" },
+    { name: "Blog", url: "https://www.iscalestudio.com/blog" },
+    { name: "Why Every Modern App Needs a Vector Database", url: "https://www.iscalestudio.com/blog/vector-database-rag-guide" }
   ])
 ];
 
@@ -25,7 +25,7 @@ export default function BlogPost3() {
       <SEOHead
         title="Why Every Modern App Needs a Vector Database | iScale Studio Blog"
         description="Understanding RAG (Retrieval Augmented Generation) and how it powers context-aware AI applications."
-        canonical="https://iscalestudio.com/blog/vector-database-rag-guide"
+        canonical="https://www.iscalestudio.com/blog/vector-database-rag-guide"
         type="article"
         schema={pageSchema}
         article={{

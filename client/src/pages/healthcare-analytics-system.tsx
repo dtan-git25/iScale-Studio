@@ -9,12 +9,12 @@ export default function CaseStudy3() {
     createWebPageSchema(
       "Healthcare Data Analytics System | iScale Studio Case Study",
       "Predictive analytics platform that improves treatment outcomes by 35% with 92% prediction accuracy for 100K+ patients.",
-      "https://iscalestudio.com/portfolio/healthcare-analytics-system"
+      "https://www.iscalestudio.com/portfolio/healthcare-analytics-system"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Case Studies", url: "https://iscalestudio.com/case-studies" },
-      { name: "Healthcare Data Analytics", url: "https://iscalestudio.com/portfolio/healthcare-analytics-system" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Case Studies", url: "https://www.iscalestudio.com/case-studies" },
+      { name: "Healthcare Data Analytics", url: "https://www.iscalestudio.com/portfolio/healthcare-analytics-system" }
     ])
   ];
 
@@ -23,7 +23,7 @@ export default function CaseStudy3() {
       <SEOHead
         title="Healthcare Data Analytics System | iScale Studio Case Study"
         description="Predictive analytics platform that improves treatment outcomes by 35% with 92% prediction accuracy for 100K+ patients."
-        canonical="https://iscalestudio.com/portfolio/healthcare-analytics-system"
+        canonical="https://www.iscalestudio.com/portfolio/healthcare-analytics-system"
         schema={pageSchema}
       />
       <div className="min-h-screen pt-20 pb-12">

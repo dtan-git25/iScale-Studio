@@ -11,12 +11,12 @@ export default function WebDevelopmentPage() {
     createServiceSchema(
       "Web Development",
       "Custom web applications powered by AI including React, Next.js dashboards, PWAs, and intelligent search & recommendation systems.",
-      "https://iscalestudio.com/services/web-development"
+      "https://www.iscalestudio.com/services/web-development"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "Web Development", url: "https://iscalestudio.com/services/web-development" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" },
+      { name: "Web Development", url: "https://www.iscalestudio.com/services/web-development" }
     ])
   ];
 
@@ -43,7 +43,7 @@ export default function WebDevelopmentPage() {
       <SEOHead
         title="Web Development Services Philippines | iScale Studio"
         description="Custom AI-powered web applications with React, Next.js, dashboards, PWAs, and intelligent recommendation systems. Transform your web presence with AI."
-        canonical="https://iscalestudio.com/services/web-development"
+        canonical="https://www.iscalestudio.com/services/web-development"
         schema={pageSchema}
       />
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">

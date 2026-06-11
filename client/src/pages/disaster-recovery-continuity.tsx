@@ -9,13 +9,13 @@ const pageSchema = [
     "Building Resilient Systems: Disaster Recovery and Business Continuity",
     "Essential strategies for ensuring your business stays operational when systems fail.",
     "2024-11-10",
-    "https://iscalestudio.com/blog/disaster-recovery-continuity",
+    "https://www.iscalestudio.com/blog/disaster-recovery-continuity",
     "DevOps"
   ),
   createBreadcrumbSchema([
-    { name: "Home", url: "https://iscalestudio.com" },
-    { name: "Blog", url: "https://iscalestudio.com/blog" },
-    { name: "Building Resilient Systems: Disaster Recovery and Business Continuity", url: "https://iscalestudio.com/blog/disaster-recovery-continuity" }
+    { name: "Home", url: "https://www.iscalestudio.com" },
+    { name: "Blog", url: "https://www.iscalestudio.com/blog" },
+    { name: "Building Resilient Systems: Disaster Recovery and Business Continuity", url: "https://www.iscalestudio.com/blog/disaster-recovery-continuity" }
   ])
 ];
 
@@ -25,7 +25,7 @@ export default function BlogPost12() {
       <SEOHead
         title="Building Resilient Systems: Disaster Recovery and Business Continuity | iScale Studio Blog"
         description="Essential strategies for ensuring your business stays operational when systems fail."
-        canonical="https://iscalestudio.com/blog/disaster-recovery-continuity"
+        canonical="https://www.iscalestudio.com/blog/disaster-recovery-continuity"
         type="article"
         schema={pageSchema}
         article={{

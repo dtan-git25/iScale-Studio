@@ -10,13 +10,13 @@ export default function AISupportAgent() {
     createServiceSchema(
       "AI Support Agent",
       "Provide instant 24/7 customer support with intelligent troubleshooting, automatic ticket resolution, and seamless human escalation. Reduce response times by 90%.",
-      "https://iscalestudio.com/ai-support-agent"
+      "https://www.iscalestudio.com/ai-support-agent"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Services", url: "https://iscalestudio.com/services" },
-      { name: "AI Agents", url: "https://iscalestudio.com/services/ai-agents" },
-      { name: "AI Support Agent", url: "https://iscalestudio.com/ai-support-agent" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Services", url: "https://www.iscalestudio.com/services" },
+      { name: "AI Agents", url: "https://www.iscalestudio.com/services/ai-agents" },
+      { name: "AI Support Agent", url: "https://www.iscalestudio.com/ai-support-agent" }
     ])
   ];
 
@@ -25,7 +25,7 @@ export default function AISupportAgent() {
       <SEOHead
         title="AI Support Agent | 24/7 Customer Service Automation | iScale Studio"
         description="Provide instant 24/7 customer support with intelligent troubleshooting, automatic ticket resolution, and seamless human escalation. Reduce response times by 90%."
-        canonical="https://iscalestudio.com/ai-support-agent"
+        canonical="https://www.iscalestudio.com/ai-support-agent"
         schema={pageSchema}
       />
       <div className="min-h-screen pt-20 pb-12">

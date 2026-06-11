@@ -10,11 +10,11 @@ export default function Blog() {
     createWebPageSchema(
       "AI & Automation Insights | iScale Studio Blog",
       "Stay updated with the latest insights on AI development, workflow automation, AI agents, and digital transformation trends from iScale Studio.",
-      "https://iscalestudio.com/blog"
+      "https://www.iscalestudio.com/blog"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Blog", url: "https://iscalestudio.com/blog" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Blog", url: "https://www.iscalestudio.com/blog" }
     ])
   ];
   const posts = [
@@ -145,7 +145,7 @@ export default function Blog() {
       <SEOHead
         title="AI & Automation Insights | iScale Studio Blog"
         description="Stay updated with the latest insights on AI development, workflow automation, AI agents, and digital transformation trends from iScale Studio."
-        canonical="https://iscalestudio.com/blog"
+        canonical="https://www.iscalestudio.com/blog"
         schema={blogSchema}
       />
       <section className="py-20 bg-gradient-to-b from-purple-900/20 to-violet-900/10 border-b border-white/5">

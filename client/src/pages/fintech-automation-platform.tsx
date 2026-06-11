@@ -9,12 +9,12 @@ export default function CaseStudy2() {
     createWebPageSchema(
       "Financial Services Automation Platform | iScale Studio Case Study",
       "Streamlined invoice processing and workflows with intelligent automation, reducing manual work by 80% and achieving 99.8% accuracy.",
-      "https://iscalestudio.com/portfolio/fintech-automation-platform"
+      "https://www.iscalestudio.com/portfolio/fintech-automation-platform"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Case Studies", url: "https://iscalestudio.com/case-studies" },
-      { name: "Financial Services Automation", url: "https://iscalestudio.com/portfolio/fintech-automation-platform" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Case Studies", url: "https://www.iscalestudio.com/case-studies" },
+      { name: "Financial Services Automation", url: "https://www.iscalestudio.com/portfolio/fintech-automation-platform" }
     ])
   ];
 
@@ -23,7 +23,7 @@ export default function CaseStudy2() {
       <SEOHead
         title="Financial Services Automation Platform | iScale Studio Case Study"
         description="Streamlined invoice processing and workflows with intelligent automation, reducing manual work by 80% and achieving 99.8% accuracy."
-        canonical="https://iscalestudio.com/portfolio/fintech-automation-platform"
+        canonical="https://www.iscalestudio.com/portfolio/fintech-automation-platform"
         schema={pageSchema}
       />
       <div className="min-h-screen pt-20 pb-12">

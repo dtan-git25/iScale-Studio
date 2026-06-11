@@ -10,11 +10,11 @@ export default function CaseStudies() {
     createWebPageSchema(
       "Case Studies | AI & Automation Success Stories | iScale Studio",
       "Real results from real clients. Explore how iScale Studio's AI solutions transformed businesses across e-commerce, fintech, healthcare, and more.",
-      "https://iscalestudio.com/case-studies"
+      "https://www.iscalestudio.com/case-studies"
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://iscalestudio.com" },
-      { name: "Case Studies", url: "https://iscalestudio.com/case-studies" }
+      { name: "Home", url: "https://www.iscalestudio.com" },
+      { name: "Case Studies", url: "https://www.iscalestudio.com/case-studies" }
     ])
   ];
   const caseStudies = [
@@ -115,7 +115,7 @@ export default function CaseStudies() {
       <SEOHead
         title="Case Studies | AI & Automation Success Stories | iScale Studio"
         description="Real results from real clients. Explore how iScale Studio's AI solutions transformed businesses across e-commerce, fintech, healthcare, and more."
-        canonical="https://iscalestudio.com/case-studies"
+        canonical="https://www.iscalestudio.com/case-studies"
         schema={pageSchema}
       />
       {/* Header */}
