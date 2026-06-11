@@ -183,3 +183,11 @@
   50% { transform: translate(50px, -30px); }
   75% { transform: translate(-25px, 15px); }
 }
+
+/* Hide the floating reCAPTCHA v3 badge — permitted by Google when the required
+   disclosure text is shown in the form (see the booking form). Use
+   visibility:hidden (NOT display:none / element removal) so the badge stays in
+   the DOM and grecaptcha keeps functioning. */
+.grecaptcha-badge {
+  visibility: hidden;
+}

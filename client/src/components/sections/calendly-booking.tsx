@@ -695,6 +695,29 @@ export function CalendlyBooking() {
                   <p className="text-xs text-center text-gray-700 mt-4">
                     We'll send you a calendar invite and Zoom link
                   </p>
+
+                  {/* Google-required disclosure shown because the reCAPTCHA badge is hidden via CSS. */}
+                  <p className="text-xs text-center text-gray-500 mt-3">
+                    This site is protected by reCAPTCHA and the Google{' '}
+                    <a
+                      href="https://policies.google.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-gray-700"
+                    >
+                      Privacy Policy
+                    </a>{' '}
+                    and{' '}
+                    <a
+                      href="https://policies.google.com/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-gray-700"
+                    >
+                      Terms of Service
+                    </a>{' '}
+                    apply.
+                  </p>
                 </>
               ) : step === 'success' && bookingConfirmation ? (
                 <>
