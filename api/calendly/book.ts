@@ -141,16 +141,28 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         phoneNumber = formattedPhone;
       }
 
-      // Stash the extra form fields in metadata (string values only; skip empties).
+      // Compose a single host-visible notes string and send it via the booking's
+      // "Additional notes" field (slug "notes") in bookingFieldsResponses. This is
+      // what the host sees in the Cal.com dashboard and has no practical length cap.
+      // NOTE: metadata is host-INVISIBLE and value-capped (500 chars), so the
+      // free-text message must NOT rely on it.
+      const notesParts: string[] = [];
+      if (service) notesParts.push(`Service: ${service}`);
+      if (company) notesParts.push(`Company: ${company}`);
+      if (message) notesParts.push(`Message: ${message}`);
+      const notes = notesParts.join("\n");
+
+      // Keep only short, bounded tags in metadata (each well under the 500-char
+      // cap) for programmatic filtering — never the free-text message.
       const metadata: Record<string, string> = {};
-      if (company) metadata.company = company;
       if (service) metadata.service = service;
-      if (message) metadata.message = message;
+      if (company) metadata.company = company;
 
       const bookingData: {
         eventTypeId: number;
         start: string;
         attendee: { name: string; email: string; timeZone: string; phoneNumber?: string };
+        bookingFieldsResponses?: Record<string, string>;
         metadata?: Record<string, string>;
       } = {
         eventTypeId: Number(CALCOM_EVENT_TYPE_ID),
@@ -161,6 +173,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           timeZone: "Asia/Manila",
           ...(phoneNumber ? { phoneNumber } : {}),
         },
+        ...(notes ? { bookingFieldsResponses: { notes } } : {}),
         ...(Object.keys(metadata).length > 0 ? { metadata } : {}),
       };
 
