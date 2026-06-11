@@ -108,8 +108,7 @@ export default function Footer() {
                     { label: "Custom Web Application", href: "/services/custom-web-application" },
                     { label: "Workflow Automation", href: "/services/workflow-automation" },
                     { label: "AI Agents", href: "/services/ai-agents" },
-                    { label: "E-commerce Solutions", href: "/services/ecommerce-solutions" },
-                    { label: "Custom AI/ML Models", href: "/services/ai-ml-development" }
+                    { label: "E-commerce Solutions", href: "/services/ecommerce-solutions" }
                   ].map((item, idx) => (
                     <li key={idx}>
                       <Link href={item.href} className="text-gray-700 text-sm hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#9929ea] hover:to-[#5808fb] transition-all flex items-center gap-2 group/link">

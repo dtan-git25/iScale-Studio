@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, Zap, Target, Clock, Shield, Globe, Smartphone, LayoutDashboard, Bot, ShoppingCart, Brain } from "lucide-react";
+import { CheckCircle2, ArrowRight, Zap, Target, Clock, Shield, Globe, Smartphone, LayoutDashboard, Bot, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import webDevImg from "@assets/optimized_images/ai_web_development_modern_interface.webp";
@@ -8,14 +8,13 @@ import customWebImg from "@assets/optimized_images/futuristic_web_development_co
 import workflowImg from "@assets/optimized_images/workflow_automation_process_diagram.webp";
 import aiAgentImg from "@assets/optimized_images/ai_agent_assistant_interface.webp";
 import ecommerceImg from "@assets/optimized_images/e-commerce_platform_interface.webp";
-import mlDevImg from "@assets/optimized_images/ml_models_development_dashboard.webp";
 import { SEOHead, createBreadcrumbSchema, createWebPageSchema } from "@/components/seo/seo-head";
 
 export default function Services() {
   const servicesSchema = [
     createWebPageSchema(
       "AI Development Services Philippines | Web, App & Automation Solutions",
-      "Explore iScale Studio's AI development services: AI web & app development, workflow automation, AI agents, e-commerce solutions, and custom ML models for Philippine businesses.",
+      "Explore iScale Studio's AI development services: AI web & app development, workflow automation, AI agents, and e-commerce solutions for Philippine businesses.",
       "https://iscalestudio.com/services"
     ),
     createBreadcrumbSchema([
@@ -132,25 +131,6 @@ export default function Services() {
       icon: ShoppingCart,
       gradient: "from-emerald-500 to-teal-500",
       href: "/services/ecommerce-solutions"
-    },
-    {
-      id: "ai-ml-development",
-      title: "Custom AI/ML Models",
-      subtitle: "Build proprietary ML models",
-      shortDesc: "Custom machine learning models tailored to your specific data and business needs.",
-      description: "We develop custom machine learning models that unlock actionable insights from your data. From predictive analytics to computer vision, our models are built to solve your specific business challenges.",
-      features: [
-        "Predictive Analytics & Forecasting",
-        "Computer Vision & Image Classification",
-        "Natural Language Processing (NLP)",
-        "Customer Churn & Risk Prediction",
-        "Custom Model Training & Optimization",
-        "Real-time Model Inference & Deployment"
-      ],
-      image: mlDevImg,
-      icon: Brain,
-      gradient: "from-orange-500 to-yellow-500",
-      href: "/services/ai-ml-development"
     }
   ];
 
@@ -165,7 +145,7 @@ export default function Services() {
     <div className="min-h-screen pt-20">
       <SEOHead
         title="AI Development Services Philippines | Web, App & Automation Solutions"
-        description="Explore iScale Studio's AI development services: AI web & app development, workflow automation, AI agents, e-commerce solutions, and custom ML models for Philippine businesses."
+        description="Explore iScale Studio's AI development services: AI web & app development, workflow automation, AI agents, and e-commerce solutions for Philippine businesses."
         canonical="https://iscalestudio.com/services"
         schema={servicesSchema}
       />

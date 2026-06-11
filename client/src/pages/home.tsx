@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Smartphone, LayoutDashboard, Bot, ShoppingCart, Brain, Clock, Target, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Code, Cpu, Workflow, Database, Globe, Zap, Check, Calendar, MessageSquare, Briefcase, GitBranch, Rocket, MapPin, Lightbulb, TrendingUp, Handshake, Users, Shield, ChevronLeft, ChevronRight, Server, Cloud, Settings, Layers, ArrowUpRight, Smartphone, LayoutDashboard, Bot, ShoppingCart, Clock, Target, CheckCircle2 } from "lucide-react";
 import { SEOHead, createBreadcrumbSchema, createWebPageSchema } from "@/components/seo/seo-head";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -25,7 +25,6 @@ import customWebImg from "@assets/generated_images/futuristic_web_development_co
 import workflowImg from "@assets/generated_images/workflow_automation_system_diagram.png";
 import aiAgentImg from "@assets/generated_images/ai_agent_customer_service_dashboard.png";
 import ecommerceSvcImg from "@assets/generated_images/e-commerce_platform_management_dashboard.png";
-import mlDevImg from "@assets/generated_images/machine_learning_model_dashboard.png";
 
 // Tech Stack Component
 function TechStack() {
@@ -282,15 +281,6 @@ export default function Home() {
                 icon: ShoppingCart,
                 gradient: "from-emerald-500 to-teal-500",
                 href: "/services/ecommerce-solutions"
-              },
-              {
-                id: "ai-ml-development",
-                title: "Custom AI/ML Models",
-                subtitle: "Build proprietary ML models",
-                shortDesc: "Custom machine learning models tailored to your specific data and business needs.",
-                icon: Brain,
-                gradient: "from-orange-500 to-yellow-500",
-                href: "/services/ai-ml-development"
               }
             ].map((service, idx) => (
               <motion.div
@@ -427,20 +417,6 @@ export default function Home() {
                 ],
                 image: ecommerceSvcImg,
                 href: "/services/ecommerce-solutions"
-              },
-              {
-                title: "Custom AI/ML Models",
-                subtitle: "Build proprietary ML models",
-                description: "We develop custom machine learning models that unlock actionable insights from your data. From predictive analytics to computer vision, our models are built to solve your specific business challenges.",
-                features: [
-                  "Predictive Analytics & Forecasting",
-                  "Computer Vision & Image Classification",
-                  "Natural Language Processing (NLP)",
-                  "Customer Churn & Risk Prediction",
-                  "Custom Model Training & Optimization"
-                ],
-                image: mlDevImg,
-                href: "/services/ai-ml-development"
               }
             ].map((service, idx) => (
               <motion.div

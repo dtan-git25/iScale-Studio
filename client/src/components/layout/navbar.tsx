@@ -79,7 +79,6 @@ export default function Navbar() {
       ]
     },
     { name: "E-commerce Solutions", href: "/services/ecommerce-solutions" },
-    { name: "Custom AI/ML Models", href: "/services/ai-ml-development" },
   ];
 
   return (

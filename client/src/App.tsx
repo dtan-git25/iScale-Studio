@@ -18,7 +18,6 @@ const MobileAppDevelopment = lazy(() => import("@/pages/services/mobile-app-deve
 const WorkflowAutomation = lazy(() => import("@/pages/services/workflow-automation"));
 const AIAgents = lazy(() => import("@/pages/services/ai-agents"));
 const EcommerceSolutions = lazy(() => import("@/pages/services/ecommerce-solutions"));
-const AIMLDevelopment = lazy(() => import("@/pages/services/ai-ml-development"));
 const Portfolio = lazy(() => import("@/pages/portfolio"));
 const About = lazy(() => import("@/pages/about"));
 const Blog = lazy(() => import("@/pages/blog"));
@@ -84,7 +83,6 @@ function Router() {
             <Route path="/services/workflow-automation" component={WorkflowAutomation} />
             <Route path="/services/ai-agents" component={AIAgents} />
             <Route path="/services/ecommerce-solutions" component={EcommerceSolutions} />
-            <Route path="/services/ai-ml-development" component={AIMLDevelopment} />
             <Route path="/portfolio" component={Portfolio} />
             <Route path="/about" component={About} />
             <Route path="/blog" component={Blog} />

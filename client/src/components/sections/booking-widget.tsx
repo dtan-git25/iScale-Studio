@@ -652,11 +652,11 @@ export function BookingWidget() {
                         data-testid="select-service"
                       >
                         <option value="Web Development">Web Development</option>
-                        <option value="App Development">App Development</option>
+                        <option value="Custom Web Application">Custom Web Application</option>
+                        <option value="Mobile App Development">Mobile App Development</option>
                         <option value="Workflow Automation">Workflow Automation</option>
                         <option value="AI Agents">AI Agents</option>
                         <option value="E-commerce Solutions">E-commerce Solutions</option>
-                        <option value="AI/ML Development">AI/ML Development</option>
                         <option value="Other">Other</option>
                       </select>
                     </div>
